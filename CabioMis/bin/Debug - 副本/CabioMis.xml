@@ -1,0 +1,569 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+CabioMis
+</name>
+</assembly>
+<members>
+<member name="P:CabioMis.Cl_DataMag.ConnStr">
+	<summary>
+ 获取或设置数据库连接字符串
+ </summary>
+</member><member name="P:CabioMis.Cl_DataMag.getZdinf">
+	<summary>
+ 获取字段信息
+ </summary>
+</member><member name="M:CabioMis.Cl_DataMag.GF_CreateDataSource(System.String,System.String)">
+	<summary>
+ 根据sql语句获取一个DATATABLE
+ </summary>
+	<param name="pStrSql">数据库查询语句</param>
+	<param name="pStrConn">数据库连接字符串</param>
+	<returns>返回查询结果</returns>
+</member><member name="M:CabioMis.Cl_DataMag.insertData(System.String,System.String)">
+	<summary>
+ 执行一条SQL语句
+ </summary>
+	<param name="pStrSql">数据库查询语句</param>
+	<param name="pStrConn">数据库连接字符串</param>
+</member><member name="M:CabioMis.Cl_DataMag.insertData(System.String,System.String[0:,0:],System.String)">
+	<summary>
+ 插入数据
+ </summary>
+	<param name="pTb">表名</param>
+	<param name="pArrItem">数据数组</param>
+</member><member name="M:CabioMis.Cl_DataMag.updateData(System.String,System.String[0:,0:],System.String,System.String)">
+	<summary>
+ 更新数据
+ </summary>
+	<param name="pTb">表名</param>
+	<param name="pArrItem">数据数组</param>
+	<param name="pStrWh">条件表达式</param>
+</member><member name="M:CabioMis.Cl_DataMag.GS_upztxx(System.String,System.String)">
+	<summary>
+ 执行一条SQL语句
+ </summary>
+	<param name="pStrSql">数据库查询语句</param>
+	<param name="pStrConn">数据库连接字符串</param>
+</member><member name="M:CabioMis.Cl_DataMag.GF_upztxx2(System.String,System.String)">
+	<summary>
+ 插入一条记录，返回最新标识
+ </summary>
+	<param name="pStrSql">数据库查询语句</param>
+	<param name="pStrConn">数据库连接字符串</param>
+</member><member name="M:CabioMis.Cl_DataMag.GetNewBS(System.Int32,System.String)">
+	<summary>
+ 返回最新标识（原标识会自动+1）
+ </summary>
+	<param name="lb">类别</param>
+	<param name="pStrConn">数据库链接串</param>
+</member><member name="M:CabioMis.Cl_DataMag.YanDttoStr(System.Data.DataTable,System.String,System.Boolean)">
+	<summary>
+ 将datatable中的一个字段中的数据转换为用“,”隔开的字符串
+ </summary>
+	<param name="pDt">datatable</param>
+	<param name="pCname">字段名</param>
+	<param name="pBl">是否为字符串内的字符加上单引号</param>
+</member><member name="M:CabioMis.Cl_DataMag.YanArrToDb(System.Data.DataRow[])">
+	<summary>
+ 根据DATAROW数组转为DATATABLE
+ </summary>
+</member><member name="M:CabioMis.Cl_DataMag.YanStrToDb(System.String)">
+	<summary>
+ 根据字符串构建DB
+ </summary>
+</member><member name="M:CabioMis.Cl_DataMag.YanCountCol(System.Data.DataTable,System.String)">
+	<summary>
+ 统计DATATABLE的列数据
+ </summary>
+	<param name="pDt"></param>
+	<param name="pCol"></param>
+</member><member name="M:CabioMis.Cl_DataMag.GF_addsj(System.String,System.Windows.Forms.Form,System.String)">
+	<summary>
+ 保存窗体提交
+ </summary>
+	<param name="pStrTb">数据库表名</param>
+	<param name="pObjFr">提交的窗体</param>
+	<param name="pStrConn">数据库连接字符串</param>
+	<returns>返回新插入的ID</returns>
+</member><member name="M:CabioMis.Cl_DataMag.gridToDatatable(System.Object)">
+	<summary>
+ 将容器转换为DB
+ </summary>
+	<param name="pObjGrid">容器对象</param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:CabioMis.Cl_DataMag.Gs_showsj(System.Windows.Forms.Form,System.String,System.Int32)">
+	<summary>
+ 将值填入窗体控件
+ </summary>
+	<param name="pObjFr">窗体对象</param>
+	<param name="pStrTbName">数据库内的表名</param>
+	<param name="pIntId">主键值</param>
+</member><member name="M:CabioMis.Cl_DataMag.Gs_showsj(System.Windows.Forms.Form,System.Data.DataTable)">
+	<summary>
+ 将值填入窗体控件
+ </summary>
+	<param name="pObjFr">窗体对象</param>
+	<param name="pDt">一个横向的DATATABLE，每列存储一个表单项</param>
+</member><member name="M:CabioMis.Cl_DataMag.Gs_updasj(System.Windows.Forms.Form,System.Data.DataTable,System.Boolean,System.String)">
+	<summary>
+ 将窗体控件的值写入DB
+ </summary>
+	<param name="pObjFr">窗体对象</param>
+	<param name="pDt">DT</param>
+	<param name="pBlUpdate">是否更新数据库</param>
+	<param name="pStrConn">数据库连接字符串</param>
+	<returns>返回数据库对应的标识</returns>
+</member><member name="M:CabioMis.Md_DataDo.GF_czmctb(System.Data.DataTable,System.String)">
+	<summary>
+ 在DataTable中查询返回 一个DataTable
+ </summary>
+</member><member name="M:CabioMis.Md_DataDo.Gs_showsj(System.String,System.Windows.Forms.Form,System.String)">
+	<summary>
+ 将数据库内的值填入窗体控件
+ </summary>
+	<param name="str">表</param>
+	<param name="str2">窗体</param>
+	<param name="str3">表对应的ID</param>
+</member><member name="M:CabioMis.Md_DataDo.GF_CheckRepeat(System.String,System.String,System.String,System.String)">
+	<summary>
+ 检测某字段的同样的值有多少个，可以用来判断数据重复
+ </summary>
+	<param name="strcnn"></param>
+	<param name="TableName"></param>
+	<param name="Field"></param>
+	<param name="FieldValue"></param>
+	<returns>返回多少</returns>
+	<remarks></remarks>
+</member><member name="M:CabioMis.Md_DataDo.GF_CheckRepeat(System.String,System.String,System.String)">
+	<summary>
+ 检测某表达式在数据库的数据条数
+ </summary>
+	<param name="strcnn"></param>
+	<param name="TableName"></param>
+	<param name="SQLBDS">表达式</param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="F:CabioMis.FrTj_Scqk_cp.m_strSclc">
+	<summary>
+ 要显示的流程名称
+ </summary>
+</member><member name="T:CabioMis.FrTj_Scqk_cp">
+	<summary>
+ 产品生产列表（显示详细批次）
+ </summary>
+</member><member name="M:CabioMis.Md_FileDo.GS_toexcel(System.Windows.Forms.Control,System.String,System.Windows.Forms.Form)">
+	<summary>
+ 对ListView、或DataGridView内容转存为excel
+ </summary>
+	<param name="lst">数据源</param>
+	<param name="excelbt">文件名称</param>
+	<param name="xx">窗体</param>
+</member><member name="T:CabioMis.yanTextBox">
+	<summary>
+ 只能输入数字的textbox
+ </summary>
+</member><member name="M:CabioMis.Md_Yw2.GS_GETGUANGUZ(System.Data.DataTable,System.String,System.Windows.Forms.Form)">
+	<summary>
+ '得到原料罐的估计重量
+ </summary>
+	<param name="gtable">原料罐DATATABLE</param>
+	<param name="phkj">原料批号控件</param>
+	<param name="whichform">窗体</param>
+	<remarks></remarks>
+</member><member name="M:CabioMis.Md_Yw2.GS_TCYLLIST_yan(System.Windows.Forms.Form,System.Data.DataTable,System.String,System.String,CabioMis.mo_YanZdy.callbackFrok)">
+	<summary>
+ 弹出原料窗体过程
+ </summary>
+	<param name="STR1">父窗体</param>
+	<param name="STR2">原料数据表</param>
+	<param name="str3">物料代码</param>
+	<param name="STR4">原料名称</param>
+	<param name="pFunCall">给调用这个窗体的回调函数</param>
+</member><member name="M:CabioMis.EnumDescription.#ctor(System.String,System.Int32)">
+	<summary>
+ 描述枚举值
+ </summary>
+	<param name="enumDisplayText">描述内容</param>
+	<param name="enumRank">排列顺序</param>
+</member><member name="M:CabioMis.EnumDescription.#ctor(System.String)">
+	<summary>
+ 描述枚举值，默认排序为5
+ </summary>
+	<param name="enumDisplayText">描述内容</param>
+</member><member name="F:CabioMis.EnumDescription.SortType.Default">
+	<summary>
+按枚举顺序默认排序
+ </summary>
+</member><member name="F:CabioMis.EnumDescription.SortType.DisplayText">
+	<summary>
+ 按描述值排序
+ </summary>
+</member><member name="F:CabioMis.EnumDescription.SortType.Rank">
+	<summary>
+ 按排序熵
+ </summary>
+</member><member name="T:CabioMis.EnumDescription.SortType">
+	<summary>
+ 排序类型
+ </summary>
+</member><member name="M:CabioMis.EnumDescription.GetEnumText(System.Type)">
+	<summary>
+ 得到对枚举的描述文本
+ </summary>
+	<param name="enumType">枚举类型</param>
+	<returns></returns>
+</member><member name="M:CabioMis.EnumDescription.GetFieldText(System.Object)">
+	<summary>
+ 获得指定枚举类型中，指定值的描述文本。
+ </summary>
+	<param name="enumValue">枚举值，不要作任何类型转换</param>
+	<returns>描述字符串</returns>
+</member><member name="M:CabioMis.EnumDescription.GetFieldTexts(System.Type)">
+	<summary>
+ 得到枚举类型定义的所有文本，按定义的顺序返回
+ </summary>
+	<exception cref="T:System.NotSupportedException"></exception>
+	<param name="enumType">枚举类型</param>
+	<returns>所有定义的文本</returns>
+</member><member name="M:CabioMis.EnumDescription.GetFieldTexts(System.Type,CabioMis.EnumDescription.SortType)">
+	<summary>
+ 得到枚举类型定义的所有文本
+ </summary>
+	<exception cref="T:System.NotSupportedException"></exception>
+	<param name="enumType">枚举类型</param>
+	<param name="sortType__1">指定排序类型</param>
+	<returns>所有定义的文本</returns>
+</member><member name="M:CabioMis.EnumDescription.YanGetEnValue(System.Type,System.String)">
+	<summary>
+ 通过枚举名称返回值
+ </summary>
+</member><member name="M:CabioMis.EnumDescription.YanGetEnText(System.Type,System.Int32)">
+	<summary>
+ 通过枚举值返回文本
+ </summary>
+</member><member name="M:CabioMis.EnumDescription.YanGetEnText_1(System.Type,System.String)">
+	<summary>
+ 通过枚举名称返回文本
+ </summary>
+</member><member name="M:CabioMis.EnumDescription.YanGetEnName(System.Type,System.Int32)">
+	<summary>
+ 通过枚举值返回名称
+ </summary>
+</member><member name="M:CabioMis.EnumDescription.YanGetEnT2N(System.Type,System.String)">
+	<summary>
+ 通过枚举文本返回名称
+ </summary>
+</member><member name="M:CabioMis.EnumDescription.YanEnToTb(System.Type)">
+	<summary>
+ 将枚举转为DATATABLE
+ </summary>
+</member><member name="M:CabioMis.EnumDescription.YanEnToTbCol(System.Type)">
+	<summary>
+ 将枚举转为DATATABLE(每个枚举名称为一列)
+ </summary>
+</member><member name="T:CabioMis.EnumDescription">
+	<summary>
+ 把枚举值按照指定的文本显示
+ <remarks>
+ 一般通过枚举值的ToString()可以得到变量的文本，
+ 但是有时候需要的到与之对应的更充分的文本，
+ </remarks>
+	</summary>
+	<example>
+ [EnumDescription("中文数字")]
+ enum MyEnum
+ {
+		[EnumDescription("数字一")]
+ 	One = 1, 
+ 
+		[EnumDescription("数字二")]
+		Two, 
+ 
+		[EnumDescription("数字三")]
+		Three
+ }
+ EnumDescription.GetEnumText(typeof(MyEnum));
+ EnumDescription.GetFieldText(MyEnum.Two);
+ EnumDescription.GetFieldTexts(typeof(MyEnum)); 
+ </example>
+</member><member name="T:CabioMis.Frddzqzfl">
+	<summary>
+ 年度订单交付率统计表
+ </summary>
+</member><member name="T:CabioMis.FrQcShowView">
+	<summary>
+ QC审核界面
+ </summary>
+</member><member name="F:CabioMis.FrTj_Scqk_yl.m_Dt">
+	<summary>
+ 显示的数据源
+ </summary>
+</member><member name="T:CabioMis.FrTj_Scqk_yl">
+	<summary>
+ 原料使用列表
+ </summary>
+</member><member name="M:CabioMis.fryxyb.ToExcel_Click(System.Object,System.EventArgs)">
+
+以上复制的是能耗月报的源代码（止）
+ 
+
+</member><member name="T:CabioMis.FrYanJcJsl">
+	<summary>
+ 检测及时率统计表
+ </summary>
+</member><member name="M:CabioMis.Frqg.bjlc">
+	<summary>
+备件在请购审核通过后直接进入采购流程
+ </summary>
+	<remarks></remarks>
+</member><member name="T:CabioMis.Frtb_823p2">
+	<summary>
+ 粉剂配料
+ </summary>
+</member><member name="T:CabioMis.cl_getWhere">
+	<summary>
+ 条件表达式
+ </summary>
+</member><member name="P:CabioMis.myDataCl.sorTable">
+	<summary>
+ 获取或设置窗体使用的dataset
+ </summary>
+</member><member name="M:CabioMis.myDataCl.setDataTb(System.String,System.Int32)">
+	<summary>
+ 将数据库的表结构转换为TB
+ </summary>
+	<param name="pStrTb">表名</param>
+	<param name="pIntId">主键，如果这个值不为空那么生成的表将从数据库中读取一条相应的记录</param>
+	<remarks></remarks>
+</member><member name="M:CabioMis.myDataCl.setDataTb(System.String,System.Windows.Forms.ListView,System.Int32)">
+	<summary>
+ 将容器内的数据填充进DT
+ </summary>
+	<param name="pStrTb">表名</param>
+	<param name="pLv">listView容器</param>
+	<param name="pRowIndex">行号</param>
+	<remarks></remarks>
+</member><member name="M:CabioMis.cl_YanMd.showCkxq(System.Object,System.EventArgs)">
+	<summary>
+ 右键餐单查看明细
+ </summary>
+</member><member name="M:CabioMis.cl_YanMd.getQcLsjl(System.String)">
+	<summary>
+ 获取DHAQC的历史记录
+ </summary>
+	<param name="pStrWlbs"></param>
+</member><member name="M:CabioMis.cl_YanMd.findcontrolinform(System.Windows.Forms.Form,System.String)">
+	<summary>
+ 根据名字获取控件
+ </summary>
+	<param name="myform">控件所在窗体</param>
+	<param name="myname">控件名</param>
+</member><member name="M:CabioMis.cl_YanMd.isRowNull(System.String,System.String)">
+	<summary>
+判断数据库中有否符合条件的记录
+ </summary>
+	<param name="pStrTable">数据库表名</param>
+	<param name="pStrWh">查询条件</param>
+	<returns>返回查询结果</returns>
+</member><member name="T:CabioMis.FrRightNow">
+	<summary>
+ 到货即时率
+ </summary>
+</member><member name="T:CabioMis.FrTj_Scqk">
+	<summary>
+ 流程统计
+ </summary>
+</member><member name="M:CabioMis.cl_theCl.getShowDtWltj(System.String,System.String,System.String,System.String)">
+	<summary>
+ 获取物料使用情况列表
+ </summary>
+	<param name="pStrWldm">物料代码</param>
+	<param name="pStlph">物料批号</param>
+	<returns>返回物料的使用列表</returns>
+	<remarks>如果批号为空，那么列出该物料所有批号的列表</remarks>
+</member><member name="M:CabioMis.cl_theCl.setQcshowView(System.Data.DataTable@,System.Int32,System.String)">
+	<summary>
+ 添加QC结果列
+ </summary>
+	<param name="pDt"></param>
+	<remarks></remarks>
+</member><member name="T:CabioMis.FrListYl_slqk">
+	<summary>
+ 根据传来的物料代码显示该物料在所有流程中的使用情况
+ </summary>
+</member><member name="P:CabioMis.My.Resources.Resources.ResourceManager">
+	<summary>
+  返回此类使用的缓存的 ResourceManager 实例。
+</summary>
+</member><member name="P:CabioMis.My.Resources.Resources.Culture">
+	<summary>
+  使用此强类型资源类，为所有资源查找
+  重写当前线程的 CurrentUICulture 属性。
+</summary>
+</member><member name="T:CabioMis.My.Resources.Resources">
+	<summary>
+  一个强类型的资源类，用于查找本地化的字符串等。
+</summary>
+</member><member name="M:CabioMis.Cl_StrMag.YanInCk(System.String,System.String)">
+	<summary>
+ 设置客户锻cookies
+ </summary>
+	<param name="pname">cookies的名字</param>
+	<param name="pvalue">cookies的值</param>
+</member><member name="M:CabioMis.Cl_StrMag.YanOutCk(System.String)">
+	<summary>
+ 获取客户锻cookies
+ </summary>
+	<param name="pname">cookies的名字</param>
+</member><member name="M:CabioMis.Cl_StrMag.YanNull(System.Object)">
+	<summary>
+ 将null转换为空
+ </summary>
+	<param name="pString">要转换的字符串</param>
+</member><member name="M:CabioMis.Cl_StrMag.toInt(System.Object)">
+	<summary>
+ 转为int
+ </summary>
+	<param name="pString">要转换的字符串</param>
+</member><member name="M:CabioMis.Cl_StrMag.YanNullToEmpty(System.Object,System.String)">
+	<summary>
+ 将null转换为空
+ </summary>
+	<param name="pString">要转换的字符串</param>
+</member><member name="M:CabioMis.Cl_StrMag.YanForDa_1(System.Object)">
+	<summary>
+ 根据日期字符串返回1900-1-1类似的字符串
+ </summary>
+	<param name="pString">需要转换的字符串</param>
+</member><member name="M:CabioMis.Cl_StrMag.YanForDa_2(System.Object)">
+	<summary>
+ 根据日期字符串返回1900-1-1 12:12:00类似的字符串
+ </summary>
+	<param name="pString">需要转换的字符串</param>
+</member><member name="M:CabioMis.Cl_StrMag.YanFormatNum(System.Object,System.Int32)">
+	<summary>
+ 格式化成2位小数
+ </summary>
+	<param name="pString">要转换的字符串</param>
+</member><member name="M:CabioMis.Cl_StrMag.YanFormatNum3(System.Object,System.Int32)">
+	<summary>
+ 格式化成2位小数
+ </summary>
+	<param name="pString">要转换的字符串</param>
+</member><member name="M:CabioMis.Cl_StrMag.YanFormatStr(System.Object,System.String,System.Boolean,System.Boolean)">
+	<summary>
+ 格式化输出
+ </summary>
+	<param name="pString">要转换的字符串</param>
+</member><member name="M:CabioMis.Cl_StrMag.getFilesuffix(System.String)">
+	<summary>
+ 获取文件后缀名
+ </summary>
+	<param name="pFileName">带后缀名的完整文件名</param>
+</member><member name="M:CabioMis.Cl_StrMag.GetINI(System.String,System.String,System.String,System.String)">
+	<summary>
+ 读取INI文件
+ </summary>
+	<param name="Section">配置名</param>
+	<param name="AppName">键名</param>
+	<param name="FileName">INI文件名带完整路径</param>
+	<param name="lpDefault">默认值</param>
+</member><member name="M:CabioMis.Cl_StrMag.WriteINI(System.String,System.String,System.String,System.String)">
+	<summary>
+	</summary>
+	<param name="Section">配置名</param>
+	<param name="AppName">键名</param>
+	<param name="FileName">INI文件名带完整路径</param>
+	<param name="lpDefault">默认值</param>
+</member><member name="T:CabioMis.mo_YanZdy.en_Tjzd">
+	<summary>
+ 原料详细列表
+ </summary>
+</member><member name="T:CabioMis.mo_YanZdy.en_Yltj">
+	<summary>
+ 原料统计
+ </summary>
+</member><member name="T:CabioMis.mo_YanZdy.en_LcTj">
+	<summary>
+ 流程详情
+ </summary>
+</member><member name="T:CabioMis.mo_YanZdy.en_PcTj">
+	<summary>
+ 流程统计
+ </summary>
+</member><member name="T:CabioMis.mo_YanZdy.en_LcTableName">
+	<summary>
+ 流程表名
+ </summary>
+</member><member name="T:CabioMis.mo_YanZdy.en_Bllx">
+	<summary>
+ 存贮性质
+ </summary>
+</member><member name="T:CabioMis.mo_YanZdy.en_xtLb">
+	<summary>
+ 系统类别
+ </summary>
+</member><member name="T:CabioMis.mo_YanZdy.en_cpMc">
+	<summary>
+ 成品名称
+ </summary>
+</member><member name="T:CabioMis.mo_YanZdy.en_QcLX">
+	<summary>
+ qc类型
+ </summary>
+</member><member name="T:CabioMis.mo_YanZdy.callbackFrok">
+	<summary>
+ 一个委托类型
+ </summary>
+</member><member name="M:CabioMis.Md_ContrDo.GS_wlbktlr2(System.Windows.Forms.ComboBox,System.Data.DataTable,System.Int32,System.String,System.Boolean)">
+	<summary>
+ 根据DB为一个ComboBox构建下拉
+ </summary>
+	<param name="STR"></param>
+	<param name="db"></param>
+	<param name="str1">DB的字段序号</param>
+	<param name="str2">默认值</param>
+	<param name="blNull">是否添加空值</param>
+	<remarks></remarks>
+</member><member name="M:CabioMis.Md_ContrDo.GS_useviewbydb2(System.Windows.Forms.ListView,System.Data.DataTable,System.Int32,System.Int32,System.Boolean,System.Windows.Forms.ContextMenuStrip)">
+	<summary>
+ 通过DB构造listview
+ </summary>
+	<param name="listname">listView对象</param>
+	<param name="dbname">数据源</param>
+	<param name="str">隐藏DB中哪个字段，默认-1表示不隐藏</param>
+	<param name="strkd">宽度，默认0代表自动分配列宽</param>
+	<param name="pBlbox">是否添加复选列，默认0代表自动分配列宽</param>
+	<param name="pCmenu">右键菜单对象</param>
+</member><member name="M:CabioMis.Md_ContrDo.GS_mendj2(System.Object,System.Windows.Forms.ToolStripItemClickedEventArgs)">
+这2个过程给DataGridView添加查看明细菜单
+
+</member><member name="M:CabioMis.Md_ContrDo.GS_DataGridViewbyDb(System.Windows.Forms.DataGridView,System.Data.DataTable,System.Boolean,System.Boolean,System.Windows.Forms.ContextMenuStrip)">
+	<summary>
+ 通过DB构造DataGridView
+ </summary>
+	<param name="listname">DataGridView名称</param>
+	<param name="dbname">数据表对象</param>
+	<param name="isTanToCn">是否将列字段翻译成中文描述</param>
+	<param name="isAddMenu">是否添加右键餐单</param>
+	<param name="pCmenu">右键餐单对象</param>
+</member><member name="M:CabioMis.Md_ContrDo.GF_GetListText(System.Windows.Forms.ListView,System.String,System.Int32,System.Int32)">
+	<summary>
+ 返回ListView某行的值
+ </summary>
+	<param name="lsit1">listView对象</param>
+	<param name="FieldName">数据库字段名</param>
+	<param name="ItemIndex">行索引</param>
+	<param name="Model">0表示无CheckBox模式，为1表示有CheckBox模式，为2表示有select模式</param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="T:CabioMis.FrQcSd">
+	<summary>
+ 单个物品的QC设定
+ </summary>
+</member>
+</members>
+</doc>
