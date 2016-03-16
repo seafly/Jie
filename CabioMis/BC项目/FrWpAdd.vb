@@ -72,6 +72,9 @@ Public Class FrWpAdd
     Private Sub FrWpAdd_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Me.Icon = G_icon : Me.BackgroundImage = G_backimg
         tb_sc_etime.BringToFront()
+        tb_sc_etime.BringToFront()
+        tb_sc_ftime.Controls(1).BackColor = Color.Wheat
+        tb_sc_etime.Controls(1).BackColor = Color.Wheat
 
         'GroupBox2.Text = "产出" & m_frOpen.m_gxDr("tb_wp_pm")
         Me.Text = m_frOpen.m_gxszDt.YanDtValue2("tb_gxsz_mc") & "生产"
@@ -159,6 +162,15 @@ Public Class FrWpAdd
                     CType(tControl, ComboBox).FormattingEnabled = True
                     CType(tControl, ComboBox).Items.AddRange( _
                     dt.Rows(i)("tb_gxfjxx_dxz").ToString.Replace(vbCrLf, ",").Replace(Chr(13), "").Replace(Chr(10), "").Split(","))
+                Case en_fjxxLx.时间.ToString
+                    tControl = New chencontrol.chendatepick
+                    If dt.YanDtValue2("tb_gxfjxx_isbx", i) = "是" Then
+                        tControl.BackColor = Color.Wheat
+                        tControl.Controls(1).BackColor = Color.Wheat
+                    End If
+                    If dt.Rows(i)("tb_gxfjxx_vadef").ToString = "" Then
+                        tControl.Text = ""
+                    End If
                 Case Else
                     tControl = New TextBox
             End Select
@@ -169,7 +181,14 @@ Public Class FrWpAdd
             tControl.Tag = dt.Rows(i).YanDrToDb
             tControl.Width = 130
             tControl.Location = objPoint
+
             GroupBoxFjxx.Controls.Add(tControl)
+            If dt.YanDtValue2("tb_gxfjxx_lx", i) = "时间" Then
+                tControl.Parent = Me
+                tControl.Location = New Point(GroupBoxFjxx.Location.X + tControl.Location.X, GroupBoxFjxx.Location.Y + tControl.Location.Y)
+                tControl.BringToFront()
+            End If
+
             objPoint.X += tControl.Width
 
             objPoint.X = IIf((i + 1) Mod 5 = 0, 5, objPoint.X + 10)
@@ -245,7 +264,7 @@ Public Class FrWpAdd
         For i As Integer = 0 To dt.Rows.Count - 1
             '先加文本
             Dim objLabel As New Label
-            objLabel.Text = dt.YanDtValue2("tb_wp_pm", i)
+            objLabel.Text = dt.YanDtValue2("tb_wp_pm", i) & IIf(dt.YanDtValue2("tb_mrp_yllx", i) = "返工", "(返工)", "")
             objLabel.Height = 23
             objLabel.Width = 100
             objLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight
@@ -307,13 +326,25 @@ Public Class FrWpAdd
         Dim czDt As DataTable = CType(sender.tag, DataTable).Rows(0).YanDrToDb
         Select Case czDt.YanDtValue2("tb_wp_wpfl")
             Case en_wpfl.过程品.ToString, en_wpfl.成品.ToString
+                '过程品，成品，根据物品设置里的属性，判断是否需要取QC,QA的状态
                 Dim strWhere As String = ""
                 If czDt.YanDtValue2("tb_wp_isqc") = "是" Then
                     strWhere &= "and tb_wlphck_wlbs in (select tb_QcJc_wlbs from tb_QcJc where tb_QcJc_sfsh='是' and tb_QcJc_jcb='tb_wlph')"
                 End If
-                If czDt.YanDtValue2("tb_wp_isqa") = "是" Then
-                    strWhere &= "and tb_wlphck_wlbs in (select tb_qa_wlbs from tb_qa where tb_qa_qaspjg='合格')"
+
+                'QA状态要先判断是否返工
+                If czDt.YanDtValue2("tb_mrp_yllx") = "返工" Then
+                    strWhere &= "and tb_wlphck_yt='返工'"
+                    If czDt.YanDtValue2("tb_wp_isqa") = "是" Then
+                        strWhere &= "and tb_wlphck_wlbs in (select tb_qa_wlbs from tb_qa where tb_qa_qaspjg='合格' or tb_qa_qaspjg='不合格')"
+                    End If
+                Else
+                    strWhere &= "and tb_wlphck_yt<>'返工'"
+                    If czDt.YanDtValue2("tb_wp_isqa") = "是" Then
+                        strWhere &= "and tb_wlphck_wlbs in (select tb_qa_wlbs from tb_qa where tb_qa_qaspjg='合格')"
+                    End If
                 End If
+
                 sql = "select 0 as 使用重量,tb_wlphck_wlph,tb_wlphck_cjcl,tb_wp_dw as 单位,tb_wlphck_ID " &
                     "from tb_wlphck as a left join tb_wp as b on a.tb_wlphck_wpbs=b.tb_wp_ID" &
                     " where tb_wlphck_cjcl>0 and tb_wp_sfyx='是' and tb_wlphck_wpbs='" & czDt.YanDtValue2("tb_wp_ID") & "' " & strWhere
@@ -514,14 +545,14 @@ Public Class FrWpAdd
         sql = "select * from tb_scxq as a left join tb_gxfjxx as b on a.tb_scxq_xxbs=b.tb_gxfjxx_ID where tb_scxq_lx='附加信息' and tb_scxq_scbs=" & m_xgid
         dt = sql.YanGetDb
         For i As Integer = 0 To dt.Rows.Count - 1
-            Dim tContr As Control = GroupBoxFjxx.YanFindControl("fjxx" & dt.YanDtValue2("tb_scxq_xxbs", i))
+            Dim tContr As Control = Me.YanFindControl("fjxx" & dt.YanDtValue2("tb_scxq_xxbs", i))
             If tContr Is Nothing Then
                 Continue For
             End If
             If dt.YanDtValue2("tb_gxfjxx_lx", i) = en_fjxxLx.批号.ToString Then
                 CType(tContr, ComboBox).Items.Add(dt.YanDtValue2("tb_scxq_value", i))
             End If
-            tContr.Text = dt.YanDtValue2("tb_scxq_value", i)
+            tContr.Text = dt.YanDtValue3("tb_scxq_value", i)
         Next
         '投料信息
         sql = "select * from tb_scxq where tb_scxq_lx='投料' and tb_scxq_scbs=" & m_xgid
@@ -649,7 +680,7 @@ Public Class FrWpAdd
             End If
             For i As Integer = 0 To m_fjxxDt.Rows.Count - 1
                 dic = New Dictionary(Of String, String)
-                Dim tContr As Control = GroupBoxFjxx.YanFindControl("fjxx" & m_fjxxDt.YanDtValue2("tb_gxfjxx_ID", i))
+                Dim tContr As Control = Me.YanFindControl("fjxx" & m_fjxxDt.YanDtValue2("tb_gxfjxx_ID", i))
                 dic("tb_scxq_xxbs") = CType(tContr.Tag, DataTable).YanDtValue2("tb_gxfjxx_ID")
                 dic("tb_scxq_text") = CType(tContr.Tag, DataTable).YanDtValue2("tb_gxfjxx_mc")
                 dic("tb_scxq_value") = tContr.Text
@@ -665,7 +696,7 @@ Public Class FrWpAdd
                 If c.Tag IsNot Nothing And c.Text <> "" Then
                     dic = New Dictionary(Of String, String)
                     dic("tb_scxq_xxbs") = CType(c.Tag, DataTable).YanDtValue2("tb_mrp_ID")
-                    dic("tb_scxq_text") = CType(c.Tag, DataTable).YanDtValue2("tb_wp_pm")
+                    dic("tb_scxq_text") = CType(c.Tag, DataTable).YanDtValue2("tb_wp_pm") & IIf(CType(c.Tag, DataTable).YanDtValue2("tb_mrp_yllx") = "返工", "(返工)", "")
                     '批号，重量，库存标识
                     dic("tb_scxq_value") = c.Text & "|" & GroupBox1.YanFindControl(c.Name & "t").Text & "|" & GroupBox1.YanFindControl(c.Name & "bs").Text
                     dic("tb_scxq_scbs") = iScbs

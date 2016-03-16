@@ -133,12 +133,12 @@
                                              End If
                                          End Sub
         menu1.Items.Add("修改")
-        AddHandler menu1.Items(2).Click,AddressOf modFjxx
+        AddHandler menu1.Items(2).Click, AddressOf modFjxx
         menu1.Items.Add("删除")
         AddHandler menu1.Items(3).Click, Sub()
                                              m_fjxxDt.Rows.Remove(m_fjxxDt.Select("rowBs='" & showFjxx.SelectedRows(0).Cells("rowBs").Value & "'")(0))
                                          End Sub
-        AddHandler showFjxx.CellDoubleClick,AddressOf modFjxx
+        AddHandler showFjxx.CellDoubleClick, AddressOf modFjxx
         m_fjxxDt.YanDataBind(showFjxx, "tb_gxfjxx_ID,rowBs,tb_gxfjxx_gxbs", menu1)
     End Sub
     Private Sub modFjxx()
@@ -206,13 +206,5 @@
         sql.YanDbExe()
 
         Me.DialogResult = DialogResult.OK
-    End Sub
-
-
-    Private Sub tb_gxsz_dm_TextChanged(sender As Object, e As EventArgs) Handles tb_gxsz_dm.TextChanged
-
-    End Sub
-    Private Sub Label5_Click(sender As Object, e As EventArgs) Handles Label5.Click
-
     End Sub
 End Class

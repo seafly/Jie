@@ -103,7 +103,7 @@ Partial Class Frkc_List
         '
         Me.ComboQa.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.ComboQa.FormattingEnabled = True
-        Me.ComboQa.Items.AddRange(New Object() {"待定", "合格", "不合格"})
+        Me.ComboQa.Items.AddRange(New Object() {"", "待定", "合格", "不合格"})
         Me.ComboQa.Location = New System.Drawing.Point(521, 18)
         Me.ComboQa.Name = "ComboQa"
         Me.ComboQa.Size = New System.Drawing.Size(62, 20)

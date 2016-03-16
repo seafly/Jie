@@ -16,6 +16,8 @@
                                                                   setText(m_point)
                                                               Case en_fjxxLx.选择.ToString
                                                                   setXz(m_point)
+                                                              Case en_fjxxLx.时间.ToString
+                                                                  setSj(m_point)
                                                               Case en_fjxxLx.批号.ToString
                                                                   setPh(m_point)
                                                           End Select
@@ -87,7 +89,30 @@
         objCol.Location = objPoint
         MyBase.Controls.Add(objCol)
     End Sub
+    '时间
+    Private Sub setSj(pPoint As Point)
+        Dim objPoint As Point = pPoint
+        '先加文本
+        Dim objLabel As New Label
+        objLabel.Name = "lable2"
+        objLabel.Text = "默认值"
+        objLabel.Height = 23 + 18 * (Int(objLabel.Text.Length / 5))
+        objLabel.Width = 180
+        objLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        objLabel.Location = objPoint
+        objPoint.X += objLabel.Width + 18
+        MyBase.Controls.Add(objLabel)
 
+        Dim objCol As New ComboBox
+        objCol.Items.AddRange(",系统时间".Split(","))
+        objCol.DropDownStyle = ComboBoxStyle.DropDownList
+        objCol.SelectedItem = "系统时间"
+        objCol.Name = "tb_gxfjxx_vadef"
+        objCol.Tag = "tb_gxfjxx_vadef"
+        objCol.Location = objPoint
+        objPoint.X += objCol.Width
+        MyBase.Controls.Add(objCol)
+    End Sub
     '文本
     Private Sub setText(pPoint As Point)
         Dim objPoint As Point = pPoint

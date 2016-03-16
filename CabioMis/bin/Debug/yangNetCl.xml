@@ -1218,6 +1218,14 @@ json字符串z转为DATABLE
  获取对话框返回的保存文件路径
  </summary>
 	<param name="pFilter">文件类型</param>
+</member><member name="T:yangNetCl.DataGridViewDisableCheckBoxColumn">
+	<summary>
+ 可以禁用的列表CHECKBOX控件
+ </summary>
+</member><member name="P:yangNetCl.DataGridViewDisableCheckBoxCell.Enabled">
+	<summary>
+ 是否启用
+ </summary>
 </member><member name="P:yangNetCl.Cl_DataMag.ConnStr">
 	<summary>
  获取或设置数据库连接字符串
@@ -1422,7 +1430,7 @@ json字符串z转为DATABLE
  </summary>
 	<param name="pControl">窗体对象</param>
 	<param name="pDt">一个横向的DATATABLE，每列存储一个表单项</param>
-	<param name="pBs">由0开始的DATATABLE的序号</param>
+	<param name="pBs">rowBs</param>
 </member><member name="M:yangNetCl.Cl_DataMag.myTransaction.Commit">
 	<summary>
   提交事物
@@ -1439,10 +1447,12 @@ json字符串z转为DATABLE
 	<summary>
  执行一条语句返回最新标识
  </summary>
-</member><member name="M:yangNetCl.Cl_DataMag.myTransaction.dbExe(System.String)">
+</member><member name="M:yangNetCl.Cl_DataMag.myTransaction.dbExe(System.String,System.Int32)">
 	<summary>
  执行一条语句
  </summary>
+	<param name="pSql">要执行的SQL语句</param>
+	<param name="pRtype">返回值的类型，默认没有返回值</param>
 </member><member name="M:yangNetCl.Cl_DataMag.myTransaction.insert(System.String,System.Collections.Generic.Dictionary{System.String,System.String},System.Boolean,System.String,System.String)">
 	<summary>
  插入数据

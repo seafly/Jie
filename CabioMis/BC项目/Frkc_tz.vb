@@ -123,6 +123,8 @@ Public Class Frkc_tz
             dic("tb_syjl_czlx") = "转库"
             dic("tb_syjl_mbb") = "tb_wlphck"
             dic("tb_syjl_czbs") = m_wlDt.Rows(0)("tb_wlphck_ID")
+            dic("tb_syjl_ctime") = tb_syjl_ctime.Text
+            dic("tb_syjl_czrgh") = G_dlrgh
             For Each k As String In dicZl.Keys
                 dic("tb_syjl_" & k) = IIf(dicZl(k) < 0, System.Math.Abs(dicZl(k)), 0)
             Next
@@ -139,6 +141,8 @@ Public Class Frkc_tz
             dic("tb_syjl_czlx") = "转库"
             dic("tb_syjl_mbb") = "tb_wlphck"
             dic("tb_syjl_czbs") = m_wlDt.Rows(0)("tb_wlphck_ID")
+            dic("tb_syjl_ctime") = tb_syjl_ctime.Text
+            dic("tb_syjl_czrgh") = G_dlrgh
             For Each k As String In dicZl.Keys
                 dic("tb_syjl_" & k) = IIf(dicZl(k) > 0, System.Math.Abs(dicZl(k)), 0)
             Next

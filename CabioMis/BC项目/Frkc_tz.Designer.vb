@@ -58,6 +58,8 @@ Partial Class Frkc_tz
         Me.tb_wlphck_kdlk = New yangNetCl.yanTextBox()
         Me.tb_wlphck_bfb = New yangNetCl.yanTextBox()
         Me.tb_wlphck_cjcl = New yangNetCl.yanTextBox()
+        Me.tb_syjl_ctime = New chencontrol.chendatepick()
+        Me.Label31 = New System.Windows.Forms.Label()
         Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -392,11 +394,30 @@ Partial Class Frkc_tz
         Me.tb_wlphck_cjcl.Size = New System.Drawing.Size(56, 21)
         Me.tb_wlphck_cjcl.TabIndex = 5
         '
+        'tb_syjl_ctime
+        '
+        Me.tb_syjl_ctime.BackColor = System.Drawing.Color.Wheat
+        Me.tb_syjl_ctime.Location = New System.Drawing.Point(90, 313)
+        Me.tb_syjl_ctime.Name = "tb_syjl_ctime"
+        Me.tb_syjl_ctime.Size = New System.Drawing.Size(122, 21)
+        Me.tb_syjl_ctime.TabIndex = 158
+        '
+        'Label31
+        '
+        Me.Label31.AutoSize = True
+        Me.Label31.Location = New System.Drawing.Point(31, 317)
+        Me.Label31.Name = "Label31"
+        Me.Label31.Size = New System.Drawing.Size(53, 12)
+        Me.Label31.TabIndex = 157
+        Me.Label31.Text = "操作时间"
+        '
         'Frkc_tz
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 12.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(754, 409)
+        Me.Controls.Add(Me.tb_syjl_ctime)
+        Me.Controls.Add(Me.Label31)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.tb_wlphck_storagewzlk)
         Me.Controls.Add(Me.tb_wlphck_storagemslk)
@@ -462,4 +483,6 @@ Partial Class Frkc_tz
     Friend WithEvents tb_wlphck_mingc As System.Windows.Forms.ComboBox
     Friend WithEvents tb_wlphck_ID As System.Windows.Forms.TextBox
     Friend WithEvents Label17 As System.Windows.Forms.Label
+    Friend WithEvents tb_syjl_ctime As chencontrol.chendatepick
+    Friend WithEvents Label31 As System.Windows.Forms.Label
 End Class

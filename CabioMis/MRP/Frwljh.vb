@@ -44,14 +44,14 @@ Public Class Frwljh
                 dtTm.Columns.Add("tb_cpdmhz_cpjz")
                 dtTm.Columns.Add("生产量")
                 For ii As Integer = 0 To listview1.Rows.Count - 1
-                    'If Convert.ToInt32(listview1.Rows(ii).Cells("生产量").Value.ToString()) > 0 Then
-                    strTm &= listview1.Rows(ii).Cells("tb_cpdmhz_ID").Value.ToString() & ","
-                    Dim drTm As DataRow = dtTm.NewRow
-                    drTm("tb_cpdmhz_ID") = listview1.Rows(ii).Cells("tb_cpdmhz_ID").Value
-                    drTm("tb_cpdmhz_cpjz") = listview1.Rows(ii).Cells("tb_cpdmhz_cpjz").Value
-                    drTm("生产量") = listview1.Rows(ii).Cells("生产量").Value
-                    dtTm.Rows.Add(drTm)
-                    'End If
+                    If Convert.ToInt32(listview1.Rows(ii).Cells("生产量").Value.ToString()) > 0 Then
+                        strTm &= listview1.Rows(ii).Cells("tb_cpdmhz_ID").Value.ToString() & ","
+                        Dim drTm As DataRow = dtTm.NewRow
+                        drTm("tb_cpdmhz_ID") = listview1.Rows(ii).Cells("tb_cpdmhz_ID").Value
+                        drTm("tb_cpdmhz_cpjz") = listview1.Rows(ii).Cells("tb_cpdmhz_cpjz").Value
+                        drTm("生产量") = listview1.Rows(ii).Cells("生产量").Value
+                        dtTm.Rows.Add(drTm)
+                    End If
                 Next
                 strTm = DeepCode.DeepDoStr.GF_removedh(strTm)
 
@@ -77,11 +77,11 @@ Public Class Frwljh
                     mm(5) = dtRow("tb_wp_wllb")
                     '计算物料需求量
                     Dim iXql As Integer = 0
-                    Dim drScl As DataRow() = dtMrp2.Select("tb_mrp_wpdm='" & dtRow("tb_wp_dm").ToString() & "'")
-                    For i As Integer = 0 To drScl.Length - 1
-                        Dim iSzl As Double = Convert.ToDouble(dtTm.Select("tb_cpdmhz_ID='" & drScl(i)("tb_mrp_cpbs").ToString() & "'")(0)("生产量").ToString())
-                        Dim iBzl As Double = Convert.ToDouble(drScl(i)("tb_mrp_blz").ToString())
-                        Dim iJzzl As Double = Convert.ToDouble(Cl_StrMag.YanFormatNum(dtTm.Select("tb_cpdmhz_ID='" & drScl(i)("tb_mrp_cpbs").ToString() & "'")(0)("tb_cpdmhz_cpjz")))
+                    Dim drScl As DataTable = dtMrp2.Select("tb_mrp_wpdm='" & dtRow("tb_wp_dm").ToString() & "'").YanArrDrToDb
+                    For i As Integer = 0 To drScl.Rows.Count - 1
+                        Dim iSzl As Double = Convert.ToDouble(dtTm.Select("tb_cpdmhz_ID='" & drScl.YanDtValue2("tb_mrp_cpbs", i) & "'")(0)("生产量").ToString())
+                        Dim iBzl As Double = Convert.ToDouble(drScl.YanDtValue2("tb_mrp_blz", i))
+                        Dim iJzzl As Double = Convert.ToDouble(Cl_StrMag.YanFormatNum(dtTm.Select("tb_cpdmhz_ID='" & drScl.YanDtValue2("tb_mrp_cpbs", i) & "'")(0)("tb_cpdmhz_cpjz")))
                         '需求量=生产量 * （标量/基准重量）
                         iXql += Convert.ToDouble(IIf(iJzzl = 0, 0, iSzl * (iBzl / iJzzl)).ToString())
                     Next
@@ -123,7 +123,6 @@ Public Class Frwljh
                 'AddNewRow() ' 根据BC物料代码构造DATATABLE
 
                 ChangeColor(dtgrid, 11) '仓库存量和在途量都为0 则不显示
-
                 RemoveIndex(dtgrid) '是否满足需求为否显示红色
             End With
         Catch ex As Exception
@@ -206,7 +205,14 @@ Public Class Frwljh
     End Sub
 
     Private Sub showsj() '初始化产品产能汇总表
-        Dim sql As String = "select tb_cpdmhz_cpdm,tb_cpdmhz_jgdm,tb_cpdmhz_cpjz, 0 as '生产量',tb_cpdmhz_ID,tb_cpdmhz_njzq,tb_cpdmhz_cpy,tb_cpdmhz_my,tb_cpdmhz_gjt,tb_cpdmhz_2a01a001,tb_cpdmhz_2a01a002,tb_cpdmhz_2a01a003,tb_cpdmhz_2a01a007,tb_cpdmhz_2a02a008,tb_cpdmhz_2a02a002,tb_cpdmhz_2a01a006,tb_cpdmhz_2a02a005,tb_cpdmhz_2a02a007,tb_cpdmhz_2a02a009,tb_cpdmhz_2a02a006,tb_cpdmhz_2a02a001,tb_cpdmhz_2a02a011,tb_cpdmhz_2a02a012,tb_cpdmhz_2a04a001,tb_cpdmhz_2a04a002,tb_cpdmhz_2a04a003,tb_cpdmhz_2a04a004,tb_cpdmhz_2a04a005,tb_cpdmhz_2a04a006,tb_cpdmhz_2a04a007,tb_cpdmhz_2a04a010,tb_cpdmhz_5a01a006,tb_cpdmhz_5a02a001,tb_cpdmhz_5a03a002,tb_cpdmhz_5a03a003,tb_cpdmhz_5a01a009,tb_cpdmhz_3a08a003,tb_cpdmhz_5a02a003,tb_cpdmhz_5a03a004,tb_cpdmhz_5a02a004,tb_cpdmhz_5a03a006,tb_cpdmhz_5a01a004,tb_cpdmhz_3a06a001,tb_cpdmhz_3a08a004,tb_cpdmhz_3a08a002,tb_cpdmhz_3a08a005,tb_cpdmhz_3a07a010,tb_cpdmhz_3a07a011,tb_cpdmhz_3a07a020,tb_cpdmhz_2a04a014,tb_cpdmhz_3a08a001,tb_cpdmhz_3a09a006,tb_cpdmhz_3a09a021,tb_cpdmhz_5a03a005,tb_cpdmhz_5a02a002,tb_cpdmhz_3a07a019,tb_cpdmhz_3a09a022,tb_cpdmhz_3a08a019,tb_cpdmhz_3a08a020 from tb_cpdmhz where tb_cpdmhz_yxx='有效' "
+        Dim sql As String = "select tb_cpdmhz_cpdm,tb_cpdmhz_jgdm,tb_cpdmhz_cpjz, 0 as '生产量',tb_cpdmhz_ID,tb_cpdmhz_njzq,tb_cpdmhz_cpy,tb_cpdmhz_my,tb_cpdmhz_gjt," &
+            "tb_cpdmhz_2a01a001,tb_cpdmhz_2a01a002,tb_cpdmhz_2a01a003,tb_cpdmhz_2a01a007,tb_cpdmhz_2a02a008,tb_cpdmhz_2a02a002,tb_cpdmhz_2a01a006,tb_cpdmhz_2a02a005," &
+            "tb_cpdmhz_2a02a007,tb_cpdmhz_2a02a009,tb_cpdmhz_2a02a006,tb_cpdmhz_2a02a001,tb_cpdmhz_2a02a011,tb_cpdmhz_2a02a012,tb_cpdmhz_2a04a001,tb_cpdmhz_2a04a002," &
+            "tb_cpdmhz_2a04a003,tb_cpdmhz_2a04a004,tb_cpdmhz_2a04a005,tb_cpdmhz_2a04a006,tb_cpdmhz_2a04a007,tb_cpdmhz_2a04a010,tb_cpdmhz_5a01a006,tb_cpdmhz_5a02a001," &
+            "tb_cpdmhz_5a03a002,tb_cpdmhz_5a03a003,tb_cpdmhz_5a01a009,tb_cpdmhz_3a08a003,tb_cpdmhz_5a02a003,tb_cpdmhz_5a03a004,tb_cpdmhz_5a02a004,tb_cpdmhz_5a03a006," &
+            "tb_cpdmhz_5a01a004,tb_cpdmhz_3a06a001,tb_cpdmhz_3a08a004,tb_cpdmhz_3a08a002,tb_cpdmhz_3a08a005,tb_cpdmhz_3a07a010,tb_cpdmhz_3a07a011,tb_cpdmhz_3a07a020," &
+            "tb_cpdmhz_2a04a014,tb_cpdmhz_3a08a001,tb_cpdmhz_3a09a006,tb_cpdmhz_3a09a021,tb_cpdmhz_5a03a005,tb_cpdmhz_5a02a002,tb_cpdmhz_3a07a019,tb_cpdmhz_3a09a022," &
+            "tb_cpdmhz_3a08a019,tb_cpdmhz_3a08a020 from tb_cpdmhz where tb_cpdmhz_yxx='有效' "
         Dim dt As DataTable = DeepCode.DeepDoDataTable.GF_CreateDataSource(G_cnnstr, sql)
         For k As Integer = 7 To dt.Columns.Count - 1
             Dim ss As String = Mid(dt.Columns(k).Caption, 11)

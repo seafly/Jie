@@ -59,59 +59,108 @@
 
     End Sub
 
-    '更新添加仓库信息表
-    Public Sub UpdateTbname(ByVal sbid As String, ByVal tbname As String, ByVal sl As String, ByVal zdm As String)
-
-        Dim cnn As ADODB.Connection = CType(CreateObject("ADODB.Connection"), ADODB.Connection)
-        cnn.ConnectionString = G_cnnstr
-        cnn.Open()
-        Dim RS As ADODB.Recordset = CType(CreateObject("ADODB.Recordset"), ADODB.Recordset)
-        Dim sql As String = "select * from " & tbname & " where " & tbname & "_id=" & sbid
-        RS.open(sql, cnn, ADODB.CursorTypeEnum.adOpenKeyset, ADODB.LockTypeEnum.adLockOptimistic)
+    ''' <summary>
+    ''' 更新添加仓库信息表
+    ''' </summary>
+    ''' <param name="sbid"></param>
+    ''' <param name="tbname"></param>
+    ''' <param name="sl"></param>
+    ''' <param name="zdm"></param>
+    ''' <remarks></remarks>
+    Public Sub UpdateTbname(ByVal sbid As String, ByVal tbname As String, ByVal sl As String, ByVal zdm As String, Optional pMt As _D.myTransaction = Nothing)
+        Dim dic As New Dictionary(Of String, String)
         Dim ArraySl() As String = sl.Split(",")
         Dim ArrayZdm() As String = zdm.Split(",")
-
         For i As Integer = 0 To ArrayZdm.Length - 1
-
-            RS(ArrayZdm(i)).value = Convert.ToDouble(ArraySl(i))
-
+            dic(ArrayZdm(i)) = Convert.ToDouble(ArraySl(i))
         Next
+        Dim sql As String = _D.getUpdateStr(tbname, dic, tbname & "_id=" & sbid)
+        If pMt Is Nothing Then
+            sql.YanDbExe()
+        Else
+            pMt.dbExe(sql)
+        End If
 
-        RS.update()
-        RS.close()
-        RS = Nothing
-        cnn.close()
-        cnn = Nothing
+        'Dim cnn As ADODB.Connection = CType(CreateObject("ADODB.Connection"), ADODB.Connection)
+        'cnn.ConnectionString = G_cnnstr
+        'cnn.Open()
+        'Dim RS As ADODB.Recordset = CType(CreateObject("ADODB.Recordset"), ADODB.Recordset)
+        'Dim sql As String = "select * from " & tbname & " where " & tbname & "_id=" & sbid
+        'RS.Open(sql, cnn, ADODB.CursorTypeEnum.adOpenKeyset, ADODB.LockTypeEnum.adLockOptimistic)
+        'Dim ArraySl() As String = sl.Split(",")
+        'Dim ArrayZdm() As String = zdm.Split(",")
+        'For i As Integer = 0 To ArrayZdm.Length - 1
+        '    RS(ArrayZdm(i)).Value = Convert.ToDouble(ArraySl(i))
+        'Next
+        'RS.Update()
+        'RS.Close()
+        'RS = Nothing
+        'cnn.Close()
+        'cnn = Nothing
     End Sub
 
-    ' 更新有关仓库信息库存表
-
-    Public Function ReturnTbname(ByVal sbid As String, ByVal tbname As String, ByVal sl As String, ByVal zdm As String) As Boolean
-
-        Dim cnn As ADODB.Connection = CType(CreateObject("ADODB.Connection"), ADODB.Connection)
-        cnn.ConnectionString = G_cnnstr
-        cnn.Open()
-        Dim RS As ADODB.Recordset = CType(CreateObject("ADODB.Recordset"), ADODB.Recordset)
+    ''' <summary>
+    ''' 更新有关仓库信息库存表
+    ''' </summary>
+    ''' <param name="sbid"></param>
+    ''' <param name="tbname"></param>
+    ''' <param name="sl"></param>
+    ''' <param name="zdm"></param>
+    ''' <returns></returns>
+    ''' <remarks></remarks>
+    Public Function ReturnTbname(ByVal sbid As String, ByVal tbname As String, ByVal sl As String, ByVal zdm As String, Optional pMt As _D.myTransaction = Nothing) As Boolean
         Dim sql As String = "select * from " & tbname.Trim & " where " & tbname.Trim & "_id=" & sbid
-        RS.open(sql, cnn, ADODB.CursorTypeEnum.adOpenKeyset, ADODB.LockTypeEnum.adLockOptimistic)
+        Dim dt As DataTable = Nothing
+        If pMt Is Nothing Then
+            dt=sql.YanGetDb
+        Else
+            dt = pMt.getDb(sql)
+        End If
+        If dt.Rows.Count = 0 Then
+            Return False
+        End If
+
+        Dim dic As New Dictionary(Of String, String)
         Dim ArraySl() As String = sl.Split(",")
         Dim ArrayZdm() As String = zdm.Split(",")
-
         For i As Integer = 0 To ArrayZdm.Length - 1
-
-            RS(ArrayZdm(i)).value = RS(ArrayZdm(i)).value - Convert.ToDouble(ArraySl(i))
-            If RS(ArrayZdm(i)).value < 0 Then
+            dic(ArrayZdm(i)) = _S.YanFormatNum(dt.YanDtValue2(ArrayZdm(i))) - Convert.ToDouble(ArraySl(i))
+            If CDbl(dic(ArrayZdm(i))) < 0 Then
                 Dim lkmc As String = GF_cnwithen(_D.G_zdinf, "tb_biaozdinf_mc='" & ArrayZdm(i) & "'", 4) '冷库名称
                 MessageBox.Show("该批号的" & lkmc & "为负数！")
                 Return False
             End If
         Next
+        sql = _D.getUpdateStr(tbname, dic, tbname & "_id=" & sbid)
+        If pMt Is Nothing Then
+            sql.YanDbExe()
+        Else
+            pMt.dbExe(sql)
+        End If
+        'Dim cnn As ADODB.Connection = CType(CreateObject("ADODB.Connection"), ADODB.Connection)
+        'cnn.ConnectionString = G_cnnstr
+        'cnn.Open()
+        'Dim RS As ADODB.Recordset = CType(CreateObject("ADODB.Recordset"), ADODB.Recordset)
+        'Dim sql As String = "select * from " & tbname.Trim & " where " & tbname.Trim & "_id=" & sbid
+        'RS.Open(sql, cnn, ADODB.CursorTypeEnum.adOpenKeyset, ADODB.LockTypeEnum.adLockOptimistic)
+        'Dim ArraySl() As String = sl.Split(",")
+        'Dim ArrayZdm() As String = zdm.Split(",")
 
-        RS.update()
-        RS.close()
-        RS = Nothing
-        cnn.close()
-        cnn = Nothing
+        'For i As Integer = 0 To ArrayZdm.Length - 1
+
+        '    RS(ArrayZdm(i)).value = RS(ArrayZdm(i)).value - Convert.ToDouble(ArraySl(i))
+        '    If RS(ArrayZdm(i)).value < 0 Then
+        '        Dim lkmc As String = GF_cnwithen(_D.G_zdinf, "tb_biaozdinf_mc='" & ArrayZdm(i) & "'", 4) '冷库名称
+        '        MessageBox.Show("该批号的" & lkmc & "为负数！")
+        '        Return False
+        '    End If
+        'Next
+
+        'RS.Update()
+        'RS.Close()
+        'RS = Nothing
+        'cnn.Close()
+        'cnn = Nothing
         Return True
     End Function
     '冷库负数

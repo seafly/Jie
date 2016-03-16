@@ -327,7 +327,7 @@ Partial Class frzk2
         'tb_i259b_id
         '
         Me.tb_i259b_id.AutoSize = True
-        Me.tb_i259b_id.Location = New System.Drawing.Point(16, 240)
+        Me.tb_i259b_id.Location = New System.Drawing.Point(593, 245)
         Me.tb_i259b_id.Name = "tb_i259b_id"
         Me.tb_i259b_id.Size = New System.Drawing.Size(41, 12)
         Me.tb_i259b_id.TabIndex = 313

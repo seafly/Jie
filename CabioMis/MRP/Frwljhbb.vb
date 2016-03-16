@@ -147,7 +147,6 @@
         Dim sql As String = "select tb_wljh_bname from tb_wljh where tb_wljh_blb='" & ComboBox1.Text & "'  group by tb_wljh_bname  "
         Dim dtbname As DataTable = GF_CreateDataSource(G_cnnstr, sql)
         GS_wlbktlr2(ComboBox3, dtbname, 0, "")
-
     End Sub
    Private Sub cx() '查询
         Dim tt1, tt2 As DateTime

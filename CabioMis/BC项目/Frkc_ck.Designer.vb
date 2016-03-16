@@ -75,6 +75,8 @@ Partial Class Frkc_ck
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.Label15 = New System.Windows.Forms.Label()
         Me.出库重量 = New yangNetCl.yanTextBox()
+        Me.tb_syjl_ctime = New chencontrol.chendatepick()
+        Me.Label14 = New System.Windows.Forms.Label()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.SuspendLayout()
@@ -587,17 +589,37 @@ Partial Class Frkc_ck
         '
         '出库重量
         '
+        Me.出库重量.Enabled = False
         Me.出库重量.Location = New System.Drawing.Point(152, 161)
         Me.出库重量.Name = "出库重量"
         Me.出库重量.Size = New System.Drawing.Size(56, 21)
         Me.出库重量.TabIndex = 20
         Me.出库重量.Text = "0"
         '
+        'tb_syjl_ctime
+        '
+        Me.tb_syjl_ctime.BackColor = System.Drawing.Color.Wheat
+        Me.tb_syjl_ctime.Location = New System.Drawing.Point(82, 425)
+        Me.tb_syjl_ctime.Name = "tb_syjl_ctime"
+        Me.tb_syjl_ctime.Size = New System.Drawing.Size(122, 21)
+        Me.tb_syjl_ctime.TabIndex = 154
+        '
+        'Label14
+        '
+        Me.Label14.AutoSize = True
+        Me.Label14.Location = New System.Drawing.Point(23, 429)
+        Me.Label14.Name = "Label14"
+        Me.Label14.Size = New System.Drawing.Size(53, 12)
+        Me.Label14.TabIndex = 153
+        Me.Label14.Text = "操作时间"
+        '
         'Frkc_ck
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 12.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(794, 505)
+        Me.Controls.Add(Me.tb_syjl_ctime)
+        Me.Controls.Add(Me.Label14)
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.Button1)
@@ -613,6 +635,7 @@ Partial Class Frkc_ck
         Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox2.PerformLayout()
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
     Friend WithEvents GroupBox1 As System.Windows.Forms.GroupBox
@@ -668,4 +691,6 @@ Partial Class Frkc_ck
     Friend WithEvents GroupBox2 As System.Windows.Forms.GroupBox
     Friend WithEvents Label15 As System.Windows.Forms.Label
     Friend WithEvents 出库重量 As yangNetCl.yanTextBox
+    Friend WithEvents tb_syjl_ctime As chencontrol.chendatepick
+    Friend WithEvents Label14 As System.Windows.Forms.Label
 End Class

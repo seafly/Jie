@@ -26,6 +26,29 @@ CabioMis
 	<summary>
  产品生产列表（显示详细批次）
  </summary>
+</member><member name="M:CabioMis.Md_Storage.UpdateTbname(System.String,System.String,System.String,System.String,yangNetCl.Cl_DataMag.myTransaction)">
+	<summary>
+ 更新添加仓库信息表
+ </summary>
+	<param name="sbid"></param>
+	<param name="tbname"></param>
+	<param name="sl"></param>
+	<param name="zdm"></param>
+	<remarks></remarks>
+</member><member name="M:CabioMis.Md_Storage.ReturnTbname(System.String,System.String,System.String,System.String,yangNetCl.Cl_DataMag.myTransaction)">
+	<summary>
+ 更新有关仓库信息库存表
+ </summary>
+	<param name="sbid"></param>
+	<param name="tbname"></param>
+	<param name="sl"></param>
+	<param name="zdm"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="T:CabioMis.Frzk">
+	<summary>
+ 转库到湖北
+ </summary>
 </member><member name="T:CabioMis.FrQcShowView">
 	<summary>
  QC审核界面
@@ -361,6 +384,10 @@ CabioMis
 </member><member name="M:CabioMis.Frshow_list.makeCpy">
 	<summary>
  多选脱臭产出成品油
+ </summary>
+</member><member name="T:CabioMis.frchuhuo">
+	<summary>
+ 成品进出货
  </summary>
 </member><member name="T:CabioMis.Frkc_tz">
 	<summary>

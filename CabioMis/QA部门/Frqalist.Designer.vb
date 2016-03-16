@@ -36,6 +36,7 @@ Partial Class Frqalist
         Me.ToolStripButton1 = New System.Windows.Forms.ToolStripDropDownButton()
         Me.ylMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.bcMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.bcDropDown = New System.Windows.Forms.ToolStripDropDownButton()
         Me.ToolStripButton5 = New System.Windows.Forms.ToolStripButton()
         Me.ToolStripButton6 = New System.Windows.Forms.ToolStripButton()
         Me.ToolStripButton3 = New System.Windows.Forms.ToolStripButton()
@@ -54,7 +55,6 @@ Partial Class Frqalist
         Me.ToolHelp = New System.Windows.Forms.ToolStripButton()
         Me.tb_x832p_qaspjg = New System.Windows.Forms.ComboBox()
         Me.lb_tb_x832p_qaspjg = New System.Windows.Forms.Label()
-        Me.bcDropDown = New System.Windows.Forms.ToolStripDropDownButton()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
         CType(Me.ListView3, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -218,6 +218,14 @@ Partial Class Frqalist
         Me.bcMenuItem.Size = New System.Drawing.Size(118, 22)
         Me.bcMenuItem.Text = "包材QA"
         '
+        'bcDropDown
+        '
+        Me.bcDropDown.Image = CType(resources.GetObject("bcDropDown.Image"), System.Drawing.Image)
+        Me.bcDropDown.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.bcDropDown.Name = "bcDropDown"
+        Me.bcDropDown.Size = New System.Drawing.Size(69, 36)
+        Me.bcDropDown.Text = "BC"
+        '
         'ToolStripButton5
         '
         Me.ToolStripButton5.BackColor = System.Drawing.Color.Transparent
@@ -349,14 +357,6 @@ Partial Class Frqalist
         Me.lb_tb_x832p_qaspjg.Size = New System.Drawing.Size(41, 12)
         Me.lb_tb_x832p_qaspjg.TabIndex = 52
         Me.lb_tb_x832p_qaspjg.Text = "QA结果"
-        '
-        'bcDropDown
-        '
-        Me.bcDropDown.Image = CType(resources.GetObject("bcDropDown.Image"), System.Drawing.Image)
-        Me.bcDropDown.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.bcDropDown.Name = "bcDropDown"
-        Me.bcDropDown.Size = New System.Drawing.Size(69, 36)
-        Me.bcDropDown.Text = "BC"
         '
         'Frqalist
         '

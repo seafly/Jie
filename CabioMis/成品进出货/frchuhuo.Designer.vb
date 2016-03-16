@@ -154,9 +154,9 @@ Partial Class frchuhuo
         'SSSQX
         '
         Me.SSSQX.Font = New System.Drawing.Font("微软雅黑", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
-        Me.SSSQX.Location = New System.Drawing.Point(359, 173)
+        Me.SSSQX.Location = New System.Drawing.Point(396, 185)
         Me.SSSQX.Name = "SSSQX"
-        Me.SSSQX.Size = New System.Drawing.Size(75, 33)
+        Me.SSSQX.Size = New System.Drawing.Size(60, 30)
         Me.SSSQX.TabIndex = 120
         Me.SSSQX.Text = "取消"
         Me.SSSQX.UseVisualStyleBackColor = True
@@ -164,9 +164,9 @@ Partial Class frchuhuo
         'SSSQD
         '
         Me.SSSQD.Font = New System.Drawing.Font("微软雅黑", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
-        Me.SSSQD.Location = New System.Drawing.Point(224, 171)
+        Me.SSSQD.Location = New System.Drawing.Point(262, 185)
         Me.SSSQD.Name = "SSSQD"
-        Me.SSSQD.Size = New System.Drawing.Size(75, 36)
+        Me.SSSQD.Size = New System.Drawing.Size(57, 30)
         Me.SSSQD.TabIndex = 119
         Me.SSSQD.Text = "确定"
         Me.SSSQD.UseVisualStyleBackColor = True

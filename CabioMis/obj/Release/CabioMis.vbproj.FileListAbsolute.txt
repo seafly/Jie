@@ -4086,6 +4086,7 @@ D:\工作目录\工程\old\新嘉吉\数据平台\bc\CabioMis\obj\Release\CabioM
 D:\工作目录\工程\old\新嘉吉\数据平台\bc\CabioMis\obj\Release\CabioMis.Frkc_tz.resources
 D:\工作目录\工程\old\新嘉吉\数据平台\bc\CabioMis\obj\Release\CabioMis.Frph_List.resources
 D:\工作目录\工程\old\新嘉吉\数据平台\bc\CabioMis\obj\Release\CabioMis.Frph_sz.resources
+D:\工作目录\工程\old\新嘉吉\数据平台\bc\CabioMis\obj\Release\CabioMis.FrSelClInfo.resources
 D:\工作目录\工程\old\新嘉吉\数据平台\bc\CabioMis\obj\Release\CabioMis.FrEdit_gxfjxx.resources
 D:\工作目录\工程\old\新嘉吉\数据平台\bc\CabioMis\obj\Release\CabioMis.FrselWp.resources
 D:\工作目录\工程\old\新嘉吉\数据平台\bc\CabioMis\obj\Release\CabioMis.FrWpAdd.resources
@@ -4262,6 +4263,7 @@ D:\工作目录\工程\old\新嘉吉\数据平台\bc\CabioMis\obj\Release\CabioM
 D:\工作目录\工程\old\新嘉吉\数据平台\bc\CabioMis\obj\Release\CabioMis.Frddzxjh2.resources
 D:\工作目录\工程\old\新嘉吉\数据平台\bc\CabioMis\obj\Release\CabioMis.Frkcxs.resources
 D:\工作目录\工程\old\新嘉吉\数据平台\bc\CabioMis\obj\Release\CabioMis.Fryxkc.resources
+D:\工作目录\工程\old\新嘉吉\数据平台\bc\CabioMis\obj\Release\CabioMis.Frzk.resources
 D:\工作目录\工程\old\新嘉吉\数据平台\bc\CabioMis\obj\Release\CabioMis.frzk2.resources
 D:\工作目录\工程\old\新嘉吉\数据平台\bc\CabioMis\obj\Release\CabioMis.Fzk1.resources
 D:\工作目录\工程\old\新嘉吉\数据平台\bc\CabioMis\obj\Release\CabioMis.Frmodjch.resources

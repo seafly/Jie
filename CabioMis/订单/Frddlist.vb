@@ -418,7 +418,7 @@ Public Class Frddlist
             sql2 &= " tb_dd_id,tb_dd_ddh,tb_dd_ddl,tb_dd_cpdm,tb_dd_jgdm,tb_dd_fhtjdh,tb_dd_kh,tb_dd_jhfhrq,tb_dd_jhfhzl,tb_dd_ph,tb_dd_jhl,tb_dd_cw,tb_dd_cys,tb_dd_ysfs,  tb_dd_fhl,tb_dd_sjfhrq,tb_dd_sjph,cast( tb_dd_ddgsyf as varchar ) as  tb_dd_ddgsyf from tb_dd where tb_dd_bz1='2'  and tb_dd_bz3 is not null and tb_dd_bz4 is null "
 
         ElseIf tb6.Checked = True Then
-            sql2 &= " tb_dd_id,cast( tb_dd_ddgsyf as varchar ) as  tb_dd_ddgsyf,tb_dd_jfwc,tb_dd_ddh,tb_dd_ddl,tb_dd_cpdm,tb_dd_jgdm,tb_dd_fhtjdh,tb_dd_kh,tb_dd_ddrq,tb_dd_fhl,tb_dd_sjdhrq,tb_dd_sjph,tb_dd_cw,tb_dd_cys,tb_dd_ysfs, tb_dd_yc,tb_dd_fhycms,tb_dd_yfh,tb_dd_cfs,tb_dd_cplx,tb_dd_khqc"
+            sql2 &= " tb_dd_id,cast( tb_dd_ddgsyf as varchar ) as  tb_dd_ddgsyf,tb_dd_jfwc,tb_dd_ddh,tb_dd_ddl,tb_dd_cpdm,tb_dd_jgdm,tb_dd_fhtjdh,tb_dd_kh,tb_dd_ddrq,tb_dd_fhl,tb_dd_sjfhrq,tb_dd_sjdhrq,tb_dd_sjph,tb_dd_cw,tb_dd_cys,tb_dd_ysfs, tb_dd_yc,tb_dd_fhycms,tb_dd_yfh,tb_dd_cfs,tb_dd_cplx,tb_dd_khqc"
             sql2 &= " ,tb_dd_shdy,tb_dd_zzfhrq,tb_dd_ddgh,tb_dd_ddsrshgh,tb_dd_fhssczrgh,tb_dd_bfb,tb_dd_kdlk,tb_dd_storagewzlk,tb_dd_storagemslk,tb_dd_returnsl,tb_dd_returnrq from tb_dd where tb_dd_bz1='2'  and  tb_dd_bz4 is not null "
 
         End If

@@ -85,6 +85,10 @@ Partial Class Frtb_x832p
         Me.tb_x832p_num2 = New System.Windows.Forms.TextBox()
         Me.tb_x832p_fyfbs = New System.Windows.Forms.TextBox()
         Me.Label26 = New System.Windows.Forms.Label()
+        Me.Label27 = New System.Windows.Forms.Label()
+        Me.Label28 = New System.Windows.Forms.Label()
+        Me.Label29 = New System.Windows.Forms.Label()
+        Me.Label30 = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'Labelid2
@@ -684,11 +688,55 @@ Partial Class Frtb_x832p
         Me.Label26.Text = "返工粉标识"
         Me.Label26.Visible = False
         '
+        'Label27
+        '
+        Me.Label27.AutoSize = True
+        Me.Label27.Location = New System.Drawing.Point(482, 437)
+        Me.Label27.Name = "Label27"
+        Me.Label27.Size = New System.Drawing.Size(107, 12)
+        Me.Label27.TabIndex = 322
+        Me.Label27.Text = "5KG粉剂铝箔袋数量"
+        Me.Label27.Visible = False
+        '
+        'Label28
+        '
+        Me.Label28.AutoSize = True
+        Me.Label28.Location = New System.Drawing.Point(499, 454)
+        Me.Label28.Name = "Label28"
+        Me.Label28.Size = New System.Drawing.Size(107, 12)
+        Me.Label28.TabIndex = 322
+        Me.Label28.Text = "5KG粉剂铝箔袋数量"
+        Me.Label28.Visible = False
+        '
+        'Label29
+        '
+        Me.Label29.AutoSize = True
+        Me.Label29.Location = New System.Drawing.Point(605, 437)
+        Me.Label29.Name = "Label29"
+        Me.Label29.Size = New System.Drawing.Size(89, 12)
+        Me.Label29.TabIndex = 322
+        Me.Label29.Text = "优粉铝箔袋数量"
+        Me.Label29.Visible = False
+        '
+        'Label30
+        '
+        Me.Label30.AutoSize = True
+        Me.Label30.Location = New System.Drawing.Point(641, 454)
+        Me.Label30.Name = "Label30"
+        Me.Label30.Size = New System.Drawing.Size(89, 12)
+        Me.Label30.TabIndex = 322
+        Me.Label30.Text = "包装机卷膜重量"
+        Me.Label30.Visible = False
+        '
         'Frtb_x832p
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 12.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(755, 507)
+        Me.Controls.Add(Me.Label30)
+        Me.Controls.Add(Me.Label29)
+        Me.Controls.Add(Me.Label28)
+        Me.Controls.Add(Me.Label27)
         Me.Controls.Add(Me.Label10)
         Me.Controls.Add(Me.tb_x832p_pwjssj)
         Me.Controls.Add(Me.tb_x832p_pwkssj)
@@ -830,4 +878,8 @@ Partial Class Frtb_x832p
     Friend WithEvents tb_x832p_num2 As System.Windows.Forms.TextBox
     Friend WithEvents tb_x832p_fyfbs As System.Windows.Forms.TextBox
     Friend WithEvents Label26 As System.Windows.Forms.Label
+    Friend WithEvents Label27 As System.Windows.Forms.Label
+    Friend WithEvents Label28 As System.Windows.Forms.Label
+    Friend WithEvents Label29 As System.Windows.Forms.Label
+    Friend WithEvents Label30 As System.Windows.Forms.Label
 End Class

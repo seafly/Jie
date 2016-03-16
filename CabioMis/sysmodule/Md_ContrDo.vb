@@ -213,6 +213,7 @@
                         newitem = .Columns.Add(zdn, strkd, HorizontalAlignment.Center)
                     End If
                     newitem.Tag = bb '把真正的字段名保存在这个属性中，如果不是从数据库中查询的，那么这个等于列标题
+                    newitem.Name = bb
                 Next
 
             Else '隐藏字段
@@ -238,6 +239,7 @@
                         End If
                     End If
                     newitem.Tag = bb '把真正的字段名保存在这个属性中，如果不是从数据库中查询的，那么这个等于列标题
+                    newitem.Name = bb
                 Next
 
             End If

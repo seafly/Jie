@@ -62,7 +62,7 @@ Module Md_FileDo
             End Select
 
             Dim jcdh As Integer = System.GC.GetGeneration(ss) : ss = Nothing : System.GC.Collect(jcdh)
-            xx.TopMost = True
+            'xx.TopMost = True
             MsgBox("生成电子表格完毕！")
             xx.TopMost = False
             System.Diagnostics.Process.Start(wjm)

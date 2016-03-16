@@ -223,6 +223,8 @@ Public Class Frkc_fk
             dic("tb_syjl_mbb") = "tb_wlphck"
             dic("tb_syjl_czbs") = tNewBs
             dic("tb_syjl_czlx") = "分库"
+            dic("tb_syjl_ctime") = tb_syjl_ctime.Text
+            dic("tb_syjl_czrgh") = G_dlrgh
             Dim rZl As Decimal = 0
             For Each s As String In m_ltCk
                 dic("tb_syjl_" & s) = Convert.ToDecimal(m_dicKczl("tb_wlphck_" & s)) - GroupBox2.YanFindControl("tb_wlphck_" & s).Text
@@ -242,6 +244,8 @@ Public Class Frkc_fk
             dic("tb_syjl_mbb") = "tb_wlphck"
             dic("tb_syjl_czbs") = tNewBs
             dic("tb_syjl_czlx") = "分库"
+            dic("tb_syjl_ctime") = tb_syjl_ctime.Text
+            dic("tb_syjl_czrgh") = G_dlrgh
             rZl = 0
             For Each s As String In m_ltCk
                 dic("tb_syjl_" & s) = GroupBox2.YanFindControl(s).Text

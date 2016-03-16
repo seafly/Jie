@@ -556,9 +556,9 @@ Partial Class Frtb_h195z
         '
         Me.tb_h195z_hblsrkzl.Location = New System.Drawing.Point(468, 412)
         Me.tb_h195z_hblsrkzl.Name = "tb_h195z_hblsrkzl"
-        Me.tb_h195z_hblsrkzl.Size = New System.Drawing.Size(43, 21)
+        Me.tb_h195z_hblsrkzl.Size = New System.Drawing.Size(88, 21)
         Me.tb_h195z_hblsrkzl.TabIndex = 191
-        Me.tb_h195z_hblsrkzl.Text = "重量"
+        Me.tb_h195z_hblsrkzl.Text = "湖北入库重量"
         Me.tb_h195z_hblsrkzl.Visible = False
         '
         'tb_h195z_y876r

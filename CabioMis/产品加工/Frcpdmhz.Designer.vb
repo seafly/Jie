@@ -33,6 +33,7 @@ Partial Class Frcpdmhz
         Me.Button5 = New System.Windows.Forms.ToolStripSplitButton()
         Me.添加修改BOMToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.查询BOMToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.DHABOMToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.Button2 = New System.Windows.Forms.ToolStripSplitButton()
         Me.添加修改产能ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.X产能ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -52,7 +53,6 @@ Partial Class Frcpdmhz
         Me.小客户修改ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolHelp = New System.Windows.Forms.ToolStripButton()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.DHABOMToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.GroupBox2.SuspendLayout()
         CType(Me.show1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.ToolStrip1.SuspendLayout()
@@ -140,15 +140,25 @@ Partial Class Frcpdmhz
         '
         '添加修改BOMToolStripMenuItem
         '
+        Me.添加修改BOMToolStripMenuItem.Enabled = False
         Me.添加修改BOMToolStripMenuItem.Name = "添加修改BOMToolStripMenuItem"
-        Me.添加修改BOMToolStripMenuItem.Size = New System.Drawing.Size(159, 22)
+        Me.添加修改BOMToolStripMenuItem.ShowShortcutKeys = False
+        Me.添加修改BOMToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.添加修改BOMToolStripMenuItem.Text = "添加/修改BOM"
         '
         '查询BOMToolStripMenuItem
         '
+        Me.查询BOMToolStripMenuItem.Enabled = False
         Me.查询BOMToolStripMenuItem.Name = "查询BOMToolStripMenuItem"
-        Me.查询BOMToolStripMenuItem.Size = New System.Drawing.Size(159, 22)
+        Me.查询BOMToolStripMenuItem.ShowShortcutKeys = False
+        Me.查询BOMToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.查询BOMToolStripMenuItem.Text = "查询BOM"
+        '
+        'DHABOMToolStripMenuItem
+        '
+        Me.DHABOMToolStripMenuItem.Name = "DHABOMToolStripMenuItem"
+        Me.DHABOMToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.DHABOMToolStripMenuItem.Text = "DHABOM"
         '
         'Button2
         '
@@ -285,12 +295,6 @@ Partial Class Frcpdmhz
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(0, 12)
         Me.Label1.TabIndex = 83
-        '
-        'DHABOMToolStripMenuItem
-        '
-        Me.DHABOMToolStripMenuItem.Name = "DHABOMToolStripMenuItem"
-        Me.DHABOMToolStripMenuItem.Size = New System.Drawing.Size(159, 22)
-        Me.DHABOMToolStripMenuItem.Text = "DHABOM"
         '
         'Frcpdmhz
         '

@@ -45,7 +45,7 @@
     <OutputPath>bin\Debug\</OutputPath>
     <DocumentationFile>CabioMis.xml</DocumentationFile>
     <NoWarn>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036,42353,42354,42355</NoWarn>
-    <PlatformTarget>AnyCPU</PlatformTarget>
+    <PlatformTarget>x86</PlatformTarget>
     <WarningsAsErrors>
     </WarningsAsErrors>
     <CodeAnalysisRuleSet>BasicDesignGuidelineRules.ruleset</CodeAnalysisRuleSet>
@@ -59,7 +59,7 @@
     <OutputPath>bin\Release\</OutputPath>
     <DocumentationFile>CabioMis.xml</DocumentationFile>
     <NoWarn>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036,42353,42354,42355</NoWarn>
-    <PlatformTarget>x86</PlatformTarget>
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <WarningsAsErrors>
     </WarningsAsErrors>
     <Prefer32Bit>false</Prefer32Bit>
@@ -192,16 +192,22 @@
     <Compile Include="BC项目\Frph_sz.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="YanShareFrom\FrEdit_gxfjxx.Designer.vb">
-      <DependentUpon>FrEdit_gxfjxx.vb</DependentUpon>
+    <Compile Include="YanFrom\FrSelClInfo.Designer.vb">
+      <DependentUpon>FrSelClInfo.vb</DependentUpon>
     </Compile>
-    <Compile Include="YanShareFrom\FrEdit_gxfjxx.vb">
+    <Compile Include="YanFrom\FrSelClInfo.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="YanShareFrom\FrselWp.Designer.vb">
+    <Compile Include="yanShareFrom\FrEdit_gxfjxx.Designer.vb">
+      <DependentUpon>FrEdit_gxfjxx.vb</DependentUpon>
+    </Compile>
+    <Compile Include="yanShareFrom\FrEdit_gxfjxx.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="yanShareFrom\FrselWp.Designer.vb">
       <DependentUpon>FrselWp.vb</DependentUpon>
     </Compile>
-    <Compile Include="YanShareFrom\FrselWp.vb">
+    <Compile Include="yanShareFrom\FrselWp.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="BC项目\FrWpAdd.Designer.vb">
@@ -649,10 +655,10 @@
     <Compile Include="YanFrom\frYanPhzl.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="YanShareFrom\FrEdit_gxcp.Designer.vb">
+    <Compile Include="yanShareFrom\FrEdit_gxcp.Designer.vb">
       <DependentUpon>FrEdit_gxcp.vb</DependentUpon>
     </Compile>
-    <Compile Include="YanShareFrom\FrEdit_gxcp.vb">
+    <Compile Include="yanShareFrom\FrEdit_gxcp.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="产品加工\Frcpdmhz.Designer.vb">
@@ -1273,6 +1279,12 @@
       <DependentUpon>Fryxkc.vb</DependentUpon>
     </Compile>
     <Compile Include="订单\Fryxkc.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="成品进出货\Frzk.Designer.vb">
+      <DependentUpon>Frzk.vb</DependentUpon>
+    </Compile>
+    <Compile Include="成品进出货\Frzk.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="运行部\frzk2.Designer.vb">
@@ -2096,10 +2108,13 @@
     <EmbeddedResource Include="BC项目\Frph_sz.resx">
       <DependentUpon>Frph_sz.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="YanShareFrom\FrEdit_gxfjxx.resx">
+    <EmbeddedResource Include="YanFrom\FrSelClInfo.resx">
+      <DependentUpon>FrSelClInfo.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="yanShareFrom\FrEdit_gxfjxx.resx">
       <DependentUpon>FrEdit_gxfjxx.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="YanShareFrom\FrselWp.resx">
+    <EmbeddedResource Include="yanShareFrom\FrselWp.resx">
       <DependentUpon>FrselWp.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="BC项目\FrWpAdd.resx">
@@ -2358,7 +2373,7 @@
     <EmbeddedResource Include="YanFrom\frYanPhzl.resx">
       <DependentUpon>frYanPhzl.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="YanShareFrom\FrEdit_gxcp.resx">
+    <EmbeddedResource Include="yanShareFrom\FrEdit_gxcp.resx">
       <DependentUpon>FrEdit_gxcp.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="产品加工\Frcpdmhz.resx">
@@ -2755,6 +2770,9 @@
     <EmbeddedResource Include="订单\Fryxkc.resx">
       <DependentUpon>Fryxkc.vb</DependentUpon>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="成品进出货\Frzk.resx">
+      <DependentUpon>Frzk.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="运行部\frzk2.resx">
       <DependentUpon>frzk2.vb</DependentUpon>
@@ -3369,7 +3387,6 @@
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </COMReference>
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildBinPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

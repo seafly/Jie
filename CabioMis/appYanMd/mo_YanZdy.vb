@@ -170,6 +170,7 @@ Public Module mo_YanZdy
         数字
         文本
         选择
+        时间
         批号
     End Enum
     ''' <summary>

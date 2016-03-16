@@ -138,8 +138,7 @@ Public Class Fryljch
             Case "湖北工厂"
                 If qa = "不合格" Then : MsgBox("qa不合格,无法转库！") : Return False : End If
                 If tb_yljch_sl.Text.Trim = "" Then : MsgBox("请输入数量") : Return False : End If
-                ck2()
-
+                Return ck2()
             Case "生产"
                 If qa <> "合格" Then : MsgBox("QA审核必须为合格才能出货") : Return False : End If
                 sc()
@@ -214,19 +213,23 @@ Public Class Fryljch
 
     '出货用途为 ： 转库到武汉
 
-    Private Sub ck2()
+    Private Function ck2() As Boolean
         '''''湖北操作
-        'TODO 
-        Dim str As String = "select tb_ylzk_id from tb_ylzk where tb_ylzk_yldm2='" & tb_yljch_dm.Text & "' and tb_ylzk_num ='" & tb_yljch_num.Text & "'"
-        Dim dt As DataTable = GF_CreateDataSource(G_cnnstrWH, str)
+        '先判断转库重量
+        Dim sql As String = "select * from tb_i259b where tb_i259b_id='" & id & "'"
+        Dim dt As DataTable = sql.YanGetDb
         If _S.YanFormatNum3(dt.YanDtValue2("tb_i259b_ckcl")) < Null2zero(tb_yljch_sl.Text) Then
-            MsgBox("数量输入错误！") : Return
+            MsgBox("数量输入错误！") : Return False
         End If
+
+        '判断是否转库过
+        Dim str As String = "select tb_ylzk_id from tb_ylzk where tb_ylzk_yldm2='" & tb_yljch_dm.Text & "' and tb_ylzk_num ='" & tb_yljch_num.Text & "'"
+        dt = GF_CreateDataSource(G_cnnstrWH, str)
         If dt.Rows.Count > 0 Then
             If MsgBox("该批号和物料代码已向湖北转过库，是否继续？", 1, "提示") <> 1 Then
-                Exit Sub
+                Return False
             End If
-            Dim sql As String = "update tb_ylzk set tb_ylzk_rkl=tb_ylzk_rkl+ " & tb_yljch_sl.Text & " where  tb_ylzk_yldm2='" & tb_yljch_dm.Text & "' and tb_ylzk_num ='" & tb_yljch_num.Text & "'"
+            sql = "update tb_ylzk set tb_ylzk_rkl=tb_ylzk_rkl+ " & tb_yljch_sl.Text & " where  tb_ylzk_yldm2='" & tb_yljch_dm.Text & "' and tb_ylzk_num ='" & tb_yljch_num.Text & "'"
             GS_upztxx(G_cnnstrWH, sql)
         Else
             '’‘’‘’‘’‘’‘’‘’‘’‘’‘’‘’‘’‘’‘’‘’‘’‘’‘’‘’‘’‘’‘’‘’‘’‘’‘’‘’‘’‘’‘’‘存入武汉原料表
@@ -235,7 +238,6 @@ Public Class Fryljch
                 yhm = sr.ReadLine() : sjk = sr.ReadLine() : mm = DeepCode.DeepDoStr.SimpleDecode(sr.ReadLine()) : fwq = sr.ReadLine() : sr.Close()
             End Using
 
-            Dim sql As String
             Dim liccnnts As String = "Data Source=" & fwq & ";User ID=" & yhm & ";Password=" & mm & ""
             sql = "Insert into tb_ylzk (tb_ylzk_lb,tb_ylzk_ylmc,tb_ylzk_yldm2,tb_ylzk_rkl,tb_ylzk_num) values"
             sql &= "(  '" & tb_yljch_yllb.Text & "','" & tb_yljch_mc.Text & "','" & tb_yljch_dm.Text & "'," & tb_yljch_sl.Text & ",'" & tb_yljch_num.Text & "' )"
@@ -247,8 +249,8 @@ Public Class Fryljch
         Dim sql0 As String = "update tb_i259b set tb_i259b_ckcl=tb_i259b_ckcl-" & tb_yljch_sl.Text & ""
         sql0 &= "where tb_i259b_id='" & id & "'"
         GS_upztxx(G_cnnstr, sql0)
-
-    End Sub
+        Return True
+    End Function
 
     ' 出货用途为 ：车间退库
     Private Sub tk2()

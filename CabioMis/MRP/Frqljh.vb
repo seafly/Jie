@@ -5,8 +5,16 @@
         showsj()
     End Sub
     Private Sub showsj()
-        Dim sql As String = "select tb_cpdmhz_cpdm,tb_cpdmhz_jgdm,tb_cpdmhz_cpjz, 0 as '生产量',tb_cpdmhz_cpy,tb_cpdmhz_my,tb_cpdmhz_gjt,tb_cpdmhz_2a01a001,tb_cpdmhz_2a01a002,tb_cpdmhz_2a01a003,tb_cpdmhz_2a01a007,tb_cpdmhz_2a02a008,tb_cpdmhz_2a02a002,tb_cpdmhz_2a01a006,tb_cpdmhz_2a02a005,tb_cpdmhz_2a02a007,tb_cpdmhz_2a02a009,tb_cpdmhz_2a02a006,tb_cpdmhz_2a02a001,tb_cpdmhz_2a02a011,tb_cpdmhz_2a02a012,tb_cpdmhz_2a04a001,tb_cpdmhz_2a04a002,tb_cpdmhz_2a04a003,tb_cpdmhz_2a04a004,tb_cpdmhz_2a04a005,tb_cpdmhz_2a04a006,tb_cpdmhz_2a04a007,tb_cpdmhz_2a04a010,tb_cpdmhz_5a01a006,tb_cpdmhz_5a02a001,tb_cpdmhz_5a03a002,tb_cpdmhz_5a03a003,tb_cpdmhz_5a01a009,tb_cpdmhz_3a08a003,tb_cpdmhz_5a02a003,tb_cpdmhz_5a03a004,tb_cpdmhz_5a02a004,tb_cpdmhz_5a03a006,tb_cpdmhz_5a01a004,tb_cpdmhz_3a06a001,tb_cpdmhz_3a08a004,tb_cpdmhz_3a08a002,tb_cpdmhz_3a08a005,tb_cpdmhz_3a07a010,tb_cpdmhz_3a07a011,tb_cpdmhz_3a07a020,tb_cpdmhz_2a04a014,tb_cpdmhz_3a08a001,tb_cpdmhz_3a09a006,tb_cpdmhz_3a09a021,tb_cpdmhz_5a03a005,tb_cpdmhz_5a02a002,tb_cpdmhz_3a07a019,tb_cpdmhz_3a09a022,tb_cpdmhz_3a08a019,tb_cpdmhz_3a08a020  from tb_cpdmhz where tb_cpdmhz_yxx='有效' "
-        Dim dt As DataTable = DeepCode.DeepDoDataTable.GF_CreateDataSource(G_cnnstr, sql)
+        'Dim sql As String = "select tb_cpdmhz_cpdm,tb_cpdmhz_jgdm,tb_cpdmhz_cpjz, 0 as '生产量',tb_cpdmhz_cpy,tb_cpdmhz_my,tb_cpdmhz_gjt,tb_cpdmhz_2a01a001,tb_cpdmhz_2a01a002,tb_cpdmhz_2a01a003,tb_cpdmhz_2a01a007,tb_cpdmhz_2a02a008,tb_cpdmhz_2a02a002,tb_cpdmhz_2a01a006,tb_cpdmhz_2a02a005,tb_cpdmhz_2a02a007,tb_cpdmhz_2a02a009,tb_cpdmhz_2a02a006,tb_cpdmhz_2a02a001,tb_cpdmhz_2a02a011,tb_cpdmhz_2a02a012,tb_cpdmhz_2a04a001,tb_cpdmhz_2a04a002,tb_cpdmhz_2a04a003,tb_cpdmhz_2a04a004,tb_cpdmhz_2a04a005,tb_cpdmhz_2a04a006,tb_cpdmhz_2a04a007,tb_cpdmhz_2a04a010,tb_cpdmhz_5a01a006,tb_cpdmhz_5a02a001,tb_cpdmhz_5a03a002,tb_cpdmhz_5a03a003,tb_cpdmhz_5a01a009,tb_cpdmhz_3a08a003,tb_cpdmhz_5a02a003,tb_cpdmhz_5a03a004,tb_cpdmhz_5a02a004,tb_cpdmhz_5a03a006,tb_cpdmhz_5a01a004,tb_cpdmhz_3a06a001,tb_cpdmhz_3a08a004,tb_cpdmhz_3a08a002,tb_cpdmhz_3a08a005,tb_cpdmhz_3a07a010,tb_cpdmhz_3a07a011,tb_cpdmhz_3a07a020,tb_cpdmhz_2a04a014,tb_cpdmhz_3a08a001,tb_cpdmhz_3a09a006,tb_cpdmhz_3a09a021,tb_cpdmhz_5a03a005,tb_cpdmhz_5a02a002,tb_cpdmhz_3a07a019,tb_cpdmhz_3a09a022,tb_cpdmhz_3a08a019,tb_cpdmhz_3a08a020  from tb_cpdmhz where tb_cpdmhz_yxx='有效' "
+        Dim sql As String = "select tb_cpdmhz_cpdm,tb_cpdmhz_jgdm,tb_cpdmhz_cpjz, 0 as '生产量',tb_cpdmhz_ID,tb_cpdmhz_njzq,tb_cpdmhz_cpy,tb_cpdmhz_my,tb_cpdmhz_gjt," &
+        "tb_cpdmhz_2a01a001,tb_cpdmhz_2a01a002,tb_cpdmhz_2a01a003,tb_cpdmhz_2a01a007,tb_cpdmhz_2a02a008,tb_cpdmhz_2a02a002,tb_cpdmhz_2a01a006,tb_cpdmhz_2a02a005," &
+        "tb_cpdmhz_2a02a007,tb_cpdmhz_2a02a009,tb_cpdmhz_2a02a006,tb_cpdmhz_2a02a001,tb_cpdmhz_2a02a011,tb_cpdmhz_2a02a012,tb_cpdmhz_2a04a001,tb_cpdmhz_2a04a002," &
+        "tb_cpdmhz_2a04a003,tb_cpdmhz_2a04a004,tb_cpdmhz_2a04a005,tb_cpdmhz_2a04a006,tb_cpdmhz_2a04a007,tb_cpdmhz_2a04a010,tb_cpdmhz_5a01a006,tb_cpdmhz_5a02a001," &
+        "tb_cpdmhz_5a03a002,tb_cpdmhz_5a03a003,tb_cpdmhz_5a01a009,tb_cpdmhz_3a08a003,tb_cpdmhz_5a02a003,tb_cpdmhz_5a03a004,tb_cpdmhz_5a02a004,tb_cpdmhz_5a03a006," &
+        "tb_cpdmhz_5a01a004,tb_cpdmhz_3a06a001,tb_cpdmhz_3a08a004,tb_cpdmhz_3a08a002,tb_cpdmhz_3a08a005,tb_cpdmhz_3a07a010,tb_cpdmhz_3a07a011,tb_cpdmhz_3a07a020," &
+        "tb_cpdmhz_2a04a014,tb_cpdmhz_3a08a001,tb_cpdmhz_3a09a006,tb_cpdmhz_3a09a021,tb_cpdmhz_5a03a005,tb_cpdmhz_5a02a002,tb_cpdmhz_3a07a019,tb_cpdmhz_3a09a022," &
+        "tb_cpdmhz_3a08a019,tb_cpdmhz_3a08a020 from tb_cpdmhz where tb_cpdmhz_yxx='有效' "
+        Dim dt As DataTable = DeepCode.DeepDoDataTable.GF_CreateDataSource(G_cnnstr, Sql)
         For k As Integer = 7 To dt.Columns.Count - 1
             Dim ss As String = Mid(dt.Columns(k).Caption, 11)
             ss = Replace(ss, "a", ".")
@@ -27,57 +35,90 @@
     End Sub
 
     Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button1.Click
+        Dim f As Frwljhbb = Me.Owner
+        Dim dtgrid As DataGridView = f.show1 : f.cz()
+        With dtgrid
+            .Columns(9).Visible = False  '计划请购量
+        End With
+        Dim dt As DataTable = dtgrid.DataSource
 
         With listview1
-            Dim tt As String = ""
-            For j As Integer = 7 To .Columns.Count - 1
-                Dim bb As Double = 0
-                For i As Integer = 0 To .Rows.Count - 1
-                    Dim zs As Double = IIf(.Rows(i).Cells(2).Value = 0, 0, _S.YanFormatNum(.Rows(i).Cells(3).Value / .Rows(i).Cells(2).Value)) '生产量除以成品基重 
-                    Dim tj As Double = _S.YanFormatNum(zs * .Rows(i).Cells(j).Value) '得要所有加工代码需要同一种原料总和
-                    bb = bb + tj
-                Next
-                tt &= bb & ","
-            Next
-            tt = DeepCode.DeepDoStr.GF_removedh(tt)
-            Dim sy() As String = tt.Split(",") '需求量
-            ww = DeepCode.DeepDoStr.GF_removedh(ww)
-            Dim sb() As String = ww.Split(",") '加工代码
+            'Dim tt As String = ""
+            'For j As Integer = 7 To listview1.Columns.Count - 1
+            '    Dim bb As Double = 0
+            '    For i As Integer = 0 To listview1.Rows.Count - 1
+            '        Dim zs As Double = IIf(listview1.Rows(i).Cells(2).Value = 0, 0, _S.YanFormatNum(listview1.Rows(i).Cells(3).Value / listview1.Rows(i).Cells(2).Value)) '生产量除以成品基重 
+            '        Dim tj As Double = _S.YanFormatNum(zs * listview1.Rows(i).Cells(j).Value) '得到所有加工代码需要同一种原料总和
+            '        bb = bb + tj
+            '    Next
+            '    tt &= bb & ","
+            'Next
+            'tt = DeepCode.DeepDoStr.GF_removedh(tt)
+            'Dim sy() As String = tt.Split(",") '需求量
+            'ww = DeepCode.DeepDoStr.GF_removedh(ww)
+            'Dim sb() As String = ww.Split(",") '加工代码
 
-            Dim f As Frwljhbb = Me.Owner
-            Dim dtgrid As DataGridView = f.show1 : f.cz()
-            With dtgrid
-                .Columns(9).Visible = False  '计划请购量
-            End With
-
-            Dim dt As DataTable = dtgrid.DataSource
-
-            For i As Integer = 0 To UBound(sb)
-                Dim mm As DataRow = dt.NewRow
-                mm(0) = sb(i) 'A物料代码
-                mm(8) = _S.YanFormatNum(sy(i)) 'A物料代码需求量
-
-                Dim sql1 As String = "select tb_wp_wpfl,tb_wp_pm,tb_wp_ggxh,tb_wp_dw,tb_wp_wllb,tb_wp_aqkc,tb_wp_cgzq,tb_wp_jjcgl from tb_wp where tb_wp_dm='" & sb(i) & "' "
-
-                Dim dt1 As DataTable = GF_CreateDataSource(G_cnnstr, sql1)
-                If dt1.Rows.Count - 1 < 0 Then
-                    mm(1) = "" : mm(2) = ""
-                    mm(3) = "" : mm(4) = ""
-                    mm(5) = "" : mm(10) = "0"
-                    mm(12) = "0" : mm(13) = "0"
-                Else
-                    mm(1) = dt1.Rows(0)("tb_wp_wpfl") : mm(2) = dt1.Rows(0)("tb_wp_pm")
-                    mm(3) = dt1.Rows(0)("tb_wp_ggxh") : mm(4) = dt1.Rows(0)("tb_wp_dw")
-                    mm(5) = dt1.Rows(0)("tb_wp_wllb") : mm(10) = dt1.Rows(0)("tb_wp_aqkc")
-                    mm(12) = dt1.Rows(0)("tb_wp_cgzq") : mm(13) = dt1.Rows(0)("tb_wp_jjcgl")
+            '保存已选产品标识的字符串
+            Dim strTm As String = ""
+            '保存已选产品内容的DT
+            Dim dtTm As New DataTable
+            dtTm.Columns.Add("tb_cpdmhz_ID")
+            dtTm.Columns.Add("tb_cpdmhz_cpjz")
+            dtTm.Columns.Add("生产量")
+            For ii As Integer = 0 To listview1.Rows.Count - 1
+                If Convert.ToInt32(listview1.Rows(ii).Cells("生产量").Value.ToString()) > 0 Then
+                    strTm &= listview1.Rows(ii).Cells("tb_cpdmhz_ID").Value.ToString() & ","
+                    Dim drTm As DataRow = dtTm.NewRow
+                    drTm("tb_cpdmhz_ID") = listview1.Rows(ii).Cells("tb_cpdmhz_ID").Value
+                    drTm("tb_cpdmhz_cpjz") = listview1.Rows(ii).Cells("tb_cpdmhz_cpjz").Value
+                    drTm("生产量") = listview1.Rows(ii).Cells("生产量").Value
+                    dtTm.Rows.Add(drTm)
                 End If
-                Dim sql2 As String = "select sum(tb_i259b_ckcl) from tb_i259b where tb_i259b_i231a= '" & sb(i) & "'"
+            Next
+            strTm = DeepCode.DeepDoStr.GF_removedh(strTm)
+
+            'Dim strSql As String = "select * from tb_wp where tb_wp_dm in (select tb_mrp_wpdm from tb_mrp where tb_mrp_cpbs in (" & strTm & "))"
+            Dim strSql As String = "select * from tb_wp where tb_wp_wpfl in ('原料','包材') and " & _
+                "tb_wp_dm in (select tb_i259b_i231a from tb_i259b group by tb_i259b_i231a having sum(tb_i259b_ckcl)>0)"
+            Dim dtMrp As DataTable = Cl_DataMag.GF_CreateDataSource(strSql)
+            strSql = "select * from tb_mrp where tb_mrp_xz=" & en_Bllx.生产原料 & " and tb_mrp_cpbs in (" & strTm & ")"
+            Dim dtMrp2 As DataTable = Cl_DataMag.GF_CreateDataSource(strSql)
+            If dtMrp.Rows.Count = 0 Then
+                MsgBox("选择的产品没有相应的物料")
+                Return
+            End If
+
+            For Each dtRow As DataRow In dtMrp.Rows
+                Dim mm As DataRow = dt.NewRow
+                mm(0) = dtRow("tb_wp_dm") 'A物料代码
+                mm(1) = dtRow("tb_wp_wpfl")
+                mm(2) = dtRow("tb_wp_pm")
+                mm(3) = dtRow("tb_wp_ggxh")
+                mm(4) = dtRow("tb_wp_dw")
+                mm(5) = dtRow("tb_wp_wllb")
+
+                '计算物料需求量
+                Dim iXql As Integer = 0
+                Dim drScl As DataTable = dtMrp2.Select("tb_mrp_wpdm='" & dtRow("tb_wp_dm").ToString() & "'").YanArrDrToDb
+                For i As Integer = 0 To drScl.Rows.Count - 1
+                    Dim iSzl As Double = Convert.ToDouble(dtTm.Select("tb_cpdmhz_ID='" & drScl.YanDtValue2("tb_mrp_cpbs", i) & "'")(0)("生产量").ToString())
+                    Dim iBzl As Double = Convert.ToDouble(drScl.YanDtValue2("tb_mrp_blz", i))
+                    Dim iJzzl As Double = Convert.ToDouble(Cl_StrMag.YanFormatNum(dtTm.Select("tb_cpdmhz_ID='" & drScl.YanDtValue2("tb_mrp_cpbs", i) & "'")(0)("tb_cpdmhz_cpjz")))
+                    '需求量=生产量 * （标量/基准重量）
+                    iXql += Convert.ToDouble(IIf(iJzzl = 0, 0, iSzl * (iBzl / iJzzl)).ToString())
+                Next
+                mm(8) = iXql
+                mm(10) = dtRow("tb_wp_aqkc")
+                mm(12) = dtRow("tb_wp_cgzq")
+                mm(13) = dtRow("tb_wp_jjcgl")
+
+                Dim sql2 As String = "select sum(tb_i259b_ckcl) from tb_i259b where tb_i259b_i231a= '" & dtRow("tb_wp_dm").ToString() & "'"
                 Dim dt2 As DataTable = GF_CreateDataSource(G_cnnstr, sql2)
                 mm(6) = Null2zero(dt2.Rows(0)(0)) '仓库存量
 
-                Dim sql3 As String = "select sum(tb_qgcg_qgsl)  from tb_qgcg where tb_qgcg_dm = '" & sb(i) & "' and  tb_qgcg_xbid is null "
+                Dim sql3 As String = "select sum(tb_qgcg_qgsl)  from tb_qgcg where tb_qgcg_dm = '" & dtRow("tb_wp_dm").ToString() & "' and  tb_qgcg_xbid is null "
                 Dim dt3 As DataTable = GF_CreateDataSource(G_cnnstr, sql3)
-                Dim sql4 = "select sum(tb_cg_qgsl) from tb_cg where tb_cg_dm = '" & sb(i) & "'and  tb_cg_xbid is null"
+                Dim sql4 As String = "select sum(tb_cg_qgsl) from tb_cg where tb_cg_dm = '" & dtRow("tb_wp_dm").ToString() & "'and  tb_cg_xbid is null"
                 Dim dt4 As DataTable = GF_CreateDataSource(G_cnnstr, sql4)
                 mm(7) = Null2zero(dt3.Rows(0)(0)) + Null2zero(dt4.Rows(0)(0))  '在途量
                 mm(9) = _S.YanFormatNum(mm(6) + mm(7) - mm(8) - mm(10))  '计划请购量
@@ -87,7 +128,7 @@
                 Else
                     mm(11) = "是"
                 End If
-                Dim sql5 = "select tb_wp_njzq from tb_wp where tb_wp_dm = '" & sb(i) & "'"
+                Dim sql5 As String = "select tb_wp_njzq from tb_wp where tb_wp_dm = '" & dtRow("tb_wp_dm").ToString() & "'"
                 Dim dt5 As DataTable = GF_CreateDataSource(G_cnnstr, sql5)
                 If dt5.Rows.Count - 1 < 0 Then
                     mm(15) = ""
@@ -95,12 +136,12 @@
                     mm(15) = dt5.Rows(0)(0)
                 End If
 
-                Dim sql6 = "select sum(tb_i259b_ckcl) from tb_i259b where tb_i259b_i231a = '" & sb(i) & "'and tb_i259b_qaspjg <>'合格'"
+                Dim sql6 As String = "select sum(tb_i259b_ckcl) from tb_i259b where tb_i259b_i231a = '" & dtRow("tb_wp_dm").ToString() & "'and tb_i259b_qaspjg <>'合格'"
                 Dim dt6 As DataTable = GF_CreateDataSource(G_cnnstr, sql6)
                 mm(16) = Null2zero(dt6.Rows(0)(0))
                 dt.Rows.Add(mm)
             Next
-            Call AddNewRow() '添加BC物料代码
+            'Call AddNewRow() '添加BC物料代码
             ChangeColor(dtgrid, 11)
             ChangeColorfs(dtgrid, 14)
             RemoveIndex(dtgrid)

@@ -7,8 +7,8 @@ Public Class Frkc_ck
 
     Private Sub Frkc_tz_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         '用途数据源
-        yt.DataSource = ("," & GetType(en_kcyt).YanEnToTb.YanDtToStr("name")).Replace _
-            ("," & en_kcyt.返工.ToString, "").Replace("," & en_kcyt.生产.ToString, "").YanRemovedh.Split(",")
+        yt.DataSource = (GetType(en_kcyt).YanEnToTb.YanDtToStr("name") & ",").Replace _
+            (en_kcyt.返工.ToString & ",", "").Replace(en_kcyt.生产.ToString & ",", "").YanRemovedh.Split(",")
         '页面赋值
         _D.YanDtSetFrCon(Me, m_wlDt)
 
@@ -87,69 +87,12 @@ Public Class Frkc_ck
 
         e.Handled = True
     End Sub
-
-    Private Sub Button1_Click(sender As Object, e As EventArgs)
-
-        Using mt As New _D.myTransaction
-            tb_wlphck_ID.Text = 0
-            Dim tNewBs As String = ""
-            Dim dic As Dictionary(Of String, String)
-            '更新原数据数量
-            dic = New Dictionary(Of String, String)
-            For Each s As String In m_ltCk
-                dic("tb_wlphck_" & s) = GroupBox2.YanFindControl("tb_wlphck_" & s).Text
-            Next
-            mt.update("tb_wlphck", dic, "tb_wlphck_ID='" & m_wlDt.YanDtValue2("tb_wlphck_ID") & "'")
-
-            '写入使用记录（出库）
-            dic = New Dictionary(Of String, String)()
-            dic("tb_syjl_wpbs") = m_wlDt.Rows(0)("tb_wlphck_wpbs")
-            dic("tb_syjl_wpdm") = m_wlDt.Rows(0)("tb_wp_dm")
-            dic("tb_syjl_xz") = 0
-            dic("tb_syjl_yb") = "tb_wlphck"
-            dic("tb_syjl_ybs") = m_wlDt.Rows(0)("tb_wlphck_ID")
-            dic("tb_syjl_wlph") = m_wlDt.Rows(0)("tb_wlphck_wlph")
-            dic("tb_syjl_mbb") = "tb_wlphck"
-            dic("tb_syjl_czbs") = tNewBs
-            dic("tb_syjl_czlx") = "分库"
-            Dim rZl As Decimal = 0
-            For Each s As String In m_ltCk
-                dic("tb_syjl_" & s) = Convert.ToDecimal(m_dicKczl("tb_wlphck_" & s)) - GroupBox2.YanFindControl("tb_wlphck_" & s).Text
-                rZl += Convert.ToDecimal(m_dicKczl("tb_wlphck_" & s)) - GroupBox2.YanFindControl("tb_wlphck_" & s).Text
-            Next
-            dic("tb_syjl_zl") = System.Math.Abs(rZl)
-            mt.insert("tb_syjl", dic)
-
-            '写入使用记录（入库）
-            dic = New Dictionary(Of String, String)()
-            dic("tb_syjl_wpbs") = m_wlDt.Rows(0)("tb_wlphck_wpbs")
-            dic("tb_syjl_wpdm") = m_wlDt.Rows(0)("tb_wp_dm")
-            dic("tb_syjl_xz") = 1
-            dic("tb_syjl_yb") = "tb_wlphck"
-            dic("tb_syjl_ybs") = m_wlDt.Rows(0)("tb_wlphck_ID")
-            dic("tb_syjl_wlph") = m_wlDt.Rows(0)("tb_wlphck_wlph")
-            dic("tb_syjl_mbb") = "tb_wlphck"
-            dic("tb_syjl_czbs") = tNewBs
-            dic("tb_syjl_czlx") = "分库"
-            rZl = 0
-            For Each s As String In m_ltCk
-                dic("tb_syjl_" & s) = GroupBox2.YanFindControl(s).Text
-                rZl += Convert.ToDecimal(m_dicKczl("tb_wlphck_" & s)) - GroupBox2.YanFindControl("tb_wlphck_" & s).Text
-            Next
-            dic("tb_syjl_zl") = System.Math.Abs(rZl)
-            mt.insert("tb_syjl", dic)
-
-            mt.Commit()
-        End Using
-        Me.DialogResult = DialogResult.OK
-    End Sub
-
     Private Sub Button1_Click_1(sender As Object, e As EventArgs) Handles Button1.Click
         If CheckControlNull(GroupBox2) = False Then
             Return
         End If
         If 出库重量.Text <= 0 Then
-            MsgBox("出库重量不能为零！",MsgBoxStyle.Exclamation)
+            MsgBox("出库重量不能为零！", MsgBoxStyle.Exclamation)
             Return
         End If
         If MsgBox("确定要出库吗？", MsgBoxStyle.Exclamation Or MsgBoxStyle.YesNo) = vbNo Then
@@ -177,6 +120,8 @@ Public Class Frkc_ck
             dic("tb_syjl_czbs") = 0
             dic("tb_syjl_czlx") = yt.Text
             dic("tb_syjl_zl") = 出库重量.Text
+            dic("tb_syjl_ctime") = tb_syjl_ctime.Text
+            dic("tb_syjl_czrgh") = G_dlrgh
             For Each s As String In m_ltCk
                 dic("tb_syjl_" & s) = GroupBox2.YanFindControl(s).Text
             Next

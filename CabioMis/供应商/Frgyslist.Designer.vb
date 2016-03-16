@@ -31,6 +31,7 @@ Partial Class Frgyslist
         Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.ComboBox1 = New System.Windows.Forms.ComboBox()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.toExcel = New System.Windows.Forms.Button()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.DataGridView2 = New System.Windows.Forms.DataGridView()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
@@ -104,6 +105,7 @@ Partial Class Frgyslist
         Me.GroupBox3.Controls.Add(Me.TextBox1)
         Me.GroupBox3.Controls.Add(Me.ComboBox1)
         Me.GroupBox3.Controls.Add(Me.Label1)
+        Me.GroupBox3.Controls.Add(Me.toExcel)
         Me.GroupBox3.Controls.Add(Me.Button1)
         Me.GroupBox3.Font = New System.Drawing.Font("微软雅黑", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
         Me.GroupBox3.Location = New System.Drawing.Point(332, 3)
@@ -138,12 +140,22 @@ Partial Class Frgyslist
         Me.Label1.TabIndex = 6
         Me.Label1.Text = "文本"
         '
+        'toExcel
+        '
+        Me.toExcel.Font = New System.Drawing.Font("微软雅黑", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
+        Me.toExcel.Location = New System.Drawing.Point(353, 14)
+        Me.toExcel.Name = "toExcel"
+        Me.toExcel.Size = New System.Drawing.Size(62, 24)
+        Me.toExcel.TabIndex = 5
+        Me.toExcel.Text = "导出"
+        Me.toExcel.UseVisualStyleBackColor = True
+        '
         'Button1
         '
         Me.Button1.Font = New System.Drawing.Font("微软雅黑", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
-        Me.Button1.Location = New System.Drawing.Point(285, 10)
+        Me.Button1.Location = New System.Drawing.Point(285, 15)
         Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(75, 33)
+        Me.Button1.Size = New System.Drawing.Size(62, 24)
         Me.Button1.TabIndex = 5
         Me.Button1.Text = "查询"
         Me.Button1.UseVisualStyleBackColor = True
@@ -214,4 +226,5 @@ Partial Class Frgyslist
     Friend WithEvents Button1 As System.Windows.Forms.Button
     Friend WithEvents DataGridView2 As System.Windows.Forms.DataGridView
     Friend WithEvents GroupBox2 As System.Windows.Forms.GroupBox
+    Friend WithEvents toExcel As System.Windows.Forms.Button
 End Class

@@ -89,12 +89,13 @@ Public Class Frkc_List
                 Case "待定"
                     strWhere &= " and tb_wlphck_wlbs not in (select tb_qa_wlbs from tb_qa where tb_qa_qaspjg<>'待定')"
                 Case Else
-                    strWhere &= " and tb_wlphck_wlbs in (select tb_qa_wlbs from tb_qa where tb_qa_qaspjg='" & ComboQc.Text & "')"
+                    strWhere &= " and tb_wlphck_wlbs in (select tb_qa_wlbs from tb_qa where tb_qa_qaspjg='" & ComboQa.Text & "')"
             End Select
         End If
         Dim sql As String = "select b.tb_wp_pm,b.tb_wp_dm,(tb_wlphck_cjcl+tb_wlphck_bfb+tb_wlphck_kdlk+tb_wlphck_storagemslk+tb_wlphck_storagewzlk) as 仓库存量," &
-            "a.*,c.tb_wlph_cjfs "
-        sql &= " from tb_wlphck as a left join tb_wp as b on a.tb_wlphck_wpbs=b.tb_wp_ID left join tb_wlph as c on a.tb_wlphck_wlbs=c.tb_wlph_ID"
+            "a.*,c.tb_wlph_cjfs,d.tb_qa_ftime,d.tb_qa_qaspjg,d.tb_qa_qaytjy,d.tb_qa_qajgsm,d.tb_qa_czr "
+        sql &= " from tb_wlphck as a left join tb_wp as b on a.tb_wlphck_wpbs=b.tb_wp_ID left join tb_wlph as c on a.tb_wlphck_wlbs=c.tb_wlph_ID "
+        sql &= " left join tb_qa as d on a.tb_wlphck_ID=d.tb_qa_wlbs"
         sql &= " where tb_wlphck_wpbs=" & m_wpDt.YanDtValue2("tb_wp_ID") & " " & strWhere
 
         Dim dt As DataTable = sql.YanGetDb
@@ -202,7 +203,7 @@ Public Class Frkc_List
     End Sub
     Private Sub showList3(Optional pWhere As String = "")
         Dim sql As String = "select tb_wp_pm,tb_wp_dm,case when tb_syjl_xz=0 then '出' else '入' end 性质,tb_syjl_ftime," & vbCrLf & _
-        "tb_syjl_czlx,tb_syjl_zl,tb_syjl_cjcl,tb_syjl_bfb,tb_syjl_kdlk,tb_syjl_storagewzlk," & vbCrLf & _
+        "tb_syjl_czlx,tb_syjl_zl,tb_syjl_cjcl,tb_syjl_bfb,tb_syjl_kdlk,tb_syjl_storagemslk,tb_syjl_storagewzlk,tb_syjl_ctime,tb_syjl_czrgh," & vbCrLf & _
         "(select tb_biaoinf_mx from tb_biaoinf where tb_biaoinf_mc=tb_syjl_yb) as 源," & vbCrLf & _
         "(select tb_biaoinf_mx from tb_biaoinf where tb_biaoinf_mc=tb_syjl_mbb) as 目标" & vbCrLf & _
         "from tb_syjl as a left join tb_wp as b on a.tb_syjl_wpbs=b.tb_wp_ID" & vbCrLf & _
@@ -210,5 +211,4 @@ Public Class Frkc_List
         Dim dt As DataTable = sql.YanGetDb
         dt.YanDataBind(show3, "")
     End Sub
-
 End Class

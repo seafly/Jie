@@ -48,7 +48,9 @@
         Dim n1 As String = GF_gettrqsj(t1.Text)
         Dim n2 As String = t2.Text
         Dim n3 As String = t3.Text.Trim
-
+        If n2 = "" Then
+            n2 = "待定"
+        End If
         If n2 = "不合格" And n3 = "" Then
             MsgBox(n2 & "请填写原因")
             Exit Sub
@@ -62,7 +64,7 @@
         dataDic("tb_qa_qaspjg") = n2
         dataDic("tb_qa_qajgsm") = n3
         dataDic("tb_qa_qaytjy") = qaytjy.Text
-        dataDic("tb_qa_czr") = qaytjy.Text
+        dataDic("tb_qa_czr") = G_dlrgh
         dataDic("tb_qa_wlbs") = m_wlbs
 
         Dim sql As String = "select tb_qa_ID from tb_qa where tb_qa_wlbs=" & m_wlbs
@@ -72,7 +74,7 @@
         Else
             _D.insertData("tb_qa", dataDic)
         End If
-        Me.Close()
+        me.DialogResult=DialogResult.OK
     End Sub
 
     Private Sub Buttdel_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Buttdel.Click

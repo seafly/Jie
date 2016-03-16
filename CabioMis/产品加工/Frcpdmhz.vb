@@ -243,7 +243,15 @@ Public Class Frcpdmhz
                 'show1.Columns("tb_QcJc_wlbs").Visible = False
             Case "查询BOM"
                 Dim sql As String
-                sql = "select tb_cpdmhz_ID,tb_cpdmhz_cplx,tb_cpdmhz_cpdm,tb_cpdmhz_jgdm,tb_cpdmhz_yxx,tb_cpdmhz_cpxz,tb_cpdmhz_cpjz,tb_cpdmhz_cpy,tb_cpdmhz_my,tb_cpdmhz_gjt,tb_cpdmhz_2a01a001,tb_cpdmhz_2a01a002,tb_cpdmhz_2a01a003,tb_cpdmhz_2a01a007,tb_cpdmhz_2a02a008,tb_cpdmhz_2a02a002,tb_cpdmhz_2a01a006,tb_cpdmhz_2a02a005,tb_cpdmhz_2a02a007,tb_cpdmhz_2a02a009,tb_cpdmhz_2a02a006,tb_cpdmhz_2a02a001,tb_cpdmhz_2a02a011,tb_cpdmhz_2a02a012,tb_cpdmhz_2a04a001,tb_cpdmhz_2a04a002,tb_cpdmhz_2a04a003,tb_cpdmhz_2a04a004,tb_cpdmhz_2a04a005,tb_cpdmhz_2a04a006,tb_cpdmhz_2a04a007,tb_cpdmhz_2a04a010,tb_cpdmhz_5a01a006,tb_cpdmhz_5a02a001,tb_cpdmhz_5a03a003,tb_cpdmhz_5a03a002,tb_cpdmhz_5a01a009,tb_cpdmhz_3a08a003,tb_cpdmhz_5a03a006,tb_cpdmhz_5a02a004,tb_cpdmhz_5a01a004,tb_cpdmhz_3a06a001,tb_cpdmhz_3a08a004,tb_cpdmhz_3a08a002,tb_cpdmhz_3a08a005,tb_cpdmhz_3a07a010,tb_cpdmhz_3a07a011,tb_cpdmhz_3a07a020,tb_cpdmhz_5a02a002,tb_cpdmhz_5a03a005,tb_cpdmhz_2a04a014,tb_cpdmhz_3a08a001,tb_cpdmhz_3a09a006,tb_cpdmhz_3a07a019,tb_cpdmhz_3a09a022,tb_cpdmhz_3a08a019,tb_cpdmhz_3a08a020,tb_cpdmhz_bz,tb_cpdmhz_bz1,tb_cpdmhz_bomczr,tb_cpdmhz_bomrq,tb_cpdmhz_bcpxz,tb_cpdmhz_cpdmczr,tb_cpdmhz_cpdmrq "
+                sql = "select tb_cpdmhz_ID,tb_cpdmhz_cplx,tb_cpdmhz_cpdm,tb_cpdmhz_jgdm,tb_cpdmhz_yxx,tb_cpdmhz_cpxz,tb_cpdmhz_cpjz,tb_cpdmhz_cpy,tb_cpdmhz_my," &
+                    "tb_cpdmhz_gjt,tb_cpdmhz_2a01a001,tb_cpdmhz_2a01a002,tb_cpdmhz_2a01a003,tb_cpdmhz_2a01a007,tb_cpdmhz_2a02a008,tb_cpdmhz_2a02a002," &
+                    "tb_cpdmhz_2a01a006,tb_cpdmhz_2a02a005,tb_cpdmhz_2a02a007,tb_cpdmhz_2a02a009,tb_cpdmhz_2a02a006,tb_cpdmhz_2a02a001,tb_cpdmhz_2a02a011," &
+                    "tb_cpdmhz_2a02a012,tb_cpdmhz_2a04a001,tb_cpdmhz_2a04a002,tb_cpdmhz_2a04a003,tb_cpdmhz_2a04a004,tb_cpdmhz_2a04a005,tb_cpdmhz_2a04a006," &
+                    "tb_cpdmhz_2a04a007,tb_cpdmhz_2a04a010,tb_cpdmhz_5a01a006,tb_cpdmhz_5a02a001,tb_cpdmhz_5a03a003,tb_cpdmhz_5a03a002,tb_cpdmhz_5a01a009," &
+                    "tb_cpdmhz_3a08a003,tb_cpdmhz_5a03a006,tb_cpdmhz_5a02a004,tb_cpdmhz_5a01a004,tb_cpdmhz_3a06a001,tb_cpdmhz_3a08a004,tb_cpdmhz_3a08a002," &
+                    "tb_cpdmhz_3a08a005,tb_cpdmhz_3a07a010,tb_cpdmhz_3a07a011,tb_cpdmhz_3a07a020,tb_cpdmhz_5a02a002,tb_cpdmhz_5a03a005,tb_cpdmhz_2a04a014," &
+                    "tb_cpdmhz_3a08a001,tb_cpdmhz_3a09a006,tb_cpdmhz_3a07a019,tb_cpdmhz_3a09a022,tb_cpdmhz_3a08a019,tb_cpdmhz_3a08a020,tb_cpdmhz_bz," &
+                    "tb_cpdmhz_bz1,tb_cpdmhz_bomczr,tb_cpdmhz_bomrq,tb_cpdmhz_bcpxz,tb_cpdmhz_cpdmczr,tb_cpdmhz_cpdmrq "
                 sql &= " from tb_cpdmhz"
                 Dim dt As DataTable = DeepCode.DeepDoDataTable.GF_CreateDataSource(G_cnnstr, sql)
                 GS_DataGridViewbyDb(show1, dt, True, True)
@@ -254,7 +262,10 @@ Public Class Frcpdmhz
                 show1.Rows(show1.Rows.Count - 1).Selected = True
             Case "查询产能"
                 Dim sql As String
-                sql = "select tb_cpdmhz_ID,tb_cpdmhz_cplx,tb_cpdmhz_cpdm,tb_cpdmhz_jgdm,tb_cpdmhz_yxx,tb_cpdmhz_cpxz,tb_cpdmhz_cnsm,tb_cpdmhz_cpdpccsj,tb_cpdmhz_dpbzsj,tb_cpdmhz_pltr,tb_cpdmhz_trphlyq,tb_cpdmhz_cpdpcl,tb_cpdmhz_yzdscsj,tb_cpdmhz_yzdccps,tb_cpdmhz_ytrl,tb_cpdmhz_yzdccl,tb_cpdmhz_cpxl,tb_cpdmhz_cpzhl,tb_cpdmhz_njzq,tb_cpdmhz_wjzq,tb_cpdmhz_lldpsj,tb_cpdmhz_lldptrl,tb_cpdmhz_lldpcl,tb_cpdmhz_llyscsj,tb_cpdmhz_llyccps,tb_cpdmhz_llcpxl,tb_cpdmhz_llcpzhl,tb_cpdmhz_cnczr,tb_cpdmhz_cnrq "
+                sql = "select tb_cpdmhz_ID,tb_cpdmhz_cplx,tb_cpdmhz_cpdm,tb_cpdmhz_jgdm,tb_cpdmhz_yxx,tb_cpdmhz_cpxz,tb_cpdmhz_cnsm,tb_cpdmhz_cpdpccsj,tb_cpdmhz_dpbzsj," &
+                    "tb_cpdmhz_pltr,tb_cpdmhz_trphlyq,tb_cpdmhz_cpdpcl,tb_cpdmhz_yzdscsj,tb_cpdmhz_yzdccps,tb_cpdmhz_ytrl,tb_cpdmhz_yzdccl,tb_cpdmhz_cpxl,tb_cpdmhz_cpzhl," &
+                    "tb_cpdmhz_njzq,tb_cpdmhz_wjzq,tb_cpdmhz_lldpsj,tb_cpdmhz_lldptrl,tb_cpdmhz_lldpcl,tb_cpdmhz_llyscsj,tb_cpdmhz_llyccps,tb_cpdmhz_llcpxl," &
+                    "tb_cpdmhz_llcpzhl,tb_cpdmhz_cnczr,tb_cpdmhz_cnrq "
                 sql &= " from tb_cpdmhz"
                 Dim dt As DataTable = DeepCode.DeepDoDataTable.GF_CreateDataSource(G_cnnstr, sql)
 

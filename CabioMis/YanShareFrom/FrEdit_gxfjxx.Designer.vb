@@ -116,7 +116,7 @@ Partial Class FrEdit_gxfjxx
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(70, 12)
         Me.Label3.TabIndex = 4
-        Me.Label3.Text = "是否必须"
+        Me.Label3.Text = "是否必填"
         Me.Label3.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
         'rowBs

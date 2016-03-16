@@ -37,15 +37,22 @@ Public Class frzchuo
         Dim cpdmzd As String = "" '生产代码字段
         'listview1
         Select Case fn
-            Case "tb_x825p"
-                sql = "select " & fn & "_id," & fn & "_mingc," & fn & "_jiagdm," & fn & "_num," & fn & "_jgrq," & fn & "_hblsrkzl," & fn & "_hblsrkzl," & fn & "_bz ," & fn & "_cw," & fn & "_fhxz from " & fn & " where (" & fn & "_glid is null  or " & fn & "_glid='') "
+            Case "tb_x825p" '毛油
+                'sql = "select " & fn & "_id," & fn & "_mingc," & fn & "_jiagdm," & fn & "_num," & fn & "_jgrq," & fn & "_hblsrkzl," & fn & "_hblsrkzl," & fn & "_bz ," &
+                '    fn & "_cw," & fn & "_fhxz from " & fn & " where (" & fn & "_glid is null  or " & fn & "_glid='') "  '下步ID
+                sql = "select " & fn & "_id," & fn & "_mingc," & fn & "_jiagdm," & fn & "_num," & fn & "_jgrq,tb_x825p_s640k," & fn & "_hblsrkzl," & fn & "_bz ," &
+                    fn & "_cw," & fn & "_fhxz from " & fn & " where (" & fn & "_glid is null  or " & fn & "_glid='') "  '浸出毛油重量，下步ID
                 arazd = "tb_x825pkc_m387e"
-            Case "tb_h195z"
-                sql = "select " & fn & "_id," & fn & "_mingc," & fn & "_jiagdm," & fn & "_num," & fn & "_jgrq," & fn & "_hblsrkzl," & fn & "_bz," & fn & "_cw," & fn & "_fhxz from " & fn & " where " & fn & "_hblsrkzl>0 "   '重量
+            Case "tb_h195z" '成品油
+                'sql = "select " & fn & "_id," & fn & "_mingc," & fn & "_jiagdm," & fn & "_num," & fn & "_jgrq," & fn & "_hblsrkzl," & fn & "_bz," & fn & "_cw," &
+                '    fn & "_fhxz from " & fn & " where " & fn & "_hblsrkzl>0 "   '湖北入库重量
+                sql = "select " & fn & "_id," & fn & "_mingc," & fn & "_jiagdm," & fn & "_num," & fn & "_jgrq,tb_h195z_m408e," & fn & "_bz," & fn & "_cw," &
+                    fn & "_fhxz from " & fn & " where (" & fn & "_glid is null  or " & fn & "_glid='') and not (tb_h195z_hblsrkzl=0 and tb_h195z_bz='由新工厂入库') and tb_h195z_m408e>0"   '成品油重量，条件修改为下步ID
                 arazd = "tb_h195zkc_c6u"
                 'arazd = "[DHA含量/(w/%)]"
-            Case "tb_x832p"
-                sql = "select " & fn & "_id," & fn & "_mingc," & fn & "_jiagdm," & fn & "_num," & fn & "_jgrq," & fn & "_i232a," & fn & "_bz," & fn & "_cw," & fn & "_fhxz from " & fn & " where  " & fn & "_i232a>0 and  (" & fn & "_xbtb is  null or " & fn & "_xbtb='')"  '成品重量
+            Case "tb_x832p" '成品粉
+                sql = "select " & fn & "_id," & fn & "_mingc," & fn & "_jiagdm," & fn & "_num," & fn & "_jgrq," & fn & "_i232a," & fn & "_bz," & fn & "_cw," &
+                    fn & "_fhxz from " & fn & " where  " & fn & "_i232a>0 and  (" & fn & "_xbtb is  null or " & fn & "_xbtb='')"  '成品重量，下步表
                 arazd = "tb_x832pkc_d65v"
                 cpdmzd = ",tb_x832pkc_scdm"
         End Select

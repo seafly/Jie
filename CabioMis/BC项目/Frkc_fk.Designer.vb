@@ -83,6 +83,8 @@ Partial Class Frkc_fk
         Me.tb_wlphck_bfb = New yangNetCl.yanTextBox()
         Me.Label22 = New System.Windows.Forms.Label()
         Me.Label17 = New System.Windows.Forms.Label()
+        Me.tb_syjl_ctime = New chencontrol.chendatepick()
+        Me.Label31 = New System.Windows.Forms.Label()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.SuspendLayout()
@@ -332,7 +334,7 @@ Partial Class Frkc_fk
         '
         'Button1
         '
-        Me.Button1.Location = New System.Drawing.Point(360, 470)
+        Me.Button1.Location = New System.Drawing.Point(347, 498)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(75, 23)
         Me.Button1.TabIndex = 16
@@ -673,11 +675,30 @@ Partial Class Frkc_fk
         Me.Label17.TabIndex = 7
         Me.Label17.Text = "外租冷库"
         '
+        'tb_syjl_ctime
+        '
+        Me.tb_syjl_ctime.BackColor = System.Drawing.Color.Wheat
+        Me.tb_syjl_ctime.Location = New System.Drawing.Point(83, 450)
+        Me.tb_syjl_ctime.Name = "tb_syjl_ctime"
+        Me.tb_syjl_ctime.Size = New System.Drawing.Size(122, 21)
+        Me.tb_syjl_ctime.TabIndex = 156
+        '
+        'Label31
+        '
+        Me.Label31.AutoSize = True
+        Me.Label31.Location = New System.Drawing.Point(24, 454)
+        Me.Label31.Name = "Label31"
+        Me.Label31.Size = New System.Drawing.Size(53, 12)
+        Me.Label31.TabIndex = 155
+        Me.Label31.Text = "操作时间"
+        '
         'Frkc_fk
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 12.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(794, 505)
+        Me.ClientSize = New System.Drawing.Size(794, 533)
+        Me.Controls.Add(Me.tb_syjl_ctime)
+        Me.Controls.Add(Me.Label31)
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.Button1)
@@ -693,6 +714,7 @@ Partial Class Frkc_fk
         Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox2.PerformLayout()
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
     Friend WithEvents tb_wlphck_storagewzlk As yangNetCl.yanTextBox
@@ -756,4 +778,6 @@ Partial Class Frkc_fk
     Friend WithEvents Label29 As System.Windows.Forms.Label
     Friend WithEvents tb_wlphck_ID As System.Windows.Forms.TextBox
     Friend WithEvents Label30 As System.Windows.Forms.Label
+    Friend WithEvents tb_syjl_ctime As chencontrol.chendatepick
+    Friend WithEvents Label31 As System.Windows.Forms.Label
 End Class

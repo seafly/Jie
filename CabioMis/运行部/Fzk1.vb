@@ -1,5 +1,4 @@
 ﻿Public Class Fzk1
-
     Private Sub Fzk1_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         Me.Icon = G_icon : Me.BackgroundImage = G_backimg
         '''''''''''''''''''''''''''''''''''上面显示
@@ -27,8 +26,8 @@
         cnn.ConnectionString = cnnstr
         cnn.Open()
         Dim sql As String = "select * from " & str & " where " & str & "_num='" & str3 & "' and  " & str & "_i231a= '" & str4 & "' "
-        Dim RS = cnn.execute(sql)
-        If RS.eof Or RS.bof Then
+        Dim RS = cnn.Execute(sql)
+        If RS.EOF Or RS.BOF Then
             Return
         End If
         Dim j As Integer, nn As DateTimePicker
@@ -37,8 +36,8 @@
                 If Microsoft.VisualBasic.Left(.Controls(j).Name, 3) = "tb_" Then
                     Dim zdsz As String = .Controls(j).Name
                     Dim sj As String = ""
-                    If IsDBNull(RS(zdsz).value) = False Then
-                        sj = RS(zdsz).value
+                    If IsDBNull(RS(zdsz).Value) = False Then
+                        sj = RS(zdsz).Value
                     End If
                     If .Controls(j).GetType.Name = "DateTimePicker" Then
                         nn = .Controls(j)
@@ -57,7 +56,7 @@
                 End If
             Next
         End With
-        RS.close() : RS = Nothing : cnn.close() : cnn = Nothing
+        RS.Close() : RS = Nothing : cnn.Close() : cnn = Nothing
     End Sub
 
     Private Sub Button2_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button2.Click
@@ -75,7 +74,6 @@
         wz()
     End Sub
 
-
     Private Sub showsearch()
         Dim sql As String
         Dim dt As DataTable
@@ -85,11 +83,11 @@
             MsgBox("起时间应当小于等于止时间") : Return
         End If
 
-        Sql = "select tb_yljch.tb_yljch_ID,tb_yljch.tb_yljch_yllb,tb_yljch.tb_yljch_dm,tb_yljch.tb_yljch_mc,tb_yljch.tb_yljch_jhdh,tb_yljch.tb_yljch_num,tb_yljch.tb_yljch_sl,tb_yljch.tb_yljch_rq,tb_yljch.tb_yljch_gg,tb_yljch.tb_yljch_dw,tb_yljch.tb_yljch_yt,tb_yljch.tb_yljch_bz,tb_yljch.tb_yljch_czrgh,tb_yljch.tb_yljch_xgsm,tb_yljch.tb_yljch_cz from tb_yljch ,tb_ylzk  "
-        Sql &= "where tb_yljch_rq between  '" & tt1 & "' and '" & tt2 & "' and tb_ylzk.tb_ylzk_yldm = tb_yljch.tb_yljch_dm And tb_yljch.tb_yljch_num = tb_ylzk.tb_ylzk_num and tb_yljch.tb_yljch_cz='进' "
+        sql = "select tb_yljch.tb_yljch_ID,tb_yljch.tb_yljch_yllb,tb_yljch.tb_yljch_dm,tb_yljch.tb_yljch_mc,tb_yljch.tb_yljch_jhdh,tb_yljch.tb_yljch_num,tb_yljch.tb_yljch_sl,tb_yljch.tb_yljch_rq,tb_yljch.tb_yljch_gg,tb_yljch.tb_yljch_dw,tb_yljch.tb_yljch_yt,tb_yljch.tb_yljch_bz,tb_yljch.tb_yljch_czrgh,tb_yljch.tb_yljch_xgsm,tb_yljch.tb_yljch_cz from tb_yljch ,tb_ylzk  "
+        sql &= "where tb_yljch_rq between  '" & tt1 & "' and '" & tt2 & "' and tb_ylzk.tb_ylzk_yldm = tb_yljch.tb_yljch_dm And tb_yljch.tb_yljch_num = tb_ylzk.tb_ylzk_num and tb_yljch.tb_yljch_cz='进' "
         Dim sqlbdssep As String = GF_FaceSearchBDS(ComboBox1, TextBox1) '文本查询函数：挂接到查询文本
-        Sql &= sqlbdssep
-        dt = DeepCode.DeepDoDataTable.GF_CreateDataSource(G_cnnstr, Sql)
+        sql &= sqlbdssep
+        dt = DeepCode.DeepDoDataTable.GF_CreateDataSource(G_cnnstr, sql)
         GS_DataGridViewbyDb(DataGridView1, dt, True, True)
         GroupBox2.Text = "武汉物料进出货：" & dt.Rows.Count & "条记录"
         GS_FaceSearch(ComboBox1, "tb_yljch", 1) '添加原料进出货下拉框

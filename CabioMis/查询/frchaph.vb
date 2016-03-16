@@ -137,8 +137,8 @@ Public Class frchaph
             dt = GF_CreateDataSource(G_cnnstrWH, sql)
         Else
             '通过工序得到工厂连接字符串
-            Dim bmconnstr As String = GF_cnwithen(TbSearch, "table='" & TableName & "'", 2)
-            Dim sql As String = "select * from  " & TableName & " where " & TableName & "_id in(" & IdString & ")"
+            Dim bmconnstr As String = GF_cnwithen(TbSearch, "table='" & TableName.Split(",")(0).Trim() & "'", 2)
+            Dim sql As String = "select * from  " & TableName.Split(",")(0).Trim() & " where " & TableName.Split(",")(0).Trim() & "_id in(" & IdString & ")"
             dt = GF_CreateDataSource(bmconnstr, sql)
 
         End If
@@ -147,15 +147,15 @@ Public Class frchaph
             If .Rows.Count = 0 Then
                 Return
             End If
-            .TableName = GF_cnwithen(TbSearch, "table='" & TableName & "'", 1) '得到表中文名
+            .TableName = GF_cnwithen(TbSearch, "table='" & TableName.Split(",")(0).Trim() & "'", 1) '得到表中文名
             Alljh.Add(dt) '集合显示的是符合条件的湖北工厂的成品油
             If TableName = "tb_zzg" Then
                 Return
             End If
 
-            sbtb = GetIdString(dt, TableName & "_sbtb") '得到上步表
+            sbtb = GetIdString(dt, TableName.Split(",")(0).Trim() & "_sbtb") '得到上步表
 
-            sbid = GetIdString(dt, TableName & "_sbid") '得到上步ID
+            sbid = GetIdString(dt, TableName.Split(",")(0).Trim() & "_sbid") '得到上步ID
 
         End With
 

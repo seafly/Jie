@@ -13,7 +13,7 @@ Public Class Frgyslist
         'sql &= sqlbdssep
         'Dim dt As DataTable = DeepCode.DeepDoDataTable.GF_CreateDataSource(G_cnnstr, sql)
         'GS_DataGridViewbyDb(DataGridView2, dt, "0", True, True)
-        showsj
+        showsj()
     End Sub
 
 
@@ -75,5 +75,9 @@ Public Class Frgyslist
                                              DataGridView2.Rows.Remove(DataGridView2.SelectedRows(0))
                                          End Sub
         dt2.YanDataBind(DataGridView2, "tb_GysTwo_ID", menu1)
+    End Sub
+
+    Private Sub toExcel_Click(sender As Object, e As EventArgs) Handles toExcel.Click
+        GS_toexcel(DataGridView2, Me.Text, Me)
     End Sub
 End Class

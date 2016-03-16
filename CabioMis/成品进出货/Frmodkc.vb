@@ -60,7 +60,6 @@ Public Class Frmodkc
             sql = "select * from " & fn & " where " & fn & "_ID not in (" & Cl_DataMag.YanDttoStr(m_dt, fn & "_ID") & ") and " & fn & "_num='" & ph.Text.Trim & "'and " & bm & "_mingc='" & ComboBox2.Tag & "'and " & bm & "_jiagdm='" & ComboBox3.Tag & "'" & _
             " order by " & bm & "_id desc"
             If Cl_DataMag.GF_CreateDataSource(sql).Rows.Count > 0 Then
-                '如果想相同的那么更新最新那条数据的数量
                 MsgBox("已有相同的记录！")
                 Return
             Else

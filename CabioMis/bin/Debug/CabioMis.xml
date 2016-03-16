@@ -6,33 +6,17 @@ CabioMis
 </name>
 </assembly>
 <members>
-<member name="T:CabioMis.FrAddwjgf">
+<member name="M:CabioMis.FrgxAdd.setCccp">
 	<summary>
- 添加外加工粉
+ 产出产品 的过程
  </summary>
-</member><member name="T:CabioMis.FrListYl_slqk">
+</member><member name="M:CabioMis.FrgxAdd.setFjxx">
 	<summary>
- 根据传来的物料代码显示该物料在所有流程中的使用情况
+ 设置附加信息的过程
  </summary>
-</member><member name="F:CabioMis.Frkc_List.m_wpDt">
+</member><member name="T:CabioMis.FrYanJcJsl">
 	<summary>
- 流程产出的物品代码
- </summary>
-</member><member name="M:CabioMis.Frkc_List.modKc">
-	<summary>
- 库存调整
- </summary>
-</member><member name="M:CabioMis.Frkc_List.showScxq(System.Object,System.EventArgs)">
-	<summary>
- 显示对应条目中的详情
- </summary>
-</member><member name="M:CabioMis.Frkc_List.setSearchText">
-	<summary>
- 填充查询下拉的文本
- </summary>
-</member><member name="T:CabioMis.FrQcShowView">
-	<summary>
- QC审核界面
+ 检测及时率统计表
  </summary>
 </member><member name="F:CabioMis.FrTj_Scqk_cp.m_strSclc">
 	<summary>
@@ -42,177 +26,96 @@ CabioMis
 	<summary>
  产品生产列表（显示详细批次）
  </summary>
-</member><member name="M:CabioMis.Frgn_list.setMenu">
+</member><member name="M:CabioMis.Md_Storage.UpdateTbname(System.String,System.String,System.String,System.String,yangNetCl.Cl_DataMag.myTransaction)">
 	<summary>
- 设置头部菜单
+ 更新添加仓库信息表
  </summary>
-</member><member name="T:CabioMis.Frgn_list">
+	<param name="sbid"></param>
+	<param name="tbname"></param>
+	<param name="sl"></param>
+	<param name="zdm"></param>
+	<remarks></remarks>
+</member><member name="M:CabioMis.Md_Storage.ReturnTbname(System.String,System.String,System.String,System.String,yangNetCl.Cl_DataMag.myTransaction)">
 	<summary>
- 暂时没用
+ 更新有关仓库信息库存表
  </summary>
-</member><member name="M:CabioMis.FrgxAdd.setCccp">
+	<param name="sbid"></param>
+	<param name="tbname"></param>
+	<param name="sl"></param>
+	<param name="zdm"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="T:CabioMis.Frzk">
 	<summary>
- 产出产品 的过程
+ 转库到湖北
  </summary>
-</member><member name="M:CabioMis.FrgxAdd.setFjxx">
+</member><member name="T:CabioMis.FrQcShowView">
 	<summary>
- 设置附加信息的过程
+ QC审核界面
  </summary>
 </member><member name="T:CabioMis.FrEdit_gxcp">
 	<summary>
  编辑工序产品
  </summary>
-</member><member name="F:CabioMis.FrbcList.m_gxszDt">
+</member><member name="T:CabioMis.Frfangong">
 	<summary>
- 工艺信息
+ 返工油和粉的混合操作
  </summary>
-</member><member name="M:CabioMis.FrbcList.setMenu">
-	<summary>
- 设置头部菜单
- </summary>
-</member><member name="M:CabioMis.FrbcList.showList">
-	<summary>
- 显示当前生产的列表
- </summary>
-</member><member name="M:CabioMis.FrbcList.showScxq(System.Object,System.EventArgs)">
-	<summary>
- 显示对应条目中的详情
- </summary>
-</member><member name="M:CabioMis.FrbcList.addPh_Click(System.Object,System.EventArgs)">
-	<summary>
- 编辑生产信息
- </summary>
-</member><member name="M:CabioMis.FrbcList.delPh">
-	<summary>
- 删除生产信息
- </summary>
-</member><member name="M:CabioMis.FrbcList.setSearchText">
-	<summary>
- 填充查询下拉的文本
- </summary>
-</member><member name="T:CabioMis.FrRightNow">
-	<summary>
- 到货即时率
- </summary>
-</member><member name="M:CabioMis.Md_Yw2.GS_yanUpdatePhzl(System.Windows.Forms.Control,System.String,System.Windows.Forms.TextBox,System.Windows.Forms.TextBox,System.String)">
-	<summary>
- 更新批号序列原表的数量
- </summary>
-	<param name="pFr">操作窗体</param>
-	<param name="pMbzdname">目标字段名</param>
-	<param name="pPh">批号文本框</param>
-	<param name="pZl">重量文本框</param>
-	<param name="pBszd">标识字段名</param>
-</member><member name="M:CabioMis.Md_Yw2.GS_GETGUANGUZ(System.Data.DataTable,System.String,System.Windows.Forms.Form)">
-	<summary>
- '得到原料罐的估计重量
- </summary>
-	<param name="gtable">原料罐DATATABLE</param>
-	<param name="phkj">原料批号控件</param>
-	<param name="whichform">窗体</param>
 	<remarks></remarks>
-</member><member name="M:CabioMis.Md_Yw2.GS_TCYLLIST_yan(System.Windows.Forms.Form,CabioMis.frYanPhzl.CLphzlPam)">
+</member><member name="T:CabioMis.FrAddwjgf">
 	<summary>
- 弹出原料窗体过程
+ 添加外加工粉
  </summary>
-	<param name="pFrOwner">父窗体</param>
-</member><member name="P:CabioMis.My.Resources.Resources.ResourceManager">
+</member><member name="F:CabioMis.Frqa_Add.m_jcbNum">
 	<summary>
-  返回此类使用的缓存的 ResourceManager 实例。
-</summary>
-</member><member name="P:CabioMis.My.Resources.Resources.Culture">
-	<summary>
-  使用此强类型资源类，为所有资源查找
-  重写当前线程的 CurrentUICulture 属性。
-</summary>
-</member><member name="T:CabioMis.My.Resources.Resources">
-	<summary>
-  一个强类型的资源类，用于查找本地化的字符串等。
-</summary>
-</member><member name="T:CabioMis.yanTextBox">
-	<summary>
- 只能输入数字的textbox
- </summary>
-</member><member name="T:CabioMis.mo_YanZdy.en_wpfl">
-	<summary>
- 物品分类
- </summary>
-</member><member name="T:CabioMis.mo_YanZdy.en_Tjzd">
-	<summary>
- 原料详细列表
- </summary>
-</member><member name="T:CabioMis.mo_YanZdy.en_Yltj">
-	<summary>
- 原料统计
- </summary>
-</member><member name="T:CabioMis.mo_YanZdy.en_LcTj">
-	<summary>
- 流程详情
- </summary>
-</member><member name="T:CabioMis.mo_YanZdy.en_PcTj">
-	<summary>
- 流程统计
- </summary>
-</member><member name="T:CabioMis.mo_YanZdy.en_LcTableName">
-	<summary>
- 流程表名
- </summary>
-</member><member name="T:CabioMis.mo_YanZdy.en_Bllx">
-	<summary>
- 存贮性质
- </summary>
-</member><member name="T:CabioMis.mo_YanZdy.en_xtLb">
-	<summary>
- 系统类别
- </summary>
-</member><member name="T:CabioMis.mo_YanZdy.en_cpMc">
-	<summary>
- 成品名称
- </summary>
-</member><member name="T:CabioMis.mo_YanZdy.en_QcLX">
-	<summary>
- qc类型
- </summary>
-</member><member name="T:CabioMis.mo_YanZdy.en_saveBb">
-	<summary>
- 保存报表
- </summary>
-</member><member name="T:CabioMis.mo_YanZdy.en_qaJg">
-	<summary>
- QA结果
- </summary>
-</member><member name="T:CabioMis.mo_YanZdy.en_qaYtJy">
-	<summary>
- QA用途建议
- </summary>
-</member><member name="T:CabioMis.mo_YanZdy.en_cklist">
-	<summary>
- 仓库列表
- </summary>
-</member><member name="T:CabioMis.mo_YanZdy.en_fjxxLx">
-	<summary>
- 附加信息类型
- </summary>
-</member><member name="T:CabioMis.mo_YanZdy.en_phEx">
-	<summary>
- 扩展批号类型
- </summary>
-</member><member name="T:CabioMis.mo_YanZdy.en_sczt">
-	<summary>
- 生产状态
- </summary>
-</member><member name="T:CabioMis.mo_YanZdy.en_kcyt">
-	<summary>
- 库存用途
- </summary>
-</member><member name="F:CabioMis.mo_YanZdy.G_loadimg">
-	<summary>
- LOAD图片
+ 流程标识
  </summary>
 </member><member name="T:CabioMis.FrTj_Scqk">
 	<summary>
  流程统计
  </summary>
+</member><member name="M:CabioMis.cl_theCl.getShowDtWltj(System.String,System.String,System.String,System.String)">
+	<summary>
+ 获取物料使用情况列表
+ </summary>
+	<param name="pStrWldm">物料代码</param>
+	<param name="pStlph">物料批号</param>
+	<returns>返回物料的使用列表</returns>
+	<remarks>如果批号为空，那么列出该物料所有批号的列表</remarks>
+</member><member name="M:CabioMis.cl_theCl.setQcshowView(System.Data.DataTable@,System.Int32,System.String,System.Boolean,System.Int32)">
+	<summary>
+ 添加QC结果列(源数据表为已有数据的表，将QC的列和结果添加上去)
+ </summary>
+	<param name="pDt">源数据表</param>
+	<param name="pJcbNum">QC来源表</param>
+	<param name="pWldm">原料的物料代码</param>
+	<param name="isAddva">是否添加检测结果</param>
+</member><member name="M:CabioMis.cl_theCl.setQcshowViewForQA(System.String,System.Int32)">
+	<summary>
+ 将QC项目转为DT，每个项目一列
+ </summary>
+	<param name="tableName">检测表</param>
+	<param name="id">物料标识</param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:CabioMis.cl_theCl.getBb(CabioMis.mo_YanZdy.en_saveBb,System.String)">
+	<summary>
+ 获取报表
+ </summary>
+</member><member name="M:CabioMis.cl_theCl.saveBb(CabioMis.mo_YanZdy.en_saveBb,System.Object,System.Int32)">
+	<summary>
+ 保存报表
+ </summary>
+</member><member name="M:CabioMis.cl_theCl.getZdDataType(System.String)">
+	<summary>
+ 将.NET数据类型转成相应的SQL数据类型
+ </summary>
+</member><member name="M:CabioMis.cl_theCl.getCkslToTb(System.String,System.Int32)">
+	<summary>
+ 获取一个指定标识的仓库存量
+ </summary>
+	<param name="pTbName"></param>
+	<param name="pId"></param>
 </member><member name="T:CabioMis.cl_getWhere">
 	<summary>
  条件表达式
@@ -295,6 +198,81 @@ CabioMis
 	<summary>
  单个物品的QC设定
  </summary>
+</member><member name="M:CabioMis.fryxyb.ToExcel_Click(System.Object,System.EventArgs)">
+
+以上复制的是能耗月报的源代码（止）
+ 
+
+</member><member name="T:CabioMis.yanTextBox">
+	<summary>
+ 只能输入数字的textbox
+ </summary>
+</member><member name="M:CabioMis.Md_DataDo.GF_czmctb(System.Data.DataTable,System.String)">
+	<summary>
+ 在DataTable中查询返回 一个DataTable
+ </summary>
+</member><member name="M:CabioMis.Md_DataDo.GF_modsj(System.String,System.Windows.Forms.Form,System.String)">
+	<summary>
+ 更新数据
+ </summary>
+	<param name="str">表</param>
+	<param name="str2">窗体</param>
+	<param name="str3">标识</param>
+</member><member name="M:CabioMis.Md_DataDo.Gs_showsj(System.String,System.Windows.Forms.Form,System.String)">
+	<summary>
+ 将数据库内的值填入窗体控件
+ </summary>
+	<param name="str">表</param>
+	<param name="str2">窗体</param>
+	<param name="str3">表对应的ID</param>
+</member><member name="M:CabioMis.Md_DataDo.GF_CheckRepeat(System.String,System.String,System.String,System.String)">
+	<summary>
+ 检测某字段的同样的值有多少个，可以用来判断数据重复
+ </summary>
+	<param name="strcnn"></param>
+	<param name="TableName"></param>
+	<param name="Field"></param>
+	<param name="FieldValue"></param>
+	<returns>返回多少</returns>
+	<remarks></remarks>
+</member><member name="M:CabioMis.Md_DataDo.GF_CheckRepeat(System.String,System.String,System.String)">
+	<summary>
+ 检测某表达式在数据库的数据条数
+ </summary>
+	<param name="strcnn"></param>
+	<param name="TableName"></param>
+	<param name="SQLBDS">表达式</param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:CabioMis.Frqg.bjlc">
+	<summary>
+备件在请购审核通过后直接进入采购流程
+ </summary>
+	<remarks></remarks>
+</member><member name="M:CabioMis.Frgn_list.setMenu">
+	<summary>
+ 设置头部菜单
+ </summary>
+</member><member name="T:CabioMis.Frgn_list">
+	<summary>
+ 暂时没用
+ </summary>
+</member><member name="F:CabioMis.Frkc_List.m_wpDt">
+	<summary>
+ 流程产出的物品代码
+ </summary>
+</member><member name="M:CabioMis.Frkc_List.modKc">
+	<summary>
+ 库存调整
+ </summary>
+</member><member name="M:CabioMis.Frkc_List.showScxq(System.Object,System.EventArgs)">
+	<summary>
+ 显示对应条目中的详情
+ </summary>
+</member><member name="M:CabioMis.Frkc_List.setSearchText">
+	<summary>
+ 填充查询下拉的文本
+ </summary>
 </member><member name="F:CabioMis.FrTj_Scqk_yl.m_Dt">
 	<summary>
  显示的数据源
@@ -303,70 +281,6 @@ CabioMis
 	<summary>
  原料使用列表
  </summary>
-</member><member name="T:CabioMis.FrYanJcJsl">
-	<summary>
- 检测及时率统计表
- </summary>
-</member><member name="M:CabioMis.fryxyb.ToExcel_Click(System.Object,System.EventArgs)">
-
-以上复制的是能耗月报的源代码（止）
- 
-
-</member><member name="M:CabioMis.cl_theCl.getShowDtWltj(System.String,System.String,System.String,System.String)">
-	<summary>
- 获取物料使用情况列表
- </summary>
-	<param name="pStrWldm">物料代码</param>
-	<param name="pStlph">物料批号</param>
-	<returns>返回物料的使用列表</returns>
-	<remarks>如果批号为空，那么列出该物料所有批号的列表</remarks>
-</member><member name="M:CabioMis.cl_theCl.setQcshowView(System.Data.DataTable@,System.Int32,System.String,System.Boolean,System.Int32)">
-	<summary>
- 添加QC结果列(源数据表为已有数据的表，将QC的列和结果添加上去)
- </summary>
-	<param name="pDt">源数据表</param>
-	<param name="pJcbNum">QC来源表</param>
-	<param name="pWldm">原料的物料代码</param>
-	<param name="isAddva">是否添加检测结果</param>
-</member><member name="M:CabioMis.cl_theCl.setQcshowViewForQA(System.String,System.Int32)">
-	<summary>
- 将QC项目转为DT，每个项目一列
- </summary>
-	<param name="tableName">检测表</param>
-	<param name="id">物料标识</param>
-	<returns></returns>
-	<remarks></remarks>
-</member><member name="M:CabioMis.cl_theCl.getBb(CabioMis.mo_YanZdy.en_saveBb,System.String)">
-	<summary>
- 获取报表
- </summary>
-</member><member name="M:CabioMis.cl_theCl.saveBb(CabioMis.mo_YanZdy.en_saveBb,System.Object,System.Int32)">
-	<summary>
- 保存报表
- </summary>
-</member><member name="M:CabioMis.cl_theCl.getZdDataType(System.String)">
-	<summary>
- 将.NET数据类型转成相应的SQL数据类型
- </summary>
-</member><member name="M:CabioMis.cl_theCl.getCkslToTb(System.String,System.Int32)">
-	<summary>
- 获取一个指定标识的仓库存量
- </summary>
-	<param name="pTbName"></param>
-	<param name="pId"></param>
-</member><member name="M:CabioMis.Frshow_list.makeDhcc(System.Object,System.EventArgs)">
-	<summary>
- 冬化多选产出
- </summary>
-</member><member name="M:CabioMis.Frshow_list.makeCpy">
-	<summary>
- 多选脱臭产出成品油
- </summary>
-</member><member name="M:CabioMis.Frqg.bjlc">
-	<summary>
-备件在请购审核通过后直接进入采购流程
- </summary>
-	<remarks></remarks>
 </member><member name="M:CabioMis.Frkc_fk.kcKeyPress(System.Object,System.Windows.Forms.KeyPressEventArgs)">
 	<summary>
  更新原库存（只能减少）
@@ -439,51 +353,68 @@ CabioMis
 	<summary>
  更新批号
  </summary>
-</member><member name="M:CabioMis.Md_DataDo.GF_czmctb(System.Data.DataTable,System.String)">
+</member><member name="M:CabioMis.Md_FileDo.GS_toexcel(System.Windows.Forms.Control,System.String,System.Windows.Forms.Form)">
 	<summary>
- 在DataTable中查询返回 一个DataTable
+ 对ListView、或DataGridView内容转存为excel
  </summary>
-</member><member name="M:CabioMis.Md_DataDo.GF_modsj(System.String,System.Windows.Forms.Form,System.String)">
-	<summary>
- 更新数据
- </summary>
-	<param name="str">表</param>
-	<param name="str2">窗体</param>
-	<param name="str3">标识</param>
-</member><member name="M:CabioMis.Md_DataDo.Gs_showsj(System.String,System.Windows.Forms.Form,System.String)">
-	<summary>
- 将数据库内的值填入窗体控件
- </summary>
-	<param name="str">表</param>
-	<param name="str2">窗体</param>
-	<param name="str3">表对应的ID</param>
-</member><member name="M:CabioMis.Md_DataDo.GF_CheckRepeat(System.String,System.String,System.String,System.String)">
-	<summary>
- 检测某字段的同样的值有多少个，可以用来判断数据重复
- </summary>
-	<param name="strcnn"></param>
-	<param name="TableName"></param>
-	<param name="Field"></param>
-	<param name="FieldValue"></param>
-	<returns>返回多少</returns>
-	<remarks></remarks>
-</member><member name="M:CabioMis.Md_DataDo.GF_CheckRepeat(System.String,System.String,System.String)">
-	<summary>
- 检测某表达式在数据库的数据条数
- </summary>
-	<param name="strcnn"></param>
-	<param name="TableName"></param>
-	<param name="SQLBDS">表达式</param>
-	<returns></returns>
-	<remarks></remarks>
+	<param name="lst">数据源</param>
+	<param name="excelbt">文件名称</param>
+	<param name="xx">窗体</param>
 </member><member name="F:CabioMis.Frtb_ylqa.m_jcbNum">
 	<summary>
  流程标识
+ </summary>
+</member><member name="P:CabioMis.My.Resources.Resources.ResourceManager">
+	<summary>
+  返回此类使用的缓存的 ResourceManager 实例。
+</summary>
+</member><member name="P:CabioMis.My.Resources.Resources.Culture">
+	<summary>
+  使用此强类型资源类，为所有资源查找
+  重写当前线程的 CurrentUICulture 属性。
+</summary>
+</member><member name="T:CabioMis.My.Resources.Resources">
+	<summary>
+  一个强类型的资源类，用于查找本地化的字符串等。
+</summary>
+</member><member name="M:CabioMis.Frshow_list.makeDhcc(System.Object,System.EventArgs)">
+	<summary>
+ 冬化多选产出
+ </summary>
+</member><member name="M:CabioMis.Frshow_list.makeCpy">
+	<summary>
+ 多选脱臭产出成品油
+ </summary>
+</member><member name="T:CabioMis.frchuhuo">
+	<summary>
+ 成品进出货
  </summary>
 </member><member name="T:CabioMis.Frkc_tz">
 	<summary>
  库存调整
  </summary>
+</member><member name="M:CabioMis.Md_Yw2.GS_yanUpdatePhzl(System.Windows.Forms.Control,System.String,System.Windows.Forms.TextBox,System.Windows.Forms.TextBox,System.String)">
+	<summary>
+ 更新批号序列原表的数量
+ </summary>
+	<param name="pFr">操作窗体</param>
+	<param name="pMbzdname">目标字段名</param>
+	<param name="pPh">批号文本框</param>
+	<param name="pZl">重量文本框</param>
+	<param name="pBszd">标识字段名</param>
+</member><member name="M:CabioMis.Md_Yw2.GS_GETGUANGUZ(System.Data.DataTable,System.String,System.Windows.Forms.Form)">
+	<summary>
+ '得到原料罐的估计重量
+ </summary>
+	<param name="gtable">原料罐DATATABLE</param>
+	<param name="phkj">原料批号控件</param>
+	<param name="whichform">窗体</param>
+	<remarks></remarks>
+</member><member name="M:CabioMis.Md_Yw2.GS_TCYLLIST_yan(System.Windows.Forms.Form,CabioMis.frYanPhzl.CLphzlPam)">
+	<summary>
+ 弹出原料窗体过程
+ </summary>
+	<param name="pFrOwner">父窗体</param>
 </member><member name="F:CabioMis.frYanPhzl.CLphzlPam.souserDt">
 	<summary>
  显示列表的数据源
@@ -581,6 +512,126 @@ CabioMis
 	<summary>
  粉剂配料
  </summary>
+</member><member name="T:CabioMis.Frzdybb.en_state">
+	<summary>
+ 处理状态
+ </summary>
+</member><member name="T:CabioMis.mo_YanZdy.en_wpfl">
+	<summary>
+ 物品分类
+ </summary>
+</member><member name="T:CabioMis.mo_YanZdy.en_Tjzd">
+	<summary>
+ 原料详细列表
+ </summary>
+</member><member name="T:CabioMis.mo_YanZdy.en_Yltj">
+	<summary>
+ 原料统计
+ </summary>
+</member><member name="T:CabioMis.mo_YanZdy.en_LcTj">
+	<summary>
+ 流程详情
+ </summary>
+</member><member name="T:CabioMis.mo_YanZdy.en_PcTj">
+	<summary>
+ 流程统计
+ </summary>
+</member><member name="T:CabioMis.mo_YanZdy.en_LcTableName">
+	<summary>
+ 流程表名
+ </summary>
+</member><member name="T:CabioMis.mo_YanZdy.en_Bllx">
+	<summary>
+ 存贮性质
+ </summary>
+</member><member name="T:CabioMis.mo_YanZdy.en_xtLb">
+	<summary>
+ 系统类别
+ </summary>
+</member><member name="T:CabioMis.mo_YanZdy.en_cpMc">
+	<summary>
+ 成品名称
+ </summary>
+</member><member name="T:CabioMis.mo_YanZdy.en_QcLX">
+	<summary>
+ qc类型
+ </summary>
+</member><member name="T:CabioMis.mo_YanZdy.en_saveBb">
+	<summary>
+ 保存报表
+ </summary>
+</member><member name="T:CabioMis.mo_YanZdy.en_qaJg">
+	<summary>
+ QA结果
+ </summary>
+</member><member name="T:CabioMis.mo_YanZdy.en_qaYtJy">
+	<summary>
+ QA用途建议
+ </summary>
+</member><member name="T:CabioMis.mo_YanZdy.en_cklist">
+	<summary>
+ 仓库列表
+ </summary>
+</member><member name="T:CabioMis.mo_YanZdy.en_fjxxLx">
+	<summary>
+ 附加信息类型
+ </summary>
+</member><member name="T:CabioMis.mo_YanZdy.en_phEx">
+	<summary>
+ 扩展批号类型
+ </summary>
+</member><member name="T:CabioMis.mo_YanZdy.en_sczt">
+	<summary>
+ 生产状态
+ </summary>
+</member><member name="T:CabioMis.mo_YanZdy.en_kcyt">
+	<summary>
+ 库存用途
+ </summary>
+</member><member name="F:CabioMis.mo_YanZdy.G_loadimg">
+	<summary>
+ LOAD图片
+ </summary>
+</member><member name="T:CabioMis.FrRightNow">
+	<summary>
+ 到货即时率
+ </summary>
+</member><member name="F:CabioMis.FrbcList.m_gxszDt">
+	<summary>
+ 工艺信息
+ </summary>
+</member><member name="M:CabioMis.FrbcList.setMenu">
+	<summary>
+ 设置头部菜单
+ </summary>
+</member><member name="M:CabioMis.FrbcList.showList">
+	<summary>
+ 显示当前生产的列表
+ </summary>
+</member><member name="M:CabioMis.FrbcList.showScxq(System.Object,System.EventArgs)">
+	<summary>
+ 显示对应条目中的详情
+ </summary>
+</member><member name="M:CabioMis.FrbcList.addPh_Click(System.Object,System.EventArgs)">
+	<summary>
+ 编辑生产信息
+ </summary>
+</member><member name="M:CabioMis.FrbcList.delPh">
+	<summary>
+ 删除生产信息
+ </summary>
+</member><member name="M:CabioMis.FrbcList.setSearchText">
+	<summary>
+ 填充查询下拉的文本
+ </summary>
+</member><member name="M:CabioMis.Frkc_ck.kcKeyPress(System.Object,System.Windows.Forms.KeyPressEventArgs)">
+	<summary>
+ 更新原库存（只能减少）
+ </summary>
+</member><member name="T:CabioMis.Frddzqzfl">
+	<summary>
+ 年度订单交付率统计表
+ </summary>
 </member><member name="M:CabioMis.Md_ContrDo.GS_wlbktlr2(System.Windows.Forms.ComboBox,System.Data.DataTable,System.Int32,System.String,System.Boolean)">
 	<summary>
  根据DB为一个ComboBox构建下拉
@@ -633,33 +684,9 @@ CabioMis
 	<param name="Model">0表示无CheckBox模式，为1表示有CheckBox模式，为2表示有select模式</param>
 	<returns></returns>
 	<remarks></remarks>
-</member><member name="M:CabioMis.Md_FileDo.GS_toexcel(System.Windows.Forms.Control,System.String,System.Windows.Forms.Form)">
+</member><member name="T:CabioMis.FrListYl_slqk">
 	<summary>
- 对ListView、或DataGridView内容转存为excel
- </summary>
-	<param name="lst">数据源</param>
-	<param name="excelbt">文件名称</param>
-	<param name="xx">窗体</param>
-</member><member name="M:CabioMis.Frkc_ck.kcKeyPress(System.Object,System.Windows.Forms.KeyPressEventArgs)">
-	<summary>
- 更新原库存（只能减少）
- </summary>
-</member><member name="F:CabioMis.Frqa_Add.m_jcbNum">
-	<summary>
- 流程标识
- </summary>
-</member><member name="T:CabioMis.Frfangong">
-	<summary>
- 返工油和粉的混合操作
- </summary>
-	<remarks></remarks>
-</member><member name="T:CabioMis.Frddzqzfl">
-	<summary>
- 年度订单交付率统计表
- </summary>
-</member><member name="T:CabioMis.Frzdybb.en_state">
-	<summary>
- 处理状态
+ 根据传来的物料代码显示该物料在所有流程中的使用情况
  </summary>
 </member>
 </members>
