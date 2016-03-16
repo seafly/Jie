@@ -1,0 +1,12 @@
+E:\Project\Jie\CabioMis\Cabio.DLL\obj\Debug\Cabio.DLL.csprojResolveAssemblyReference.cache
+E:\Project\Jie\CabioMis\Cabio.DLL\bin\Debug\Cabio.DLL.dll.config
+E:\Project\Jie\CabioMis\Cabio.DLL\bin\Debug\Cabio.DLL.dll
+E:\Project\Jie\CabioMis\Cabio.DLL\bin\Debug\Cabio.DLL.pdb
+E:\Project\Jie\CabioMis\Cabio.DLL\bin\Debug\Cabio.Model.dll
+E:\Project\Jie\CabioMis\Cabio.DLL\bin\Debug\EntityFramework.dll
+E:\Project\Jie\CabioMis\Cabio.DLL\bin\Debug\EntityFramework.SqlServer.dll
+E:\Project\Jie\CabioMis\Cabio.DLL\bin\Debug\Cabio.Model.pdb
+E:\Project\Jie\CabioMis\Cabio.DLL\bin\Debug\EntityFramework.xml
+E:\Project\Jie\CabioMis\Cabio.DLL\bin\Debug\EntityFramework.SqlServer.xml
+E:\Project\Jie\CabioMis\Cabio.DLL\obj\Debug\Cabio.DLL.dll
+E:\Project\Jie\CabioMis\Cabio.DLL\obj\Debug\Cabio.DLL.pdb

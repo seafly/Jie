@@ -5,7 +5,7 @@ Public Class frlogin
     Private Sub frlogin_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
 
         'Dim holder As ResourceHolder = ResourceHolder.getInstance()
-#if not DEBUG Then
+#If Not Debug Then
     Version.Text = checkUpdate()
 #End If
         '¡¯¡®¡¯¡®¡¯¡®¡¯¡®¡¯¡®¡¯¡®¡¯¡®¡¯¡®¡¯¡®¡¯¡®¡¯¡®¡¯¡®¡¯¡®¡¯¡®
@@ -31,7 +31,8 @@ Public Class frlogin
             fwq = sr.ReadLine()
             sr.Close()
         End Using
-
+        Dim mmm As New Cabio.Model.Crafts.tb_gxsz()
+        mmm = New Cabio.BLL.Crafts.CraftsSettingBll().First()
         G_cnnstr = "Provider=sqloledb; User ID=" & yhm & "; Password=" & mm & "; Initial Catalog=" & sjk & "; Data Source=" & fwq & ";"
         G_cnnstrWH = "Provider=sqloledb; User ID=" & yhm & "; Password=" & mm & "; Initial Catalog=hb" & sjk & "; Data Source=" & fwq & ";"
         '***********************

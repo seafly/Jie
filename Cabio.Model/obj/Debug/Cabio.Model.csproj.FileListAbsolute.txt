@@ -1,0 +1,4 @@
+E:\Project\Jie\CabioMis\Cabio.Model\bin\Debug\Cabio.Model.dll
+E:\Project\Jie\CabioMis\Cabio.Model\bin\Debug\Cabio.Model.pdb
+E:\Project\Jie\CabioMis\Cabio.Model\obj\Debug\Cabio.Model.dll
+E:\Project\Jie\CabioMis\Cabio.Model\obj\Debug\Cabio.Model.pdb
