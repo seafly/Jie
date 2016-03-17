@@ -42,26 +42,26 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Cabio.BLL.dll" size="5632">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Cabio.BLL.dll" size="4608">
       <assemblyIdentity name="Cabio.BLL" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>ynIDxycI2dIl6fuVMdXHjXtLAPE=</dsig:DigestValue>
+        <dsig:DigestValue>b5v9JkPHDribkQkYC7ywcLf6eK8=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Cabio.DLL.dll" size="5120">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Cabio.DLL.dll" size="4608">
       <assemblyIdentity name="Cabio.DLL" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>29jpZa2EKmzDZFVo3Wbwi7LJ8fE=</dsig:DigestValue>
+        <dsig:DigestValue>nqbYw9hKsyY0za2Lb6zAHh1GC/s=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -73,19 +73,19 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>tZKM//vxmG6m5dmfa71TqDZvV8w=</dsig:DigestValue>
+        <dsig:DigestValue>VdR9jKMleDFk9RXOrgl7I0v0UtE=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="CabioMis.exe" size="6694400">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="CabioMis.exe" size="6694912">
       <assemblyIdentity name="CabioMis" version="2.1.0.0" language="neutral" processorArchitecture="x86" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>B+yplsSw/bUQuXlsyM+NqraM4FE=</dsig:DigestValue>
+        <dsig:DigestValue>5R5N8WMVWsS7WE6oz1vex/wTah8=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -98,6 +98,42 @@
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
         <dsig:DigestValue>jWCboz8UFhd/FYOSGtxcoGEUKz0=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="COM.Excel.dll" size="15360">
+      <assemblyIdentity name="COM.Excel" version="1.1.1606.17082" language="neutral" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+        <dsig:DigestValue>YTo8w202VDR6qI+YOG2F590tibg=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="com.uceip.Common.dll" size="118784">
+      <assemblyIdentity name="com.uceip.Common" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+        <dsig:DigestValue>JAR57NU7D/2ASYb884JPTG0x+zE=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="com.uceip.DBUtility.dll" size="39936">
+      <assemblyIdentity name="com.uceip.DBUtility" version="2.2.0.0" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+        <dsig:DigestValue>DwEYcEkOcmYVgF4Ou5NkStfN4rU=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -138,6 +174,54 @@
     </dependentAssembly>
   </dependency>
   <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="IBatisNet.Common.dll" size="102400">
+      <assemblyIdentity name="IBatisNet.Common" version="1.6.2.0" publicKeyToken="ED781D9FC396C6CA" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+        <dsig:DigestValue>/3lSCpFLbNQZXbf87NO3BIsaKKo=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="IBatisNet.DataAccess.dll" size="57344">
+      <assemblyIdentity name="IBatisNet.DataAccess" version="1.9.2.0" publicKeyToken="ED781D9FC396C6CA" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+        <dsig:DigestValue>RsqrdLdMS4jFIgBllPOXKjYKxp8=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="IBatisNet.DataMapper.dll" size="266240">
+      <assemblyIdentity name="IBatisNet.DataMapper" version="1.6.2.0" publicKeyToken="ED781D9FC396C6CA" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+        <dsig:DigestValue>WAabbs5CopUWrpAHpnLTobwzlAs=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Newtonsoft.Json.dll" size="356352">
+      <assemblyIdentity name="Newtonsoft.Json" version="4.0.3.0" publicKeyToken="30AD4FE6B2A6AEED" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+        <dsig:DigestValue>GMtfLZGe79vLqJQWaPSsYoav6wE=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
     <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="yangNetCl.dll" size="156672">
       <assemblyIdentity name="yangNetCl" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
@@ -149,6 +233,24 @@
       </hash>
     </dependentAssembly>
   </dependency>
+  <file name="bin\Debug\Config\Maps\Crafts\CraftsSetting.xml" size="1139" writeableType="applicationData">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>L84JJ7YYhPyqXcW93dwd0VNXpx0=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="bin\Debug\Config\Maps\Crafts\SysUser.xml" size="18234" writeableType="applicationData">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>J48rN+XD4Ly+glNI4bMn1p2xrHg=</dsig:DigestValue>
+    </hash>
+  </file>
   <file name="CabioMis.exe.config" size="2231">
     <hash>
       <dsig:Transforms>
@@ -165,6 +267,24 @@
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
       <dsig:DigestValue>dZIemgtttNhA5rJ9RS7OUx1EMaE=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Config\Maps\Crafts\CraftsSetting.xml" size="5500" writeableType="applicationData">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>PgTq/IMqvDAvmXeCmW5ChYOmD+s=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Config\Maps\Crafts\SysUser.xml" size="18234" writeableType="applicationData">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>J48rN+XD4Ly+glNI4bMn1p2xrHg=</dsig:DigestValue>
     </hash>
   </file>
   <file name="dx.ico" size="8478">

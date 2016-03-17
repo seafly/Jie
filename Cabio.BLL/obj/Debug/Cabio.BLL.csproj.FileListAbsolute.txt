@@ -26,3 +26,12 @@ E:\Project\Jie\Cabio.BLL\bin\Debug\EntityFramework.SqlServer.xml
 E:\Project\Jie\Cabio.BLL\obj\Debug\Cabio.BLL.csprojResolveAssemblyReference.cache
 E:\Project\Jie\Cabio.BLL\obj\Debug\Cabio.BLL.dll
 E:\Project\Jie\Cabio.BLL\obj\Debug\Cabio.BLL.pdb
+E:\Project\Jie\Cabio.BLL\bin\Debug\com.uceip.DBUtility.dll
+E:\Project\Jie\Cabio.BLL\bin\Debug\IBatisNet.Common.dll
+E:\Project\Jie\Cabio.BLL\bin\Debug\IBatisNet.DataAccess.dll
+E:\Project\Jie\Cabio.BLL\bin\Debug\IBatisNet.DataMapper.dll
+E:\Project\Jie\Cabio.BLL\bin\Debug\com.uceip.Common.dll
+E:\Project\Jie\Cabio.BLL\bin\Debug\Newtonsoft.Json.dll
+E:\Project\Jie\Cabio.BLL\bin\Debug\COM.Excel.dll
+E:\Project\Jie\Cabio.BLL\bin\Debug\com.uceip.DBUtility.pdb
+E:\Project\Jie\Cabio.BLL\bin\Debug\com.uceip.Common.pdb

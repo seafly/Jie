@@ -3305,8 +3305,26 @@
     <None Include="app.config">
       <SubType>Designer</SubType>
     </None>
+    <None Include="bin\Debug\Config\CabioMap.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="bin\Debug\Config\dao.config" />
+    <None Include="bin\Debug\Config\Project.config" />
+    <None Include="bin\Debug\Config\properties.config" />
+    <None Include="bin\Debug\Config\providers.config" />
+    <None Include="bin\Debug\Config\SqlServerMap.config" />
+    <None Include="bin\Debug\Config\SqlServerMapPub.config" />
     <None Include="CabioMis_TemporaryKey.pfx" />
     <None Include="ClassDiagram1.cd" />
+    <None Include="Config\dao.config" />
+    <None Include="Config\Project.config" />
+    <None Include="Config\properties.config" />
+    <None Include="Config\providers.config" />
+    <None Include="Config\SqlServerMap.config" />
+    <None Include="Config\SqlServerMapPub.config" />
+    <None Include="Config\CabioMap.config">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="My Project\app.manifest" />
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
@@ -3338,6 +3356,10 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Chemistry.ico" />
+    <Content Include="bin\Debug\Config\Maps\Crafts\CraftsSetting.xml" />
+    <Content Include="bin\Debug\Config\Maps\Crafts\SysUser.xml" />
+    <Content Include="Config\Maps\Crafts\CraftsSetting.xml" />
+    <Content Include="Config\Maps\Crafts\SysUser.xml" />
     <Content Include="dx.ico" />
   </ItemGroup>
   <ItemGroup>
@@ -3405,7 +3427,12 @@
       <Project>{69fb3577-5ded-4585-b957-ddd0a5bd78c8}</Project>
       <Name>Cabio.Model</Name>
     </ProjectReference>
+    <ProjectReference Include="..\com.uceip.DBUtility\com.uceip.DBUtility.csproj">
+      <Project>{952d90e0-f1ad-426a-a5fc-73585d29d375}</Project>
+      <Name>com.uceip.DBUtility</Name>
+    </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildBinPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

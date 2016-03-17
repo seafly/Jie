@@ -1,0 +1,9 @@
+D:\worknet\uceip-app-public\com.uceip.DBUtility\obj\Release\ResolveAssemblyReference.cache
+D:\worknet\uceip-app-public\com.uceip.DBUtility\bin\Release\com.uceip.DBUtility.dll
+D:\worknet\uceip-app-public\com.uceip.DBUtility\bin\Release\com.uceip.DBUtility.pdb
+D:\worknet\uceip-app-public\com.uceip.DBUtility\bin\Release\IBatisNet.Common.dll
+D:\worknet\uceip-app-public\com.uceip.DBUtility\bin\Release\IBatisNet.DataAccess.dll
+D:\worknet\uceip-app-public\com.uceip.DBUtility\bin\Release\IBatisNet.DataMapper.dll
+D:\worknet\uceip-app-public\com.uceip.DBUtility\bin\Release\MySql.Data.dll
+D:\worknet\uceip-app-public\com.uceip.DBUtility\obj\Release\com.uceip.DBUtility.dll
+D:\worknet\uceip-app-public\com.uceip.DBUtility\obj\Release\com.uceip.DBUtility.pdb

@@ -43,6 +43,15 @@
     <Reference Include="EntityFramework.SqlServer">
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net40\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
+    <Reference Include="IBatisNet.Common">
+      <HintPath>..\Packages\IBatisNet.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="IBatisNet.DataAccess">
+      <HintPath>..\Packages\IBatisNet.DataAccess.dll</HintPath>
+    </Reference>
+    <Reference Include="IBatisNet.DataMapper">
+      <HintPath>..\Packages\IBatisNet.DataMapper.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
@@ -53,9 +62,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Base\BaseDll.cs" />
     <Compile Include="Class1.cs" />
-    <Compile Include="Crafts\CraftsSettingDll.cs" />
+    <Compile Include="Crafts\CraftsSettingDao.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -67,6 +75,10 @@
     <ProjectReference Include="..\Cabio.Model\Cabio.Model.csproj">
       <Project>{69fb3577-5ded-4585-b957-ddd0a5bd78c8}</Project>
       <Name>Cabio.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\com.uceip.DBUtility\com.uceip.DBUtility.csproj">
+      <Project>{952d90e0-f1ad-426a-a5fc-73585d29d375}</Project>
+      <Name>com.uceip.DBUtility</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

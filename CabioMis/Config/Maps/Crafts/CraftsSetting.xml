@@ -1,0 +1,139 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<sqlMap namespace="tb_gxsz" xmlns="http://ibatis.apache.org/mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+  <alias>
+    <typeAlias alias="tb_gxsz" type="Cabio.Model.Crafts.tb_gxsz,Cabio.Model" />
+  </alias>
+
+
+  <statements>
+    <select id="gettb_gxszById" resultClass="tb_gxsz" parameterClass="int">
+      select * from tb_gxsz where tb_gxsz_ID = 1
+    </select>
+
+    <select id="gettb_gxszByMap" resultClass="tb_gxsz" parameterClass="map">
+      select a.ID,UserName,UserPwd,ui.name as TrueName,Serils,b.DepartmentName as Department,ui.DepartmentId,
+      c.PostName,ui.email as EmailStr,IfLogin,a.FenjiHao,a.ShortCode,a.DeskBj,
+      ui.Sex,BackInfo,ui.telephone as Shouji,Gsdianhua,State,ui.PostId,a.Sn,ActiveTime,ui.statusid as Status,
+      FirstLogin,LastLoginTime,version,d.Name as PostLevelName
+      from Sys_User a
+      left join sys_userinfo ui on a.ID=ui.userid
+      left join Sys_Department b on b.id=ui.departmentid
+      left join Sys_Post c on c.id=ui.postid
+      left join CT_Sys_PostLevelName d on c.postLevel = d.id
+      <![CDATA[ where a.State <>  9 ]]>
+      <dynamic>
+        <isNotEmpty prepend="AND" property="UserName">
+          a.UserName = #UserName#
+        </isNotEmpty>
+        <isNotEmpty prepend="AND" property="UserPwd">
+          a.UserPwd = #UserPwd#
+        </isNotEmpty>
+      </dynamic>
+      order by a.Sn Desc
+    </select>
+
+    <select id="querytb_gxszList" resultClass="tb_gxsz" parameterClass="map">
+      select a.ID,UserName,UserPwd,ui.name as TrueName,Serils,b.DepartmentName as Department,ui.DepartmentId,
+      c.PostName,ui.email as EmailStr,IfLogin,a.FenjiHao,a.ShortCode,a.DeskBj,
+      ui.Sex,BackInfo,ui.telephone as Shouji,Gsdianhua,State,ui.PostId,a.Sn,ActiveTime,ui.statusid as Status,
+      FirstLogin,LastLoginTime,version,d.Name as PostLevelName
+      from Sys_User a
+      left join sys_userinfo ui on a.ID=ui.userid
+      left join Sys_Department b on b.id=ui.departmentid
+      left join Sys_Post c on c.id=ui.postid
+      left join CT_Sys_PostLevelName d on c.postLevel = d.id
+      <![CDATA[ where a.State <>  9 ]]>
+      <dynamic>
+        <isNotNull prepend="AND" property="IdList">
+          a.ID in ($IdList$)
+        </isNotNull>
+        <isNotNull prepend="AND" property="UserName">
+          a.UserName like #UserName#
+        </isNotNull>
+        <isNotNull prepend="AND" property="UserNameAll">
+          a.UserName = #UserNameAll#
+        </isNotNull>
+        <isNotNull prepend="AND" property="OrUserName">
+          a.UserName like #OrUserName# Or ui.Name like #OrTrueName#
+        </isNotNull>
+        <isNotNull prepend="AND" property="TrueName">
+          ui.name like #TrueName#
+        </isNotNull>
+        <isNotNull prepend="AND" property="TrueNameAll">
+          ui.name = #TrueNameAll#
+        </isNotNull>
+        <isNotNull prepend="AND" property="Department">
+          b.DepartmentName like #Department#
+        </isNotNull>
+        <isNotNull prepend="AND" property="PostName">
+          c.PostName like #PostName#
+        </isNotNull>
+        <isNotNull prepend="AND" property="EmailStrNot">
+          (ui.email is not null and len(ui.email) > 5 )
+        </isNotNull>
+        <isNotNull prepend="AND" property="StatusIDzz">
+          (ui.StatusID = 1 or ui.StatusID = 5)
+        </isNotNull>
+        <isNotNull prepend="AND" property="Shouji">
+          <![CDATA[ ui.telephone is not null and ui.telephone <> '']]>
+        </isNotNull>
+        <!--<isNotNull prepend="AND" property="online">
+          <![CDATA[datediff(minute,ActiveTime,getdate())<10]]>
+        </isNotNull>-->
+        <isNotNull prepend="and" property="Status">
+          ui.StatusID = #Status#
+        </isNotNull>
+        <isNotNull prepend="and" property="PostIdList">
+          ui.PostId in ($PostIdList$)
+        </isNotNull>
+        <isNotNull prepend="and" property="DepartmentIdList">
+          ui.DepartmentId in ($DepartmentIdList$)
+        </isNotNull>
+        <isNotNull prepend="and" property="IfLogin">
+          IfLogin = #IfLogin#
+        </isNotNull>
+        <isNotNull prepend="and" property="PostId">
+          ui.PostId = #PostId#
+        </isNotNull>
+        <!--EmpUser不为空，去掉已经被人员关联的用户-->
+        <isNotNull prepend="and" property="EmpUser">
+          a.ID not in (select userid from sys_userinfo where empid is not null and userid is not null)
+        </isNotNull>
+      </dynamic>
+      order by a.Sn
+    </select>
+
+    <insert id="inserttb_gxsz" parameterClass="tb_gxsz">
+      insert into Sys_User
+      (ID,UserName,UserPwd,Serils,ActiveTime,IfLogin,BackInfo,
+      Gsdianhua,State,Sn,FirstLogin,LastLoginTime,FenjiHao,ShortCode,DeskBj)
+      values
+      (#ID#,#UserName#,#UserPwd#,#Serils#,#ActiveTime#,#IfLogin#,#BackInfo#,
+      #Gsdianhua#,#State#,#Sn#,#FirstLogin#,#LastLoginTime#,#FenjiHao#,#ShortCode#,#DeskBj#)
+    </insert>
+
+    <update id="updatetb_gxsz" parameterClass="tb_gxsz">
+      update Sys_User
+      set UserName = #UserName#,
+      UserPwd = #UserPwd#,
+      Serils=#Serils#,
+      IfLogin=#IfLogin#,
+      BackInfo=#BackInfo#,
+      Gsdianhua=#Gsdianhua#,
+      State = #State#,
+      Sn=#Sn#,
+      version=#version#,
+      FenjiHao= #FenjiHao#,
+      ShortCode = #ShortCode#,
+      DeskBj=#DeskBj#
+      where ID = #ID#
+    </update>
+
+    <delete id="deletetb_gxsz" parameterClass="string">
+      update Sys_User set State = 9 where ID in ($value$)
+    </delete>
+
+  </statements>
+
+</sqlMap>

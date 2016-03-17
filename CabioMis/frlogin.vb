@@ -32,7 +32,7 @@ Public Class frlogin
             sr.Close()
         End Using
         Dim mmm As New Cabio.Model.Crafts.tb_gxsz()
-        mmm = New Cabio.BLL.Crafts.CraftsSettingBll().First()
+        mmm = New Cabio.BLL.Crafts.CraftsSettingService().GetObject(1)
         G_cnnstr = "Provider=sqloledb; User ID=" & yhm & "; Password=" & mm & "; Initial Catalog=" & sjk & "; Data Source=" & fwq & ";"
         G_cnnstrWH = "Provider=sqloledb; User ID=" & yhm & "; Password=" & mm & "; Initial Catalog=hb" & sjk & "; Data Source=" & fwq & ";"
         '***********************
