@@ -3356,8 +3356,10 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Chemistry.ico" />
-    <Content Include="bin\Debug\Config\Maps\Crafts\CraftsSetting.xml" />
     <Content Include="bin\Debug\Config\Maps\Crafts\SysUser.xml" />
+    <Content Include="bin\Debug\Config\Maps\Crafts\tb_gxcccp.xml" />
+    <Content Include="bin\Debug\Config\Maps\Crafts\tb_gxfjxx.xml" />
+    <Content Include="bin\Debug\Config\Maps\Crafts\tb_gxsz.xml" />
     <Content Include="Config\Maps\Crafts\CraftsSetting.xml" />
     <Content Include="Config\Maps\Crafts\SysUser.xml" />
     <Content Include="dx.ico" />

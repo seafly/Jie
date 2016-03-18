@@ -8,8 +8,7 @@ namespace Cabio.Model.Crafts
 {
     //tb_gxfjxx
     public class tb_gxfjxx
-    {
-
+    {        
         /// <summary>
         /// tb_gxfjxx_ID
         /// </summary>		

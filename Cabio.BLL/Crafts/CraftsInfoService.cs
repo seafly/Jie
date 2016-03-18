@@ -10,14 +10,14 @@ using Cabio.DLL.Crafts;
 namespace Cabio.BLL.Crafts
 {
     /// <summary>
-    /// 工艺设置服务
+    /// 工艺附件信息服务
     /// </summary>
-    public class CraftsSettingService : BaseService<tb_gxsz>
+    public class CraftsInfoService : BaseService<tb_gxfjxx>
     {
-        public CraftsSettingService()
+        public CraftsInfoService()
         {
             _daoManager = ServiceConfig.GetInstance().DaoManager;
-            dao = new CraftsSettingDao(_daoManager);
+            dao = new CraftsInfoDao(_daoManager);
         }
     }
 }
