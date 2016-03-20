@@ -46,14 +46,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Code\tb_bcbm.cs" />
     <Compile Include="Crafts\tb_gxcccp.cs" />
     <Compile Include="Crafts\tb_gxfjxx.cs" />
     <Compile Include="Crafts\tb_gxsz.cs" />
+    <Compile Include="Produce\tb_sc.cs" />
+    <Compile Include="Produce\tb_scxq.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="mykey.snk" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

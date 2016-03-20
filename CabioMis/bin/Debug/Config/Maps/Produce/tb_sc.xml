@@ -1,0 +1,114 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<sqlMap namespace="tb_sc" xmlns="http://ibatis.apache.org/mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+  <alias>
+    <typeAlias alias="tb_sc" type="Cabio.Model.Produce.tb_sc,Cabio.Model" />
+  </alias>
+
+  <statements>
+    <select id="gettb_scById" resultClass="tb_sc" parameterClass="int">
+      select
+      tb_sc_ID,
+      tb_sc_ftime,
+      tb_sc_etime,
+      tb_sc_czrgh,
+      tb_sc_gxbs,
+      tb_sc_dh,
+      tb_sc_isEnd,
+      tb_sc_bz
+      from tb_sc
+      where tb_sc_ID = $value$
+    </select>
+
+    <select id="gettb_scByMap" resultClass="tb_sc" parameterClass="map">
+      select
+      tb_sc_ID,
+      tb_sc_ftime,
+      tb_sc_etime,
+      tb_sc_czrgh,
+      tb_sc_gxbs,
+      tb_sc_dh,
+      tb_sc_isEnd,
+      tb_sc_bz
+      from tb_sc
+      <dynamic prepend="where">
+        <isNotEmpty prepend="" property="">
+        </isNotEmpty>
+      </dynamic>
+    </select>
+
+    <select id="querytb_scList" resultClass="tb_sc" parameterClass="map">
+      select
+      tb_sc_ID,
+      tb_sc_ftime,
+      tb_sc_etime,
+      tb_sc_czrgh,
+      tb_sc_gxbs,
+      tb_sc_dh,
+      tb_sc_isEnd,
+      tb_sc_bz
+      from tb_sc
+      <dynamic prepend="where">
+        <isNotEmpty prepend="" property="">
+        </isNotEmpty>
+      </dynamic>
+    </select>
+
+    <insert id="inserttb_sc" parameterClass="tb_sc">
+      insert into tb_sc
+      (
+      tb_sc_ftime,
+      tb_sc_etime,
+      tb_sc_czrgh,
+      tb_sc_gxbs,
+      tb_sc_dh,
+      tb_sc_isEnd,
+      tb_sc_bz
+      )
+      values
+      (
+      #tb_sc_ftime#,
+      #tb_sc_etime#,
+      #tb_sc_czrgh#,
+      #tb_sc_gxbs#,
+      #tb_sc_dh#,
+      #tb_sc_isEnd#,
+      #tb_sc_bz#
+      )
+    </insert>
+
+    <update id="updatetb_sc" parameterClass="tb_sc">
+      update tb_sc set
+      <dynamic>
+        <isNotEmpty prepend="," property="tb_sc_ftime">
+          tb_sc_ftime = #tb_sc_ftime#,
+        </isNotEmpty>
+        <isNotEmpty prepend="," property="tb_sc_etime">
+          tb_sc_etime = #tb_sc_etime#,
+        </isNotEmpty>
+        <isNotEmpty prepend="," property="tb_sc_czrgh">
+          tb_sc_czrgh = #tb_sc_czrgh#,
+        </isNotEmpty>
+        <isNotEmpty prepend="," property="tb_sc_gxbs">
+          tb_sc_gxbs = #tb_sc_gxbs#,
+        </isNotEmpty>
+        <isNotEmpty prepend="," property="tb_sc_dh">
+          tb_sc_dh = #tb_sc_dh#,
+        </isNotEmpty>
+        <isNotEmpty prepend="," property="tb_sc_isEnd">
+          tb_sc_isEnd = #tb_sc_isEnd#,
+        </isNotEmpty>
+        <isNotEmpty prepend="," property="tb_sc_bz">
+          tb_sc_bz = #tb_sc_bz#,
+        </isNotEmpty>
+      </dynamic>
+      where   tb_sc_ID = $tb_sc_ID$
+    </update>
+
+    <delete id="deletetb_sc" parameterClass="string">
+      delete from tb_sc  where   tb_sc_ID = #value#
+    </delete>
+
+  </statements>
+
+</sqlMap>

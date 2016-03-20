@@ -121,13 +121,13 @@ namespace com.uceip.DBUtility.iBatis.BaseImpl
         }
 
         //获得结果集
-        public virtual IList GetListByQuery(Hashtable map, string sql)
+        public virtual IList GetListByQuery(Hashtable map, string statementName)
         {
             IList ilist = null;
             try
             {
                 _daoManager.OpenConnection();
-                ilist = dao.GetListByQuery(map, sql);
+                ilist = dao.GetListByQuery(map, statementName);
             }
             catch (Exception e)
             {

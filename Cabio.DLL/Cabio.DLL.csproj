@@ -56,9 +56,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Code\CustomeizeCodeDao.cs" />
     <Compile Include="Crafts\CraftsInfoDao.cs" />
     <Compile Include="Crafts\CraftsProductDao.cs" />
     <Compile Include="Crafts\CraftsSettingDao.cs" />
+    <Compile Include="Produce\ProduceDao.cs" />
+    <Compile Include="Produce\ProduceDetailDao.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -1,0 +1,123 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<sqlMap namespace="tb_gxfjxx" xmlns="http://ibatis.apache.org/mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+  <alias>
+    <typeAlias alias="tb_gxfjxx" type="Cabio.Model.Crafts.tb_gxfjxx,Cabio.Model" />
+  </alias>
+
+
+  <statements>
+    <select id="gettb_gxfjxxById" resultClass="tb_gxfjxx" parameterClass="int">
+      select
+      tb_gxfjxx_ID,
+      tb_gxfjxx_mc,
+      tb_gxfjxx_gxbs,
+      tb_gxfjxx_lx,
+      tb_gxfjxx_vamin,
+      tb_gxfjxx_vamax,
+      tb_gxfjxx_vadef,
+      tb_gxfjxx_dxz,
+      tb_gxfjxx_isbx
+      from tb_gxfjxx
+      where tb_gxfjxx_ID = $value$
+    </select>
+
+    <select id="gettb_gxfjxxByMap" resultClass="tb_gxfjxx" parameterClass="map">
+      select
+      tb_gxfjxx_ID,
+      tb_gxfjxx_mc,
+      tb_gxfjxx_gxbs,
+      tb_gxfjxx_lx,
+      tb_gxfjxx_vamin,
+      tb_gxfjxx_vamax,
+      tb_gxfjxx_vadef,
+      tb_gxfjxx_dxz,
+      tb_gxfjxx_isbx
+      from tb_gxfjxx
+      <dynamic prepend="where">
+        <isNotEmpty prepend="" property="">
+        </isNotEmpty>
+      </dynamic>
+    </select>
+
+    <select id="querytb_gxfjxxList" resultClass="tb_gxfjxx" parameterClass="map">
+      select
+      tb_gxfjxx_ID,
+      tb_gxfjxx_mc,
+      tb_gxfjxx_gxbs,
+      tb_gxfjxx_lx,
+      tb_gxfjxx_vamin,
+      tb_gxfjxx_vamax,
+      tb_gxfjxx_vadef,
+      tb_gxfjxx_dxz,
+      tb_gxfjxx_isbx
+      from tb_gxfjxx
+      <dynamic prepend="where">
+        <isNotEmpty prepend="" property="">
+        </isNotEmpty>
+      </dynamic>
+    </select>
+
+    <insert id="inserttb_gxfjxx" parameterClass="tb_gxfjxx">
+      insert into tb_gxfjxx
+      (
+      tb_gxfjxx_mc,
+      tb_gxfjxx_gxbs,
+      tb_gxfjxx_lx,
+      tb_gxfjxx_vamin,
+      tb_gxfjxx_vamax,
+      tb_gxfjxx_vadef,
+      tb_gxfjxx_dxz,
+      tb_gxfjxx_isbx
+      )
+      values
+      (
+      #tb_gxfjxx_mc#,
+      #tb_gxfjxx_gxbs#,
+      #tb_gxfjxx_lx#,
+      #tb_gxfjxx_vamin#,
+      #tb_gxfjxx_vamax#,
+      #tb_gxfjxx_vadef#,
+      #tb_gxfjxx_dxz#,
+      #tb_gxfjxx_isbx#
+      )
+    </insert>
+
+    <update id="updatetb_gxfjxx" parameterClass="tb_gxfjxx">
+      update tb_gxfjxx set
+      <dynamic>
+        <isNotEmpty prepend="," property="tb_gxfjxx_mc">
+          tb_gxfjxx_mc = #tb_gxfjxx_mc#,
+        </isNotEmpty>
+        <isNotEmpty prepend="," property="tb_gxfjxx_gxbs">
+          tb_gxfjxx_gxbs = #tb_gxfjxx_gxbs#,
+        </isNotEmpty>
+        <isNotEmpty prepend="," property="tb_gxfjxx_lx">
+          tb_gxfjxx_lx = #tb_gxfjxx_lx#,
+        </isNotEmpty>
+        <isNotEmpty prepend="," property="tb_gxfjxx_vamin">
+          tb_gxfjxx_vamin = #tb_gxfjxx_vamin#,
+        </isNotEmpty>
+        <isNotEmpty prepend="," property="tb_gxfjxx_vamax">
+          tb_gxfjxx_vamax = #tb_gxfjxx_vamax#,
+        </isNotEmpty>
+        <isNotEmpty prepend="," property="tb_gxfjxx_vadef">
+          tb_gxfjxx_vadef = #tb_gxfjxx_vadef#,
+        </isNotEmpty>
+        <isNotEmpty prepend="," property="tb_gxfjxx_dxz">
+          tb_gxfjxx_dxz = #tb_gxfjxx_dxz#,
+        </isNotEmpty>
+        <isNotEmpty prepend="," property="tb_gxfjxx_isbx">
+          tb_gxfjxx_isbx = #tb_gxfjxx_isbx#,
+        </isNotEmpty>
+      </dynamic>
+      where   tb_gxfjxx_ID = $tb_gxfjxx_ID$
+    </update>
+
+    <delete id="deletetb_gxfjxx" parameterClass="string">
+      delete from tb_gxfjxx  where tb_gxfjxx_gxbs = #value#
+    </delete>
+
+  </statements>
+
+</sqlMap>

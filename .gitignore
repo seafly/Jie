@@ -1,4 +1,2 @@
-CabioMis/bin/Debug/
-!CabioMis/bin/Debug/Config/
-CabioMis/obj/Debug/
-#git rm -r --cached .
+#/CabioMis/bin/Debug/
+/CabioMis/obj/Debug/

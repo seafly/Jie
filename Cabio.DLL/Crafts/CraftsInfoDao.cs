@@ -7,8 +7,6 @@ using IBatisNet.DataAccess;
 using com.uceip.DBUtility.iBatis.BaseImpl;
 using Cabio.Model.Crafts;
 
-
-
 namespace Cabio.DLL.Crafts
 {
     public class CraftsInfoDao : BaseDao<tb_gxfjxx>

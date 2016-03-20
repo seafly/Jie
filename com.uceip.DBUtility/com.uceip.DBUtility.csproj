@@ -76,19 +76,13 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="bin\IBatisNet.Common.dll" />
-    <Content Include="bin\IBatisNet.DataAccess.dll" />
-    <Content Include="bin\IBatisNet.DataMapper.dll" />
-    <Content Include="bin\MySql.Data.dll" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="bin\IBatisNet.Common.dll.refresh" />
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\com.uceip.Common\com.uceip.Common.csproj">
       <Project>{0b1b56c9-54e1-4351-b1b1-1f2096bea808}</Project>
       <Name>com.uceip.Common</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="bin\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

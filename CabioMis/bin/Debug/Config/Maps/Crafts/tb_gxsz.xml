@@ -1,0 +1,108 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<sqlMap namespace="tb_gxsz" xmlns="http://ibatis.apache.org/mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+  <alias>
+    <typeAlias alias="tb_gxsz" type="Cabio.Model.Crafts.tb_gxsz,Cabio.Model" />
+  </alias>
+
+
+  <statements>
+    <select id="gettb_gxszById" resultClass="tb_gxsz" parameterClass="int">
+      select
+      tb_gxsz_ID,
+      tb_gxsz_mc,
+      tb_gxsz_px,
+      tb_gxsz_isMod,
+      tb_gxsz_dm,
+      tb_gxsz_isqc,
+      tb_gxsz_isBf
+      from tb_gxsz
+      where tb_gxsz_ID = $value$
+    </select>
+
+    <select id="gettb_gxszByMap" resultClass="tb_gxsz" parameterClass="map">
+      select
+      tb_gxsz_ID,
+      tb_gxsz_mc,
+      tb_gxsz_px,
+      tb_gxsz_isMod,
+      tb_gxsz_dm,
+      tb_gxsz_isqc,
+      tb_gxsz_isBf
+      from tb_gxsz
+      <dynamic prepend="where">
+        <isNotEmpty prepend="" property="">
+        </isNotEmpty>
+      </dynamic>
+    </select>
+
+    <select id="querytb_gxszList" resultClass="tb_gxsz" parameterClass="map">
+      select
+      tb_gxsz_ID,
+      tb_gxsz_mc,
+      tb_gxsz_px,
+      tb_gxsz_isMod,
+      tb_gxsz_dm,
+      tb_gxsz_isqc,
+      tb_gxsz_isBf
+      from tb_gxsz
+      <dynamic prepend="where">
+        <isNotEmpty prepend="" property="">
+        </isNotEmpty>
+      </dynamic>
+      order by tb_gxsz_px
+    </select>
+
+    <insert id="inserttb_gxsz" parameterClass="tb_gxsz">
+      insert into tb_gxsz
+      (
+      tb_gxsz_mc,
+      tb_gxsz_px,
+      tb_gxsz_isMod,
+      tb_gxsz_dm,
+      tb_gxsz_isqc,
+      tb_gxsz_isBf
+      )
+      values
+      (
+      #tb_gxsz_mc#,
+      #tb_gxsz_px#,
+      #tb_gxsz_isMod#,
+      #tb_gxsz_dm#,
+      #tb_gxsz_isqc#,
+      #tb_gxsz_isBf#
+      )
+    </insert>
+
+    <update id="updatetb_gxsz" parameterClass="tb_gxsz">
+      update tb_gxsz set
+      <dynamic>
+        <isNotEmpty prepend="," property="tb_gxsz_mc">
+          tb_gxsz_mc = #tb_gxsz_mc#,
+        </isNotEmpty>
+        <isNotEmpty prepend="," property="tb_gxsz_px">
+          tb_gxsz_px = #tb_gxsz_px#,
+        </isNotEmpty>
+        <isNotEmpty prepend="," property="tb_gxsz_isMod">
+          tb_gxsz_isMod = #tb_gxsz_isMod#,
+        </isNotEmpty>
+        <isNotEmpty prepend="," property="tb_gxsz_dm">
+          tb_gxsz_dm = #tb_gxsz_dm#,
+        </isNotEmpty>
+        <isNotEmpty prepend="," property="tb_gxsz_isqc">
+          tb_gxsz_isqc = #tb_gxsz_isqc#,
+        </isNotEmpty>
+        <isNotEmpty prepend="," property="tb_gxsz_isBf">
+          tb_gxsz_isBf = #tb_gxsz_isBf#,
+        </isNotEmpty>
+      </dynamic>
+      where   tb_gxsz_ID = $tb_gxsz_ID$
+    </update>
+
+    <delete id="deletetb_gxsz" parameterClass="string">
+      delete from tb_gxsz  where   tb_gxsz_ID = #value#
+    </delete>
+
+  </statements>
+
+</sqlMap>
