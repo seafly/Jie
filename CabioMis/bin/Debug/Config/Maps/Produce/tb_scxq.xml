@@ -96,6 +96,17 @@
       delete from tb_scxq  where   tb_scxq_ID = #value#
     </delete>
 
+    <delete id="deletetb_scxqByMap" parameterClass="map">
+      delete from tb_scxq
+      <dynamic prepend="where">
+        <isNotEmpty prepend="and" property="tb_scxq_lx">
+          tb_scxq_lx = #tb_scxq_lx#
+        </isNotEmpty>
+        <isNotEmpty prepend="and" property="tb_scxq_scbs">
+          tb_scxq_scbs = #tb_scxq_scbs#
+        </isNotEmpty>
+      </dynamic>
+    </delete>
   </statements>
 
 </sqlMap>

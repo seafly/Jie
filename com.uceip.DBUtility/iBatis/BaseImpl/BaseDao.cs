@@ -369,6 +369,21 @@ namespace com.uceip.DBUtility.iBatis.BaseImpl
             }
         }
 
+        public virtual int Remove(string statementName, Hashtable map)
+        {
+            ISqlMapper sqlMap = GetLocalSqlMap();
+
+            try
+            {
+                int result = sqlMap.Delete(statementName, map);
+                return result;
+            }
+            catch (Exception e)
+            {
+                throw new IBatisNetException("数据删除错误  Cause: " + e.Message, e);
+            }
+        }
+
         ///
         ///======================================================================
         ///以下方法返回数据集指定行数

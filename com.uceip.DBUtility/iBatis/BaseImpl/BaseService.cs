@@ -245,6 +245,23 @@ namespace com.uceip.DBUtility.iBatis.BaseImpl
             }
             return result;
         }
+
+        public virtual int Remove(string statementName, Hashtable map)
+        {
+            int result = -1;
+            _daoManager.BeginTransaction();
+            try
+            {
+                result = dao.Remove(statementName, map);
+                _daoManager.CommitTransaction();
+            }
+            catch (Exception e)
+            {
+                _daoManager.RollBackTransaction();
+                System.Diagnostics.Debug.Write(e.Message);
+            }
+            return result;
+        }
         ///
         ///======================================================================
         ///以下方法返回数据集指定行数

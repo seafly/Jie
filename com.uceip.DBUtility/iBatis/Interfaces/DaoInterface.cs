@@ -46,6 +46,8 @@ namespace com.uceip.DBUtility.iBatis.Interfaces
 
         int Remove(string statementName, string idlist);
 
+        int Remove(string statementName, Hashtable map);
+
         /// <summary>
         /// 获取指定行数的结果集
         /// </summary>
