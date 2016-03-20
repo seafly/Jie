@@ -60,6 +60,8 @@
     <Compile Include="Crafts\CraftsInfoService.cs" />
     <Compile Include="Crafts\CraftsProductService.cs" />
     <Compile Include="Crafts\CraftsSettingService.cs" />
+    <Compile Include="Material\MaterialService.cs" />
+    <Compile Include="Material\MaterialStockService.cs" />
     <Compile Include="Produce\ProduceDetailService.cs" />
     <Compile Include="Produce\ProduceService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -86,7 +88,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Code\" />
-    <Folder Include="Material\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

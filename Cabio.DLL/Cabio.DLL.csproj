@@ -60,6 +60,8 @@
     <Compile Include="Crafts\CraftsInfoDao.cs" />
     <Compile Include="Crafts\CraftsProductDao.cs" />
     <Compile Include="Crafts\CraftsSettingDao.cs" />
+    <Compile Include="Material\MaterialDao.cs" />
+    <Compile Include="Material\MaterialStockDao.cs" />
     <Compile Include="Produce\ProduceDao.cs" />
     <Compile Include="Produce\ProduceDetailDao.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -78,9 +80,7 @@
       <Name>com.uceip.DBUtility</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Material\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
