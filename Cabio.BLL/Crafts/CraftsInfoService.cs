@@ -21,9 +21,14 @@ namespace Cabio.BLL.Crafts
             dao = new CraftsInfoDao(_daoManager);
         }
 
+        /// <summary>
+        /// 获取工艺附加信息
+        /// </summary>
+        /// <param name="key">工艺标识</param>
+        /// <returns></returns>
         public IList<tb_gxfjxx> getCraftsInfoList(string key)
         {
-            return base.GetListByQuery<tb_gxfjxx>(new Hashtable { { "", key } });
+            return base.GetListByQuery<tb_gxfjxx>(new Hashtable { { "tb_gxfjxx_gxbs", key } });
         }
     }
 }

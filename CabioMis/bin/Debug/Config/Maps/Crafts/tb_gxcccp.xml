@@ -39,9 +39,11 @@
       tb_gxcccp_wpbs,
       tb_gxcccp_isdp,
       tb_gxcccp_ccps
-      from tb_gxcccp
+      from tb_gxcccp a 
+      left join tb_wp b on a.tb_gxcccp_wpbs=b.tb_wp_ID
       <dynamic prepend="where">
-        <isNotEmpty prepend="" property="">
+        <isNotEmpty prepend="and" property="tb_gxcccp_gxbs">
+          a.tb_gxcccp_gxbs = #tb_gxcccp_gxbs#
         </isNotEmpty>
       </dynamic>
     </select>

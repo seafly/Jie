@@ -457,13 +457,13 @@ namespace com.uceip.DBUtility.iBatis.BaseImpl
         /// </summary>
         public virtual IList<Entity> GetListByQuery<Entity>(Hashtable map)
         {
-            string statementName = "query" + typeof(Entity).Name + "ListT";
+            string statementName = "query" + typeof(Entity).Name + "List";
             return GetListByQuery<Entity>(statementName, map);
         }
 
         public virtual IList<Entity> GetListByQuery<Entity>(Hashtable map, int skipResults, int maxResults)
         {
-            string statementName = "query" + typeof(Entity).Name + "ListT";
+            string statementName = "query" + typeof(Entity).Name + "List";
             return GetListByQuery<Entity>(statementName, map, skipResults, maxResults);
         }
 
