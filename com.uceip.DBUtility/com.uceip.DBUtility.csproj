@@ -67,10 +67,6 @@
     <Compile Include="iBatis\BaseImpl\ServiceConfig.cs" />
     <Compile Include="iBatis\BaseImpl\SysTableId.cs" />
     <Compile Include="iBatis\BaseImpl\SysTableIdDao.cs" />
-    <Compile Include="iBatis\DataService\Log\DataServiceLog.cs" />
-    <Compile Include="iBatis\DataService\Log\DataServiceLogConfig.cs" />
-    <Compile Include="iBatis\DataService\Log\DataServiceLogConfigDataHelper.cs" />
-    <Compile Include="iBatis\DataService\Log\DataServiceLogHelper.cs" />
     <Compile Include="iBatis\Interfaces\DaoInterface.cs" />
     <Compile Include="iBatis\Interfaces\ServiceInterface.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -83,6 +79,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="bin\" />
+    <Folder Include="iBatis\DataService\Log\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

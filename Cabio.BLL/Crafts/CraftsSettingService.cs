@@ -39,7 +39,7 @@ namespace Cabio.BLL.Crafts
                 }
                 else
                 {
-                    result = base.Insert(t);
+                    result = dao.Insert(t);
                 }
                 _daoManager.CommitTransaction();
             }
@@ -71,7 +71,7 @@ namespace Cabio.BLL.Crafts
                 }
                 else
                 {
-                    result = base.Update(t);
+                    result = dao.Update(t);
                 }
                 _daoManager.CommitTransaction();
             }

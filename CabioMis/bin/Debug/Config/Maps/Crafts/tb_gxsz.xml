@@ -72,6 +72,10 @@
       #tb_gxsz_isqc#,
       #tb_gxsz_isBf#
       )
+
+      <selectKey resultClass="int" type="post" property="tb_gxsz_ID" >
+        select @@IDENTITY as value
+      </selectKey>
     </insert>
 
     <update id="updatetb_gxsz" parameterClass="tb_gxsz">

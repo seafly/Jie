@@ -17,7 +17,6 @@ using IBatisNet.DataMapper.Scope;
 using System.Reflection;
 using System.Configuration;
 using com.uceip.Common.DEncrypt;
-using com.uceip.DBUtility.iBatis.DataService.Log;
 
 namespace com.uceip.DBUtility.iBatis.BaseImpl
 {
@@ -27,8 +26,6 @@ namespace com.uceip.DBUtility.iBatis.BaseImpl
         public string domainEntity = "";
         public static ISqlMapper sqlMap = null;
         private string fileName = AppDomain.CurrentDomain.BaseDirectory + "\\Config\\ModeSqlMap.config";
-        private DataServiceLogHelper LogDao = new DataServiceLogHelper();
-
         public ISqlMapper GetLocalSqlMap()
         {
             if (sqlMap == null)
@@ -152,11 +149,6 @@ namespace com.uceip.DBUtility.iBatis.BaseImpl
             {
                 sqlMap.BeginTransaction();
                 keyId = (int)sqlMap.Insert(getInsertSqlId(), t);
-                //写入数据日志
-                if (keyId > 0)
-                {
-                    LogDao.Insert<T>(t, sqlMap);
-                }
                 sqlMap.CommitTransaction();
             }
             catch (Exception e)
@@ -179,7 +171,6 @@ namespace com.uceip.DBUtility.iBatis.BaseImpl
             try
             {
                 sqlMap.BeginTransaction();
-                LogDao.Update<T>(t, this, sqlMap);
                 keyId = sqlMap.Update(getUpdateSqlId(), t);
                 sqlMap.CommitTransaction();
             }
@@ -208,10 +199,6 @@ namespace com.uceip.DBUtility.iBatis.BaseImpl
                 //map.Add("IDList", idlist.Split(','));
                 //keyId = sqlMap.Delete(getDeleteSqlId(), map);
                 keyId = sqlMap.Delete(getDeleteSqlId(), idlist);
-                if (keyId > 0)
-                {
-                    LogDao.Delete<T>(typeof(T).FullName, idlist, sqlMap);
-                }
                 sqlMap.CommitTransaction();
             }
             catch (Exception e)

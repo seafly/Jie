@@ -35,7 +35,8 @@
       tb_gxfjxx_isbx
       from tb_gxfjxx
       <dynamic prepend="where">
-        <isNotEmpty prepend="" property="">
+        <isNotEmpty prepend="and" property="exist">
+          tb_gxfjxx_ID != #tb_gxfjxx_ID# and tb_gxfjxx_gxbs = #tb_gxfjxx_gxbs# and tb_gxfjxx_mc = #tb_gxfjxx_mc#
         </isNotEmpty>
       </dynamic>
     </select>

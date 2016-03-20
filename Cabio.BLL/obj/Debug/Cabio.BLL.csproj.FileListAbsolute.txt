@@ -26,8 +26,4 @@ E:\Project\Jie\Cabio.BLL\bin\Debug\com.uceip.DBUtility.dll
 E:\Project\Jie\Cabio.BLL\bin\Debug\IBatisNet.Common.dll
 E:\Project\Jie\Cabio.BLL\bin\Debug\IBatisNet.DataAccess.dll
 E:\Project\Jie\Cabio.BLL\bin\Debug\IBatisNet.DataMapper.dll
-E:\Project\Jie\Cabio.BLL\bin\Debug\com.uceip.Common.dll
-E:\Project\Jie\Cabio.BLL\bin\Debug\Newtonsoft.Json.dll
-E:\Project\Jie\Cabio.BLL\bin\Debug\COM.Excel.dll
 E:\Project\Jie\Cabio.BLL\bin\Debug\com.uceip.DBUtility.pdb
-E:\Project\Jie\Cabio.BLL\bin\Debug\com.uceip.Common.pdb
