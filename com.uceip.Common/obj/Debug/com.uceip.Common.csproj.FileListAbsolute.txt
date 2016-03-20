@@ -35,3 +35,4 @@ E:\Project\Jie\com.uceip.Common\bin\Debug\com.uceip.Common.dll
 E:\Project\Jie\com.uceip.Common\bin\Debug\com.uceip.Common.pdb
 E:\Project\Jie\com.uceip.Common\obj\Debug\com.uceip.Common.dll
 E:\Project\Jie\com.uceip.Common\obj\Debug\com.uceip.Common.pdb
+E:\Project\Jie\com.uceip.Common\obj\Debug\com.uceip.Common.csprojResolveAssemblyReference.cache

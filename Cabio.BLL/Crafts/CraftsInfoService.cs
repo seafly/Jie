@@ -21,6 +21,7 @@ namespace Cabio.BLL.Crafts
             dao = new CraftsInfoDao(_daoManager);
         }
 
+
         /// <summary>
         /// 获取工艺附加信息
         /// </summary>

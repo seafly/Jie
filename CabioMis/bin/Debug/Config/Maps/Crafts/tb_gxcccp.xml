@@ -27,7 +27,8 @@
       tb_gxcccp_ccps
       from tb_gxcccp
       <dynamic prepend="where">
-        <isNotEmpty prepend="" property="">
+        <isNotEmpty prepend="and" property="exist">
+          (tb_gxcccp_ID != #tb_gxcccp_ID# and tb_gxcccp_gxbs = #tb_gxcccp_gxbs# and tb_gxcccp_wpbs = #tb_gxcccp_wpbs#)
         </isNotEmpty>
       </dynamic>
     </select>

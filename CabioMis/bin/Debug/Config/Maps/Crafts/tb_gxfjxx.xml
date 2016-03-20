@@ -56,7 +56,7 @@
         <isNotEmpty prepend="and" property="tb_gxfjxx_gxbs">
           tb_gxfjxx_gxbs = #tb_gxfjxx_gxbs#
         </isNotEmpty>
-      </dynamic>
+      </dynamic>      
     </select>
 
     <insert id="inserttb_gxfjxx" parameterClass="tb_gxfjxx">

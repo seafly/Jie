@@ -1,4 +1,5 @@
-﻿Public Class FrgxAdd
+﻿Imports Cabio.BLL;
+Public Class FrgxAdd
     '基本信息数据
     Dim m_gxszDt As DataTable
     '产出产品信息
@@ -81,6 +82,7 @@
     Private Sub showSetCccp(sender As Object, e As EventArgs)
         If sender.ToString() <> "修改" Then
             If m_cccpDt.Rows.Count >= 2 Then
+                Dim mm As New Crafts.CraftsInfoService().
                 MsgBox("最多只能产出2种物品！", MsgBoxStyle.Exclamation)
                 Return
             End If

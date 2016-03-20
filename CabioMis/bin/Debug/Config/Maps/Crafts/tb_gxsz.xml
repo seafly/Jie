@@ -5,7 +5,6 @@
     <typeAlias alias="tb_gxsz" type="Cabio.Model.Crafts.tb_gxsz,Cabio.Model" />
   </alias>
 
-
   <statements>
     <select id="gettb_gxszById" resultClass="tb_gxsz" parameterClass="int">
       select
@@ -31,7 +30,8 @@
       tb_gxsz_isBf
       from tb_gxsz
       <dynamic prepend="where">
-        <isNotEmpty prepend="" property="">
+        <isNotEmpty prepend="and" property="exist">
+          (tb_gxsz_ID != #tb_gxsz_ID# and (tb_gxsz_mc = #tb_gxsz_mc# or tb_gxsz_dm = #tb_gxsz_dm#))
         </isNotEmpty>
       </dynamic>
     </select>
