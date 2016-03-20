@@ -75,6 +75,9 @@
       #tb_sc_isEnd#,
       #tb_sc_bz#
       )
+      <selectKey resultClass="int" type="post" property="tb_sc_ID" >
+        select @@IDENTITY as value
+      </selectKey>
     </insert>
 
     <update id="updatetb_sc" parameterClass="tb_sc">

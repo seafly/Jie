@@ -61,9 +61,7 @@
   <ItemGroup>
     <Compile Include="DbHelperSQL.cs" />
     <Compile Include="iBatis\BaseImpl\BaseDao.cs" />
-    <Compile Include="iBatis\BaseImpl\ModeBaseDao.cs" />
     <Compile Include="iBatis\BaseImpl\BaseService.cs" />
-    <Compile Include="iBatis\BaseImpl\ModeBaseService.cs" />
     <Compile Include="iBatis\BaseImpl\ServiceConfig.cs" />
     <Compile Include="iBatis\BaseImpl\SysTableId.cs" />
     <Compile Include="iBatis\BaseImpl\SysTableIdDao.cs" />

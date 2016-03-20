@@ -3372,7 +3372,6 @@
   <ItemGroup>
     <EmbeddedResource Include="Chemistry.ico" />
     <Content Include="bin\Debug\Config\Maps\Code\tb_bcbm.xml" />
-    <Content Include="bin\Debug\Config\Maps\Crafts\SysUser.xml" />
     <Content Include="bin\Debug\Config\Maps\Crafts\tb_gxcccp.xml" />
     <Content Include="bin\Debug\Config\Maps\Crafts\tb_gxfjxx.xml" />
     <Content Include="bin\Debug\Config\Maps\Crafts\tb_gxsz.xml" />

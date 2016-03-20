@@ -318,6 +318,22 @@ namespace com.uceip.DBUtility.iBatis.BaseImpl
             }
         }
 
+        public virtual int Update(string statementName, T t)
+        {
+            ISqlMapper sqlMap = GetLocalSqlMap();
+
+            try
+            {
+                int result = sqlMap.Update(statementName, t);
+                return result;
+
+            }
+            catch (Exception e)
+            {
+                throw new IBatisNetException("更新数据错误  Cause: " + e.Message, e);
+            }
+        }
+
         //根据id集合删除数据
         public virtual int Remove(string idlist)
         {
@@ -330,6 +346,21 @@ namespace com.uceip.DBUtility.iBatis.BaseImpl
                 //map.Add("IDList", idlist.Split(','));
                 //return sqlMap.Delete(getDeleteSqlId(), map);
                 int result = sqlMap.Delete(getDeleteSqlId(), idlist);
+                return result;
+            }
+            catch (Exception e)
+            {
+                throw new IBatisNetException("数据删除错误  Cause: " + e.Message, e);
+            }
+        }
+
+        public virtual int Remove(string statementName, string idlist)
+        {
+            ISqlMapper sqlMap = GetLocalSqlMap();
+
+            try
+            {
+                int result = sqlMap.Delete(statementName, idlist);
                 return result;
             }
             catch (Exception e)

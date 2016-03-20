@@ -16,5 +16,15 @@ namespace Cabio.DLL.Crafts
             daoManager = manager;
             domainEntity = "tb_gxfjxx";
         }
+
+        /// <summary>
+        /// 根据工艺设置删除工艺附加信息
+        /// </summary>
+        /// <param name="key">工艺设置ID</param>
+        /// <returns></returns>
+        public int RemoveByCraftsSetting(string key)
+        {
+            return base.Remove("deletetb_gxfjxxByGxsz", key);
+        }
     }
 }

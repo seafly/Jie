@@ -39,8 +39,12 @@ namespace com.uceip.DBUtility.iBatis.Interfaces
         int Insert(T t);
         //修改数据
         int Update(T t);
+
+        int Update(string statementName, T t);
         //根据id集合删除数据
         int Remove(string idlist);
+
+        int Remove(string statementName, string idlist);
         /// 得到运行时ibatis.net动态生成的statementName
         string GetRuntimeSql(string statementName, object paramObject);
     }

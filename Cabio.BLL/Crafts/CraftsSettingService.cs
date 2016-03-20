@@ -98,8 +98,8 @@ namespace Cabio.BLL.Crafts
                 _daoManager.BeginTransaction();
 
                 dao.Remove(id);
-                new CraftsInfoDao(_daoManager).Remove(id);
-                new CraftsProductDao(_daoManager).Remove(id);
+                new CraftsInfoDao(_daoManager).RemoveByCraftsSetting(id);
+                new CraftsProductDao(_daoManager).RemoveByCraftsSetting(id);
 
                 _daoManager.CommitTransaction();
                 result = true;

@@ -65,6 +65,9 @@
       #tb_scxq_scbs#,
       #tb_scxq_xxbs#
       )
+      <selectKey resultClass="int" type="post" property="tb_scxq_ID" >
+        select @@IDENTITY as value
+      </selectKey>
     </insert>
 
     <update id="updatetb_scxq" parameterClass="tb_scxq">

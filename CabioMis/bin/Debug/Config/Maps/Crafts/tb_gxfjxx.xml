@@ -83,6 +83,9 @@
       #tb_gxfjxx_dxz#,
       #tb_gxfjxx_isbx#
       )
+      <selectKey resultClass="int" type="post" property="tb_gxfjxx_ID" >
+        select @@IDENTITY as value
+      </selectKey>
     </insert>
 
     <update id="updatetb_gxfjxx" parameterClass="tb_gxfjxx">
@@ -117,9 +120,12 @@
     </update>
 
     <delete id="deletetb_gxfjxx" parameterClass="string">
+      delete from tb_gxfjxx  where tb_gxfjxx_ID = #value#
+    </delete>
+    
+    <delete id="deletetb_gxfjxxByGxsz" parameterClass="string">
       delete from tb_gxfjxx  where tb_gxfjxx_gxbs = #value#
     </delete>
-
   </statements>
 
 </sqlMap>

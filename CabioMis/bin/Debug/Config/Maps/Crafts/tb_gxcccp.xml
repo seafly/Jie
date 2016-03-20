@@ -89,9 +89,12 @@
     </update>
 
     <delete id="deletetb_gxcccp" parameterClass="string">
-      delete from tb_gxcccp  where  tb_gxcccp_gxbs = #value#
+      delete from tb_gxcccp  where  tb_gxcccp_ID = #value#
     </delete>
 
+    <delete id="deletetb_gxcccpByGxsz" parameterClass="string">
+      delete from tb_gxcccp  where  tb_gxcccp_gxbs = #value#
+    </delete>
   </statements>
 
 </sqlMap>

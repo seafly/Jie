@@ -193,6 +193,24 @@ namespace com.uceip.DBUtility.iBatis.BaseImpl
             }
             return result;
         }
+
+        public virtual int Update(string statementName, T t)
+        {
+            int result = -1;
+            _daoManager.BeginTransaction();
+            try
+            {
+                result = dao.Update(statementName, t);
+                _daoManager.CommitTransaction();
+            }
+            catch (Exception e)
+            {
+                _daoManager.RollBackTransaction();
+                System.Diagnostics.Debug.Write(e.Message);
+            }
+            return result;
+        }
+
         //根据id集合删除数据
         public virtual int Remove(string idlist)
         {
@@ -211,6 +229,22 @@ namespace com.uceip.DBUtility.iBatis.BaseImpl
             return result;
         }
 
+        public virtual int Remove(string statementName, string idlist)
+        {
+            int result = -1;
+            _daoManager.BeginTransaction();
+            try
+            {
+                result = dao.Remove(statementName, idlist);
+                _daoManager.CommitTransaction();
+            }
+            catch (Exception e)
+            {
+                _daoManager.RollBackTransaction();
+                System.Diagnostics.Debug.Write(e.Message);
+            }
+            return result;
+        }
         ///
         ///======================================================================
         ///以下方法返回数据集指定行数
