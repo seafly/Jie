@@ -26,20 +26,52 @@ namespace Cabio.BLL.Crafts
         /// </summary>
         /// <param name="model"></param>
         /// <returns>0:失败；-1：程序出错；-2：已存在相同的工艺代码或工艺名称；大于0：成功</returns>
-        public int Add(tb_gxsz model)
+        public override int Insert(tb_gxsz t)
         {
             int result = 0;
             try
             {
                 _daoManager.BeginTransaction();
 
-                if (exists(model))
+                if (exists(t))
                 {
                     result = -2;
                 }
                 else
                 {
-                    result = base.Insert(model);
+                    result = base.Insert(t);
+                }
+                _daoManager.CommitTransaction();
+            }
+            catch
+            {
+                result = -1;
+                _daoManager.RollBackTransaction();
+            }
+
+            return result;
+        }
+
+        /// <summary>
+        /// 更新一条工艺信息
+        /// </summary>
+        /// <param name="model"></param>
+        /// <returns>0:失败；-1：程序出错；-2：已存在相同的工艺代码或工艺名称；大于0：成功</returns>
+
+        public override int Update(tb_gxsz t)
+        {
+            int result = 0;
+            try
+            {
+                _daoManager.BeginTransaction();
+
+                if (exists(t))
+                {
+                    result = -2;
+                }
+                else
+                {
+                    result = base.Update(t);
                 }
                 _daoManager.CommitTransaction();
             }
