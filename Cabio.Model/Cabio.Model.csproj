@@ -50,6 +50,7 @@
     <Compile Include="Crafts\tb_gxcccp.cs" />
     <Compile Include="Crafts\tb_gxfjxx.cs" />
     <Compile Include="Crafts\tb_gxsz.cs" />
+    <Compile Include="Material\tb_syjl.cs" />
     <Compile Include="Material\tb_wlph.cs" />
     <Compile Include="Material\tb_wlphck.cs" />
     <Compile Include="Produce\tb_sc.cs" />

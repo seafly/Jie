@@ -8,6 +8,7 @@ namespace Cabio.Model.Material
 {
     public class tb_wlph
     {
+
         /// <summary>
         /// 主键
         /// </summary>		
@@ -44,5 +45,7 @@ namespace Cabio.Model.Material
         /// 创建标识
         /// </summary>		
         public int tb_wlph_cjbs { get; set; }
+
+        public tb_wlphck wlphck { get; set; }
     }
 }

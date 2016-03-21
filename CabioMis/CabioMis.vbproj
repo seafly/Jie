@@ -3375,6 +3375,7 @@
     <Content Include="bin\Debug\Config\Maps\Crafts\tb_gxcccp.xml" />
     <Content Include="bin\Debug\Config\Maps\Crafts\tb_gxfjxx.xml" />
     <Content Include="bin\Debug\Config\Maps\Crafts\tb_gxsz.xml" />
+    <Content Include="bin\Debug\Config\Maps\Material\tb_syjl.xml" />
     <Content Include="bin\Debug\Config\Maps\Material\tb_wlph.xml" />
     <Content Include="bin\Debug\Config\Maps\Material\tb_wlphck.xml" />
     <Content Include="bin\Debug\Config\Maps\Produce\tb_sc.xml" />

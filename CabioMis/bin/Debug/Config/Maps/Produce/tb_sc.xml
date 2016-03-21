@@ -32,7 +32,8 @@
       tb_sc_bz
       from tb_sc
       <dynamic prepend="where">
-        <isNotEmpty prepend="" property="">
+        <isNotEmpty prepend="and" property="exist">
+          (tb_sc_ID != #tb_sc_ID# and tb_sc_dh = #tb_sc_dh#)
         </isNotEmpty>
       </dynamic>
     </select>
