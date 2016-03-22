@@ -1,0 +1,3444 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{72DAFE1A-3F5C-4301-B510-1EFC98D8ECA5}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <StartupObject>CabioMis.My.MyApplication</StartupObject>
+    <RootNamespace>CabioMis</RootNamespace>
+    <AssemblyName>CabioMis</AssemblyName>
+    <MyType>WindowsForms</MyType>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <ApplicationManifest>My Project\app.manifest</ApplicationManifest>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>1</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>CabioMis.xml</DocumentationFile>
+    <NoWarn>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036,42353,42354,42355</NoWarn>
+    <PlatformTarget>x86</PlatformTarget>
+    <WarningsAsErrors>
+    </WarningsAsErrors>
+    <CodeAnalysisRuleSet>BasicDesignGuidelineRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>CabioMis.xml</DocumentationFile>
+    <NoWarn>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036,42353,42354,42355</NoWarn>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <WarningsAsErrors>
+    </WarningsAsErrors>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Chemistry.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>2863C587CB4DD589F68C0851363FD7F7B23632C9</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>CabioMis_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="chencontrol, Version=1.0.3001.29737, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\chencontrol.dll</HintPath>
+    </Reference>
+    <Reference Include="DeepCode, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>packages\EntityFramework.6.1.3\lib\net40\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>packages\EntityFramework.6.1.3\lib\net40\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\Packages\Microsoft.Office.Interop.Excel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Word, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\Packages\Microsoft.Office.Interop.Word.dll</HintPath>
+    </Reference>
+    <Reference Include="office, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\Packages\office.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xml" />
+    <Reference Include="yangNetCl, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\yangNetCl.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Windows.Forms" />
+    <Import Include="yangNetCl" />
+    <Import Include="_D=yangNetCl.Cl_DataMag" />
+    <Import Include="_S=yangNetCl.Cl_StrMag" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ApplicationEvents.vb" />
+    <Compile Include="appYanMd\cl_theCl.vb" />
+    <Compile Include="appYanMd\cl_YanMd.vb" />
+    <Compile Include="appYanMd\CustomControl1.Designer.vb">
+      <DependentUpon>CustomControl1.vb</DependentUpon>
+    </Compile>
+    <Compile Include="appYanMd\CustomControl1.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="appYanMd\mo_YanZdy.vb" />
+    <Compile Include="BC功能\Frgn_list.Designer.vb">
+      <DependentUpon>Frgn_list.vb</DependentUpon>
+    </Compile>
+    <Compile Include="BC功能\Frgn_list.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BC项目\FrbcList.Designer.vb">
+      <DependentUpon>FrbcList.vb</DependentUpon>
+    </Compile>
+    <Compile Include="BC项目\FrbcList.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BC项目\FrgxShow.Designer.vb">
+      <DependentUpon>FrgxShow.vb</DependentUpon>
+    </Compile>
+    <Compile Include="BC项目\FrgxShow.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BC项目\FrgxAdd.Designer.vb">
+      <DependentUpon>FrgxAdd.vb</DependentUpon>
+    </Compile>
+    <Compile Include="BC项目\FrgxAdd.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BC项目\Frkc_ck.Designer.vb">
+      <DependentUpon>Frkc_ck.vb</DependentUpon>
+    </Compile>
+    <Compile Include="BC项目\Frkc_ck.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BC项目\Frkc_fk.Designer.vb">
+      <DependentUpon>Frkc_fk.vb</DependentUpon>
+    </Compile>
+    <Compile Include="BC项目\Frkc_fk.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BC项目\Frkc_List.Designer.vb">
+      <DependentUpon>Frkc_List.vb</DependentUpon>
+    </Compile>
+    <Compile Include="BC项目\Frkc_List.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BC项目\Frkc_tz.Designer.vb">
+      <DependentUpon>Frkc_tz.vb</DependentUpon>
+    </Compile>
+    <Compile Include="BC项目\Frkc_tz.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BC项目\Frph_List.Designer.vb">
+      <DependentUpon>Frph_List.vb</DependentUpon>
+    </Compile>
+    <Compile Include="BC项目\Frph_List.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BC项目\Frph_sz.Designer.vb">
+      <DependentUpon>Frph_sz.vb</DependentUpon>
+    </Compile>
+    <Compile Include="BC项目\Frph_sz.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="YanFrom\FrSelClInfo.Designer.vb">
+      <DependentUpon>FrSelClInfo.vb</DependentUpon>
+    </Compile>
+    <Compile Include="YanFrom\FrSelClInfo.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="yanShareFrom\FrEdit_gxfjxx.Designer.vb">
+      <DependentUpon>FrEdit_gxfjxx.vb</DependentUpon>
+    </Compile>
+    <Compile Include="yanShareFrom\FrEdit_gxfjxx.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="yanShareFrom\FrselWp.Designer.vb">
+      <DependentUpon>FrselWp.vb</DependentUpon>
+    </Compile>
+    <Compile Include="yanShareFrom\FrselWp.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BC项目\FrWpAdd.Designer.vb">
+      <DependentUpon>FrWpAdd.vb</DependentUpon>
+    </Compile>
+    <Compile Include="BC项目\FrWpAdd.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DHAQC\FrQcShowView.Designer.vb">
+      <DependentUpon>FrQcShowView.vb</DependentUpon>
+    </Compile>
+    <Compile Include="DHAQC\FrQcShowView.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DHAQC\FrQcSz.Designer.vb">
+      <DependentUpon>FrQcSz.vb</DependentUpon>
+    </Compile>
+    <Compile Include="DHAQC\FrQcSz.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DHAQC\FrWlJc.Designer.vb">
+      <DependentUpon>FrWlJc.vb</DependentUpon>
+    </Compile>
+    <Compile Include="DHAQC\FrWlJc.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DHAQC\FrXmSjsz.Designer.vb">
+      <DependentUpon>FrXmSjsz.vb</DependentUpon>
+    </Compile>
+    <Compile Include="DHAQC\FrXmSjsz.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form2.Designer.vb">
+      <DependentUpon>Form2.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form2.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrChenReturn.Designer.vb">
+      <DependentUpon>FrChenReturn.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrChenReturn.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrModPass.Designer.vb">
+      <DependentUpon>FrModPass.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrModPass.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frphzl2.Designer.vb">
+      <DependentUpon>Frphzl2.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Frphzl2.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frpxlb.Designer.vb">
+      <DependentUpon>Frpxlb.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Frpxlb.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrQA2.Designer.vb">
+      <DependentUpon>FrQA2.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrQA2.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frshowmx.Designer.vb">
+      <DependentUpon>Frshowmx.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Frshowmx.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrVb.Designer.vb">
+      <DependentUpon>FrVb.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrVb.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Manage\Fraddelse.Designer.vb">
+      <DependentUpon>Fraddelse.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Manage\Fraddelse.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Manage\Fradminlist.Designer.vb">
+      <DependentUpon>Fradminlist.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Manage\Fradminlist.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Manage\Frbbiao.Designer.vb">
+      <DependentUpon>Frbbiao.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Manage\Frbbiao.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Manage\Frbbiao2.Designer.vb">
+      <DependentUpon>Frbbiao2.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Manage\Frbbiao2.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Manage\frjiaose.Designer.vb">
+      <DependentUpon>frjiaose.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Manage\frjiaose.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Manage\frpassword.Designer.vb">
+      <DependentUpon>frpassword.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Manage\frpassword.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Manage\Frqjface.Designer.vb">
+      <DependentUpon>Frqjface.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Manage\Frqjface.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Manage\Frry.Designer.vb">
+      <DependentUpon>Frry.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Manage\Frry.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Manage\frryAdd.Designer.vb">
+      <DependentUpon>frryAdd.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Manage\frryAdd.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Manage\frShowLog.Designer.vb">
+      <DependentUpon>frShowLog.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Manage\frShowLog.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Manage\Frtb_cplb.Designer.vb">
+      <DependentUpon>Frtb_cplb.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Manage\Frtb_cplb.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Manage\Frzdycxb.Designer.vb">
+      <DependentUpon>Frzdycxb.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Manage\Frzdycxb.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Manage\Frzx.Designer.vb">
+      <DependentUpon>Frzx.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Manage\Frzx.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MRP\FrMrpWeight.Designer.vb">
+      <DependentUpon>FrMrpWeight.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MRP\FrMrpWeight.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MRP\FrDull.Designer.vb">
+      <DependentUpon>FrDull.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MRP\FrDull.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MRP\Frqljh.Designer.vb">
+      <DependentUpon>Frqljh.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MRP\Frqljh.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MRP\FrRightNow.Designer.vb">
+      <DependentUpon>FrRightNow.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MRP\FrRightNow.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MRP\FrRightNowMX.Designer.vb">
+      <DependentUpon>FrRightNowMX.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MRP\FrRightNowMX.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MRP\Frwldmhz.Designer.vb">
+      <DependentUpon>Frwldmhz.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MRP\Frwldmhz.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MRP\Frwljh.Designer.vb">
+      <DependentUpon>Frwljh.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MRP\Frwljh.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MRP\Frwljhbb.Designer.vb">
+      <DependentUpon>Frwljhbb.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MRP\Frwljhbb.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QA部门\Frqalist.Designer.vb">
+      <DependentUpon>Frqalist.vb</DependentUpon>
+    </Compile>
+    <Compile Include="QA部门\Frqalist.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QA部门\Frqa_Add.Designer.vb">
+      <DependentUpon>Frqa_Add.vb</DependentUpon>
+    </Compile>
+    <Compile Include="QA部门\Frqa_Add.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QA部门\Frtb_gysshtz.Designer.vb">
+      <DependentUpon>Frtb_gysshtz.vb</DependentUpon>
+    </Compile>
+    <Compile Include="QA部门\Frtb_gysshtz.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QA部门\Frtb_khtsjlb.Designer.vb">
+      <DependentUpon>Frtb_khtsjlb.vb</DependentUpon>
+    </Compile>
+    <Compile Include="QA部门\Frtb_khtsjlb.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QA部门\Frtb_xtwjqd.Designer.vb">
+      <DependentUpon>Frtb_xtwjqd.vb</DependentUpon>
+    </Compile>
+    <Compile Include="QA部门\Frtb_xtwjqd.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QC部门\Frqc_list.Designer.vb">
+      <DependentUpon>Frqc_list.vb</DependentUpon>
+    </Compile>
+    <Compile Include="QC部门\Frqc_list.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QC部门\Frtb_bcQC.Designer.vb">
+      <DependentUpon>Frtb_bcQC.vb</DependentUpon>
+    </Compile>
+    <Compile Include="QC部门\Frtb_bcQC.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QC部门\Frtb_elsecheck.Designer.vb">
+      <DependentUpon>Frtb_elsecheck.vb</DependentUpon>
+    </Compile>
+    <Compile Include="QC部门\Frtb_elsecheck.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QC部门\Frtb_hjwswjc.Designer.vb">
+      <DependentUpon>Frtb_hjwswjc.vb</DependentUpon>
+    </Compile>
+    <Compile Include="QC部门\Frtb_hjwswjc.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QC部门\Frtb_t676l.Designer.vb">
+      <DependentUpon>Frtb_t676l.vb</DependentUpon>
+    </Compile>
+    <Compile Include="QC部门\Frtb_t676l.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QC部门\Frtb_wjxmjl.Designer.vb">
+      <DependentUpon>Frtb_wjxmjl.vb</DependentUpon>
+    </Compile>
+    <Compile Include="QC部门\Frtb_wjxmjl.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QC部门\Frtb_wsjcjl.Designer.vb">
+      <DependentUpon>Frtb_wsjcjl.vb</DependentUpon>
+    </Compile>
+    <Compile Include="QC部门\Frtb_wsjcjl.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QC部门\QCService.vb" />
+    <Compile Include="ResourceHolder.vb" />
+    <Compile Include="SplashScreen1.Designer.vb">
+      <DependentUpon>SplashScreen1.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SplashScreen1.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="sysadd\Form1.Designer.vb">
+      <DependentUpon>Form1.vb</DependentUpon>
+    </Compile>
+    <Compile Include="sysadd\Form1.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="sysadd\Frtb_2009nwbshqktj.Designer.vb">
+      <DependentUpon>Frtb_2009nwbshqktj.vb</DependentUpon>
+    </Compile>
+    <Compile Include="sysadd\Frtb_2009nwbshqktj.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="sysadd\Frtb_beizhu.Designer.vb">
+      <DependentUpon>Frtb_beizhu.vb</DependentUpon>
+    </Compile>
+    <Compile Include="sysadd\Frtb_beizhu.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="sysadd\Frtb_fsq.Designer.vb">
+      <DependentUpon>Frtb_fsq.vb</DependentUpon>
+    </Compile>
+    <Compile Include="sysadd\Frtb_fsq.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="sysadd\Frtb_hjwswbz.Designer.vb">
+      <DependentUpon>Frtb_hjwswbz.vb</DependentUpon>
+    </Compile>
+    <Compile Include="sysadd\Frtb_hjwswbz.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="sysadd\Frtb_hjwswjcsj.Designer.vb">
+      <DependentUpon>Frtb_hjwswjcsj.vb</DependentUpon>
+    </Compile>
+    <Compile Include="sysadd\Frtb_hjwswjcsj.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="sysadd\Frtb_spaqnwsh.Designer.vb">
+      <DependentUpon>Frtb_spaqnwsh.vb</DependentUpon>
+    </Compile>
+    <Compile Include="sysadd\Frtb_spaqnwsh.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="sysmodule\Class1.vb" />
+    <Compile Include="sysmodule\ClassDeepChart.vb" />
+    <Compile Include="sysmodule\CL_Word.vb" />
+    <Compile Include="sysmodule\DeepDoDataTable.vb" />
+    <Compile Include="sysmodule\DeepDoExcel.vb" />
+    <Compile Include="sysmodule\FileToDb.vb" />
+    <Compile Include="sysmodule\Frprintweb.Designer.vb">
+      <DependentUpon>Frprintweb.vb</DependentUpon>
+    </Compile>
+    <Compile Include="sysmodule\Frprintweb.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="sysmodule\Md_ContrDo.vb" />
+    <Compile Include="sysmodule\Md_DataDo.vb" />
+    <Compile Include="sysmodule\Md_FileDo.vb" />
+    <Compile Include="sysmodule\Md_PublicDim.vb" />
+    <Compile Include="sysmodule\Md_Storage.vb" />
+    <Compile Include="sysmodule\Md_StrDo.vb" />
+    <Compile Include="sysmodule\Md_Yw1.vb" />
+    <Compile Include="sysmodule\Md_Yw2.vb" />
+    <Compile Include="sysmodule\Md_Yw3.vb" />
+    <Compile Include="sysmodule\Md_Yw4.vb" />
+    <Compile Include="sysmodule\Md_Yw5.vb" />
+    <Compile Include="YanFrom\Frbb.Designer.vb">
+      <DependentUpon>Frbb.vb</DependentUpon>
+    </Compile>
+    <Compile Include="YanFrom\Frbb.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="YanFrom\Frbb_Gs.Designer.vb">
+      <DependentUpon>Frbb_Gs.vb</DependentUpon>
+    </Compile>
+    <Compile Include="YanFrom\Frbb_Gs.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="YanFrom\Frbb_save.Designer.vb">
+      <DependentUpon>Frbb_save.vb</DependentUpon>
+    </Compile>
+    <Compile Include="YanFrom\Frbb_save.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="YanFrom\Frhccl.Designer.vb">
+      <DependentUpon>Frhccl.vb</DependentUpon>
+    </Compile>
+    <Compile Include="YanFrom\Frhccl.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="YanFrom\FrBmpSz.Designer.vb">
+      <DependentUpon>FrBmpSz.vb</DependentUpon>
+    </Compile>
+    <Compile Include="YanFrom\FrBmpSz.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="YanFrom\FrListYl.Designer.vb">
+      <DependentUpon>FrListYl.vb</DependentUpon>
+    </Compile>
+    <Compile Include="YanFrom\FrListYl.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="YanFrom\FrListYl_slqk.Designer.vb">
+      <DependentUpon>FrListYl_slqk.vb</DependentUpon>
+    </Compile>
+    <Compile Include="YanFrom\FrListYl_slqk.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DHAQC\FrQcSd.Designer.vb">
+      <DependentUpon>FrQcSd.vb</DependentUpon>
+    </Compile>
+    <Compile Include="DHAQC\FrQcSd.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DHAQC\FrQcXmsz.Designer.vb">
+      <DependentUpon>FrQcXmsz.vb</DependentUpon>
+    </Compile>
+    <Compile Include="DHAQC\FrQcXmsz.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="YanFrom\FrSelCl.Designer.vb">
+      <DependentUpon>FrSelCl.vb</DependentUpon>
+    </Compile>
+    <Compile Include="YanFrom\FrSelCl.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="YanFrom\FrSelHcCz.Designer.vb">
+      <DependentUpon>FrSelHcCz.vb</DependentUpon>
+    </Compile>
+    <Compile Include="YanFrom\FrSelHcCz.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="YanFrom\FrTj_Scqk.Designer.vb">
+      <DependentUpon>FrTj_Scqk.vb</DependentUpon>
+    </Compile>
+    <Compile Include="YanFrom\FrTj_Scqk.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="YanFrom\FrTj_Scqk_cp.Designer.vb">
+      <DependentUpon>FrTj_Scqk_cp.vb</DependentUpon>
+    </Compile>
+    <Compile Include="YanFrom\FrTj_Scqk_cp.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="YanFrom\FrTj_Scqk_yl.Designer.vb">
+      <DependentUpon>FrTj_Scqk_yl.vb</DependentUpon>
+    </Compile>
+    <Compile Include="YanFrom\FrTj_Scqk_yl.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="YanFrom\FrTj_Yjyl.Designer.vb">
+      <DependentUpon>FrTj_Yjyl.vb</DependentUpon>
+    </Compile>
+    <Compile Include="YanFrom\FrTj_Yjyl.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="YanFrom\frYanPhzl.Designer.vb">
+      <DependentUpon>frYanPhzl.vb</DependentUpon>
+    </Compile>
+    <Compile Include="YanFrom\frYanPhzl.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="yanShareFrom\FrEdit_gxcp.Designer.vb">
+      <DependentUpon>FrEdit_gxcp.vb</DependentUpon>
+    </Compile>
+    <Compile Include="yanShareFrom\FrEdit_gxcp.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="产品加工\Frcpdmhz.Designer.vb">
+      <DependentUpon>Frcpdmhz.vb</DependentUpon>
+    </Compile>
+    <Compile Include="产品加工\Frcpdmhz.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="产品加工\Frcpgf.Designer.vb">
+      <DependentUpon>Frcpgf.vb</DependentUpon>
+    </Compile>
+    <Compile Include="产品加工\Frcpgf.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="产品加工\Frcpgf2.Designer.vb">
+      <DependentUpon>Frcpgf2.vb</DependentUpon>
+    </Compile>
+    <Compile Include="产品加工\Frcpgf2.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="产品加工\Frcpxlv.Designer.vb">
+      <DependentUpon>Frcpxlv.vb</DependentUpon>
+    </Compile>
+    <Compile Include="产品加工\Frcpxlv.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="产品加工\Frhzbc.Designer.vb">
+      <DependentUpon>Frhzbc.vb</DependentUpon>
+    </Compile>
+    <Compile Include="产品加工\Frhzbc.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="产品加工\Frhzcn.Designer.vb">
+      <DependentUpon>Frhzcn.vb</DependentUpon>
+    </Compile>
+    <Compile Include="产品加工\Frhzcn.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="产品加工\Frhzcp.Designer.vb">
+      <DependentUpon>Frhzcp.vb</DependentUpon>
+    </Compile>
+    <Compile Include="产品加工\Frhzcp.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="产品加工\Frhzcp2.Designer.vb">
+      <DependentUpon>Frhzcp2.vb</DependentUpon>
+    </Compile>
+    <Compile Include="产品加工\Frhzcp2.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="产品加工\Frhzycl.Designer.vb">
+      <DependentUpon>Frhzycl.vb</DependentUpon>
+    </Compile>
+    <Compile Include="产品加工\Frhzycl.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="产品加工\Frkhxq.Designer.vb">
+      <DependentUpon>Frkhxq.vb</DependentUpon>
+    </Compile>
+    <Compile Include="产品加工\Frkhxq.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="产品加工\Frkhxq2.Designer.vb">
+      <DependentUpon>Frkhxq2.vb</DependentUpon>
+    </Compile>
+    <Compile Include="产品加工\Frkhxq2.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="产品加工\Frxkh.Designer.vb">
+      <DependentUpon>Frxkh.vb</DependentUpon>
+    </Compile>
+    <Compile Include="产品加工\Frxkh.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="供应商\FrgetGysmc.Designer.vb">
+      <DependentUpon>FrgetGysmc.vb</DependentUpon>
+    </Compile>
+    <Compile Include="供应商\FrgetGysmc.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="供应商\Frgysadd.Designer.vb">
+      <DependentUpon>Frgysadd.vb</DependentUpon>
+    </Compile>
+    <Compile Include="供应商\Frgysadd.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="供应商\Frgyslist.Designer.vb">
+      <DependentUpon>Frgyslist.vb</DependentUpon>
+    </Compile>
+    <Compile Include="供应商\Frgyslist.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="冬化与脱臭\Frtb_donghua.Designer.vb">
+      <DependentUpon>Frtb_donghua.vb</DependentUpon>
+    </Compile>
+    <Compile Include="冬化与脱臭\Frtb_donghua.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="冬化与脱臭\Frtb_donghuaQC.Designer.vb">
+      <DependentUpon>Frtb_donghuaQC.vb</DependentUpon>
+    </Compile>
+    <Compile Include="冬化与脱臭\Frtb_donghuaQC.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="冬化与脱臭\Frtb_tuoxiu.Designer.vb">
+      <DependentUpon>Frtb_tuoxiu.vb</DependentUpon>
+    </Compile>
+    <Compile Include="冬化与脱臭\Frtb_tuoxiu.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="冬化与脱臭\Frtb_tuoxiuQC.Designer.vb">
+      <DependentUpon>Frtb_tuoxiuQC.vb</DependentUpon>
+    </Compile>
+    <Compile Include="冬化与脱臭\Frtb_tuoxiuQC.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="原料\Frfscylsy.Designer.vb">
+      <DependentUpon>Frfscylsy.vb</DependentUpon>
+    </Compile>
+    <Compile Include="原料\Frfscylsy.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="原料\Frfscylsy2.Designer.vb">
+      <DependentUpon>Frfscylsy2.vb</DependentUpon>
+    </Compile>
+    <Compile Include="原料\Frfscylsy2.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="原料\Frylcybj.Designer.vb">
+      <DependentUpon>Frylcybj.vb</DependentUpon>
+    </Compile>
+    <Compile Include="原料\Frylcybj.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="原料\Frylcybj2.Designer.vb">
+      <DependentUpon>Frylcybj2.vb</DependentUpon>
+    </Compile>
+    <Compile Include="原料\Frylcybj2.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="各冷库信息\Frstorage.Designer.vb">
+      <DependentUpon>Frstorage.vb</DependentUpon>
+    </Compile>
+    <Compile Include="各冷库信息\Frstorage.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="外加工和返工\FrAddfangong.Designer.vb">
+      <DependentUpon>FrAddfangong.vb</DependentUpon>
+    </Compile>
+    <Compile Include="外加工和返工\FrAddfangong.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="外加工和返工\FrAddwjgf.Designer.vb">
+      <DependentUpon>FrAddwjgf.vb</DependentUpon>
+    </Compile>
+    <Compile Include="外加工和返工\FrAddwjgf.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="外加工和返工\Frfangong.Designer.vb">
+      <DependentUpon>Frfangong.vb</DependentUpon>
+    </Compile>
+    <Compile Include="外加工和返工\Frfangong.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="外加工和返工\Frfgyf.Designer.vb">
+      <DependentUpon>Frfgyf.vb</DependentUpon>
+    </Compile>
+    <Compile Include="外加工和返工\Frfgyf.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="外加工和返工\StiveModel.vb" />
+    <Compile Include="外购油\Frshowwg.Designer.vb">
+      <DependentUpon>Frshowwg.vb</DependentUpon>
+    </Compile>
+    <Compile Include="外购油\Frshowwg.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="外购油\Frwgcpy.Designer.vb">
+      <DependentUpon>Frwgcpy.vb</DependentUpon>
+    </Compile>
+    <Compile Include="外购油\Frwgcpy.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="外购油\Frwgmy.Designer.vb">
+      <DependentUpon>Frwgmy.vb</DependentUpon>
+    </Compile>
+    <Compile Include="外购油\Frwgmy.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="成品进出货\FrInternal.Designer.vb">
+      <DependentUpon>FrInternal.vb</DependentUpon>
+    </Compile>
+    <Compile Include="成品进出货\FrInternal.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="成品进出货\FrReturn.Designer.vb">
+      <DependentUpon>FrReturn.vb</DependentUpon>
+    </Compile>
+    <Compile Include="成品进出货\FrReturn.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="技术部\Faddfjpl5.Designer.vb">
+      <DependentUpon>Faddfjpl5.vb</DependentUpon>
+    </Compile>
+    <Compile Include="技术部\Faddfjpl5.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="技术部\Frjsb_YFXMGL.Designer.vb">
+      <DependentUpon>Frjsb_YFXMGL.vb</DependentUpon>
+    </Compile>
+    <Compile Include="技术部\Frjsb_YFXMGL.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="技术部\Frjsb_YFXMGLZL.Designer.vb">
+      <DependentUpon>Frjsb_YFXMGLZL.vb</DependentUpon>
+    </Compile>
+    <Compile Include="技术部\Frjsb_YFXMGLZL.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="技术部\Frjsb_YFXMGL_ADD.Designer.vb">
+      <DependentUpon>Frjsb_YFXMGL_ADD.vb</DependentUpon>
+    </Compile>
+    <Compile Include="技术部\Frjsb_YFXMGL_ADD.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="技术部\Frjsb_YFXMGL_ZLADD.Designer.vb">
+      <DependentUpon>Frjsb_YFXMGL_ZLADD.vb</DependentUpon>
+    </Compile>
+    <Compile Include="技术部\Frjsb_YFXMGL_ZLADD.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="技术部\Frtb_five.Designer.vb">
+      <DependentUpon>Frtb_five.vb</DependentUpon>
+    </Compile>
+    <Compile Include="技术部\Frtb_five.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="样品留样管理\Frtb_reserved.Designer.vb">
+      <DependentUpon>Frtb_reserved.vb</DependentUpon>
+    </Compile>
+    <Compile Include="样品留样管理\Frtb_reserved.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="样品留样管理\Frtb_reservedAdd.Designer.vb">
+      <DependentUpon>Frtb_reservedAdd.vb</DependentUpon>
+    </Compile>
+    <Compile Include="样品留样管理\Frtb_reservedAdd.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="毛油\Frfgadd.Designer.vb">
+      <DependentUpon>Frfgadd.vb</DependentUpon>
+    </Compile>
+    <Compile Include="毛油\Frfgadd.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="成品粉\Frcpfhp.Designer.vb">
+      <DependentUpon>Frcpfhp.vb</DependentUpon>
+    </Compile>
+    <Compile Include="成品粉\Frcpfhp.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="成品粉\FrcpfMIX.Designer.vb">
+      <DependentUpon>FrcpfMIX.vb</DependentUpon>
+    </Compile>
+    <Compile Include="成品粉\FrcpfMIX.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="成品粉\Frdtbh.Designer.vb">
+      <DependentUpon>Frdtbh.vb</DependentUpon>
+    </Compile>
+    <Compile Include="成品粉\Frdtbh.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="批号规律\ClassPhgn.vb" />
+    <Compile Include="技术部\Fraddfjpl.Designer.vb">
+      <DependentUpon>Fraddfjpl.vb</DependentUpon>
+    </Compile>
+    <Compile Include="技术部\Fraddfjpl.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="技术部\Frsgfjtp.Designer.vb">
+      <DependentUpon>Frsgfjtp.vb</DependentUpon>
+    </Compile>
+    <Compile Include="技术部\Frsgfjtp.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="中罐\整批返工\Frzpfg.Designer.vb">
+      <DependentUpon>Frzpfg.vb</DependentUpon>
+    </Compile>
+    <Compile Include="中罐\整批返工\Frzpfg.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="文件上传\Frgxry.Designer.vb">
+      <DependentUpon>Frgxry.vb</DependentUpon>
+    </Compile>
+    <Compile Include="文件上传\Frgxry.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="查询\frcpfcx.Designer.vb">
+      <DependentUpon>frcpfcx.vb</DependentUpon>
+    </Compile>
+    <Compile Include="查询\frcpfcx.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="查询\Frsavereport.Designer.vb">
+      <DependentUpon>Frsavereport.vb</DependentUpon>
+    </Compile>
+    <Compile Include="查询\Frsavereport.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="毛油\Frfg_ss2.Designer.vb">
+      <DependentUpon>Frfg_ss2.vb</DependentUpon>
+    </Compile>
+    <Compile Include="毛油\Frfg_ss2.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="物料进出货\Frmodyl.Designer.vb">
+      <DependentUpon>Frmodyl.vb</DependentUpon>
+    </Compile>
+    <Compile Include="物料进出货\Frmodyl.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="物料进出货\Frwldmtj.Designer.vb">
+      <DependentUpon>Frwldmtj.vb</DependentUpon>
+    </Compile>
+    <Compile Include="物料进出货\Frwldmtj.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="物料进出货\Fryl.Designer.vb">
+      <DependentUpon>Fryl.vb</DependentUpon>
+    </Compile>
+    <Compile Include="物料进出货\Fryl.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="物料进出货\Frylchuhuo.Designer.vb">
+      <DependentUpon>Frylchuhuo.vb</DependentUpon>
+    </Compile>
+    <Compile Include="物料进出货\Frylchuhuo.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="物料进出货\Fryljch.Designer.vb">
+      <DependentUpon>Fryljch.vb</DependentUpon>
+    </Compile>
+    <Compile Include="物料进出货\Fryljch.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="粉剂部\Frfenji_list.Designer.vb">
+      <DependentUpon>Frfenji_list.vb</DependentUpon>
+    </Compile>
+    <Compile Include="粉剂部\Frfenji_list.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="粉剂部\Frtb_FiveBuckleOil.Designer.vb">
+      <DependentUpon>Frtb_FiveBuckleOil.vb</DependentUpon>
+    </Compile>
+    <Compile Include="粉剂部\Frtb_FiveBuckleOil.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="粉剂部\Fr_fiveqq.Designer.vb">
+      <DependentUpon>Fr_fiveqq.vb</DependentUpon>
+    </Compile>
+    <Compile Include="粉剂部\Fr_fiveqq.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="粉剂部\Frxgfjnbd.Designer.vb">
+      <DependentUpon>Frxgfjnbd.vb</DependentUpon>
+    </Compile>
+    <Compile Include="粉剂部\Frxgfjnbd.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="粉剂部\Fr_qq.Designer.vb">
+      <DependentUpon>Fr_qq.vb</DependentUpon>
+    </Compile>
+    <Compile Include="粉剂部\Fr_qq.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="粉剂配料\Frx832p5.Designer.vb">
+      <DependentUpon>Frx832p5.vb</DependentUpon>
+    </Compile>
+    <Compile Include="粉剂配料\Frx832p5.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="精炼脱色\FrYJ_jlts.Designer.vb">
+      <DependentUpon>FrYJ_jlts.vb</DependentUpon>
+    </Compile>
+    <Compile Include="精炼脱色\FrYJ_jlts.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="精炼计划\Frcpydmtx.Designer.vb">
+      <DependentUpon>Frcpydmtx.vb</DependentUpon>
+    </Compile>
+    <Compile Include="精炼计划\Frcpydmtx.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="精炼计划\Fr_jljh.Designer.vb">
+      <DependentUpon>Fr_jljh.vb</DependentUpon>
+    </Compile>
+    <Compile Include="精炼计划\Fr_jljh.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="统计\fjylsy2.Designer.vb">
+      <DependentUpon>fjylsy2.vb</DependentUpon>
+    </Compile>
+    <Compile Include="统计\fjylsy2.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="统计\Frcphzb.Designer.vb">
+      <DependentUpon>Frcphzb.vb</DependentUpon>
+    </Compile>
+    <Compile Include="统计\Frcphzb.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="统计\Frddzqzfl.Designer.vb">
+      <DependentUpon>Frddzqzfl.vb</DependentUpon>
+    </Compile>
+    <Compile Include="统计\Frddzqzfl.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="统计\FrFGHTTJB.Designer.vb">
+      <DependentUpon>FrFGHTTJB.vb</DependentUpon>
+    </Compile>
+    <Compile Include="统计\FrFGHTTJB.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="统计\frfjsczbYS2.Designer.vb">
+      <DependentUpon>frfjsczbYS2.vb</DependentUpon>
+    </Compile>
+    <Compile Include="统计\frfjsczbYS2.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="统计\frfxyjyl2.Designer.vb">
+      <DependentUpon>frfxyjyl2.vb</DependentUpon>
+    </Compile>
+    <Compile Include="统计\frfxyjyl2.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="统计\frfxyjylara.Designer.vb">
+      <DependentUpon>frfxyjylara.vb</DependentUpon>
+    </Compile>
+    <Compile Include="统计\frfxyjylara.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="统计\Frjchtj.Designer.vb">
+      <DependentUpon>Frjchtj.vb</DependentUpon>
+    </Compile>
+    <Compile Include="统计\Frjchtj.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="统计\Frlpkhblpk.Designer.vb">
+      <DependentUpon>Frlpkhblpk.vb</DependentUpon>
+    </Compile>
+    <Compile Include="统计\Frlpkhblpk.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="统计\frtjmenuNEW.Designer.vb">
+      <DependentUpon>frtjmenuNEW.vb</DependentUpon>
+    </Compile>
+    <Compile Include="统计\frtjmenuNEW.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="统计\FrYanJcJsl.Designer.vb">
+      <DependentUpon>FrYanJcJsl.vb</DependentUpon>
+    </Compile>
+    <Compile Include="统计\FrYanJcJsl.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="统计\Frzdybb_mx.Designer.vb">
+      <DependentUpon>Frzdybb_mx.vb</DependentUpon>
+    </Compile>
+    <Compile Include="统计\Frzdybb_mx.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="统计图形\Fr2009nwbshqkTJ.Designer.vb">
+      <DependentUpon>Fr2009nwbshqkTJ.vb</DependentUpon>
+    </Compile>
+    <Compile Include="统计图形\Fr2009nwbshqkTJ.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="统计图形\FrCPFQCIMG.Designer.vb">
+      <DependentUpon>FrCPFQCIMG.vb</DependentUpon>
+    </Compile>
+    <Compile Include="统计图形\FrCPFQCIMG.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="统计图形\FrFSQTJ.Designer.vb">
+      <DependentUpon>FrFSQTJ.vb</DependentUpon>
+    </Compile>
+    <Compile Include="统计图形\FrFSQTJ.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="统计图形\Frgyshtztj.Designer.vb">
+      <DependentUpon>Frgyshtztj.vb</DependentUpon>
+    </Compile>
+    <Compile Include="统计图形\Frgyshtztj.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="统计图形\Frkhtsbtj.Designer.vb">
+      <DependentUpon>Frkhtsbtj.vb</DependentUpon>
+    </Compile>
+    <Compile Include="统计图形\Frkhtsbtj.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="统计图形\FrMOCTXTJ.Designer.vb">
+      <DependentUpon>FrMOCTXTJ.vb</DependentUpon>
+    </Compile>
+    <Compile Include="统计图形\FrMOCTXTJ.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="统计图形\Frpctztxtj.Designer.vb">
+      <DependentUpon>Frpctztxtj.vb</DependentUpon>
+    </Compile>
+    <Compile Include="统计图形\Frpctztxtj.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="统计图形\FrQCIMG.Designer.vb">
+      <DependentUpon>FrQCIMG.vb</DependentUpon>
+    </Compile>
+    <Compile Include="统计图形\FrQCIMG.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="统计图形\FrQCIMG3.Designer.vb">
+      <DependentUpon>FrQCIMG3.vb</DependentUpon>
+    </Compile>
+    <Compile Include="统计图形\FrQCIMG3.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="统计图形\FrQCIMG4.Designer.vb">
+      <DependentUpon>FrQCIMG4.vb</DependentUpon>
+    </Compile>
+    <Compile Include="统计图形\FrQCIMG4.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="订单\Frddadd.Designer.vb">
+      <DependentUpon>Frddadd.vb</DependentUpon>
+    </Compile>
+    <Compile Include="订单\Frddadd.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="订单\Frdddy.Designer.vb">
+      <DependentUpon>Frdddy.vb</DependentUpon>
+    </Compile>
+    <Compile Include="订单\Frdddy.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="订单\Frddfhzb.Designer.vb">
+      <DependentUpon>Frddfhzb.vb</DependentUpon>
+    </Compile>
+    <Compile Include="订单\Frddfhzb.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="订单\Frddgzb.Designer.vb">
+      <DependentUpon>Frddgzb.vb</DependentUpon>
+    </Compile>
+    <Compile Include="订单\Frddgzb.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="订单\Frddhmx.Designer.vb">
+      <DependentUpon>Frddhmx.vb</DependentUpon>
+    </Compile>
+    <Compile Include="订单\Frddhmx.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="订单\Frddjfyb.Designer.vb">
+      <DependentUpon>Frddjfyb.vb</DependentUpon>
+    </Compile>
+    <Compile Include="订单\Frddjfyb.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="订单\Frddjfyb2.Designer.vb">
+      <DependentUpon>Frddjfyb2.vb</DependentUpon>
+    </Compile>
+    <Compile Include="订单\Frddjfyb2.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="订单\Frddlist.Designer.vb">
+      <DependentUpon>Frddlist.vb</DependentUpon>
+    </Compile>
+    <Compile Include="订单\Frddlist.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="订单\Frddqhjf.Designer.vb">
+      <DependentUpon>Frddqhjf.vb</DependentUpon>
+    </Compile>
+    <Compile Include="订单\Frddqhjf.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="订单\Frddstorage.Designer.vb">
+      <DependentUpon>Frddstorage.vb</DependentUpon>
+    </Compile>
+    <Compile Include="订单\Frddstorage.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="订单\Frddyxkc.Designer.vb">
+      <DependentUpon>Frddyxkc.vb</DependentUpon>
+    </Compile>
+    <Compile Include="订单\Frddyxkc.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="订单\Frddzxjh.Designer.vb">
+      <DependentUpon>Frddzxjh.vb</DependentUpon>
+    </Compile>
+    <Compile Include="订单\Frddzxjh.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="订单\Frddzxjh2.Designer.vb">
+      <DependentUpon>Frddzxjh2.vb</DependentUpon>
+    </Compile>
+    <Compile Include="订单\Frddzxjh2.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="订单\Frkcxs.Designer.vb">
+      <DependentUpon>Frkcxs.vb</DependentUpon>
+    </Compile>
+    <Compile Include="订单\Frkcxs.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="订单\Fryxkc.Designer.vb">
+      <DependentUpon>Fryxkc.vb</DependentUpon>
+    </Compile>
+    <Compile Include="订单\Fryxkc.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="成品进出货\Frzk.Designer.vb">
+      <DependentUpon>Frzk.vb</DependentUpon>
+    </Compile>
+    <Compile Include="成品进出货\Frzk.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="运行部\frzk2.Designer.vb">
+      <DependentUpon>frzk2.vb</DependentUpon>
+    </Compile>
+    <Compile Include="运行部\frzk2.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="运行部\Fzk1.Designer.vb">
+      <DependentUpon>Fzk1.vb</DependentUpon>
+    </Compile>
+    <Compile Include="运行部\Fzk1.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="成品进出货\Frmodjch.Designer.vb">
+      <DependentUpon>Frmodjch.vb</DependentUpon>
+    </Compile>
+    <Compile Include="成品进出货\Frmodjch.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="统计\Fryfcltj.Designer.vb">
+      <DependentUpon>Fryfcltj.vb</DependentUpon>
+    </Compile>
+    <Compile Include="统计\Fryfcltj.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="统计\fryjyl.Designer.vb">
+      <DependentUpon>fryjyl.vb</DependentUpon>
+    </Compile>
+    <Compile Include="统计\fryjyl.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="统计\fryjzbYS2.Designer.vb">
+      <DependentUpon>fryjzbYS2.vb</DependentUpon>
+    </Compile>
+    <Compile Include="统计\fryjzbYS2.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="运行部\Frtb_k3cpykc.Designer.vb">
+      <DependentUpon>Frtb_k3cpykc.vb</DependentUpon>
+    </Compile>
+    <Compile Include="运行部\Frtb_k3cpykc.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="运行部\frShowyllbYS.Designer.vb">
+      <DependentUpon>frShowyllbYS.vb</DependentUpon>
+    </Compile>
+    <Compile Include="运行部\frShowyllbYS.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="运行部\frtb_cpkczbcx.Designer.vb">
+      <DependentUpon>frtb_cpkczbcx.vb</DependentUpon>
+    </Compile>
+    <Compile Include="运行部\frtb_cpkczbcx.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="运行部\Frtb_fhyb.Designer.vb">
+      <DependentUpon>Frtb_fhyb.vb</DependentUpon>
+    </Compile>
+    <Compile Include="运行部\Frtb_fhyb.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="运行部\Frtb_pljh.Designer.vb">
+      <DependentUpon>Frtb_pljh.vb</DependentUpon>
+    </Compile>
+    <Compile Include="运行部\Frtb_pljh.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="运行部\frtb_yllbYS.Designer.vb">
+      <DependentUpon>frtb_yllbYS.vb</DependentUpon>
+    </Compile>
+    <Compile Include="运行部\frtb_yllbYS.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="运行部\Frtb_yxjh.Designer.vb">
+      <DependentUpon>Frtb_yxjh.vb</DependentUpon>
+    </Compile>
+    <Compile Include="运行部\Frtb_yxjh.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="大罐\frtangjiang.Designer.vb">
+      <DependentUpon>frtangjiang.vb</DependentUpon>
+    </Compile>
+    <Compile Include="大罐\frtangjiang.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="大罐\frtb_jg.Designer.vb">
+      <DependentUpon>frtb_jg.vb</DependentUpon>
+    </Compile>
+    <Compile Include="大罐\frtb_jg.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="大罐\frtb_jg2.Designer.vb">
+      <DependentUpon>frtb_jg2.vb</DependentUpon>
+    </Compile>
+    <Compile Include="大罐\frtb_jg2.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="大罐\frtb_tg.Designer.vb">
+      <DependentUpon>frtb_tg.vb</DependentUpon>
+    </Compile>
+    <Compile Include="大罐\frtb_tg.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="统计\frnbMonthft.Designer.vb">
+      <DependentUpon>frnbMonthft.vb</DependentUpon>
+    </Compile>
+    <Compile Include="统计\frnbMonthft.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="统计\frnhyb.Designer.vb">
+      <DependentUpon>frnhyb.vb</DependentUpon>
+    </Compile>
+    <Compile Include="统计\frnhyb.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="统计\frnhYearJG.Designer.vb">
+      <DependentUpon>frnhYearJG.vb</DependentUpon>
+    </Compile>
+    <Compile Include="统计\frnhYearJG.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="统计\Frtb_QAcc.Designer.vb">
+      <DependentUpon>Frtb_QAcc.vb</DependentUpon>
+    </Compile>
+    <Compile Include="统计\Frtb_QAcc.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="设备动力部\Frehslist.Designer.vb">
+      <DependentUpon>Frehslist.vb</DependentUpon>
+    </Compile>
+    <Compile Include="设备动力部\Frehslist.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frphzl.Designer.vb">
+      <DependentUpon>Frphzl.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Frphzl.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frshowadd.Designer.vb">
+      <DependentUpon>Frshowadd.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Frshowadd.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frtb_qa.Designer.vb">
+      <DependentUpon>Frtb_qa.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Frtb_qa.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="sysadd\FrK3connect.Designer.vb">
+      <DependentUpon>FrK3connect.vb</DependentUpon>
+    </Compile>
+    <Compile Include="sysadd\FrK3connect.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="sysadd\Frtb_b962t.Designer.vb">
+      <DependentUpon>Frtb_b962t.vb</DependentUpon>
+    </Compile>
+    <Compile Include="sysadd\Frtb_b962t.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="sysadd\Frtb_cgptscl.Designer.vb">
+      <DependentUpon>Frtb_cgptscl.vb</DependentUpon>
+    </Compile>
+    <Compile Include="sysadd\Frtb_cgptscl.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="sysadd\Frtb_dian.Designer.vb">
+      <DependentUpon>Frtb_dian.vb</DependentUpon>
+    </Compile>
+    <Compile Include="sysadd\Frtb_dian.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="sysadd\Frtb_glqghjl.Designer.vb">
+      <DependentUpon>Frtb_glqghjl.vb</DependentUpon>
+    </Compile>
+    <Compile Include="sysadd\Frtb_glqghjl.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="sysadd\Frtb_jcdftj.Designer.vb">
+      <DependentUpon>Frtb_jcdftj.vb</DependentUpon>
+    </Compile>
+    <Compile Include="sysadd\Frtb_jcdftj.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="sysadd\Frtb_jcfxx.Designer.vb">
+      <DependentUpon>Frtb_jcfxx.vb</DependentUpon>
+    </Compile>
+    <Compile Include="sysadd\Frtb_jcfxx.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="sysadd\Frtb_pctz.Designer.vb">
+      <DependentUpon>Frtb_pctz.vb</DependentUpon>
+    </Compile>
+    <Compile Include="sysadd\Frtb_pctz.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="sysadd\Frtb_tz.Designer.vb">
+      <DependentUpon>Frtb_tz.vb</DependentUpon>
+    </Compile>
+    <Compile Include="sysadd\Frtb_tz.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="sysadd\Frtb_xcjcapb.Designer.vb">
+      <DependentUpon>Frtb_xcjcapb.vb</DependentUpon>
+    </Compile>
+    <Compile Include="sysadd\Frtb_xcjcapb.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="sysadd\Frtb_xmsgbgzzxt.Designer.vb">
+      <DependentUpon>Frtb_xmsgbgzzxt.vb</DependentUpon>
+    </Compile>
+    <Compile Include="sysadd\Frtb_xmsgbgzzxt.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="sysadd\Frtb_ygpxda.Designer.vb">
+      <DependentUpon>Frtb_ygpxda.vb</DependentUpon>
+    </Compile>
+    <Compile Include="sysadd\Frtb_ygpxda.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="sysadd\Frtb_ygpxda2.Designer.vb">
+      <DependentUpon>Frtb_ygpxda2.vb</DependentUpon>
+    </Compile>
+    <Compile Include="sysadd\Frtb_ygpxda2.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="sysadd\Frtb_yllb.Designer.vb">
+      <DependentUpon>Frtb_yllb.vb</DependentUpon>
+    </Compile>
+    <Compile Include="sysadd\Frtb_yllb.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="sysadd\Frtb_zls.Designer.vb">
+      <DependentUpon>Frtb_zls.vb</DependentUpon>
+    </Compile>
+    <Compile Include="sysadd\Frtb_zls.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="sysadd\Frtb_zqb.Designer.vb">
+      <DependentUpon>Frtb_zqb.vb</DependentUpon>
+    </Compile>
+    <Compile Include="sysadd\Frtb_zqb.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="中罐\Frtb_b959t.Designer.vb">
+      <DependentUpon>Frtb_b959t.vb</DependentUpon>
+    </Compile>
+    <Compile Include="中罐\Frtb_b959t.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="中罐\Frtb_zgqc.Designer.vb">
+      <DependentUpon>Frtb_zgqc.vb</DependentUpon>
+    </Compile>
+    <Compile Include="中罐\Frtb_zgqc.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="运行部\Form6.Designer.vb">
+      <DependentUpon>Form6.vb</DependentUpon>
+    </Compile>
+    <Compile Include="运行部\Form6.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="运行部\frtb_cpkczb.Designer.vb">
+      <DependentUpon>frtb_cpkczb.vb</DependentUpon>
+    </Compile>
+    <Compile Include="运行部\frtb_cpkczb.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="运行部\Fryllist.Designer.vb">
+      <DependentUpon>Fryllist.vb</DependentUpon>
+    </Compile>
+    <Compile Include="运行部\Fryllist.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="大罐\Frtb_dgqc.Designer.vb">
+      <DependentUpon>Frtb_dgqc.vb</DependentUpon>
+    </Compile>
+    <Compile Include="大罐\Frtb_dgqc.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="导库存\Frdrk3kc.Designer.vb">
+      <DependentUpon>Frdrk3kc.vb</DependentUpon>
+    </Compile>
+    <Compile Include="导库存\Frdrk3kc.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="小罐\Frtb_b970t.Designer.vb">
+      <DependentUpon>Frtb_b970t.vb</DependentUpon>
+    </Compile>
+    <Compile Include="小罐\Frtb_b970t.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="小罐\Frtb_xgqc.Designer.vb">
+      <DependentUpon>Frtb_xgqc.vb</DependentUpon>
+    </Compile>
+    <Compile Include="小罐\Frtb_xgqc.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="大罐\Frtb_i234a.Designer.vb">
+      <DependentUpon>Frtb_i234a.vb</DependentUpon>
+    </Compile>
+    <Compile Include="大罐\Frtb_i234a.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="成品油\Frtb_cpqc.Designer.vb">
+      <DependentUpon>Frtb_cpqc.vb</DependentUpon>
+    </Compile>
+    <Compile Include="成品油\Frtb_cpqc.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="成品油\Frtb_h195z.Designer.vb">
+      <DependentUpon>Frtb_h195z.vb</DependentUpon>
+    </Compile>
+    <Compile Include="成品油\Frtb_h195z.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="成品粉\frhunpixl.Designer.vb">
+      <DependentUpon>frhunpixl.vb</DependentUpon>
+    </Compile>
+    <Compile Include="成品粉\frhunpixl.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="成品粉\Frtbfj_qc.Designer.vb">
+      <DependentUpon>Frtbfj_qc.vb</DependentUpon>
+    </Compile>
+    <Compile Include="成品粉\Frtbfj_qc.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="成品粉\Frtb_x832p.Designer.vb">
+      <DependentUpon>Frtb_x832p.vb</DependentUpon>
+    </Compile>
+    <Compile Include="成品粉\Frtb_x832p.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="批号规律\Frphgn.Designer.vb">
+      <DependentUpon>Frphgn.vb</DependentUpon>
+    </Compile>
+    <Compile Include="批号规律\Frphgn.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="技术部\Frjsb_list.Designer.vb">
+      <DependentUpon>Frjsb_list.vb</DependentUpon>
+    </Compile>
+    <Compile Include="技术部\Frjsb_list.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="毛油\Form5.Designer.vb">
+      <DependentUpon>Form5.vb</DependentUpon>
+    </Compile>
+    <Compile Include="毛油\Form5.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="毛油\Frfg_ss.Designer.vb">
+      <DependentUpon>Frfg_ss.vb</DependentUpon>
+    </Compile>
+    <Compile Include="毛油\Frfg_ss.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="毛油\Frtb_fgqc.Designer.vb">
+      <DependentUpon>Frtb_fgqc.vb</DependentUpon>
+    </Compile>
+    <Compile Include="毛油\Frtb_fgqc.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="毛油\Frtb_x825p.Designer.vb">
+      <DependentUpon>Frtb_x825p.vb</DependentUpon>
+    </Compile>
+    <Compile Include="毛油\Frtb_x825p.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="文件上传\frwjmenu.Designer.vb">
+      <DependentUpon>frwjmenu.vb</DependentUpon>
+    </Compile>
+    <Compile Include="文件上传\frwjmenu.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="时间控制\Fttimecontr.Designer.vb">
+      <DependentUpon>Fttimecontr.vb</DependentUpon>
+    </Compile>
+    <Compile Include="时间控制\Fttimecontr.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="查询\frchaph.Designer.vb">
+      <DependentUpon>frchaph.vb</DependentUpon>
+    </Compile>
+    <Compile Include="查询\frchaph.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="查询\Frdxxfdate.Designer.vb">
+      <DependentUpon>Frdxxfdate.vb</DependentUpon>
+    </Compile>
+    <Compile Include="查询\Frdxxfdate.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="查询\frdzxf.Designer.vb">
+      <DependentUpon>frdzxf.vb</DependentUpon>
+    </Compile>
+    <Compile Include="查询\frdzxf.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="查询\frdzxf2.Designer.vb">
+      <DependentUpon>frdzxf2.vb</DependentUpon>
+    </Compile>
+    <Compile Include="查询\frdzxf2.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="查询\Frdzxf3.Designer.vb">
+      <DependentUpon>Frdzxf3.vb</DependentUpon>
+    </Compile>
+    <Compile Include="查询\Frdzxf3.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="查询\Frylcx.Designer.vb">
+      <DependentUpon>Frylcx.vb</DependentUpon>
+    </Compile>
+    <Compile Include="查询\Frylcx.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="油剂部\Frshow_list.Designer.vb">
+      <DependentUpon>Frshow_list.vb</DependentUpon>
+    </Compile>
+    <Compile Include="油剂部\Frshow_list.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="粉剂小批QA\Form4.Designer.vb">
+      <DependentUpon>Form4.vb</DependentUpon>
+    </Compile>
+    <Compile Include="粉剂小批QA\Form4.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="粉剂小批QA\Frfjxp_qa.Designer.vb">
+      <DependentUpon>Frfjxp_qa.vb</DependentUpon>
+    </Compile>
+    <Compile Include="粉剂小批QA\Frfjxp_qa.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="粉剂配料\Frtb_823p2.Designer.vb">
+      <DependentUpon>Frtb_823p2.vb</DependentUpon>
+    </Compile>
+    <Compile Include="粉剂配料\Frtb_823p2.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="粉剂配料\Frtb_x823p.Designer.vb">
+      <DependentUpon>Frtb_x823p.vb</DependentUpon>
+    </Compile>
+    <Compile Include="粉剂配料\Frtb_x823p.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="粉剂部\Frtb_n441f.Designer.vb">
+      <DependentUpon>Frtb_n441f.vb</DependentUpon>
+    </Compile>
+    <Compile Include="粉剂部\Frtb_n441f.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="技术部\Frtb_one.Designer.vb">
+      <DependentUpon>Frtb_one.vb</DependentUpon>
+    </Compile>
+    <Compile Include="技术部\Frtb_one.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="34号塔\Frtb_ss.Designer.vb">
+      <DependentUpon>Frtb_ss.vb</DependentUpon>
+    </Compile>
+    <Compile Include="34号塔\Frtb_ss.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="精炼脱色\Frtb_jlqc.Designer.vb">
+      <DependentUpon>Frtb_jlqc.vb</DependentUpon>
+    </Compile>
+    <Compile Include="精炼脱色\Frtb_jlqc.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="精炼脱色\Frtb_k306c.Designer.vb">
+      <DependentUpon>Frtb_k306c.vb</DependentUpon>
+    </Compile>
+    <Compile Include="精炼脱色\Frtb_k306c.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="统计\fraqjczgqk.Designer.vb">
+      <DependentUpon>fraqjczgqk.vb</DependentUpon>
+    </Compile>
+    <Compile Include="统计\fraqjczgqk.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="统计图形\frfjsczbYS.Designer.vb">
+      <DependentUpon>frfjsczbYS.vb</DependentUpon>
+    </Compile>
+    <Compile Include="统计图形\frfjsczbYS.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="统计\frjylsy.Designer.vb">
+      <DependentUpon>frjylsy.vb</DependentUpon>
+    </Compile>
+    <Compile Include="统计\frjylsy.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frlogin.Designer.vb">
+      <DependentUpon>frlogin.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frlogin.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="统计\frMOCss.Designer.vb">
+      <DependentUpon>frMOCss.vb</DependentUpon>
+    </Compile>
+    <Compile Include="统计\frMOCss.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="统计\frnhzb.Designer.vb">
+      <DependentUpon>frnhzb.vb</DependentUpon>
+    </Compile>
+    <Compile Include="统计\frnhzb.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="统计\frpcfxzgx.Designer.vb">
+      <DependentUpon>frpcfxzgx.vb</DependentUpon>
+    </Compile>
+    <Compile Include="统计\frpcfxzgx.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="统计\frspaqwswc.Designer.vb">
+      <DependentUpon>frspaqwswc.vb</DependentUpon>
+    </Compile>
+    <Compile Include="统计\frspaqwswc.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="统计\frtjmenu.Designer.vb">
+      <DependentUpon>frtjmenu.vb</DependentUpon>
+    </Compile>
+    <Compile Include="统计\frtjmenu.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="统计\frxmsg.Designer.vb">
+      <DependentUpon>frxmsg.vb</DependentUpon>
+    </Compile>
+    <Compile Include="统计\frxmsg.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="统计\frygpx.Designer.vb">
+      <DependentUpon>frygpx.vb</DependentUpon>
+    </Compile>
+    <Compile Include="统计\frygpx.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="统计\frygpx2.Designer.vb">
+      <DependentUpon>frygpx2.vb</DependentUpon>
+    </Compile>
+    <Compile Include="统计\frygpx2.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="统计图形\fryjzbYS.Designer.vb">
+      <DependentUpon>fryjzbYS.vb</DependentUpon>
+    </Compile>
+    <Compile Include="统计图形\fryjzbYS.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="统计\fryxyb.Designer.vb">
+      <DependentUpon>fryxyb.vb</DependentUpon>
+    </Compile>
+    <Compile Include="统计\fryxyb.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="统计\Frzdybb.Designer.vb">
+      <DependentUpon>Frzdybb.vb</DependentUpon>
+    </Compile>
+    <Compile Include="统计\Frzdybb.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="角色权限\Frweb.Designer.vb">
+      <DependentUpon>Frweb.vb</DependentUpon>
+    </Compile>
+    <Compile Include="角色权限\Frweb.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EHS\Frsbdllist.Designer.vb">
+      <DependentUpon>Frsbdllist.vb</DependentUpon>
+    </Compile>
+    <Compile Include="EHS\Frsbdllist.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="外加工和返工\Frfgydcpf.Designer.vb">
+      <DependentUpon>Frfgydcpf.vb</DependentUpon>
+    </Compile>
+    <Compile Include="外加工和返工\Frfgydcpf.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="外加工和返工\Frscfgy.Designer.vb">
+      <DependentUpon>Frscfgy.vb</DependentUpon>
+    </Compile>
+    <Compile Include="外加工和返工\Frscfgy.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="成品进出货\frchuhuo.Designer.vb">
+      <DependentUpon>frchuhuo.vb</DependentUpon>
+    </Compile>
+    <Compile Include="成品进出货\frchuhuo.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="运行部\Frpljhcx.Designer.vb">
+      <DependentUpon>Frpljhcx.vb</DependentUpon>
+    </Compile>
+    <Compile Include="运行部\Frpljhcx.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="成品进出货\Frmodkc.Designer.vb">
+      <DependentUpon>Frmodkc.vb</DependentUpon>
+    </Compile>
+    <Compile Include="成品进出货\Frmodkc.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="成品进出货\FrModsykc.Designer.vb">
+      <DependentUpon>FrModsykc.vb</DependentUpon>
+    </Compile>
+    <Compile Include="成品进出货\FrModsykc.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="成品进出货\Frtb_x824p.Designer.vb">
+      <DependentUpon>Frtb_x824p.vb</DependentUpon>
+    </Compile>
+    <Compile Include="成品进出货\Frtb_x824p.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="成品进出货\Frtb_x824pcpf.Designer.vb">
+      <DependentUpon>Frtb_x824pcpf.vb</DependentUpon>
+    </Compile>
+    <Compile Include="成品进出货\Frtb_x824pcpf.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="成品进出货\frzchuo.Designer.vb">
+      <DependentUpon>frzchuo.vb</DependentUpon>
+    </Compile>
+    <Compile Include="成品进出货\frzchuo.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="酶解\Frtb_meijie.Designer.vb">
+      <DependentUpon>Frtb_meijie.vb</DependentUpon>
+    </Compile>
+    <Compile Include="酶解\Frtb_meijie.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="酶解\Frtb_meijieQC.Designer.vb">
+      <DependentUpon>Frtb_meijieQC.vb</DependentUpon>
+    </Compile>
+    <Compile Include="酶解\Frtb_meijieQC.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="采购人资\Frcgrzlist.Designer.vb">
+      <DependentUpon>Frcgrzlist.vb</DependentUpon>
+    </Compile>
+    <Compile Include="采购人资\Frcgrzlist.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="采购人资\Frpxsstj.Designer.vb">
+      <DependentUpon>Frpxsstj.vb</DependentUpon>
+    </Compile>
+    <Compile Include="采购人资\Frpxsstj.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="采购人资\Frpxsstj2.Designer.vb">
+      <DependentUpon>Frpxsstj2.vb</DependentUpon>
+    </Compile>
+    <Compile Include="采购人资\Frpxsstj2.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="采购人资\Frrlzy.Designer.vb">
+      <DependentUpon>Frrlzy.vb</DependentUpon>
+    </Compile>
+    <Compile Include="采购人资\Frrlzy.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="采购到货\Frbz.Designer.vb">
+      <DependentUpon>Frbz.vb</DependentUpon>
+    </Compile>
+    <Compile Include="采购到货\Frbz.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="采购到货\Frcg.Designer.vb">
+      <DependentUpon>Frcg.vb</DependentUpon>
+    </Compile>
+    <Compile Include="采购到货\Frcg.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="采购到货\Frcgdhbb.Designer.vb">
+      <DependentUpon>Frcgdhbb.vb</DependentUpon>
+    </Compile>
+    <Compile Include="采购到货\Frcgdhbb.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="采购到货\Frcgdhbbylbc.Designer.vb">
+      <DependentUpon>Frcgdhbbylbc.vb</DependentUpon>
+    </Compile>
+    <Compile Include="采购到货\Frcgdhbbylbc.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="采购到货\Frcgdhjl.Designer.vb">
+      <DependentUpon>Frcgdhjl.vb</DependentUpon>
+    </Compile>
+    <Compile Include="采购到货\Frcgdhjl.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="采购到货\Frcgxx.Designer.vb">
+      <DependentUpon>Frcgxx.vb</DependentUpon>
+    </Compile>
+    <Compile Include="采购到货\Frcgxx.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="采购到货\Frdhgz.Designer.vb">
+      <DependentUpon>Frdhgz.vb</DependentUpon>
+    </Compile>
+    <Compile Include="采购到货\Frdhgz.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="采购到货\Frjh.Designer.vb">
+      <DependentUpon>Frjh.vb</DependentUpon>
+    </Compile>
+    <Compile Include="采购到货\Frjh.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="采购到货\Frjhxg.Designer.vb">
+      <DependentUpon>Frjhxg.vb</DependentUpon>
+    </Compile>
+    <Compile Include="采购到货\Frjhxg.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="采购到货\Frqg.Designer.vb">
+      <DependentUpon>Frqg.vb</DependentUpon>
+    </Compile>
+    <Compile Include="采购到货\Frqg.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="采购到货\Frqg0.Designer.vb">
+      <DependentUpon>Frqg0.vb</DependentUpon>
+    </Compile>
+    <Compile Include="采购到货\Frqg0.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="采购到货\Frqgdsx.Designer.vb">
+      <DependentUpon>Frqgdsx.vb</DependentUpon>
+    </Compile>
+    <Compile Include="采购到货\Frqgdsx.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="采购到货\Frtjxg.Designer.vb">
+      <DependentUpon>Frtjxg.vb</DependentUpon>
+    </Compile>
+    <Compile Include="采购到货\Frtjxg.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="采购到货\Frwplb.Designer.vb">
+      <DependentUpon>Frwplb.vb</DependentUpon>
+    </Compile>
+    <Compile Include="采购到货\Frwplb.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="采购到货\Frys.Designer.vb">
+      <DependentUpon>Frys.vb</DependentUpon>
+    </Compile>
+    <Compile Include="采购到货\Frys.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="预警时间\Frtb_warning.Designer.vb">
+      <DependentUpon>Frtb_warning.vb</DependentUpon>
+    </Compile>
+    <Compile Include="预警时间\Frtb_warning.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="预警时间\Frtb_WarningAdd.Designer.vb">
+      <DependentUpon>Frtb_WarningAdd.vb</DependentUpon>
+    </Compile>
+    <Compile Include="预警时间\Frtb_WarningAdd.vb">
+      <SubType>Form</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="BC功能\Frgn_list.resx">
+      <DependentUpon>Frgn_list.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BC项目\FrbcList.resx">
+      <DependentUpon>FrbcList.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BC项目\FrgxShow.resx">
+      <DependentUpon>FrgxShow.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BC项目\FrgxAdd.resx">
+      <DependentUpon>FrgxAdd.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BC项目\Frkc_ck.resx">
+      <DependentUpon>Frkc_ck.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BC项目\Frkc_fk.resx">
+      <DependentUpon>Frkc_fk.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BC项目\Frkc_List.resx">
+      <DependentUpon>Frkc_List.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BC项目\Frkc_tz.resx">
+      <DependentUpon>Frkc_tz.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BC项目\Frph_List.resx">
+      <DependentUpon>Frph_List.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BC项目\Frph_sz.resx">
+      <DependentUpon>Frph_sz.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="YanFrom\FrSelClInfo.resx">
+      <DependentUpon>FrSelClInfo.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="yanShareFrom\FrEdit_gxfjxx.resx">
+      <DependentUpon>FrEdit_gxfjxx.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="yanShareFrom\FrselWp.resx">
+      <DependentUpon>FrselWp.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BC项目\FrWpAdd.resx">
+      <DependentUpon>FrWpAdd.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DHAQC\FrQcShowView.resx">
+      <DependentUpon>FrQcShowView.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DHAQC\FrQcSz.resx">
+      <DependentUpon>FrQcSz.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DHAQC\FrWlJc.resx">
+      <DependentUpon>FrWlJc.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DHAQC\FrXmSjsz.resx">
+      <DependentUpon>FrXmSjsz.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form2.resx">
+      <DependentUpon>Form2.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrChenReturn.resx">
+      <DependentUpon>FrChenReturn.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrModPass.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>FrModPass.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frphzl2.resx">
+      <DependentUpon>Frphzl2.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frpxlb.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Frpxlb.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrQA2.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>FrQA2.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frshowmx.resx">
+      <DependentUpon>Frshowmx.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrVb.resx">
+      <DependentUpon>FrVb.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Manage\Fraddelse.resx">
+      <DependentUpon>Fraddelse.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Manage\Fradminlist.resx">
+      <DependentUpon>Fradminlist.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Manage\Frbbiao.resx">
+      <DependentUpon>Frbbiao.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Manage\Frbbiao2.resx">
+      <DependentUpon>Frbbiao2.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Manage\frjiaose.resx">
+      <DependentUpon>frjiaose.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Manage\frpassword.resx">
+      <DependentUpon>frpassword.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Manage\Frqjface.resx">
+      <DependentUpon>Frqjface.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Manage\Frry.resx">
+      <DependentUpon>Frry.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Manage\frryAdd.resx">
+      <DependentUpon>frryAdd.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Manage\frShowLog.resx">
+      <DependentUpon>frShowLog.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Manage\Frtb_cplb.resx">
+      <DependentUpon>Frtb_cplb.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Manage\Frzdycxb.resx">
+      <DependentUpon>Frzdycxb.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Manage\Frzx.resx">
+      <DependentUpon>Frzx.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MRP\FrDull.resx">
+      <DependentUpon>FrDull.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MRP\FrMrpWeight.resx">
+      <DependentUpon>FrMrpWeight.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MRP\Frqljh.resx">
+      <DependentUpon>Frqljh.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MRP\FrRightNow.resx">
+      <DependentUpon>FrRightNow.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MRP\FrRightNowMX.resx">
+      <DependentUpon>FrRightNowMX.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MRP\Frwldmhz.resx">
+      <DependentUpon>Frwldmhz.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MRP\Frwljh.resx">
+      <DependentUpon>Frwljh.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MRP\Frwljhbb.resx">
+      <DependentUpon>Frwljhbb.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QA部门\Frqalist.resx">
+      <DependentUpon>Frqalist.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QA部门\Frqa_Add.resx">
+      <DependentUpon>Frqa_Add.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QA部门\Frtb_gysshtz.resx">
+      <DependentUpon>Frtb_gysshtz.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QA部门\Frtb_khtsjlb.resx">
+      <DependentUpon>Frtb_khtsjlb.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QA部门\Frtb_xtwjqd.resx">
+      <DependentUpon>Frtb_xtwjqd.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QC部门\Frqc_list.resx">
+      <DependentUpon>Frqc_list.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QC部门\Frtb_bcQC.resx">
+      <DependentUpon>Frtb_bcQC.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QC部门\Frtb_elsecheck.resx">
+      <DependentUpon>Frtb_elsecheck.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QC部门\Frtb_hjwswjc.resx">
+      <DependentUpon>Frtb_hjwswjc.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QC部门\Frtb_t676l.resx">
+      <DependentUpon>Frtb_t676l.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QC部门\Frtb_wjxmjl.resx">
+      <DependentUpon>Frtb_wjxmjl.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QC部门\Frtb_wsjcjl.resx">
+      <DependentUpon>Frtb_wsjcjl.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SplashScreen1.resx">
+      <DependentUpon>SplashScreen1.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="sysadd\Frtb_2009nwbshqktj.resx">
+      <DependentUpon>Frtb_2009nwbshqktj.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="sysadd\Frtb_beizhu.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Frtb_beizhu.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="sysadd\Frtb_fsq.resx">
+      <DependentUpon>Frtb_fsq.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="sysadd\Frtb_hjwswbz.resx">
+      <DependentUpon>Frtb_hjwswbz.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="sysadd\Frtb_hjwswjcsj.resx">
+      <DependentUpon>Frtb_hjwswjcsj.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="sysadd\Frtb_spaqnwsh.resx">
+      <DependentUpon>Frtb_spaqnwsh.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="sysmodule\Frprintweb.resx">
+      <DependentUpon>Frprintweb.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="YanFrom\Frbb.resx">
+      <DependentUpon>Frbb.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="YanFrom\Frbb_Gs.resx">
+      <DependentUpon>Frbb_Gs.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="YanFrom\Frbb_save.resx">
+      <DependentUpon>Frbb_save.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="YanFrom\Frhccl.resx">
+      <DependentUpon>Frhccl.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="YanFrom\FrBmpSz.resx">
+      <DependentUpon>FrBmpSz.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="YanFrom\FrListYl.resx">
+      <DependentUpon>FrListYl.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="YanFrom\FrListYl_slqk.resx">
+      <DependentUpon>FrListYl_slqk.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DHAQC\FrQcSd.resx">
+      <DependentUpon>FrQcSd.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DHAQC\FrQcXmsz.resx">
+      <DependentUpon>FrQcXmsz.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="YanFrom\FrSelCl.resx">
+      <DependentUpon>FrSelCl.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="YanFrom\FrSelHcCz.resx">
+      <DependentUpon>FrSelHcCz.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="YanFrom\FrTj_Scqk.resx">
+      <DependentUpon>FrTj_Scqk.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="YanFrom\FrTj_Scqk_cp.resx">
+      <DependentUpon>FrTj_Scqk_cp.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="YanFrom\FrTj_Scqk_yl.resx">
+      <DependentUpon>FrTj_Scqk_yl.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="YanFrom\FrTj_Yjyl.resx">
+      <DependentUpon>FrTj_Yjyl.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="YanFrom\frYanPhzl.resx">
+      <DependentUpon>frYanPhzl.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="yanShareFrom\FrEdit_gxcp.resx">
+      <DependentUpon>FrEdit_gxcp.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="产品加工\Frcpdmhz.resx">
+      <DependentUpon>Frcpdmhz.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="产品加工\Frcpgf.resx">
+      <DependentUpon>Frcpgf.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="产品加工\Frcpgf2.resx">
+      <DependentUpon>Frcpgf2.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="产品加工\Frcpxlv.resx">
+      <DependentUpon>Frcpxlv.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="产品加工\Frhzbc.resx">
+      <DependentUpon>Frhzbc.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="产品加工\Frhzcn.resx">
+      <DependentUpon>Frhzcn.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="产品加工\Frhzcp.resx">
+      <DependentUpon>Frhzcp.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="产品加工\Frhzcp2.resx">
+      <DependentUpon>Frhzcp2.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="产品加工\Frhzycl.resx">
+      <DependentUpon>Frhzycl.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="产品加工\Frkhxq.resx">
+      <DependentUpon>Frkhxq.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="产品加工\Frkhxq2.resx">
+      <DependentUpon>Frkhxq2.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="产品加工\Frxkh.resx">
+      <DependentUpon>Frxkh.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="供应商\FrgetGysmc.resx">
+      <DependentUpon>FrgetGysmc.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="供应商\Frgysadd.resx">
+      <DependentUpon>Frgysadd.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="供应商\Frgyslist.resx">
+      <DependentUpon>Frgyslist.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="冬化与脱臭\Frtb_donghua.resx">
+      <DependentUpon>Frtb_donghua.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="冬化与脱臭\Frtb_donghuaQC.resx">
+      <DependentUpon>Frtb_donghuaQC.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="冬化与脱臭\Frtb_tuoxiu.resx">
+      <DependentUpon>Frtb_tuoxiu.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="冬化与脱臭\Frtb_tuoxiuQC.resx">
+      <DependentUpon>Frtb_tuoxiuQC.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="原料\Frfscylsy.resx">
+      <DependentUpon>Frfscylsy.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="原料\Frfscylsy2.resx">
+      <DependentUpon>Frfscylsy2.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="原料\Frylcybj.resx">
+      <DependentUpon>Frylcybj.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="原料\Frylcybj2.resx">
+      <DependentUpon>Frylcybj2.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="各冷库信息\Frstorage.resx">
+      <DependentUpon>Frstorage.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="外加工和返工\FrAddfangong.resx">
+      <DependentUpon>FrAddfangong.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="外加工和返工\FrAddwjgf.resx">
+      <DependentUpon>FrAddwjgf.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="外加工和返工\Frfangong.resx">
+      <DependentUpon>Frfangong.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="外加工和返工\Frfgyf.resx">
+      <DependentUpon>Frfgyf.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="外购油\Frshowwg.resx">
+      <DependentUpon>Frshowwg.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="外购油\Frwgcpy.resx">
+      <DependentUpon>Frwgcpy.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="外购油\Frwgmy.resx">
+      <DependentUpon>Frwgmy.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="成品进出货\FrInternal.resx">
+      <DependentUpon>FrInternal.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="成品进出货\FrReturn.resx">
+      <DependentUpon>FrReturn.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="技术部\Faddfjpl5.resx">
+      <DependentUpon>Faddfjpl5.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="技术部\Frjsb_YFXMGL.resx">
+      <DependentUpon>Frjsb_YFXMGL.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="技术部\Frjsb_YFXMGLZL.resx">
+      <DependentUpon>Frjsb_YFXMGLZL.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="技术部\Frjsb_YFXMGL_ADD.resx">
+      <DependentUpon>Frjsb_YFXMGL_ADD.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="技术部\Frjsb_YFXMGL_ZLADD.resx">
+      <DependentUpon>Frjsb_YFXMGL_ZLADD.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="技术部\Frtb_five.resx">
+      <DependentUpon>Frtb_five.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="样品留样管理\Frtb_reserved.resx">
+      <DependentUpon>Frtb_reserved.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="样品留样管理\Frtb_reservedAdd.resx">
+      <DependentUpon>Frtb_reservedAdd.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="毛油\Frfgadd.resx">
+      <DependentUpon>Frfgadd.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="成品粉\Frcpfhp.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Frcpfhp.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="成品粉\FrcpfMIX.resx">
+      <DependentUpon>FrcpfMIX.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="成品粉\Frdtbh.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Frdtbh.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="技术部\Fraddfjpl.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Fraddfjpl.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="技术部\Frsgfjtp.resx">
+      <DependentUpon>Frsgfjtp.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="中罐\整批返工\Frzpfg.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Frzpfg.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="文件上传\Frgxry.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Frgxry.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="查询\frcpfcx.resx">
+      <DependentUpon>frcpfcx.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="查询\Frsavereport.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Frsavereport.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="毛油\Frfg_ss2.resx">
+      <DependentUpon>Frfg_ss2.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="物料进出货\Frmodyl.resx">
+      <DependentUpon>Frmodyl.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="物料进出货\Frwldmtj.resx">
+      <DependentUpon>Frwldmtj.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="物料进出货\Fryl.resx">
+      <DependentUpon>Fryl.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="物料进出货\Frylchuhuo.resx">
+      <DependentUpon>Frylchuhuo.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="物料进出货\Fryljch.resx">
+      <DependentUpon>Fryljch.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="粉剂部\Frfenji_list.resx">
+      <DependentUpon>Frfenji_list.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="粉剂部\Frtb_FiveBuckleOil.resx">
+      <DependentUpon>Frtb_FiveBuckleOil.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="粉剂部\Fr_fiveqq.resx">
+      <DependentUpon>Fr_fiveqq.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="粉剂部\Frxgfjnbd.resx">
+      <DependentUpon>Frxgfjnbd.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="粉剂部\Fr_qq.resx">
+      <DependentUpon>Fr_qq.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="粉剂配料\Frx832p5.resx">
+      <DependentUpon>Frx832p5.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="精炼脱色\FrYJ_jlts.resx">
+      <DependentUpon>FrYJ_jlts.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="精炼计划\Frcpydmtx.resx">
+      <DependentUpon>Frcpydmtx.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="精炼计划\Fr_jljh.resx">
+      <DependentUpon>Fr_jljh.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="统计\fjylsy2.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>fjylsy2.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="统计\Frcphzb.resx">
+      <DependentUpon>Frcphzb.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="统计\Frddzqzfl.resx">
+      <DependentUpon>Frddzqzfl.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="统计\FrFGHTTJB.resx">
+      <DependentUpon>FrFGHTTJB.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="统计\frfjsczbYS2.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frfjsczbYS2.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="统计\frfxyjyl2.resx">
+      <DependentUpon>frfxyjyl2.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="统计\frfxyjylara.resx">
+      <DependentUpon>frfxyjylara.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="统计\Frjchtj.resx">
+      <DependentUpon>Frjchtj.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="统计\Frlpkhblpk.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Frlpkhblpk.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="统计\frtjmenuNEW.resx">
+      <DependentUpon>frtjmenuNEW.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="统计\FrYanJcJsl.resx">
+      <DependentUpon>FrYanJcJsl.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="统计\Frzdybb_mx.resx">
+      <DependentUpon>Frzdybb_mx.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="统计图形\Fr2009nwbshqkTJ.resx">
+      <DependentUpon>Fr2009nwbshqkTJ.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="统计图形\FrCPFQCIMG.resx">
+      <DependentUpon>FrCPFQCIMG.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="统计图形\FrFSQTJ.resx">
+      <DependentUpon>FrFSQTJ.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="统计图形\Frgyshtztj.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Frgyshtztj.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="统计图形\Frkhtsbtj.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Frkhtsbtj.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="统计图形\FrMOCTXTJ.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>FrMOCTXTJ.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="统计图形\Frpctztxtj.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Frpctztxtj.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="统计图形\FrQCIMG.resx">
+      <DependentUpon>FrQCIMG.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="统计图形\FrQCIMG3.resx">
+      <DependentUpon>FrQCIMG3.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="统计图形\FrQCIMG4.resx">
+      <DependentUpon>FrQCIMG4.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="订单\Frddadd.resx">
+      <DependentUpon>Frddadd.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="订单\Frdddy.resx">
+      <DependentUpon>Frdddy.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="订单\Frddfhzb.resx">
+      <DependentUpon>Frddfhzb.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="订单\Frddgzb.resx">
+      <DependentUpon>Frddgzb.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="订单\Frddhmx.resx">
+      <DependentUpon>Frddhmx.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="订单\Frddjfyb.resx">
+      <DependentUpon>Frddjfyb.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="订单\Frddjfyb2.resx">
+      <DependentUpon>Frddjfyb2.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="订单\Frddlist.resx">
+      <DependentUpon>Frddlist.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="订单\Frddqhjf.resx">
+      <DependentUpon>Frddqhjf.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="订单\Frddstorage.resx">
+      <DependentUpon>Frddstorage.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="订单\Frddyxkc.resx">
+      <DependentUpon>Frddyxkc.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="订单\Frddzxjh.resx">
+      <DependentUpon>Frddzxjh.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="订单\Frddzxjh2.resx">
+      <DependentUpon>Frddzxjh2.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="订单\Frkcxs.resx">
+      <DependentUpon>Frkcxs.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="订单\Fryxkc.resx">
+      <DependentUpon>Fryxkc.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="成品进出货\Frzk.resx">
+      <DependentUpon>Frzk.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="运行部\frzk2.resx">
+      <DependentUpon>frzk2.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="运行部\Fzk1.resx">
+      <DependentUpon>Fzk1.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="成品进出货\Frmodjch.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Frmodjch.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="统计\frnhyb.resx">
+      <DependentUpon>frnhyb.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="统计\Fryfcltj.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Fryfcltj.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="统计\fryjyl.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>fryjyl.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="统计\fryjzbYS2.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>fryjzbYS2.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="运行部\Frtb_k3cpykc.resx">
+      <DependentUpon>Frtb_k3cpykc.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="运行部\frShowyllbYS.resx">
+      <DependentUpon>frShowyllbYS.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="运行部\frtb_cpkczbcx.resx">
+      <DependentUpon>frtb_cpkczbcx.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="运行部\Frtb_fhyb.resx">
+      <DependentUpon>Frtb_fhyb.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="运行部\Frtb_pljh.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Frtb_pljh.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="运行部\frtb_yllbYS.resx">
+      <DependentUpon>frtb_yllbYS.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="运行部\Frtb_yxjh.resx">
+      <DependentUpon>Frtb_yxjh.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="大罐\frtangjiang.resx">
+      <DependentUpon>frtangjiang.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="大罐\frtb_jg.resx">
+      <DependentUpon>frtb_jg.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="大罐\frtb_jg2.resx">
+      <DependentUpon>frtb_jg2.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="大罐\frtb_tg.resx">
+      <DependentUpon>frtb_tg.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="统计\frnbMonthft.resx">
+      <DependentUpon>frnbMonthft.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="统计\frnhYearJG.resx">
+      <DependentUpon>frnhYearJG.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="统计\Frtb_QAcc.resx">
+      <DependentUpon>Frtb_QAcc.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="设备动力部\Frehslist.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Frehslist.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frphzl.resx">
+      <DependentUpon>Frphzl.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frshowadd.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Frshowadd.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frtb_qa.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Frtb_qa.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="sysadd\FrK3connect.resx">
+      <DependentUpon>FrK3connect.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="sysadd\Frtb_b962t.resx">
+      <DependentUpon>Frtb_b962t.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="sysadd\Frtb_cgptscl.resx">
+      <DependentUpon>Frtb_cgptscl.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="sysadd\Frtb_dian.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Frtb_dian.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="sysadd\Frtb_glqghjl.resx">
+      <DependentUpon>Frtb_glqghjl.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="sysadd\Frtb_jcdftj.resx">
+      <DependentUpon>Frtb_jcdftj.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="sysadd\Frtb_jcfxx.resx">
+      <DependentUpon>Frtb_jcfxx.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="sysadd\Frtb_pctz.resx">
+      <DependentUpon>Frtb_pctz.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="sysadd\Frtb_tz.resx">
+      <DependentUpon>Frtb_tz.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="sysadd\Frtb_xcjcapb.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Frtb_xcjcapb.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="sysadd\Frtb_xmsgbgzzxt.resx">
+      <DependentUpon>Frtb_xmsgbgzzxt.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="sysadd\Frtb_ygpxda.resx">
+      <DependentUpon>Frtb_ygpxda.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="sysadd\Frtb_ygpxda2.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Frtb_ygpxda2.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="sysadd\Frtb_yllb.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Frtb_yllb.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="sysadd\Frtb_zls.resx">
+      <DependentUpon>Frtb_zls.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="sysadd\Frtb_zqb.resx">
+      <DependentUpon>Frtb_zqb.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="中罐\Frtb_b959t.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Frtb_b959t.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="中罐\Frtb_zgqc.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Frtb_zgqc.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="运行部\Form6.resx">
+      <DependentUpon>Form6.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="运行部\frtb_cpkczb.resx">
+      <DependentUpon>frtb_cpkczb.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="运行部\Fryllist.resx">
+      <DependentUpon>Fryllist.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="大罐\Frtb_dgqc.resx">
+      <DependentUpon>Frtb_dgqc.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="导库存\Frdrk3kc.resx">
+      <DependentUpon>Frdrk3kc.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="小罐\Frtb_b970t.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Frtb_b970t.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="小罐\Frtb_xgqc.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Frtb_xgqc.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="大罐\Frtb_i234a.resx">
+      <DependentUpon>Frtb_i234a.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="成品油\Frtb_cpqc.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Frtb_cpqc.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="成品油\Frtb_h195z.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Frtb_h195z.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="成品粉\frhunpixl.resx">
+      <DependentUpon>frhunpixl.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="成品粉\Frtbfj_qc.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Frtbfj_qc.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="成品粉\Frtb_x832p.resx">
+      <DependentUpon>Frtb_x832p.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="批号规律\Frphgn.resx">
+      <DependentUpon>Frphgn.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="技术部\Frjsb_list.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Frjsb_list.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="毛油\Form5.resx">
+      <DependentUpon>Form5.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="毛油\Frfg_ss.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Frfg_ss.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="毛油\Frtb_fgqc.resx">
+      <DependentUpon>Frtb_fgqc.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="毛油\Frtb_x825p.resx">
+      <DependentUpon>Frtb_x825p.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="文件上传\frwjmenu.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frwjmenu.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="时间控制\Fttimecontr.resx">
+      <DependentUpon>Fttimecontr.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="查询\frchaph.resx">
+      <DependentUpon>frchaph.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="查询\Frdxxfdate.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Frdxxfdate.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="查询\frdzxf.resx">
+      <DependentUpon>frdzxf.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="查询\frdzxf2.resx">
+      <DependentUpon>frdzxf2.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="查询\Frdzxf3.resx">
+      <DependentUpon>Frdzxf3.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="查询\Frylcx.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Frylcx.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="油剂部\Frshow_list.resx">
+      <DependentUpon>Frshow_list.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="粉剂小批QA\Form4.resx">
+      <DependentUpon>Form4.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="粉剂小批QA\Frfjxp_qa.resx">
+      <DependentUpon>Frfjxp_qa.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="粉剂配料\Frtb_823p2.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Frtb_823p2.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="粉剂配料\Frtb_x823p.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Frtb_x823p.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="粉剂部\Frtb_n441f.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Frtb_n441f.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="技术部\Frtb_one.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Frtb_one.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="34号塔\Frtb_ss.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Frtb_ss.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="精炼脱色\Frtb_jlqc.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Frtb_jlqc.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="精炼脱色\Frtb_k306c.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Frtb_k306c.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="统计\fraqjczgqk.resx">
+      <DependentUpon>fraqjczgqk.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="统计图形\frfjsczbYS.resx">
+      <DependentUpon>frfjsczbYS.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="统计\frjylsy.resx">
+      <DependentUpon>frjylsy.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frlogin.resx">
+      <DependentUpon>frlogin.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="统计\frMOCss.resx">
+      <DependentUpon>frMOCss.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="统计\frnhzb.resx">
+      <DependentUpon>frnhzb.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="统计\frpcfxzgx.resx">
+      <DependentUpon>frpcfxzgx.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="统计\frspaqwswc.resx">
+      <DependentUpon>frspaqwswc.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="统计\frtjmenu.resx">
+      <DependentUpon>frtjmenu.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="统计\frxmsg.resx">
+      <DependentUpon>frxmsg.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="统计\frygpx.resx">
+      <DependentUpon>frygpx.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="统计\frygpx2.resx">
+      <DependentUpon>frygpx2.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="统计图形\fryjzbYS.resx">
+      <DependentUpon>fryjzbYS.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="统计\fryxyb.resx">
+      <DependentUpon>fryxyb.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="统计\Frzdybb.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Frzdybb.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="角色权限\Frweb.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Frweb.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EHS\Frsbdllist.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Frsbdllist.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="外加工和返工\Frfgydcpf.resx">
+      <DependentUpon>Frfgydcpf.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="外加工和返工\Frscfgy.resx">
+      <DependentUpon>Frscfgy.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="成品进出货\frchuhuo.resx">
+      <DependentUpon>frchuhuo.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="运行部\Frpljhcx.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Frpljhcx.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="成品进出货\Frmodkc.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Frmodkc.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="成品进出货\FrModsykc.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>FrModsykc.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="成品进出货\Frtb_x824p.resx">
+      <DependentUpon>Frtb_x824p.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="成品进出货\Frtb_x824pcpf.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Frtb_x824pcpf.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="成品进出货\frzchuo.resx">
+      <DependentUpon>frzchuo.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="酶解\Frtb_meijie.resx">
+      <DependentUpon>Frtb_meijie.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="酶解\Frtb_meijieQC.resx">
+      <DependentUpon>Frtb_meijieQC.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="采购人资\Frcgrzlist.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Frcgrzlist.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="采购人资\Frpxsstj.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Frpxsstj.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="采购人资\Frpxsstj2.resx">
+      <DependentUpon>Frpxsstj2.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="采购人资\Frrlzy.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Frrlzy.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="采购到货\Frbz.resx">
+      <DependentUpon>Frbz.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="采购到货\Frcg.resx">
+      <DependentUpon>Frcg.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="采购到货\Frcgdhbb.resx">
+      <DependentUpon>Frcgdhbb.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="采购到货\Frcgdhbbylbc.resx">
+      <DependentUpon>Frcgdhbbylbc.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="采购到货\Frcgdhjl.resx">
+      <DependentUpon>Frcgdhjl.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="采购到货\Frcgxx.resx">
+      <DependentUpon>Frcgxx.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="采购到货\Frdhgz.resx">
+      <DependentUpon>Frdhgz.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="采购到货\Frjh.resx">
+      <DependentUpon>Frjh.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="采购到货\Frjhxg.resx">
+      <DependentUpon>Frjhxg.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="采购到货\Frqg.resx">
+      <DependentUpon>Frqg.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="采购到货\Frqg0.resx">
+      <DependentUpon>Frqg0.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="采购到货\Frqgdsx.resx">
+      <DependentUpon>Frqgdsx.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="采购到货\Frtjxg.resx">
+      <DependentUpon>Frtjxg.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="采购到货\Frwplb.resx">
+      <DependentUpon>Frwplb.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="采购到货\Frys.resx">
+      <DependentUpon>Frys.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="预警时间\Frtb_warning.resx">
+      <DependentUpon>Frtb_warning.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="预警时间\Frtb_WarningAdd.resx">
+      <DependentUpon>Frtb_WarningAdd.vb</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="bin\Debug\Config\CabioMap.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="bin\Debug\Config\dao.config" />
+    <None Include="bin\Debug\Config\Project.config" />
+    <None Include="bin\Debug\Config\properties.config" />
+    <None Include="bin\Debug\Config\providers.config" />
+    <None Include="bin\Debug\Config\SqlServerMap.config" />
+    <None Include="bin\Debug\Config\SqlServerMapPub.config" />
+    <None Include="CabioMis_TemporaryKey.pfx" />
+    <None Include="ClassDiagram1.cd" />
+    <None Include="Config\dao.config" />
+    <None Include="Config\Project.config" />
+    <None Include="Config\properties.config" />
+    <None Include="Config\providers.config" />
+    <None Include="Config\SqlServerMap.config" />
+    <None Include="Config\SqlServerMapPub.config" />
+    <None Include="Config\CabioMap.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="My Project\app.manifest" />
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Chemistry.ico" />
+    <Content Include="bin\Debug\Config\Maps\Code\tb_bcbm.xml" />
+    <Content Include="bin\Debug\Config\Maps\Crafts\tb_gxcccp.xml" />
+    <Content Include="bin\Debug\Config\Maps\Crafts\tb_gxfjxx.xml" />
+    <Content Include="bin\Debug\Config\Maps\Crafts\tb_gxsz.xml" />
+    <Content Include="bin\Debug\Config\Maps\Material\tb_syjl.xml" />
+    <Content Include="bin\Debug\Config\Maps\Material\tb_wlph.xml" />
+    <Content Include="bin\Debug\Config\Maps\Material\tb_wlphck.xml" />
+    <Content Include="bin\Debug\Config\Maps\Produce\tb_sc.xml" />
+    <Content Include="bin\Debug\Config\Maps\Produce\tb_scxq.xml" />
+    <Content Include="bin\Debug\Config\Maps\QC\tb_QcJc.xml" />
+    <Content Include="bin\Debug\Config\Maps\QC\tb_QcVa.xml" />
+    <Content Include="bin\Debug\Config\Maps\QC\tb_QcXm.xml" />
+    <Content Include="Config\Maps\Crafts\CraftsSetting.xml" />
+    <Content Include="Config\Maps\Crafts\SysUser.xml" />
+    <Content Include="dx.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="ADODB">
+      <Guid>{B691E011-1797-432E-907A-4D8C69339129}</Guid>
+      <VersionMajor>6</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="ADOMD">
+      <Guid>{22813728-8BD3-11D0-B4EF-00A0C9138CA4}</Guid>
+      <VersionMajor>6</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="VBIDE">
+      <Guid>{0002E157-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>5</VersionMajor>
+      <VersionMinor>3</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Cabio.BLL\Cabio.BLL.csproj">
+      <Project>{a7cff141-ef1b-4a75-b455-4fd190680f4d}</Project>
+      <Name>Cabio.BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Cabio.Model\Cabio.Model.csproj">
+      <Project>{69fb3577-5ded-4585-b957-ddd0a5bd78c8}</Project>
+      <Name>Cabio.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\com.uceip.DBUtility\com.uceip.DBUtility.csproj">
+      <Project>{952d90e0-f1ad-426a-a5fc-73585d29d375}</Project>
+      <Name>com.uceip.DBUtility</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="bin\Debug\Config\Maps\QA\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.VisualBasic.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

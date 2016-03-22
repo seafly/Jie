@@ -1,0 +1,118 @@
+<html>
+ <head>
+   <title>
+   </title>
+ </head>
+ <body>
+   body标签属性：
+   text:用于整个网页中的文字颜色
+   link：设定一般超链接文本的颜色
+   alink：设定鼠标移动到超链接上文本显示的颜色
+   vlink：设定访问过的超链接文本颜色
+   bgcolor：用于设定背景颜色，当已经设定背景
+               墙纸时失效
+   background：用于设置背景图片
+   leftmargin：显示的左边距
+   topmargin：显示的上边距
+   name：自定义的标记
+   style：body的类型设置
+   …………
+    <a href="#mark1">跳到标签处</a>
+    <p align="center">
+     这是第一段
+     <br>
+     文本区域
+    &nbsp;&nbsp;&nbsp;&nbsp;<!--空格 -->
+    &lt;html&gt;<!--大于和小于 -->
+    &copy;&#169;<!--版权符号-->
+    &amp;<!--& -->
+    &amp;lt;
+    &quot;<!--"-->
+    &reg;<!---->
+    &trade;<!---->
+    </p>
+   
+   <p>
+   <nobr>
+   ********************************
+   *************************************
+   *****************************************
+   *****************************************
+   </nobr>
+   </p>
+   
+    <p align="left">
+    <font face="宋体">
+   
+    <blockquote>
+     这是第二段
+    </blockquote>
+   
+    <blockquote><blockquote>
+     效果显示
+    </blockquote></blockquote>
+   
+    <center>
+     显示效果
+    </center>
+   
+    <marquee behavior="scoll" direction="right">
+    您好！scoll slide alternate
+    </marquee>
+   
+    <dl>
+       <dt>上层</dt>
+       <dd>下层</dd>
+       <dt>上层</dt>
+       <dd>下层</dd>
+    </dl>
+   
+    <ol>
+    <li>数字标识</li>
+    <li>数字标识</li>
+    <li>数字标识</li>
+    </ol>
+     <dl>
+        <dt>上层</dt>
+        <dd>下层</dd>
+        <dt>上层</dt>
+        <dd>下层</dd>
+     </dl>
+   
+     <ol>
+     <li>数字标识</li>
+     <li>数字标识</li>
+     <li>数字标识</li>
+    </ol>
+     <dl>
+        <dt>上层</dt>
+        <dd>下层</dd>
+        <dt>上层</dt>
+        <dd>下层</dd>
+     </dl>
+   
+     <ol>
+     <li>数字标识</li>
+     <li>数字标识</li>
+     <li>数字标识</li>
+    </ol>
+   
+    <ul>
+    <li>圆点标识</li>
+    <li>圆点标识</li>
+    <li>圆点标识</li>
+    </ul>
+    <pre>
+    <a name="mark1">
+    自定义格式显示  自定义格式显示
+             自定义格式显示
+                             自定义格式显示
+    </pre>
+    <font>
+    </p>
+   <a href="#">自己</a>
+<a href="">空/a>
+   <p>
+   </p>
+ </body>
+</html>

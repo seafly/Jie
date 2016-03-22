@@ -1,0 +1,1478 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+yangNetCl
+</name>
+</assembly>
+<members>
+<member name="T:yangNetCl.YanClFormBn.en_fieldType">
+	<summary>
+ 表单项类型
+ </summary>
+</member><member name="T:yangNetCl.YanClFormBn.en_JsonTb">
+	<summary>
+ 表单项属性
+ </summary>
+</member><member name="M:yangNetCl.YanClFormBn.add(System.String,System.String,System.String,System.String,System.String)">
+	<summary>
+ 添加表单项
+ </summary>
+	<param name="pText">说明文本</param>
+	<param name="pName">表单项的名称</param>
+	<param name="pValue">表单项的值</param>
+	<param name="pType">要添加的类型</param>
+	<param name="pClspm">附加属性</param>
+</member><member name="M:yangNetCl.YanClFormBn.add2(System.String,System.String,System.String,System.String)">
+	<summary>
+ 添加表单项
+ </summary>
+	<param name="pText">说明文本</param>
+	<param name="pName">表单项的名</param>
+	<param name="pType">要添加的类型</param>
+	<param name="pClspm">附加属性</param>
+</member><member name="M:yangNetCl.YanClFormBn.addZd(System.String,System.String,System.String,System.String,System.String,System.String)">
+	<summary>
+ 添加一个数据库字段作为表单项
+ </summary>
+	<param name="pZd">字段</param>
+	<param name="pType">要添加的类型</param>
+	<param name="pClspm">附加属性</param>
+	<param name="pId">所属表的ID</param>
+	<param name="pTb">所属的表</param>
+	<param name="pVa">默认值</param>
+</member><member name="M:yangNetCl.YanClFormBn.setValue(System.String,System.String)">
+	<summary>
+ 设置值
+ </summary>
+	<param name="pName">表单项名称</param>
+	<param name="pValue">值</param>
+	<remarks></remarks>
+</member><member name="M:yangNetCl.YanClFormBn.remove(System.String)">
+	<summary>
+ 移除
+ </summary>
+	<param name="pName">表单项名称</param>
+	<remarks></remarks>
+</member><member name="M:yangNetCl.YanClFormBn.updateTb(System.String,System.String)">
+	<summary>
+ 更新对应表的值
+ </summary>
+	<param name="pTb">要更新的表</param>
+	<param name="pId">ID</param>
+	<remarks></remarks>
+</member><member name="M:yangNetCl.YanClFormBn.getBn(System.String,System.String,System.Int32,System.Int32,System.String,System.Int32,System.String)">
+	<summary>
+ 生成按钮
+ </summary>
+	<param name="pMsg">按钮文本</param>
+	<param name="pJs">表单提交后执行的JS</param>
+	<param name="pW">弹出窗体的宽</param>
+	<param name="pH">弹出窗体的高</param>
+	<param name="pApm">附加的参数</param>
+	<param name="pBtype">按钮类型</param>
+</member><member name="T:yangNetCl.YanClFormBn">
+	<summary>
+ 生成表单项的按钮
+ </summary>
+</member><member name="M:yangNetCl.Cl_Html.BnText(System.String,System.String,System.String,System.String,System.Int32,System.String,System.Int32)">
+	<summary>
+ 文本输入框
+ </summary>
+	<param name="pName">name和id</param>
+	<param name="pValue">值</param>
+	<param name="pJs">附加的属性，可以是JS，也可以是其他的属性</param>
+	<param name="pStyle">样式（不需要写style=）</param>
+	<param name="pShowText">提示信息类型</param>
+	<param name="pStrType">文本类型（TEXT,DATE,PASSWORD）</param>
+</member><member name="M:yangNetCl.Cl_Html.Hidden(System.String,System.String)">
+	<summary>
+ 隐藏表单项
+ </summary>
+	<param name="pName">name和id</param>
+	<param name="pValue">值</param>
+</member><member name="M:yangNetCl.Cl_Html.Button(System.String,System.String,System.String,System.String)">
+	<summary>
+  按钮
+ </summary>
+	<param name="pName">name和id</param>
+	<param name="pValue">值</param>
+</member><member name="M:yangNetCl.Cl_Html.BnDel(System.String,System.String,System.Int32,System.String,System.String,System.Int32)">
+	<summary>
+ 生成删除按钮
+ </summary>
+	<param name="pTb">要删除的表</param>
+	<param name="pId">要删除的记录的ID</param>
+	<param name="pClType">操作类型</param>
+	<param name="pJs">操作完成执行的脚本操作</param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:yangNetCl.Cl_Html.BnCz(System.String,System.String,System.String,System.Int32,System.String,System.Boolean,System.String,System.String)">
+	<summary>
+ 处理按钮
+ </summary>
+	<param name="pText">按钮显示的文字</param>
+	<param name="pApm">参数信息</param>
+	<param name="pJs">执行完按钮使用的JS</param>
+	<param name="pType">按钮类型</param>
+	<param name="pMsg">点击按钮的提示信息</param>
+	<param name="pBlts">是否显示提示信息</param>
+	<param name="pUrl">后台处理程序的地址</param>
+	<param name="pQt">样式</param>
+</member><member name="M:yangNetCl.Cl_Html.Select(System.Data.DataTable,System.String,System.String,System.String,System.String,System.String,System.Boolean,System.String,System.Int32,System.Int32)">
+	<summary>
+     '通过DataTable字段名产生下拉列表
+ </summary>
+	<param name="SouceDb">DataTable</param>
+	<param name="ContrName">下拉框名称</param>
+	<param name="DbColNameForValue">下拉框Value属性字段</param>
+	<param name="DbColNameForText">下拉框Text属性字段</param>
+	<param name="CheckString">下拉框默认选中文本，可以空</param>
+	<param name="HtmlString">下拉框附属超文本标记(可以是样式或脚本等)，可以空</param>
+	<param name="pBlFj">是否附加空列</param>
+	<param name="pFjValue">附加空列的值</param>
+	<param name="iShowType">使用的SELEC框架</param>
+	<param name="iShowPla">是否显示提示</param>
+</member><member name="M:yangNetCl.Cl_Html.Select(System.Int32,System.Int32,System.String,System.String,System.String,System.String,System.Boolean)">
+	<summary>
+ 根据逗号间隔的字符串产生下拉列表
+ </summary>
+	<param name="pNum1">逗号间隔的字符串</param>
+	<param name="ContrName">下拉框名称</param>
+	<param name="HtmlString">下拉框附属超文本标记(可以是样式或脚本等</param>
+	<param name="CheckString">下拉框默认选中文本，可以空</param>
+	<param name="pStrZh">文本显示为空的字符</param>
+</member><member name="M:yangNetCl.Cl_Html.Select(System.String,System.String,System.String,System.String,System.String,System.Int32)">
+	<summary>
+ 根据逗号间隔的字符串产生下拉列表
+ </summary>
+	<param name="instring">逗号间隔的字符串</param>
+	<param name="ContrName">下拉框名称</param>
+	<param name="HtmlString">下拉框附属超文本标记(可以是样式或脚本等</param>
+	<param name="CheckString">下拉框默认选中文本，可以空</param>
+	<param name="pStrZh">文本显示为空的字符</param>
+	<param name="iShowType">使用的SELEC框架</param>
+</member><member name="M:yangNetCl.Cl_Html.SelectItem(System.String,System.String,System.String)">
+	<summary>
+ 下拉列表项目
+ </summary>
+	<param name="ValueString">下拉列表值</param>
+	<param name="TextString">下拉列表文本</param>
+	<param name="CheckString">是否选中</param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:yangNetCl.Cl_Html.setFormVa(System.String,System.String,System.String)">
+	<summary>
+ 表单项赋值
+ </summary>
+	<param name="pTb">表</param>
+	<param name="pId">ID</param>
+	<param name="pZd">字段</param>
+</member><member name="M:yangNetCl.Cl_Html.getPagePart">
+	<summary>
+ 处理分页数据控件
+ </summary>
+</member><member name="M:yangNetCl.Cl_Html.getFormTdStr(System.Data.DataTable,System.Int32,System.String)">
+	<summary>
+ 获取表单内表格的文本
+ </summary>
+	<param name="pDt">包含表单信息的数据表</param>
+	<param name="pType">表单项分列值</param>
+</member><member name="M:yangNetCl.Cl_Html.getFormJs(System.Data.DataTable)">
+	<summary>
+ 获取表单的脚本
+ </summary>
+	<param name="pDt">包含表单信息的数据表</param>
+</member><member name="M:yangNetCl.Cl_liger.getLigridShow(System.String[],System.String,System.Boolean,System.Boolean,System.String,System.String,System.Int32,System.String,System.String,System.String,System.Boolean,System.String)">
+	<summary>
+ 获取表格字符串（基于liger）
+ </summary>
+</member><member name="T:yangNetCl.Cl_liger">
+	<summary>
+ 辅助处理liger的类
+ </summary>
+</member><member name="P:yangNetCl.My.Resources.Resources.ResourceManager">
+	<summary>
+  返回此类使用的缓存的 ResourceManager 实例。
+</summary>
+</member><member name="P:yangNetCl.My.Resources.Resources.Culture">
+	<summary>
+  使用此强类型资源类，为所有资源查找
+  重写当前线程的 CurrentUICulture 属性。
+</summary>
+</member><member name="T:yangNetCl.My.Resources.Resources">
+	<summary>
+  一个强类型的资源类，用于查找本地化的字符串等。
+</summary>
+</member><member name="T:yangNetCl.yanTextBox">
+	<summary>
+ 只能输入数字的textbox
+ </summary>
+</member><member name="M:yangNetCl.yanDaTaGridView.GetRowIndexAt(System.Int32)">
+	<summary>
+ 获取指定Y标的行号
+ </summary>
+	<param name="pY">控件上的Y标</param>
+</member><member name="T:yangNetCl.yanDaTaGridView">
+	<summary>
+ 添加了绘制功能的DATAGRIDVIEW
+ </summary>
+</member><member name="M:yangNetCl.MyOpaqueLayer.OnPaint(System.Windows.Forms.PaintEventArgs)">
+	<summary>
+ 自定义绘制窗体
+ </summary>
+	<param name="e"></param>
+</member><member name="M:yangNetCl.OpaqueCommand.ShowOpaqueLayer(System.Windows.Forms.Control,System.Int32,System.Boolean,System.String)">
+	<summary>
+ 显示遮罩层
+ </summary>
+	<param name="control">控件</param>
+	<param name="alpha">透明度</param>
+	<param name="isShowLoadingImage">是否显示图标</param>
+</member><member name="M:yangNetCl.OpaqueCommand.HideOpaqueLayer">
+	<summary>
+ 隐藏遮罩层
+ </summary>
+</member><member name="T:yangNetCl.OpaqueCommand">
+	<summary>
+ 遮罩层类
+ </summary>
+</member><member name="P:yangNetCl.Cl_StrMag.m_MynumWs">
+	<summary>
+ 系统使用到的数字位数(-1为如果是整数就返回整数否则返回2位小数，-2为自身)
+ </summary>
+</member><member name="P:yangNetCl.Cl_StrMag.m_EnCodePwd">
+	<summary>
+ 默认加密KEY
+ </summary>
+</member><member name="M:yangNetCl.Cl_StrMag.YanInCk(System.String,System.String,System.DateTime,System.String)">
+	<summary>
+ 设置客户锻cookies
+ </summary>
+	<param name="pname">cookies的名字</param>
+	<param name="pvalue">cookies的值</param>
+	<param name="pExpires">cookies过期日期</param>
+	<param name="pDomain">cookies域</param>
+</member><member name="M:yangNetCl.Cl_StrMag.YanOutCk(System.String)">
+	<summary>
+ 获取客户锻cookies
+ </summary>
+	<param name="pname">cookies的名字</param>
+</member><member name="M:yangNetCl.Cl_StrMag.yanToDBC(System.String)">
+	<summary>
+ 转半角
+ </summary>
+</member><member name="M:yangNetCl.Cl_StrMag.YanNull(System.Object)">
+	<summary>
+ 将null转换为空
+ </summary>
+	<param name="pString">要转换的字符串</param>
+</member><member name="M:yangNetCl.Cl_StrMag.toInt(System.Object)">
+	<summary>
+ 转为int
+ </summary>
+	<param name="pString">要转换的字符串</param>
+</member><member name="M:yangNetCl.Cl_StrMag.YanNullToEmpty(System.Object,System.String)">
+	<summary>
+ 将null转换为空
+ </summary>
+	<param name="pString">要转换的字符串</param>
+</member><member name="M:yangNetCl.Cl_StrMag.YanForDa_1(System.Object)">
+	<summary>
+ 根据日期字符串返回1900-1-1类似的字符串
+ </summary>
+	<param name="pString">需要转换的字符串</param>
+</member><member name="M:yangNetCl.Cl_StrMag.YanForDa_2(System.Object,System.Boolean)">
+	<summary>
+ 根据日期字符串返回1900-1-1 12:12:00类似的字符串
+ </summary>
+	<param name="pString">需要转换的字符串</param>
+</member><member name="M:yangNetCl.Cl_StrMag.YanFormatNum(System.Object)">
+	<summary>
+ 格式化成数字，默认返回格式化2位
+ </summary>
+	<param name="pString">要转换的字符串</param>
+</member><member name="M:yangNetCl.Cl_StrMag.YanFormatNum3(System.Object,System.Int32)">
+	<summary>
+ 格式化成数字，返回自身
+ </summary>
+	<param name="pString">要转换的字符串</param>
+</member><member name="M:yangNetCl.Cl_StrMag.YanFormatNum2(System.Object)">
+	<summary>
+ 格式化成整数
+ </summary>
+	<param name="pString">要转换的字符串</param>
+</member><member name="M:yangNetCl.Cl_StrMag.YanFormatStr(System.Object,System.String,System.Boolean,System.Boolean,System.Int32)">
+	<summary>
+ 格式化输出
+ </summary>
+	<param name="pString">要转换的字符串</param>
+</member><member name="M:yangNetCl.Cl_StrMag.getFilesuffix(System.String)">
+	<summary>
+ 获取文件后缀名
+ </summary>
+	<param name="pFileName">带后缀名的完整文件名</param>
+</member><member name="M:yangNetCl.Cl_StrMag.Calculate(System.String)">
+	<summary>
+ 执行一个表达式
+ </summary>
+	<param name="expression"></param>
+</member><member name="M:yangNetCl.Cl_StrMag.GF_removedh(System.String)">
+	<summary>
+ 去掉字符串最后一个字符
+ </summary>
+	<param name="str"></param>
+</member><member name="M:yangNetCl.Cl_StrMag.GF_PF_bzhs(System.String,System.Int32,System.String,System.Boolean)">
+	<summary>
+ 补充字符串位置
+ </summary>
+	<param name="pStrOld">源字符串</param>
+	<param name="pIwS">位数</param>
+	<param name="pStrNew">补充的字符</param>
+</member><member name="M:yangNetCl.Cl_StrMag.getNumToStr(System.Int32,System.Int32)">
+	<summary>
+ 将2个数字转化按顺序转换为字符串
+ </summary>
+	<param name="pN1"></param>
+	<param name="pN2"></param>
+</member><member name="M:yangNetCl.Cl_StrMag.getJsonStr(System.Data.DataTable,System.Int32)">
+	<summary>
+ 转换为Json格式的字符串
+ </summary>
+	<param name="pDt">源数据表</param>
+	<remarks>
+ 0将一张数据表直接转横JSON形式，名称字段就是数据表的列名称
+ 1将一条记录转换成2层的JSON，未知JSON名称的情况下使用
+ 2将一条记录转换成一层的JSON,这是在已知JSON名称的情况下使用，适合简单赋值的应用
+ </remarks>
+</member><member name="M:yangNetCl.Cl_StrMag.getJsonStr(System.String[],System.String[0:,0:])">
+	<summary>
+ 转换为Json格式的字符串
+ </summary>
+	<param name="pArrStrName">json名称字段</param>
+	<param name="pArrString">json内容字段</param>
+</member><member name="M:yangNetCl.Cl_StrMag.getGuid">
+	<summary>
+ 获取一个GUID字符串
+ </summary>
+</member><member name="M:yangNetCl.Cl_StrMag.YanEncodeStr(System.String,System.String)">
+	<summary>
+ 加密字符串
+ </summary>
+	<param name="pText">待加密字符串</param>
+	<param name="pKey">KEY</param>
+</member><member name="M:yangNetCl.Cl_StrMag.YanDecodeStr(System.String,System.String)">
+	<summary>
+ 解密字符串
+ </summary>
+	<param name="pText">待解密字符串</param>
+	<param name="pKey">KEY</param>
+</member><member name="M:yangNetCl.Cl_StrMag.PtInPolygon(System.Drawing.Point,System.Drawing.Point[],System.Int32)">
+	<summary>
+  判断一个点是否在多边形呢
+ </summary>
+	<param name="p"></param>
+	<param name="ptPolygon"></param>
+	<param name="nCount"></param>
+</member><member name="M:yangNetCl.Cl_StrMag.getRandom(System.Int32)">
+	<summary>
+ 获取一个指定位数的随机数
+ </summary>
+	<param name="pWs">位数</param>
+</member><member name="M:yangNetCl.Cl_StrMag.YanSfzAge(System.String)">
+	<summary>
+ 输入身份证号返回年龄
+ </summary>
+	<param name="pStrText">身份证号</param>
+</member><member name="M:yangNetCl.Cl_StrMag.CheckIDCard(System.String)">
+	<summary>
+ 验证身份证号码
+ </summary>
+	<param name="Id">身份证号码</param>
+	<returns>验证成功为True，否则为False</returns>
+</member><member name="M:yangNetCl.Cl_StrMag.CheckIDCard18(System.String)">
+	<summary>
+ 验证18位身份证号
+ </summary>
+	<param name="Id">身份证号</param>
+	<returns>验证成功为True，否则为False</returns>
+</member><member name="M:yangNetCl.Cl_StrMag.CheckIDCard15(System.String)">
+	<summary>
+ 验证15位身份证号
+ </summary>
+	<param name="Id">身份证号</param>
+	<returns>验证成功为True，否则为False</returns>
+</member><member name="M:yangNetCl.Cl_StrMag.GetINI(System.String,System.String,System.String,System.String)">
+	<summary>
+ 读取INI文件
+ </summary>
+	<param name="Section">配置名</param>
+	<param name="AppName">键名</param>
+	<param name="FileName">INI文件名带完整路径</param>
+	<param name="lpDefault">默认值</param>
+</member><member name="M:yangNetCl.Cl_StrMag.WriteINI(System.String,System.String,System.String,System.String)">
+	<summary>
+ 写入INI文件
+ </summary>
+	<param name="Section">配置名</param>
+	<param name="AppName">键名</param>
+	<param name="FileName">INI文件名带完整路径</param>
+	<param name="lpDefault">默认值</param>
+</member><member name="M:yangNetCl.Cl_StrMag.GetINIW(System.String,System.String,System.String,System.String)">
+	<summary>
+ 读取INI文件(UNO)
+ </summary>
+	<param name="Section">配置名</param>
+	<param name="AppName">键名</param>
+	<param name="FileName">INI文件名带完整路径</param>
+	<param name="lpDefault">默认值</param>
+</member><member name="M:yangNetCl.Cl_StrMag.WriteINIW(System.String,System.String,System.String,System.String)">
+	<summary>
+ 写入INI文件(UNO)
+ </summary>
+	<param name="Section">配置名</param>
+	<param name="AppName">键名</param>
+	<param name="FileName">INI文件名带完整路径</param>
+	<param name="lpDefault">默认值</param>
+</member><member name="T:yangNetCl.Cl_StrMag">
+	<summary>
+ 字符串函数类
+ </summary>
+</member><member name="M:yangNetCl.Simple3Des.TruncateHash(System.String,System.Int32)">
+	<summary>
+ 从指定密钥的哈希创建指定长度的字节数组
+ </summary>
+	<param name="key">密钥</param>
+	<param name="length">长度</param>
+</member><member name="M:yangNetCl.Simple3Des.#ctor(System.String)">
+	<summary>
+ 初始化类
+ </summary>
+	<param name="key">key 参数控制 EncryptData 和 DecryptData 方法。</param>
+</member><member name="M:yangNetCl.Simple3Des.EncryptData(System.String)">
+	<summary>
+ 加密字符串
+ </summary>
+	<param name="plaintext">待加密的字符串</param>
+</member><member name="M:yangNetCl.Simple3Des.DecryptData(System.String)">
+	<summary>
+ 解密字符串
+ </summary>
+	<param name="encryptedtext">待解密的字符串</param>
+</member><member name="T:yangNetCl.Simple3Des">
+	<summary>
+ 字符串加密类
+ </summary>
+</member><member name="F:yangNetCl.cl_pagePart.Su_cbData.theDataRow">
+	<summary>
+ 当前行
+ </summary>
+</member><member name="F:yangNetCl.cl_pagePart.Su_cbData.theColumn">
+	<summary>
+ 列文本
+ </summary>
+</member><member name="F:yangNetCl.cl_pagePart.Su_cbData.ColumnName">
+	<summary>
+ 列名称
+ </summary>
+</member><member name="F:yangNetCl.cl_pagePart.Su_cbData.theIndex">
+	<summary>
+ 当前行的序号
+ </summary>
+</member><member name="F:yangNetCl.cl_pagePart.Su_cbData.theCellStyle">
+	<summary>
+ 当前行的样式
+ </summary>
+</member><member name="T:yangNetCl.cl_pagePart.Su_cbData">
+	<summary>
+ 给回调函数调用的结构
+ </summary>
+</member><member name="F:yangNetCl.cl_pagePart.Su_inData.ColumnName">
+	<summary>
+ 列名称
+ </summary>
+</member><member name="F:yangNetCl.cl_pagePart.Su_inData.theIndex">
+	<summary>
+ 当前行的序号
+ </summary>
+</member><member name="F:yangNetCl.cl_pagePart.Su_inData.theCellStyle">
+	<summary>
+ 当前单元格的样式
+ </summary>
+</member><member name="F:yangNetCl.cl_pagePart.Su_inData.theCellText">
+	<summary>
+ 当前单元格的内容
+ </summary>
+</member><member name="T:yangNetCl.cl_pagePart.Su_inData">
+	<summary>
+ 回调函数返回的对象
+ </summary>
+</member><member name="F:yangNetCl.cl_pagePart.Su_cbFoot.thePage">
+	<summary>
+ 当前页
+ </summary>
+</member><member name="F:yangNetCl.cl_pagePart.Su_cbFoot.theUrl">
+	<summary>
+ 要转到的连接地址
+ </summary>
+</member><member name="F:yangNetCl.cl_pagePart.Su_cbFoot.theParm">
+	<summary>
+ 前面带连接符的参数字符串
+ </summary>
+</member><member name="F:yangNetCl.cl_pagePart.Su_cbFoot.thePageSize">
+	<summary>
+ 每页显示的数据大小
+ </summary>
+</member><member name="F:yangNetCl.cl_pagePart.Su_cbFoot.thePageNum">
+	<summary>
+ 总页面数
+ </summary>
+</member><member name="T:yangNetCl.cl_pagePart.Su_cbFoot">
+	<summary>
+ 给脚部回调函数调用的结构
+ </summary>
+</member><member name="F:yangNetCl.cl_pagePart.m_dtExplain">
+	<summary>
+ 数据显示内容
+ </summary>
+</member><member name="F:yangNetCl.cl_pagePart.m_intNum">
+	<summary>
+ 每页数
+ </summary>
+</member><member name="F:yangNetCl.cl_pagePart.m_strKey">
+	<summary>
+主键
+ </summary>
+</member><member name="F:yangNetCl.cl_pagePart.m_strTable">
+	<summary>
+使用的表
+ </summary>
+</member><member name="F:yangNetCl.cl_pagePart.m_strWhere">
+	<summary>
+条件表达式
+ </summary>
+</member><member name="F:yangNetCl.cl_pagePart.m_strDesc">
+	<summary>
+排序表达式
+ </summary>
+</member><member name="F:yangNetCl.cl_pagePart.m_strFjZd">
+	<summary>
+附加字段
+ </summary>
+</member><member name="F:yangNetCl.cl_pagePart.m_fyType">
+	<summary>
+ 分页模式
+ </summary>
+</member><member name="F:yangNetCl.cl_pagePart.m_isShowEnd">
+	<summary>
+ 当请求的页面数大于总页面数的时候是否返回空
+ </summary>
+</member><member name="P:yangNetCl.cl_pagePart.footBtStyle">
+	<summary>
+ 分页脚步按钮的样式
+ </summary>
+</member><member name="P:yangNetCl.cl_pagePart.blMyTableAjax">
+	<summary>
+ 是否启用AJAX
+ </summary>
+</member><member name="P:yangNetCl.cl_pagePart.parentName">
+	<summary>
+ 父容器名称
+ </summary>
+</member><member name="P:yangNetCl.cl_pagePart.rnAjaxbs">
+	<summary>
+ 父容器名称
+ </summary>
+</member><member name="P:yangNetCl.cl_pagePart.blShowFoot">
+	<summary>
+ 父容器名称
+ </summary>
+</member><member name="P:yangNetCl.cl_pagePart.useTable">
+	<summary>
+ 获取或设置使用的表或视图
+ </summary>
+</member><member name="P:yangNetCl.cl_pagePart.setCallBackHtml">
+	<summary>
+设置委托函数
+ </summary>
+</member><member name="P:yangNetCl.cl_pagePart.setCallBackFoot">
+	<summary>
+设置生成脚本的委托函数
+ </summary>
+</member><member name="M:yangNetCl.cl_pagePart.SelectOleDbSrvRows(System.String,System.String)">
+	<summary>
+ 数据生成操作
+ </summary>
+	<param name="connection">数据库连接字符串</param>
+	<param name="query">查询字符串</param>
+</member><member name="M:yangNetCl.cl_pagePart.stly1(System.String,System.String,System.String)">
+	<summary>
+ 输出样式
+ </summary>
+	<param name="pstrUrl">连接地址</param>
+	<param name="pstrParm">参数字符串</param>
+	<param name="pstrBnSty">按钮的样式</param>
+	<returns>返回一组字符跟按钮，无容器</returns>
+	<remarks></remarks>
+</member><member name="M:yangNetCl.cl_pagePart.clcs">
+	<summary>
+ 得到传来参数
+ </summary>
+</member><member name="M:yangNetCl.cl_pagePart.ljdz">
+	<summary>
+ 得到程序执行页面
+ </summary>
+</member><member name="M:yangNetCl.cl_pagePart.searchchar(System.String,System.String,System.String)">
+	<summary>
+ 分解页面字符串
+ </summary>
+</member><member name="M:yangNetCl.cl_pagePart.initDtExplain">
+	<summary>
+  初始化页面现实内容
+ </summary>
+	<remarks>0为数据库字段，1为附加内容,2为不显示的数据库字段</remarks>
+</member><member name="M:yangNetCl.cl_pagePart.addZdInf(System.String)">
+	<summary>
+ 添加数据显示内容
+ </summary>
+	<param name="pstrShowTd">用,隔开的字段字符串</param>
+</member><member name="M:yangNetCl.cl_pagePart.addRows(System.String,System.String,System.Int32,System.String)">
+	<summary>
+ 添加一条数据显示内容
+ </summary>
+	<param name="pstrName">数据字段名</param>
+	<param name="pstrValue">显示的字段名</param>
+	<param name="ptype">显示类型0为数据库字段，1为附加内容,2为不显示的数据库字段</param>
+</member><member name="M:yangNetCl.cl_pagePart.initInf">
+	<summary>
+ 获取所有记录集的信息
+ </summary>
+</member><member name="M:yangNetCl.cl_pagePart.getDtPage">
+	<summary>
+ 获取当前数据
+ </summary>
+</member><member name="M:yangNetCl.cl_pagePart.getDtAll(System.String,System.String)">
+	<summary>
+ 获取当前数据
+ </summary>
+	<param name="pStrSql">查询字符串</param>
+	<param name="pStrTop">头部表达式</param>
+</member><member name="M:yangNetCl.cl_pagePart.showFoot(System.String)">
+	<summary>
+ 显示分页的脚部
+ </summary>
+	<param name="pstrBtSty">按钮的样式或其他参数</param>
+</member><member name="M:yangNetCl.cl_pagePart.showList(System.String,System.String)">
+	<summary>
+ 显示内容表格
+ </summary>
+	<param name="pClassName">表格的样式</param>
+	<param name="pFenColor">换行的颜色</param>
+	<returns></returns>
+</member><member name="M:yangNetCl.cl_pagePart.getPageUrl">
+	<summary>
+ 获取页面参数字符串
+ </summary>
+</member><member name="M:yangNetCl.cl_pagePart.getLiGdcols">
+	<summary>
+ 获取LiGrid列组合字符串
+ </summary>
+</member><member name="T:yangNetCl.AttachDataExtensions.G_EN_JSSTR">
+	<summary>
+ 常用JS字符串
+ </summary>
+</member><member name="T:yangNetCl.AttachDataExtensions.G_EN_TEXT">
+	<summary>
+ 常用说明文本
+ </summary>
+</member><member name="T:yangNetCl.AttachDataExtensions.YCL_G_EN_ENTBZJ">
+	<summary>
+ 枚举转换为表的字段
+ </summary>
+</member><member name="M:yangNetCl.AttachDataExtensions.GetAttachedData(System.Enum,System.Object)">
+	<summary>
+ 从枚举值获取KEY属性，KEY为属性的KEY
+ </summary>
+	<param name="key"></param>
+</member><member name="M:yangNetCl.AttachDataExtensions.YanGetEnValue(System.Type,System.String)">
+	<summary>
+ 通过枚举名称返回值
+ </summary>
+</member><member name="M:yangNetCl.AttachDataExtensions.YanGetEnName(System.Type,System.Int32)">
+	<summary>
+ 通过枚举值返回名称
+ </summary>
+</member><member name="M:yangNetCl.AttachDataExtensions.YanGetEnName(System.Enum)">
+	<summary>
+ 通过枚举值返回名称（静态值）
+ </summary>
+</member><member name="M:yangNetCl.AttachDataExtensions.YanGetEnText(System.Type,System.Int32)">
+	<summary>
+ 通过枚举值返回文本
+ </summary>
+</member><member name="M:yangNetCl.AttachDataExtensions.YanGetEnText(System.Enum)">
+	<summary>
+ 通过枚举值返回文本（静态值）
+ </summary>
+</member><member name="M:yangNetCl.AttachDataExtensions.YanGetEnText_1(System.Type,System.String)">
+	<summary>
+ 通过枚举名称返回文本
+ </summary>
+</member><member name="M:yangNetCl.AttachDataExtensions.YanGetEnT2N(System.Type,System.String)">
+	<summary>
+ 通过枚举文本返回名称
+ </summary>
+</member><member name="M:yangNetCl.AttachDataExtensions.YanEnToTb(System.Type)">
+	<summary>
+ 将枚举转为DATATABLE(名称，值，文本三列，每个枚举值为一行)
+ </summary>
+</member><member name="M:yangNetCl.AttachDataExtensions.YanEnToTbCol(System.Type,System.Int32)">
+	<summary>
+ 将枚举转为DATATABLE(每个枚举名称为一列)
+ </summary>
+</member><member name="M:yangNetCl.AttachDataExtensions.YanRemovedh(System.String)">
+	<summary>
+ 去掉字符串最后一个字符
+ </summary>
+	<param name="str"></param>
+</member><member name="M:yangNetCl.AttachDataExtensions.YanMD5(System.String,System.Int16)">
+	<summary>
+ 'MD5 加密函数
+ </summary>
+	<param name="Code">模式</param>
+</member><member name="M:yangNetCl.AttachDataExtensions.YanGetDb(System.String)">
+	<summary>
+ 根据字符串返回数据库查询结果
+ </summary>
+	<param name="str"></param>
+</member><member name="M:yangNetCl.AttachDataExtensions.YanDbExe(System.String)">
+	<summary>
+ 根据字符串返执行查询,并返回最后一个受此影响的标识
+ </summary>
+	<param name="str"></param>
+</member><member name="M:yangNetCl.AttachDataExtensions.YanArrToStr(System.String[])">
+	<summary>
+ 将字符串数组转化为“,”隔开的字符串
+ </summary>
+	<param name="pArrStr"></param>
+</member><member name="M:yangNetCl.AttachDataExtensions.YanArrToNum(System.String[])">
+	<summary>
+ 获取数组内数字的总计
+ </summary>
+	<param name="pArrStr"></param>
+</member><member name="M:yangNetCl.AttachDataExtensions.YanJsonToDt(System.String,System.Int32)">
+	<summary>
+json字符串z转为DATABLE
+ </summary>
+</member><member name="M:yangNetCl.AttachDataExtensions.YanArrQc``1(``0[])">
+	<summary>
+ 去除数组中的重复项目，返回一个新数组
+ </summary>
+</member><member name="M:yangNetCl.AttachDataExtensions.YanArrAdd``1(``0[],``0,System.Int32)">
+	<summary>
+ 为数组添加元素，返回一个新的数组
+ </summary>
+</member><member name="M:yangNetCl.AttachDataExtensions.YanDtToJson(System.Data.DataTable,System.Int32,System.Boolean)">
+	<summary>
+ 转化为json
+ </summary>
+	<param name="pDt">数据表格</param>
+	<param name="pType">类型</param>
+	<param name="blRtszf">是否去掉特殊字符</param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:yangNetCl.AttachDataExtensions.YanDtToStr(System.Data.DataTable,System.String)">
+	<summary>
+字段值转为字符串
+ </summary>
+</member><member name="M:yangNetCl.AttachDataExtensions.YanArrDrToDb(System.Data.DataRow[])">
+	<summary>
+ datarow数组转为DATATABLE
+ </summary>
+	<param name="pStr"></param>
+</member><member name="M:yangNetCl.AttachDataExtensions.YanDrToDb(System.Data.DataRow)">
+	<summary>
+ datarow转为DATATABLE
+ </summary>
+	<param name="pStr"></param>
+</member><member name="M:yangNetCl.AttachDataExtensions.YanDtValue(System.Data.DataTable,System.Enum,System.Int32,System.Int32)">
+	<summary>
+ 获取指定字段的值
+ </summary>
+	<param name="pObj">数据源</param>
+	<param name="pColName">列名</param>
+	<param name="pRindex">行序号</param>
+	<param name="pNumerType">数字格式化样式</param>
+</member><member name="M:yangNetCl.AttachDataExtensions.YanDtValue2(System.Data.DataTable,System.String,System.Int32,System.Int32)">
+	<summary>
+ 获取指定字段的值
+ </summary>
+	<param name="pObj">数据源</param>
+	<param name="pColName">列名</param>
+	<param name="pRindex">行序号</param>
+	<param name="pNumerType">数字格式化样式</param>
+</member><member name="M:yangNetCl.AttachDataExtensions.YanDtValue3(System.Data.DataTable,System.String,System.Int32)">
+	<summary>
+ 获取指定字段的值
+ </summary>
+	<param name="pObj">数据源</param>
+	<param name="pColName">列名</param>
+	<param name="pRindex">行序号</param>
+	<remarks>这个函数是将返回值NULL转为空</remarks>
+</member><member name="M:yangNetCl.AttachDataExtensions.YanToExcel(System.Data.DataTable,System.String,System.Int32,System.String,System.Int32,System.Boolean)">
+	<summary>
+ 转为EXCEL文件
+ </summary>
+	<param name="pDt">数据源</param>
+	<param name="pPath">保存路径</param>
+	<param name="pStarRow">开始行</param>
+	<param name="pTitle">标题</param>
+	<param name="pW">行宽度</param>
+</member><member name="M:yangNetCl.AttachDataExtensions.YanSetDtCap(System.Data.DataTable)">
+	<summary>
+ 设置DATATABLE列标题
+ </summary>
+</member><member name="M:yangNetCl.AttachDataExtensions.YanGetNewTb(System.Data.DataTable@,System.String,System.Int32)">
+	<summary>
+ 获取数据库表结构对应的表
+ </summary>
+</member><member name="M:yangNetCl.AttachDataExtensions.YanNullToEmpty(System.Object,System.String)">
+	<summary>
+ NULL转为空
+ </summary>
+</member><member name="M:yangNetCl.AttachDataExtensions.YanFormatNum(System.Object,System.Int32)">
+	<summary>
+ 转为数字
+ </summary>
+</member><member name="M:yangNetCl.AttachDataExtensions._REQ(System.Object)">
+	<summary>
+ sql字符串过滤,并去掉前后空格
+ </summary>
+</member><member name="M:yangNetCl.AttachDataExtensions.ToJSONString(System.Object)">
+	<summary>
+ 序列化成JSON字符串
+ </summary>
+</member><member name="M:yangNetCl.AttachDataExtensions.YanFindControl(System.Windows.Forms.Control,System.String)">
+	<summary>
+ 根据名字查找窗体内的控件
+ </summary>
+</member><member name="M:yangNetCl.AttachDataExtensions.YanSetHeadText(System.Windows.Forms.DataGridView)">
+	<summary>
+ 根据名字设置DataGridView在数据库内的中文文本
+ </summary>
+</member><member name="M:yangNetCl.AttachDataExtensions.YanHideDataGriwHead(System.Windows.Forms.DataGridView,System.String)">
+	<summary>
+ 隐藏列
+ </summary>
+</member><member name="M:yangNetCl.AttachDataExtensions.YanDataBind(System.Data.DataTable,System.Windows.Forms.Control,System.String,System.Windows.Forms.ContextMenuStrip)">
+	<summary>
+ 设置为控件的数据源
+ </summary>
+	<param name="pDt">数据源DATATABLE</param>
+	<param name="pShow">要显示的控件</param>
+	<param name="pHideCloums">要隐藏的列</param>
+	<param name="pCmenu">右键菜单</param>
+</member><member name="M:yangNetCl.EnumDescription.#ctor(System.String,System.Int32)">
+	<summary>
+ 描述枚举值
+ </summary>
+	<param name="enumDisplayText">描述内容</param>
+	<param name="enumRank">排列顺序</param>
+</member><member name="M:yangNetCl.EnumDescription.#ctor(System.String)">
+	<summary>
+ 描述枚举值，默认排序为5
+ </summary>
+	<param name="enumDisplayText">描述内容</param>
+</member><member name="F:yangNetCl.EnumDescription.SortType.Default">
+	<summary>
+按枚举顺序默认排序
+ </summary>
+</member><member name="F:yangNetCl.EnumDescription.SortType.DisplayText">
+	<summary>
+ 按描述值排序
+ </summary>
+</member><member name="F:yangNetCl.EnumDescription.SortType.Rank">
+	<summary>
+ 按排序熵
+ </summary>
+</member><member name="T:yangNetCl.EnumDescription.SortType">
+	<summary>
+ 排序类型
+ </summary>
+</member><member name="M:yangNetCl.EnumDescription.GetEnumText(System.Type)">
+	<summary>
+ 得到对枚举的描述文本
+ </summary>
+	<param name="enumType">枚举类型</param>
+	<returns></returns>
+</member><member name="M:yangNetCl.EnumDescription.GetFieldText(System.Object)">
+	<summary>
+ 获得指定枚举类型中，指定值的描述文本。
+ </summary>
+	<param name="enumValue">枚举值，不要作任何类型转换</param>
+	<returns>描述字符串</returns>
+</member><member name="M:yangNetCl.EnumDescription.GetFieldTexts(System.Type)">
+	<summary>
+ 得到枚举类型定义的所有文本，按定义的顺序返回
+ </summary>
+	<exception cref="T:System.NotSupportedException"></exception>
+	<param name="enumType">枚举类型</param>
+	<returns>所有定义的文本</returns>
+</member><member name="M:yangNetCl.EnumDescription.GetFieldTexts(System.Type,yangNetCl.EnumDescription.SortType)">
+	<summary>
+ 得到枚举类型定义的所有文本
+ </summary>
+	<exception cref="T:System.NotSupportedException"></exception>
+	<param name="enumType">枚举类型</param>
+	<param name="sortType__1">指定排序类型</param>
+	<returns>所有定义的文本</returns>
+</member><member name="T:yangNetCl.EnumDescription">
+	<summary>
+ 把枚举值按照指定的文本显示
+ <remarks>
+ 一般通过枚举值的ToString()可以得到变量的文本，
+ 但是有时候需要的到与之对应的更充分的文本，
+ </remarks>
+	</summary>
+	<example>
+ [EnumDescription("中文数字")]
+ enum MyEnum
+ {
+		[EnumDescription("数字一")]
+ 	One = 1, 
+ 
+		[EnumDescription("数字二")]
+		Two, 
+ 
+		[EnumDescription("数字三")]
+		Three
+ }
+ EnumDescription.GetEnumText(typeof(MyEnum));
+ EnumDescription.GetFieldText(MyEnum.Two);
+ EnumDescription.GetFieldTexts(typeof(MyEnum)); 
+ </example>
+</member><member name="M:yangNetCl.yanDbExtensions.YanDbSelect(System.Object,System.String,System.String)">
+	<summary>
+ 获取表记录
+ </summary>
+	<param name="pTb">表</param>
+	<param name="pId">ID</param>
+	<param name="pZd">字段</param>
+</member><member name="M:yangNetCl.yanDbExtensions.YanDbInsert(System.Object,System.String[][],System.String)">
+	<summary>
+插入记录
+ </summary>
+	<param name="pTable">表</param>
+	<param name="pCols">插入的字段和值的数组</param>
+</member><member name="M:yangNetCl.cl_htmlWrite.RefreshParent">
+	<summary>
+ 刷新打开的父窗口,关闭自身
+ </summary>
+</member><member name="M:yangNetCl.cl_htmlWrite.CloseWindow(System.String)">
+	<summary>
+ 关闭窗体按钮,产生关闭窗体按钮，并终止执行程序
+ </summary>
+	<param name="STR">需要提示的文本</param>
+</member><member name="M:yangNetCl.cl_htmlWrite.BackWindow(System.String)">
+	<summary>
+ 后退按钮,并终止执行程序
+ </summary>
+	<param name="STR">需要提示的文本</param>
+</member><member name="M:yangNetCl.cl_htmlWrite.makeScriptWin(System.Int32,System.String)">
+	<summary>
+ 产生提示并执行操作的脚本，并终止执行程序
+ </summary>
+	<param name="ptype">操作类型，0关闭，1后退,2刷新父窗体关闭</param>
+	<param name="STR">需要提示的文本</param>
+</member><member name="P:yangNetCl.PagerControl.PageIndex">
+	<summary>
+ 当前页面
+ </summary>
+</member><member name="P:yangNetCl.PagerControl.PageSize">
+	<summary>
+ 每页记录数
+ </summary>
+</member><member name="P:yangNetCl.PagerControl.RecordCount">
+	<summary>
+ 总记录数
+ </summary>
+</member><member name="P:yangNetCl.PagerControl.PageCount">
+	<summary>
+ 总页数
+ </summary>
+</member><member name="P:yangNetCl.PagerControl.JumpText">
+	<summary>
+ 跳转按钮文本
+ </summary>
+</member><member name="M:yangNetCl.PagerControl.GetPageCount">
+	<summary>
+ 计算总页数
+ </summary>
+	<returns></returns>
+</member><member name="M:yangNetCl.PagerControl.DrawControl(System.Int32)">
+	<summary>
+ 外部调用
+ </summary>
+</member><member name="M:yangNetCl.PagerControl.DrawControl(System.Boolean)">
+	<summary>
+ 页面控件呈现
+ </summary>
+</member><member name="M:yangNetCl.PagerControl.txtPageNum_KeyPress(System.Object,System.Windows.Forms.KeyPressEventArgs)">
+	<summary>
+ enter键功能
+ </summary>
+</member><member name="M:yangNetCl.PagerControl.txtPageNum_TextChanged(System.Object,System.EventArgs)">
+	<summary>
+ 跳转页数限制
+ </summary>
+</member><member name="M:yangNetCl.PagerControl.btnGo_Click(System.Object,System.EventArgs)">
+	<summary>
+ 跳转
+ </summary>
+	<param name="sender"></param>
+	<param name="e"></param>
+</member><member name="M:yangNetCl.PagerControl.txtPageSize_TextChanged(System.Object,System.EventArgs)">
+	<summary>
+ 分页属性改变了。
+ </summary>
+</member><member name="M:yangNetCl.PagerControl.txtPageSize_Leave(System.Object,System.EventArgs)">
+	<summary>
+ 光标离开分页属性
+  </summary>
+</member><member name="M:yangNetCl.Cl_ClassWeb.MakeHtmlSelectByNum(System.String,System.Int32,System.Int32,System.String,System.String)">
+	<summary>
+     '通过数字循环产生下拉列表
+ </summary>
+	<param name="ContrName">下拉框名称</param>
+	<param name="FirstNum">起数字</param>
+	<param name="LastNum">止数字</param>
+	<param name="HtmlString">下拉框附属超文本标记(可以是样式或脚本等)</param>
+	<param name="CheckNum">下拉框默认选中文本，可以空</param>
+</member><member name="M:yangNetCl.Cl_ClassWeb.MakeHtmlSelect(System.Data.DataTable,System.String,System.String,System.String,System.String,System.String)">
+	<summary>
+     '通过DataTable字段名产生下拉列表
+ </summary>
+	<param name="SouceDb">DataTable</param>
+	<param name="ContrName">下拉框名称</param>
+	<param name="HtmlString">下拉框附属超文本标记(可以是样式或脚本等)，可以空</param>
+	<param name="CheckString">下拉框默认选中文本，可以空</param>
+	<param name="DbColNameForText">下拉框Text属性字段</param>
+	<param name="DbColNameForValue">下拉框Value属性字段</param>
+</member><member name="M:yangNetCl.Cl_ClassWeb.MakeHtmlSelect(System.String[],System.String,System.String,System.String)">
+	<summary>
+ 通过数组产生下拉列表
+ </summary>
+	<param name="SouceArray">数组</param>
+	<param name="ContrName">下拉框名称</param>
+	<param name="HtmlString">下拉框附属超文本标记(可以是样式或脚本等)，可以空</param>
+	<param name="CheckString">下拉框默认选中文本，可以空</param>
+</member><member name="M:yangNetCl.Cl_ClassWeb.MakeHtmlSelect(System.Data.DataTable,System.String,System.String,System.String,System.Int32,System.Int32)">
+	<summary>
+     '通过DataTable字段索引产生下拉列表
+ </summary>
+	<param name="SouceDb">DataTable</param>
+	<param name="ContrName">下拉框名称</param>
+	<param name="HtmlString">下拉框附属超文本标记(可以是样式或脚本等)，可以空</param>
+	<param name="CheckString">下拉框默认选中文本，可以空</param>
+	<param name="DbColIndexForText">下拉框Text属性字段</param>
+	<param name="DbColIndexForValue">下拉框Value属性字段</param>
+</member><member name="M:yangNetCl.Cl_ClassWeb.MakeHtmlSelect(System.String,System.String,System.String,System.String)">
+	<summary>
+ 根据逗号间隔的字符串产生下拉列表
+ </summary>
+	<param name="ContrName">下拉框名称</param>
+	<param name="instring">逗号间隔的字符串</param>
+	<param name="HtmlString">下拉框附属超文本标记(可以是样式或脚本等)，可以空</param>
+	<param name="CheckString">下拉框默认选中文本，可以空</param>
+</member><member name="M:yangNetCl.Cl_ClassWeb.MakeHtmlSelect(System.String,System.Data.DataTable,System.String,System.String,System.String,System.String,System.String,System.String,System.Data.DataTable,System.Int32,System.Int32,System.Int32)">
+	<summary>
+ '通过DataTable产生内联下拉列表
+ </summary>
+	<param name="FormName">表单名称</param>
+	<param name="SouceDb">父DataTable</param>
+	<param name="ContrName">父下拉框名称</param>
+	<param name="HtmlString">父下拉框附属超文本标记(可以是样式或脚本等)，可以空</param>
+	<param name="CheckString">父下拉框默认选中文本，可以空</param>
+	<param name="DbColNameForText">父下拉框Text属性字段</param>
+	<param name="DbColNameForValue">父下拉框Value属性字段</param>
+	<param name="ContrNameChild">子下拉框名称，应该先期在页面上画好</param>
+	<param name="ContrNameChildDb">子DataTable</param>
+	<param name="IndexOfChildDbrelationSouceDb">子DataTable关联父DataTable的索引</param>
+	<param name="IndexOfContrNameChildDbForText">子下拉框Text属性字段的索引</param>
+	<param name="IndexOfContrNameChildDbColNameForValue">子下拉框Value属性字段的索引</param>
+</member><member name="M:yangNetCl.Cl_ClassWeb.MakeHtmlSelectItem(System.String,System.String,System.String)">
+	<summary>
+ 生成下拉菜单项
+ </summary>
+	<param name="ValueString">下拉列表值</param>
+	<param name="TextString">标签</param>
+	<param name="CheckString">是否选中</param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:yangNetCl.Cl_ClassWeb.MakeHtmlNormal(System.String,yangNetCl.Cl_ClassWeb.FormType,System.String,System.String)">
+	<summary>
+ 生成基本HTML表单控件
+ </summary>
+	<param name="ContrName">控件名称</param>
+	<param name="formtype">表单类型</param>
+	<param name="HtmlString">附属超文本标记(可以是样式或脚本等，或者其他属性)，可以空</param>
+	<param name="ValueString">初始值，可以空</param>
+</member><member name="M:yangNetCl.Cl_ClassWeb.MakeArrayTwo(System.Data.DataTable,System.String)">
+	<summary>
+ '根据datatable构建2维数组
+ </summary>
+	<param name="SouceDb">datatable</param>
+	<param name="ArrayName">要定义的2维数组名称</param>
+</member><member name="M:yangNetCl.Cl_ClassWeb.calendarocx(System.String,System.String,System.String)">
+	<summary>
+ 创建时间控件,一定要将 <link href="calendar/calendar-win2k-cold-1.css" type="text/css" rel="stylesheet"/>
+		<script src="calendar/calendar.js" type="text/javascript"></script>包含在页面中
+ </summary>
+	<param name="ContrName">产生的文本框的名称</param>
+	<param name="DefaultValue">表示默认值，可以为空</param>
+	<param name="HtmlString">附属超文本标记(可以是样式或脚本等)，可以空</param>
+</member><member name="M:yangNetCl.Cl_ClassWeb.MakeStringToDatatable(System.String,System.String)">
+	<summary>
+ 根据输入字符串构造单纯的Datatable
+ </summary>
+	<param name="InString">输入字符串，多个用BS隔开</param>
+	<param name="BS">字符串分割标识</param>
+</member><member name="M:yangNetCl.Cl_ClassWeb.MakeStringToDatatable(System.String,System.String,System.String)">
+	<summary>
+ 根据输入字符串构造单纯的Datatable
+ </summary>
+	<param name="InStringText">输入字符串，多个用BS隔开，构成第1列</param>
+	<param name="InStringValue">输入字符串，多个用BS隔开，构成第2列</param>
+	<param name="BS">字符串分割标识</param>
+</member><member name="M:yangNetCl.Cl_ClassWeb.CloseWindow(System.String)">
+	<summary>
+ 关闭窗体按钮,产生关闭窗体按钮，并终止执行程序
+ </summary>
+	<param name="STR">需要提示的文本</param>
+</member><member name="M:yangNetCl.Cl_ClassWeb.BackWindow(System.String)">
+	<summary>
+ 后退按钮,并终止执行程序
+ </summary>
+	<param name="STR">需要提示的文本</param>
+</member><member name="M:yangNetCl.Cl_fileMag.setXmlValue(System.String,System.String,System.String)">
+	<summary>
+ 设置XML结点的值
+ </summary>
+	<param name="pNodeName">结点名称，使用"，"分割界面层次</param>
+	<param name="pValue">要设置的值</param>
+	<param name="pPath">文件地址</param>
+</member><member name="M:yangNetCl.Cl_fileMag.getXmlValue(System.String,System.String)">
+	<summary>
+ 获取XML结点的值
+ </summary>
+	<param name="pNodeName">结点名称，使用"，"分割界面层次</param>
+	<param name="pPath">文件地址</param>
+</member><member name="M:yangNetCl.Cl_fileMag.getXmlDataTable(System.String,System.String)">
+	<summary>
+ 获取XML结点列表
+ </summary>
+	<param name="pNodeName">结点名称，使用"，"分割界面层次</param>
+	<param name="pPath">文件地址</param>
+</member><member name="M:yangNetCl.Cl_fileMag.setXmlDataTable(System.String,System.Data.DataTable,System.String)">
+	<summary>
+ 设置XML结点列表
+ </summary>
+	<param name="pNodeName">结点名称，使用"，"分割界面层次(最后一个元素为LIST列表名)</param>
+	<param name="pPath">文件地址</param>
+</member><member name="M:yangNetCl.Cl_fileMag.CreatXml(System.String)">
+	<summary>
+ 根据一个XML文档生成DATATABLE
+ </summary>
+</member><member name="M:yangNetCl.Cl_fileMag.ObjectToBytesCompress(System.Object)">
+	<summary>
+ 将objec格式化成字节数组byte[]，并压缩
+ </summary>
+	<param name="dsOriginal">object对象</param>
+	<returns>字节数组</returns>
+</member><member name="M:yangNetCl.Cl_fileMag.BytesToObjectDecompress(System.Byte[])">
+	<summary>
+ 将字节数组解压后反序列化成object对象
+ </summary>
+	<param name="binaryData">字节数组</param>
+	<returns>object对象</returns>
+</member><member name="M:yangNetCl.Cl_fileMag.ObjectToBytes(System.Object)">
+	<summary>
+ 将objec格式化成字节数组byte[]
+ </summary>
+	<param name="dsOriginal">object对象</param>
+	<returns>字节数组</returns>
+</member><member name="M:yangNetCl.Cl_fileMag.Decompress(System.Byte[])">
+	<summary>
+ 解压数据
+ </summary>
+	<param name="data"></param>
+	<returns></returns>
+</member><member name="M:yangNetCl.Cl_fileMag.Compress(System.Byte[])">
+	<summary>
+ 压缩数据
+ </summary>
+	<param name="data"></param>
+	<returns></returns>
+</member><member name="M:yangNetCl.Cl_fileMag.getSaveFilePath(System.String)">
+	<summary>
+ 获取对话框返回的保存文件路径
+ </summary>
+	<param name="pFilter">文件类型</param>
+</member><member name="T:yangNetCl.DataGridViewDisableCheckBoxColumn">
+	<summary>
+ 可以禁用的列表CHECKBOX控件
+ </summary>
+</member><member name="P:yangNetCl.DataGridViewDisableCheckBoxCell.Enabled">
+	<summary>
+ 是否启用
+ </summary>
+</member><member name="P:yangNetCl.Cl_DataMag.ConnStr">
+	<summary>
+ 获取或设置数据库连接字符串
+ </summary>
+</member><member name="P:yangNetCl.Cl_DataMag.getZdinf(System.String)">
+	<summary>
+ 获取字段信息
+ </summary>
+	<param name="pStrTb">表名</param>
+</member><member name="P:yangNetCl.Cl_DataMag.getBiaoinf">
+	<summary>
+ 获取表信息
+ </summary>
+</member><member name="M:yangNetCl.Cl_DataMag.isRowNull(System.String,System.String)">
+	<summary>
+判断数据库中有否符合条件的记录
+ </summary>
+	<param name="pStrTable">数据库表名</param>
+	<param name="pStrWh">查询条件</param>
+	<returns>返回查询结果</returns>
+</member><member name="M:yangNetCl.Cl_DataMag.GF_CreateDataSource(System.String,System.String)">
+	<summary>
+ 根据sql语句获取一个DATATABLE
+ </summary>
+	<param name="pStrSql">数据库查询语句</param>
+	<param name="pStrConn">数据库连接字符串</param>
+	<returns>返回查询结果</returns>
+</member><member name="M:yangNetCl.Cl_DataMag.insertData(System.String,System.String[0:,0:],System.String)">
+	<summary>
+ 插入数据
+ </summary>
+	<param name="pTb">表名</param>
+	<param name="pArrItem">数据数组</param>
+</member><member name="M:yangNetCl.Cl_DataMag.insertData(System.String,System.Collections.Generic.Dictionary{System.String,System.String},System.Boolean,System.Int32,System.String,System.String)">
+	<summary>
+ 插入数据
+ </summary>
+	<param name="pTb">数据表</param>
+	<param name="pCollDic">包含数据的结构</param>
+	<param name="pIszkh">字段名是否加上中括号</param>
+	<param name="pType">执行模式，0为执行，返回受影响的行数，1为不执行，返回生成的SQL字符串</param>
+	<param name="pStrZy">值第一个字符为对应字符，则执行转义</param>
+</member><member name="M:yangNetCl.Cl_DataMag.updateData(System.String,System.String[0:,0:],System.String,System.String)">
+	<summary>
+ 更新数据
+ </summary>
+	<param name="pTb">表名</param>
+	<param name="pArrItem">数据数组</param>
+	<param name="pStrWh">条件表达式</param>
+</member><member name="M:yangNetCl.Cl_DataMag.updateData(System.String,System.Collections.Generic.Dictionary{System.String,System.String},System.String,System.String,System.String)">
+	<summary>
+ 更新数据
+ </summary>
+	<param name="pTb">表名</param>
+	<param name="pCollDic">数据数组</param>
+	<param name="pStrWh">条件表达式</param>
+	<param name="pStrZy">值第一个字符为对应字符，则执行转义</param>
+</member><member name="M:yangNetCl.Cl_DataMag.getUpdateStr(System.String,System.Collections.Generic.Dictionary{System.String,System.String},System.String,System.String)">
+	<summary>
+ 更新数据的字符串
+ </summary>
+	<param name="pTb">表名</param>
+	<param name="pCollDic">数据数组</param>
+	<param name="pStrWh">条件表达式</param>
+	<param name="pStrZy">值第一个字符为对应字符，则执行转义</param>
+</member><member name="M:yangNetCl.Cl_DataMag.GS_upztxx(System.String,System.String)">
+	<summary>
+ 执行一条SQL语句
+ </summary>
+	<param name="pStrSql">数据库查询语句</param>
+	<param name="pStrConn">数据库连接字符串</param>
+</member><member name="M:yangNetCl.Cl_DataMag.GF_upztxx2(System.String,System.String)">
+	<summary>
+ 插入一条记录，返回最新标识
+ </summary>
+	<param name="pStrSql">数据库查询语句</param>
+	<param name="pStrConn">数据库连接字符串</param>
+</member><member name="M:yangNetCl.Cl_DataMag.getZdtext(System.String,System.Int32,System.Int32)">
+	<summary>
+ 获取字段中文含义
+ </summary>
+	<param name="pStrZd">字段名称</param>
+	<param name="pRaType">如果没有找到对应的中文含义，那么返回形式0=""，1=字段名</param>
+</member><member name="M:yangNetCl.Cl_DataMag.GetNewBS(System.Int32,System.String)">
+	<summary>
+ 返回最新标识（原标识会自动+1）
+ </summary>
+	<param name="lb">类别</param>
+	<param name="pStrConn">数据库链接串</param>
+</member><member name="M:yangNetCl.Cl_DataMag.saveRequestData(System.String,System.String)">
+	<summary>
+ 将提交的数据插入数据库post方式
+ </summary>
+</member><member name="M:yangNetCl.Cl_DataMag.modRequestData(System.String,System.String,System.String)">
+	<summary>
+ 将表单提交的数据更新数据库相应的记录
+ </summary>
+</member><member name="M:yangNetCl.Cl_DataMag.YanDttoStr(System.Data.DataTable,System.String,System.Boolean)">
+	<summary>
+ 将datatable中的一个字段中的数据转换为用“,”隔开的字符串
+ </summary>
+	<param name="pDt">datatable</param>
+	<param name="pCname">字段名</param>
+	<param name="pBl">是否为字符串内的字符加上单引号</param>
+</member><member name="M:yangNetCl.Cl_DataMag.YanArrToDb(System.Data.DataRow[])">
+	<summary>
+ 根据DATAROW数组转为DATATABLE
+ </summary>
+</member><member name="M:yangNetCl.Cl_DataMag.YanStrToDb(System.String)">
+	<summary>
+ 根据字符串构建DB
+ </summary>
+</member><member name="M:yangNetCl.Cl_DataMag.YanCountCol(System.Data.DataTable,System.String)">
+	<summary>
+ 统计DATATABLE的列数据
+ </summary>
+	<param name="pDt"></param>
+	<param name="pCol"></param>
+</member><member name="M:yangNetCl.Cl_DataMag.YanGetXg(System.Int32,System.String,System.String)">
+	<summary>
+ 修改表单的脚本生成
+ </summary>
+	<param name="pxgid">修改ID</param>
+	<param name="ptable">待修改的表</param>
+	<param name="pFormName">提交的表单名</param>
+</member><member name="M:yangNetCl.Cl_DataMag.MakeArrayTwo(System.Data.DataTable,System.String)">
+	<summary>
+ '根据datatable构建2维数组
+ </summary>
+	<param name="SouceDb">datatable</param>
+	<param name="ArrayName">要定义的2维数组名称</param>
+</member><member name="M:yangNetCl.Cl_DataMag.GF_addsj(System.String,System.Windows.Forms.Control,System.String)">
+	<summary>
+ 保存窗体提交
+ </summary>
+	<param name="pStrTb">数据库表名</param>
+	<param name="pObjFr">提交的窗体</param>
+	<param name="pStrConn">数据库连接字符串</param>
+	<returns>返回新插入的ID</returns>
+</member><member name="M:yangNetCl.Cl_DataMag.YanFrtoDbMod(System.String,System.Windows.Forms.Control,System.Int32,System.String)">
+	<summary>
+ 保存窗体修改
+ </summary>
+	<param name="pStrTb">数据库表名</param>
+	<param name="pObjFr">提交的窗体</param>
+	<param name="pStrConn">数据库连接字符串</param>
+	<returns>返回新插入的ID</returns>
+</member><member name="M:yangNetCl.Cl_DataMag.gridToDatatable(System.Object)">
+	<summary>
+ 将容器转换为DB
+ </summary>
+	<param name="pObjGrid">容器对象</param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:yangNetCl.Cl_DataMag.Gs_showsj(System.Windows.Forms.Form,System.String,System.Int32)">
+	<summary>
+ 将值填入窗体控件
+ </summary>
+	<param name="pObjFr">窗体对象</param>
+	<param name="pStrTbName">数据库内的表名</param>
+	<param name="pIntId">主键值</param>
+</member><member name="M:yangNetCl.Cl_DataMag.Gs_showsj(System.Windows.Forms.Form,System.Data.DataTable)">
+	<summary>
+ 将值填入窗体控件
+ </summary>
+	<param name="pObjFr">窗体对象</param>
+	<param name="pDt">一个横向的DATATABLE，每列存储一个表单项</param>
+</member><member name="M:yangNetCl.Cl_DataMag.Gs_updasj(System.Windows.Forms.Form,System.Data.DataTable,System.Boolean,System.String)">
+	<summary>
+ 将窗体控件的值写入DB
+ </summary>
+	<param name="pObjFr">窗体对象</param>
+	<param name="pDt">DT</param>
+	<param name="pBlUpdate">是否更新数据库</param>
+	<param name="pStrConn">数据库连接字符串</param>
+	<returns>返回数据库对应的标识</returns>
+</member><member name="M:yangNetCl.Cl_DataMag.YanFrVaAddDt(System.Windows.Forms.Control,System.Data.DataTable,System.Boolean,yangNetCl.Cl_DataMag.myTransaction,System.Int32,System.String)">
+	<summary>
+ 将窗体控件的值写入DB
+ </summary>
+	<param name="pControl">窗体对象</param>
+	<param name="pDt">DT</param>
+	<param name="pBlUpdate">是否更新数据库</param>
+	<param name="pMt">更新数据库时的事物实体</param>
+	<param name="pRvType">返回值性质0rowBs,1数据库标识</param>
+	<param name="pStrConn">数据库连接字符串</param>
+	<returns>默认返回rowBs,当prvtype=1时,返回数据库标识</returns>
+	<remarks>注意，如果PMT不为空，那么PSTRCONN将失效</remarks>
+</member><member name="M:yangNetCl.Cl_DataMag.YanDtUpdateSv(System.Data.DataTable,System.String,yangNetCl.Cl_DataMag.myTransaction,System.String)">
+	<summary>
+ 将DATATABLE更新至数据库
+ </summary>
+	<param name="pDt">数据源DATATABLE</param>
+	<param name="pBs">需要更新的索引</param>
+	<param name="pMt">事物对象</param>
+	<param name="pStrConn">连接字符串</param>
+	<returns>更新的数据库ID</returns>
+	<remarks>注意，如果PMT不为空，那么PSTRCONN将失效</remarks>
+</member><member name="M:yangNetCl.Cl_DataMag.YanDtSetFrCon(System.Windows.Forms.Control,System.Data.DataTable,System.String)">
+	<summary>
+ 将值填入窗体控件（多行中根据标识选择一行进行填充）
+ </summary>
+	<param name="pControl">窗体对象</param>
+	<param name="pDt">一个横向的DATATABLE，每列存储一个表单项</param>
+	<param name="pBs">rowBs</param>
+</member><member name="M:yangNetCl.Cl_DataMag.myTransaction.Commit">
+	<summary>
+  提交事物
+ </summary>
+</member><member name="M:yangNetCl.Cl_DataMag.myTransaction.Rollback">
+	<summary>
+ 回滚事物
+ </summary>
+</member><member name="M:yangNetCl.Cl_DataMag.myTransaction.getDb(System.String)">
+	<summary>
+ 获取数据集
+ </summary>
+</member><member name="M:yangNetCl.Cl_DataMag.myTransaction.getExeBs(System.String)">
+	<summary>
+ 执行一条语句返回最新标识
+ </summary>
+</member><member name="M:yangNetCl.Cl_DataMag.myTransaction.dbExe(System.String,System.Int32)">
+	<summary>
+ 执行一条语句
+ </summary>
+	<param name="pSql">要执行的SQL语句</param>
+	<param name="pRtype">返回值的类型，默认没有返回值</param>
+</member><member name="M:yangNetCl.Cl_DataMag.myTransaction.insert(System.String,System.Collections.Generic.Dictionary{System.String,System.String},System.Boolean,System.String,System.String)">
+	<summary>
+ 插入数据
+ </summary>
+	<param name="pTb">数据表</param>
+	<param name="pCollDic">包含数据的结构</param>
+	<param name="pIszkh">字段名是否加上中括号</param>
+	<param name="pStrZy">字段第一个字符为对应字符，则执行转义</param>
+</member><member name="M:yangNetCl.Cl_DataMag.myTransaction.update(System.String,System.Collections.Generic.Dictionary{System.String,System.String},System.String,System.String)">
+	<summary>
+ 更新数据的字符串
+ </summary>
+	<param name="pTb">表名</param>
+	<param name="pCollDic">数据数组</param>
+	<param name="pStrWh">条件表达式</param>
+	<param name="pStrZy">值第一个字符为对应字符，则执行转义</param>
+</member><member name="T:yangNetCl.Cl_DataMag.myTransaction">
+	<summary>
+ 数据库事物处理类
+ </summary>
+</member>
+</members>
+</doc>

@@ -1,0 +1,17 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+DeepCode
+</name>
+</assembly>
+<members>
+<member name="M:DeepCode.CDESCryp.#ctor(System.Byte[],System.Byte[])">
+	<summary> 
+ CDESCryp构造函数 
+ </summary>
+	<param name="key"></param>
+	<param name="iv"></param>
+</member>
+</members>
+</doc>

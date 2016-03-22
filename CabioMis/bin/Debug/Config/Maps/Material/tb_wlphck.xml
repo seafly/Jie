@@ -1,0 +1,182 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<sqlMap namespace="tb_wlphck" xmlns="http://ibatis.apache.org/mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+  <alias>
+    <typeAlias alias="tb_wlphck" type="Cabio.Model.Material.tb_wlphck,Cabio.Model" />
+  </alias>
+
+  <statements>
+    <select id="gettb_wlphckById" resultClass="tb_wlphck" parameterClass="int">
+      select
+      tb_wlphck_ID,
+      tb_wlphck_wlbs,
+      tb_wlphck_wlph,
+      tb_wlphck_cplb,
+      tb_wlphck_mingc,
+      tb_wlphck_jiagdm,
+      tb_wlphck_cjcl,
+      tb_wlphck_bfb,
+      tb_wlphck_kdlk,
+      tb_wlphck_storagemslk,
+      tb_wlphck_storagewzlk,
+      tb_wlphck_ftime,
+      tb_wlphck_zzl,
+      tb_wlphck_kyzl,
+      tb_wlphck_wpbs,
+      tb_wlphck_yt
+      from tb_wlphck
+      where tb_wlphck_ID = $value$
+    </select>
+
+    <select id="gettb_wlphckByMap" resultClass="tb_wlphck" parameterClass="map">
+      select
+      tb_wlphck_ID,
+      tb_wlphck_wlbs,
+      tb_wlphck_wlph,
+      tb_wlphck_cplb,
+      tb_wlphck_mingc,
+      tb_wlphck_jiagdm,
+      tb_wlphck_cjcl,
+      tb_wlphck_bfb,
+      tb_wlphck_kdlk,
+      tb_wlphck_storagemslk,
+      tb_wlphck_storagewzlk,
+      tb_wlphck_ftime,
+      tb_wlphck_zzl,
+      tb_wlphck_kyzl,
+      tb_wlphck_wpbs,
+      tb_wlphck_yt
+      from tb_wlphck
+      <dynamic prepend="where">
+        <isNotEmpty prepend="" property="">
+        </isNotEmpty>
+      </dynamic>
+    </select>
+
+    <select id="querytb_wlphckList" resultClass="tb_wlphck" parameterClass="map">
+      select
+      tb_wlphck_ID,
+      tb_wlphck_wlbs,
+      tb_wlphck_wlph,
+      tb_wlphck_cplb,
+      tb_wlphck_mingc,
+      tb_wlphck_jiagdm,
+      tb_wlphck_cjcl,
+      tb_wlphck_bfb,
+      tb_wlphck_kdlk,
+      tb_wlphck_storagemslk,
+      tb_wlphck_storagewzlk,
+      tb_wlphck_ftime,
+      tb_wlphck_zzl,
+      tb_wlphck_kyzl,
+      tb_wlphck_wpbs,
+      tb_wlphck_yt
+      from tb_wlphck
+      <dynamic prepend="where">
+        <isNotEmpty prepend="" property="">
+        </isNotEmpty>
+      </dynamic>
+
+    </select>
+
+    <insert id="inserttb_wlphck" parameterClass="tb_wlphck">
+      insert into tb_wlphck
+      (
+      tb_wlphck_wlbs,
+      tb_wlphck_wlph,
+      tb_wlphck_cplb,
+      tb_wlphck_mingc,
+      tb_wlphck_jiagdm,
+      tb_wlphck_cjcl,
+      tb_wlphck_bfb,
+      tb_wlphck_kdlk,
+      tb_wlphck_storagemslk,
+      tb_wlphck_storagewzlk,
+      tb_wlphck_ftime,
+      tb_wlphck_zzl,
+      tb_wlphck_kyzl,
+      tb_wlphck_wpbs,
+      tb_wlphck_yt
+      )
+      values
+      (
+      #tb_wlphck_wlbs#,
+      #tb_wlphck_wlph#,
+      #tb_wlphck_cplb#,
+      #tb_wlphck_mingc#,
+      #tb_wlphck_jiagdm#,
+      #tb_wlphck_cjcl#,
+      #tb_wlphck_bfb#,
+      #tb_wlphck_kdlk#,
+      #tb_wlphck_storagemslk#,
+      #tb_wlphck_storagewzlk#,
+      #tb_wlphck_ftime#,
+      #tb_wlphck_zzl#,
+      #tb_wlphck_kyzl#,
+      #tb_wlphck_wpbs#,
+      #tb_wlphck_yt#
+      )
+      <selectKey resultClass="int" type="post" property="tb_wlphck_ID" >
+        select @@IDENTITY as value
+      </selectKey>
+    </insert>
+
+    <update id="updatetb_wlphck" parameterClass="tb_wlphck">
+      update tb_wlphck set
+      <dynamic>
+        <isNotEmpty prepend="," property="tb_wlphck_wlbs">
+          tb_wlphck_wlbs = #tb_wlphck_wlbs#,
+        </isNotEmpty>
+        <isNotEmpty prepend="," property="tb_wlphck_wlph">
+          tb_wlphck_wlph = #tb_wlphck_wlph#,
+        </isNotEmpty>
+        <isNotEmpty prepend="," property="tb_wlphck_cplb">
+          tb_wlphck_cplb = #tb_wlphck_cplb#,
+        </isNotEmpty>
+        <isNotEmpty prepend="," property="tb_wlphck_mingc">
+          tb_wlphck_mingc = #tb_wlphck_mingc#,
+        </isNotEmpty>
+        <isNotEmpty prepend="," property="tb_wlphck_jiagdm">
+          tb_wlphck_jiagdm = #tb_wlphck_jiagdm#,
+        </isNotEmpty>
+        <isNotEmpty prepend="," property="tb_wlphck_cjcl">
+          tb_wlphck_cjcl = #tb_wlphck_cjcl#,
+        </isNotEmpty>
+        <isNotEmpty prepend="," property="tb_wlphck_bfb">
+          tb_wlphck_bfb = #tb_wlphck_bfb#,
+        </isNotEmpty>
+        <isNotEmpty prepend="," property="tb_wlphck_kdlk">
+          tb_wlphck_kdlk = #tb_wlphck_kdlk#,
+        </isNotEmpty>
+        <isNotEmpty prepend="," property="tb_wlphck_storagemslk">
+          tb_wlphck_storagemslk = #tb_wlphck_storagemslk#,
+        </isNotEmpty>
+        <isNotEmpty prepend="," property="tb_wlphck_storagewzlk">
+          tb_wlphck_storagewzlk = #tb_wlphck_storagewzlk#,
+        </isNotEmpty>
+        <isNotEmpty prepend="," property="tb_wlphck_ftime">
+          tb_wlphck_ftime = #tb_wlphck_ftime#,
+        </isNotEmpty>
+        <isNotEmpty prepend="," property="tb_wlphck_zzl">
+          tb_wlphck_zzl = #tb_wlphck_zzl#,
+        </isNotEmpty>
+        <isNotEmpty prepend="," property="tb_wlphck_kyzl">
+          tb_wlphck_kyzl = #tb_wlphck_kyzl#,
+        </isNotEmpty>
+        <isNotEmpty prepend="," property="tb_wlphck_wpbs">
+          tb_wlphck_wpbs = #tb_wlphck_wpbs#,
+        </isNotEmpty>
+        <isNotEmpty prepend="," property="tb_wlphck_yt">
+          tb_wlphck_yt = #tb_wlphck_yt#,
+        </isNotEmpty>
+      </dynamic>
+      where   tb_wlphck_ID = $tb_wlphck_ID$
+    </update>
+
+    <delete id="deletetb_wlphck" parameterClass="string">
+      delete from tb_wlphck  where   tb_wlphck_ID = #value#
+    </delete>
+
+  </statements>
+
+</sqlMap>
