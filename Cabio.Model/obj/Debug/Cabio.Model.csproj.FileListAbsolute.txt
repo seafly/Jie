@@ -6,4 +6,3 @@ E:\Project\Jie\Cabio.Model\bin\Debug\Cabio.Model.dll
 E:\Project\Jie\Cabio.Model\bin\Debug\Cabio.Model.pdb
 E:\Project\Jie\Cabio.Model\obj\Debug\Cabio.Model.dll
 E:\Project\Jie\Cabio.Model\obj\Debug\Cabio.Model.pdb
-E:\Project\Jie\Cabio.Model\obj\Debug\Cabio.Model.csprojResolveAssemblyReference.cache

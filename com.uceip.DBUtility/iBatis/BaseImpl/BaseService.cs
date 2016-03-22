@@ -490,5 +490,69 @@ namespace com.uceip.DBUtility.iBatis.BaseImpl
             }
             return ilist;
         }
+
+        public virtual DataTable GetDataTable()
+        {
+            DataTable dt = null;
+            try
+            {
+                _daoManager.OpenConnection();
+                dt = dao.GetDataTable();
+            }
+            catch (Exception e)
+            {
+                System.Diagnostics.Debug.Write(e.Message);
+            }
+            finally
+            {
+                if (_daoManager.IsDaoSessionStarted())
+                {
+                    _daoManager.CloseConnection();
+                }
+            }
+            return dt;
+        }
+        public virtual DataTable GetDataTable(Hashtable map)
+        {
+            DataTable dt = null;
+            try
+            {
+                _daoManager.OpenConnection();
+                dt = dao.GetDataTable(map);
+            }
+            catch (Exception e)
+            {
+                System.Diagnostics.Debug.Write(e.Message);
+            }
+            finally
+            {
+                if (_daoManager.IsDaoSessionStarted())
+                {
+                    _daoManager.CloseConnection();
+                }
+            }
+            return dt;
+        }
+        public virtual DataTable GetDataTable(string statementName, Hashtable map)
+        {
+            DataTable dt = null;
+            try
+            {
+                _daoManager.OpenConnection();
+                dt = dao.GetDataTable(statementName, map);
+            }
+            catch (Exception e)
+            {
+                System.Diagnostics.Debug.Write(e.Message);
+            }
+            finally
+            {
+                if (_daoManager.IsDaoSessionStarted())
+                {
+                    _daoManager.CloseConnection();
+                }
+            }
+            return dt;
+        }
     }
 }

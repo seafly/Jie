@@ -34,7 +34,9 @@ namespace com.uceip.DBUtility.iBatis.Interfaces
         IList<Entity> GetListByQuery<Entity>(string statementName, object parameterObject);
         IList<Entity> GetListByQuery<Entity>(Hashtable map, int skipResults, int maxResults);
         IList<Entity> GetListByQuery<Entity>(string statementName, object parameterObject, int skipResults, int maxResults);
-
+        DataTable GetDataTable();
+        DataTable GetDataTable(Hashtable map);
+        DataTable GetDataTable(string statementName, Hashtable map);
         //插入数据
         int Insert(T t);
         //修改数据

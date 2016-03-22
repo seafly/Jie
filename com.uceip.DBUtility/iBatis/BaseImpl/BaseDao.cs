@@ -285,6 +285,28 @@ namespace com.uceip.DBUtility.iBatis.BaseImpl
             }
         }
 
+        public virtual DataTable GetDataTable()
+        {
+            return this.GetDataTable(new Hashtable());
+        }
+        public virtual DataTable GetDataTable(Hashtable map)
+        {
+            return this.GetDataTable(getBuildObjectSqlMap(), map);
+        }
+        public virtual DataTable GetDataTable(string statementName, Hashtable map)
+        {
+            ISqlMapper sqlMap = GetLocalSqlMap();
+
+            try
+            {
+                return (DataTable)sqlMap.QueryForObject(statementName, map);
+            }
+            catch (Exception e)
+            {
+                throw new IBatisNetException("Error executing query '" + getBuildObjectSqlMapId() + "' for object.  Cause: " + e.Message, e);
+            }
+        }
+
         //新增数据
         public virtual int Insert(T t)
         {
