@@ -1,6 +1,0 @@
-D:\worknet\uceip-app-public\com.uceip.Common\bin\Release\com.uceip.Common.dll
-D:\worknet\uceip-app-public\com.uceip.Common\bin\Release\com.uceip.Common.pdb
-D:\worknet\uceip-app-public\com.uceip.Common\bin\Release\COM.Excel.dll
-D:\worknet\uceip-app-public\com.uceip.Common\obj\Release\ResolveAssemblyReference.cache
-D:\worknet\uceip-app-public\com.uceip.Common\obj\Release\com.uceip.Common.dll
-D:\worknet\uceip-app-public\com.uceip.Common\obj\Release\com.uceip.Common.pdb
