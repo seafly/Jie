@@ -23,7 +23,7 @@
     End Sub
     Private Sub FrgxAdd_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Me.Icon = G_icon : Me.BackgroundImage = G_backimg
-
+        ''1123
         Dim sql As String = "select * from tb_gxsz where tb_gxsz_ID=" & IIf(m_gxid > 0, m_gxid, 0)
         m_gxszDt = sql.YanGetDb
         m_gxszDt.TableName = "tb_gxsz"
