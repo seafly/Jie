@@ -17,5 +17,12 @@ namespace Cabio.DLL.Produce
             daoManager = manager;
             domainEntity = "tb_sc";
         }
+
+        public bool IsLack(int key, decimal amount)
+        {
+
+
+            return false;
+        }
     }
 }

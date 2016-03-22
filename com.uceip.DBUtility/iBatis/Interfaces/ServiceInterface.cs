@@ -29,7 +29,7 @@ namespace com.uceip.DBUtility.iBatis.Interfaces
         IList GetListByQuery(Hashtable map, string statementName);
         IList GetListByQuery(Hashtable map, int skipResults, int maxResults);
         IList GetListByQuery(string statementName, Hashtable map, int skipResults, int maxResults);
-
+        IList<Entity> GetListByQuery<Entity>();
         IList<Entity> GetListByQuery<Entity>(Hashtable map);
         IList<Entity> GetListByQuery<Entity>(string statementName, object parameterObject);
         IList<Entity> GetListByQuery<Entity>(Hashtable map, int skipResults, int maxResults);

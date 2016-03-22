@@ -30,13 +30,15 @@ namespace Cabio.BLL.Produce
         /// <param name="scxq_list"></param>
         /// <param name="wlphl_ist"></param>
         /// <returns></returns>
-        public int Save(tb_sc produce, List<tb_scxq> scxq_list, List<tb_wlph> wlphl_ist)
+        public int Save(tb_sc produce, List<tb_scxq> fjxx_list, List<tb_scxq> tlxx_list, List<tb_scxq> ccxx_list, List<tb_wlph> wlphl_ist)
         {
             int result = 0;
             try
             {
-                _daoManager.BeginTransaction();
 
+                ProduceDetailDao detailDao = new ProduceDetailDao(_daoManager);
+
+                _daoManager.BeginTransaction();
 
                 #region 保存生产信息
 
@@ -58,28 +60,46 @@ namespace Cabio.BLL.Produce
                     produceKey = dao.Insert(produce);
                 }
 
-                #endregion
-
-                #region 保存生产详情
-                if (produceKey > 0)
-                {
-                    ProduceDetailDao detailDao = new ProduceDetailDao(_daoManager);
-                    detailDao.RemoveByMap("附加信息", produce.tb_sc_ID.ToString());
-                    detailDao.RemoveByMap("投料", produce.tb_sc_ID.ToString());
-                    detailDao.RemoveByMap("产出", produce.tb_sc_ID.ToString());
-
-                    foreach (tb_scxq scxq in scxq_list)
-                    {
-                        scxq.tb_scxq_scbs = produceKey;
-                        if (detailDao.Insert(scxq) < 1)
-                        {
-                            throw new Exception("保存生产详情出错");
-                        }
-                    }
-                }
-                else
+                if (produceKey < 1)
                 {
                     throw new Exception("保存生产信息出错");
+                }
+
+                #endregion
+
+                #region 保存附加信息
+                detailDao.RemoveByMap("附加信息", produce.tb_sc_ID.ToString());
+                foreach (tb_scxq scxq in fjxx_list)
+                {
+                    scxq.tb_scxq_scbs = produceKey;
+                    if (detailDao.Insert(scxq) < 1)
+                    {
+                        throw new Exception("保存附加信息出错");
+                    }
+                }
+                #endregion
+
+                #region 保存投料信息
+                detailDao.RemoveByMap("投料", produce.tb_sc_ID.ToString());
+                foreach (tb_scxq scxq in tlxx_list)
+                {
+                    scxq.tb_scxq_scbs = produceKey;
+                    if (detailDao.Insert(scxq) < 1)
+                    {
+                        throw new Exception("保存投料信息出错");
+                    }
+                }
+                #endregion
+
+                #region 保存产出信息
+                detailDao.RemoveByMap("产出", produce.tb_sc_ID.ToString());
+                foreach (tb_scxq scxq in ccxx_list)
+                {
+                    scxq.tb_scxq_scbs = produceKey;
+                    if (detailDao.Insert(scxq) < 1)
+                    {
+                        throw new Exception("保存产出信息出错");
+                    }
                 }
                 #endregion
 

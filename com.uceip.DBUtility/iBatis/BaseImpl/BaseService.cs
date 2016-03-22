@@ -391,6 +391,12 @@ namespace com.uceip.DBUtility.iBatis.BaseImpl
             }
             return obj;
         }
+
+        public virtual IList<Entity> GetListByQuery<Entity>()
+        {
+            return this.GetListByQuery<Entity>(new Hashtable());
+        }
+
         /// <summary>
         /// 返回指定类型的实体集合(SqlMap命名：query+EntityName+ListT)
         /// </summary>

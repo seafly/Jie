@@ -56,11 +56,16 @@
     <Compile Include="Produce\tb_sc.cs" />
     <Compile Include="Produce\tb_scxq.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="QC\tb_QcJc.cs" />
+    <Compile Include="QC\tb_QcVa.cs" />
+    <Compile Include="QC\tb_QcXm.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="mykey.snk" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="QA\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

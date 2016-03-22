@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<sqlMap namespace="tb_QcVa" xmlns="http://ibatis.apache.org/mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+  <alias>
+    <typeAlias alias="tb_QcVa" type="Cabio.Model.QC.tb_QcVa,Cabio.Model" />
+  </alias>
+
+  <statements>
+    <select id="gettb_QcVaById" resultClass="tb_QcVa" parameterClass="int">
+      select
+      tb_QcVa_ID,
+      tb_QcVa_xmmc,
+      tb_QcVa_xmva,
+      tb_QcVa_Qcbs
+      from tb_QcVa
+      where tb_QcVa_ID = $value$
+    </select>
+
+    <select id="gettb_QcVaByMap" resultClass="tb_QcVa" parameterClass="map">
+      select
+      tb_QcVa_ID,
+      tb_QcVa_xmmc,
+      tb_QcVa_xmva,
+      tb_QcVa_Qcbs
+      from tb_QcVa
+      <dynamic prepend="where">
+        <isNotEmpty prepend="" property="">
+        </isNotEmpty>
+      </dynamic>
+    </select>
+
+    <select id="querytb_QcVaList" resultClass="tb_QcVa" parameterClass="map">
+      select
+      tb_QcVa_ID,
+      tb_QcVa_xmmc,
+      tb_QcVa_xmva,
+      tb_QcVa_Qcbs
+      from tb_QcVa
+      <dynamic prepend="where">
+        <isNotEmpty prepend="" property="">
+        </isNotEmpty>
+      </dynamic>
+
+    </select>
+
+    <insert id="inserttb_QcVa" parameterClass="tb_QcVa">
+      insert into tb_QcVa
+      (
+      tb_QcVa_xmmc,
+      tb_QcVa_xmva,
+      tb_QcVa_Qcbs
+      )
+      values
+      (
+      #tb_QcVa_xmmc#,
+      #tb_QcVa_xmva#,
+      #tb_QcVa_Qcbs#
+      )
+      <selectKey resultClass="int" type="post" property="tb_QcVa_ID" >
+        select @@IDENTITY as value
+      </selectKey>
+    </insert>
+
+    <update id="updatetb_QcVa" parameterClass="tb_QcVa">
+      update tb_QcVa set
+      <dynamic>
+        <isNotEmpty prepend="," property="tb_QcVa_xmmc">
+          tb_QcVa_xmmc = #tb_QcVa_xmmc#,
+        </isNotEmpty>
+        <isNotEmpty prepend="," property="tb_QcVa_xmva">
+          tb_QcVa_xmva = #tb_QcVa_xmva#,
+        </isNotEmpty>
+        <isNotEmpty prepend="," property="tb_QcVa_Qcbs">
+          tb_QcVa_Qcbs = #tb_QcVa_Qcbs#,
+        </isNotEmpty>
+      </dynamic>
+      where   tb_QcVa_ID = $tb_QcVa_ID$
+    </update>
+
+    <delete id="deletetb_QcVa" parameterClass="string">
+      delete from tb_QcVa  where   tb_QcVa_ID = #value#
+    </delete>
+
+  </statements>
+
+</sqlMap>

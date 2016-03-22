@@ -3380,6 +3380,9 @@
     <Content Include="bin\Debug\Config\Maps\Material\tb_wlphck.xml" />
     <Content Include="bin\Debug\Config\Maps\Produce\tb_sc.xml" />
     <Content Include="bin\Debug\Config\Maps\Produce\tb_scxq.xml" />
+    <Content Include="bin\Debug\Config\Maps\QC\tb_QcJc.xml" />
+    <Content Include="bin\Debug\Config\Maps\QC\tb_QcVa.xml" />
+    <Content Include="bin\Debug\Config\Maps\QC\tb_QcXm.xml" />
     <Content Include="Config\Maps\Crafts\CraftsSetting.xml" />
     <Content Include="Config\Maps\Crafts\SysUser.xml" />
     <Content Include="dx.ico" />
@@ -3427,7 +3430,9 @@
       <Name>com.uceip.DBUtility</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="bin\Debug\Config\Maps\QA\" />
+  </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
