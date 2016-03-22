@@ -1,4 +1,6 @@
 #/CabioMis/bin/Debug/
+/CabioMis/bin/Debug/*.dll
+/CabioMis/bin/Debug/*.pdb
 /CabioMis/obj/
 /Cabio.BLL/bin/
 /Cabio.BLL/obj/
