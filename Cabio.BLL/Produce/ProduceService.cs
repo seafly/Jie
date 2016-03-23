@@ -37,6 +37,7 @@ namespace Cabio.BLL.Produce
             {
 
                 ProduceDetailDao detailDao = new ProduceDetailDao(_daoManager);
+                MaterialStockDao materialStockDao = new MaterialStockDao(_daoManager);
 
                 _daoManager.BeginTransaction();
 
@@ -83,6 +84,16 @@ namespace Cabio.BLL.Produce
                 detailDao.RemoveByMap("投料", produce.tb_sc_ID.ToString());
                 foreach (tb_scxq scxq in tlxx_list)
                 {
+                    if (scxq.lb == 1)
+                    {
+
+                    }
+                    else
+                    {
+
+                    }
+                    tb_syjl  syjl = new tb_syjl();
+
                     scxq.tb_scxq_scbs = produceKey;
                     if (detailDao.Insert(scxq) < 1)
                     {

@@ -17,5 +17,25 @@ namespace Cabio.BLL.Material
             _daoManager = ServiceConfig.GetInstance().DaoManager;
             dao = new MaterialStockDao(_daoManager);
         }
+
+        /// <summary>
+        /// 库存是否足够
+        /// </summary>
+        /// <param name="key"></param>
+        /// <param name="amount"></param>
+        /// <returns></returns>
+        public bool IsLack(int key, decimal amount)
+        {
+            tb_wlphck Model = base.GetObject(key);
+            if (Model != null)
+            {
+                if (Model.tb_wlphck_cjcl >= amount)
+                {
+                    return true;
+                }
+            }
+
+            return false;
+        }
     }
 }

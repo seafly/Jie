@@ -33,5 +33,10 @@ namespace Cabio.Model.Produce
         /// </summary>		
         public int tb_scxq_xxbs { get; set; }
 
+        /// <summary>
+        /// 原料类别
+        /// </summary>
+        public int lb { get; set; }
+
     }
 }
