@@ -33,7 +33,7 @@
   <ItemGroup>
     <Reference Include="COM.Excel, Version=1.1.1606.17082, Culture=neutral">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>bin\Debug\COM.Excel.dll</HintPath>
+      <HintPath>..\Packages\COM.Excel.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />

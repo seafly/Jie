@@ -1,4 +1,6 @@
 #/CabioMis/bin/Debug/
+/CabioMis/bin/*.dll
+/CabioMis/bin/*.pdb
 /CabioMis/bin/Debug/*.dll
 /CabioMis/bin/Debug/*.pdb
 /CabioMis/obj/
