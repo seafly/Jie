@@ -55,6 +55,35 @@
       </dynamic>
     </select>
 
+    <select id="tb_scinfolist" resultClass="tb_sc" parameterClass="map">
+      select
+      b.tb_gxsz_mc,
+      tb_sc_ID,
+      tb_sc_ftime,
+      tb_sc_etime,
+      tb_sc_czrgh,
+      tb_sc_gxbs,
+      tb_sc_dh,
+      tb_sc_isEnd,
+      tb_sc_bz,
+      case when b.tb_gxsz_isqc = '是' Then
+      qc.tb_QcJc_sfsh
+      else
+      '--'
+      end sfsh
+      from tb_sc a
+      left join tb_gxsz b on a.tb_sc_gxbs = b.tb_gxsz_ID
+      left join tb_QcJc qc on qc.tb_QcJc_wlbs = a.tb_sc_ID and qc.tb_QcJc_jcb = 'tb_sc'
+      <dynamic prepend="where">
+        <isNotEmpty prepend="and" property="tb_sc_isEnd">
+          a.tb_sc_isEnd = #tb_sc_isEnd#
+        </isNotEmpty>
+        <isNotEmpty prepend="and" property="tb_sc_gxbs">
+          a.tb_sc_gxbs = #tb_sc_gxbs#
+        </isNotEmpty>
+      </dynamic>
+    </select>
+
     <insert id="inserttb_sc" parameterClass="tb_sc">
       insert into tb_sc
       (

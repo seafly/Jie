@@ -42,38 +42,38 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Cabio.BLL.dll" size="11776">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Cabio.BLL.dll" size="12800">
       <assemblyIdentity name="Cabio.BLL" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>27MlPfDO2nubG4bqJAvxkxvi4jU=</dsig:DigestValue>
+        <dsig:DigestValue>iVXxcFyHZOMry5H87UZivep5Mfo=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Cabio.DLL.dll" size="6144">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Cabio.DLL.dll" size="6656">
       <assemblyIdentity name="Cabio.DLL" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>xFW7CjOJreXVRhTq156dToFD3n0=</dsig:DigestValue>
+        <dsig:DigestValue>xniOYZLWQhSgHGKTT7cqq9kxqp0=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Cabio.Model.dll" size="26624">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Cabio.Model.dll" size="35840">
       <assemblyIdentity name="Cabio.Model" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>+eNtDsGjyLBnFycmLSKYKImDsIg=</dsig:DigestValue>
+        <dsig:DigestValue>wweuNHFKzs0L5Rc5SIs+XcV2Qyw=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -85,7 +85,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>vrqU2n2ZArZ4F9aIKATps76rXvo=</dsig:DigestValue>
+        <dsig:DigestValue>Gant9bjHYfa+AyIqv9pXhu64egE=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -231,6 +231,15 @@
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
       <dsig:DigestValue>byoc+XeGyWV1snvWoCQSMdE+GeM=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="bin\Debug\Config\Maps\Material\tb_i259b.xml" size="11355" writeableType="applicationData">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>iqPY57Ny83peNqf+okE31c7MLbw=</dsig:DigestValue>
     </hash>
   </file>
   <file name="bin\Debug\Config\Maps\Material\tb_syjl.xml" size="5623" writeableType="applicationData">

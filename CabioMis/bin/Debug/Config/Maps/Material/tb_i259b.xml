@@ -1,0 +1,398 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<sqlMap namespace="tb_i259b" xmlns="http://ibatis.apache.org/mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+  <alias>
+    <typeAlias alias="tb_i259b" type="Cabio.Model.Material.tb_i259b,Cabio.Model" />
+  </alias>
+
+  <statements>
+    <select id="gettb_i259bById" resultClass="tb_i259b" parameterClass="int">
+      select
+      tb_i259b_ID,
+      tb_i259b_r596j,
+      tb_i259b_i231a,
+      tb_i259b_c24u,
+      tb_i259b_h200z,
+      tb_i259b_num,
+      tb_i259b_p518h,
+      tb_i259b_q546i,
+      tb_i259b_y840q,
+      tb_i259b_f122x,
+      tb_i259b_bz,
+      tb_i259b_qcrq,
+      tb_i259b_czrgh,
+      tb_i259b_qajgsm,
+      tb_i259b_qaspjg,
+      tb_i259b_qarq,
+      tb_i259b_yxx,
+      tb_i259b_qaczrgh,
+      tb_i259b_gg,
+      tb_i259b_num2,
+      tb_i259b_kczl,
+      tb_i259b_bf,
+      tb_i259b_bfmx,
+      tb_i259b_cpbzrq,
+      tb_i259b_ckcl,
+      tb_i259b_jhdh,
+      tb_i259b_cgdh,
+      tb_i259b_sbid,
+      tb_i259b_sfqj,
+      tb_i259b_zhbzq,
+      tb_i259b_qjrq,
+      tb_i259b_rkrq,
+      tb_i259b_rkl,
+      tb_i259b_num22,
+      tb_i259b_cw,
+      tb_i259b_scs,
+      tb_i259b_qcsh,
+      tb_i259b_endrq,
+      tb_i259b_scrq,
+      tb_i259b_remind,
+      tb_i259b_fhxz,
+      tb_i259b_zlhsxs,
+      tb_i259b_gysbs
+      from tb_i259b
+      where tb_i259b_ID = $value$
+    </select>
+
+    <select id="gettb_i259bByMap" resultClass="tb_i259b" parameterClass="map">
+      select
+      tb_i259b_ID,
+      tb_i259b_r596j,
+      tb_i259b_i231a,
+      tb_i259b_c24u,
+      tb_i259b_h200z,
+      tb_i259b_num,
+      tb_i259b_p518h,
+      tb_i259b_q546i,
+      tb_i259b_y840q,
+      tb_i259b_f122x,
+      tb_i259b_bz,
+      tb_i259b_qcrq,
+      tb_i259b_czrgh,
+      tb_i259b_qajgsm,
+      tb_i259b_qaspjg,
+      tb_i259b_qarq,
+      tb_i259b_yxx,
+      tb_i259b_qaczrgh,
+      tb_i259b_gg,
+      tb_i259b_num2,
+      tb_i259b_kczl,
+      tb_i259b_bf,
+      tb_i259b_bfmx,
+      tb_i259b_cpbzrq,
+      tb_i259b_ckcl,
+      tb_i259b_jhdh,
+      tb_i259b_cgdh,
+      tb_i259b_sbid,
+      tb_i259b_sfqj,
+      tb_i259b_zhbzq,
+      tb_i259b_qjrq,
+      tb_i259b_rkrq,
+      tb_i259b_rkl,
+      tb_i259b_num22,
+      tb_i259b_cw,
+      tb_i259b_scs,
+      tb_i259b_qcsh,
+      tb_i259b_endrq,
+      tb_i259b_scrq,
+      tb_i259b_remind,
+      tb_i259b_fhxz,
+      tb_i259b_zlhsxs,
+      tb_i259b_gysbs
+      from tb_i259b
+      <dynamic prepend="where">
+        <isNotEmpty prepend="" property="">
+        </isNotEmpty>
+      </dynamic>
+    </select>
+
+    <select id="querytb_i259bList" resultClass="tb_i259b" parameterClass="map">
+      select
+      tb_i259b_ID,
+      tb_i259b_r596j,
+      tb_i259b_i231a,
+      tb_i259b_c24u,
+      tb_i259b_h200z,
+      tb_i259b_num,
+      tb_i259b_p518h,
+      tb_i259b_q546i,
+      tb_i259b_y840q,
+      tb_i259b_f122x,
+      tb_i259b_bz,
+      tb_i259b_qcrq,
+      tb_i259b_czrgh,
+      tb_i259b_qajgsm,
+      tb_i259b_qaspjg,
+      tb_i259b_qarq,
+      tb_i259b_yxx,
+      tb_i259b_qaczrgh,
+      tb_i259b_gg,
+      tb_i259b_num2,
+      tb_i259b_kczl,
+      tb_i259b_bf,
+      tb_i259b_bfmx,
+      tb_i259b_cpbzrq,
+      tb_i259b_ckcl,
+      tb_i259b_jhdh,
+      tb_i259b_cgdh,
+      tb_i259b_sbid,
+      tb_i259b_sfqj,
+      tb_i259b_zhbzq,
+      tb_i259b_qjrq,
+      tb_i259b_rkrq,
+      tb_i259b_rkl,
+      tb_i259b_num22,
+      tb_i259b_cw,
+      tb_i259b_scs,
+      tb_i259b_qcsh,
+      tb_i259b_endrq,
+      tb_i259b_scrq,
+      tb_i259b_remind,
+      tb_i259b_fhxz,
+      tb_i259b_zlhsxs,
+      tb_i259b_gysbs
+      from tb_i259b
+      <dynamic prepend="where">
+        <isNotEmpty prepend="" property="">
+        </isNotEmpty>
+      </dynamic>
+
+    </select>
+
+    <insert id="inserttb_i259b" parameterClass="tb_i259b">
+      insert into tb_i259b
+      (
+      tb_i259b_r596j,
+      tb_i259b_i231a,
+      tb_i259b_c24u,
+      tb_i259b_h200z,
+      tb_i259b_num,
+      tb_i259b_p518h,
+      tb_i259b_q546i,
+      tb_i259b_y840q,
+      tb_i259b_f122x,
+      tb_i259b_bz,
+      tb_i259b_qcrq,
+      tb_i259b_czrgh,
+      tb_i259b_qajgsm,
+      tb_i259b_qaspjg,
+      tb_i259b_qarq,
+      tb_i259b_yxx,
+      tb_i259b_qaczrgh,
+      tb_i259b_gg,
+      tb_i259b_num2,
+      tb_i259b_kczl,
+      tb_i259b_bf,
+      tb_i259b_bfmx,
+      tb_i259b_cpbzrq,
+      tb_i259b_ckcl,
+      tb_i259b_jhdh,
+      tb_i259b_cgdh,
+      tb_i259b_sbid,
+      tb_i259b_sfqj,
+      tb_i259b_zhbzq,
+      tb_i259b_qjrq,
+      tb_i259b_rkrq,
+      tb_i259b_rkl,
+      tb_i259b_num22,
+      tb_i259b_cw,
+      tb_i259b_scs,
+      tb_i259b_qcsh,
+      tb_i259b_endrq,
+      tb_i259b_scrq,
+      tb_i259b_remind,
+      tb_i259b_fhxz,
+      tb_i259b_zlhsxs,
+      tb_i259b_gysbs
+      )
+      values
+      (
+      #tb_i259b_r596j#,
+      #tb_i259b_i231a#,
+      #tb_i259b_c24u#,
+      #tb_i259b_h200z#,
+      #tb_i259b_num#,
+      #tb_i259b_p518h#,
+      #tb_i259b_q546i#,
+      #tb_i259b_y840q#,
+      #tb_i259b_f122x#,
+      #tb_i259b_bz#,
+      #tb_i259b_qcrq#,
+      #tb_i259b_czrgh#,
+      #tb_i259b_qajgsm#,
+      #tb_i259b_qaspjg#,
+      #tb_i259b_qarq#,
+      #tb_i259b_yxx#,
+      #tb_i259b_qaczrgh#,
+      #tb_i259b_gg#,
+      #tb_i259b_num2#,
+      #tb_i259b_kczl#,
+      #tb_i259b_bf#,
+      #tb_i259b_bfmx#,
+      #tb_i259b_cpbzrq#,
+      #tb_i259b_ckcl#,
+      #tb_i259b_jhdh#,
+      #tb_i259b_cgdh#,
+      #tb_i259b_sbid#,
+      #tb_i259b_sfqj#,
+      #tb_i259b_zhbzq#,
+      #tb_i259b_qjrq#,
+      #tb_i259b_rkrq#,
+      #tb_i259b_rkl#,
+      #tb_i259b_num22#,
+      #tb_i259b_cw#,
+      #tb_i259b_scs#,
+      #tb_i259b_qcsh#,
+      #tb_i259b_endrq#,
+      #tb_i259b_scrq#,
+      #tb_i259b_remind#,
+      #tb_i259b_fhxz#,
+      #tb_i259b_zlhsxs#,
+      #tb_i259b_gysbs#
+      )
+      <selectKey resultClass="int" type="post" property="tb_i259b_ID" >
+        select @@IDENTITY as value
+      </selectKey>
+    </insert>
+
+    <update id="updatetb_i259b" parameterClass="tb_i259b">
+      update tb_i259b set
+      <dynamic>
+        <isNotEmpty prepend="," property="tb_i259b_r596j">
+          tb_i259b_r596j = #tb_i259b_r596j#,
+        </isNotEmpty>
+        <isNotEmpty prepend="," property="tb_i259b_i231a">
+          tb_i259b_i231a = #tb_i259b_i231a#,
+        </isNotEmpty>
+        <isNotEmpty prepend="," property="tb_i259b_c24u">
+          tb_i259b_c24u = #tb_i259b_c24u#,
+        </isNotEmpty>
+        <isNotEmpty prepend="," property="tb_i259b_h200z">
+          tb_i259b_h200z = #tb_i259b_h200z#,
+        </isNotEmpty>
+        <isNotEmpty prepend="," property="tb_i259b_num">
+          tb_i259b_num = #tb_i259b_num#,
+        </isNotEmpty>
+        <isNotEmpty prepend="," property="tb_i259b_p518h">
+          tb_i259b_p518h = #tb_i259b_p518h#,
+        </isNotEmpty>
+        <isNotEmpty prepend="," property="tb_i259b_q546i">
+          tb_i259b_q546i = #tb_i259b_q546i#,
+        </isNotEmpty>
+        <isNotEmpty prepend="," property="tb_i259b_y840q">
+          tb_i259b_y840q = #tb_i259b_y840q#,
+        </isNotEmpty>
+        <isNotEmpty prepend="," property="tb_i259b_f122x">
+          tb_i259b_f122x = #tb_i259b_f122x#,
+        </isNotEmpty>
+        <isNotEmpty prepend="," property="tb_i259b_bz">
+          tb_i259b_bz = #tb_i259b_bz#,
+        </isNotEmpty>
+        <isNotEmpty prepend="," property="tb_i259b_qcrq">
+          tb_i259b_qcrq = #tb_i259b_qcrq#,
+        </isNotEmpty>
+        <isNotEmpty prepend="," property="tb_i259b_czrgh">
+          tb_i259b_czrgh = #tb_i259b_czrgh#,
+        </isNotEmpty>
+        <isNotEmpty prepend="," property="tb_i259b_qajgsm">
+          tb_i259b_qajgsm = #tb_i259b_qajgsm#,
+        </isNotEmpty>
+        <isNotEmpty prepend="," property="tb_i259b_qaspjg">
+          tb_i259b_qaspjg = #tb_i259b_qaspjg#,
+        </isNotEmpty>
+        <isNotEmpty prepend="," property="tb_i259b_qarq">
+          tb_i259b_qarq = #tb_i259b_qarq#,
+        </isNotEmpty>
+        <isNotEmpty prepend="," property="tb_i259b_yxx">
+          tb_i259b_yxx = #tb_i259b_yxx#,
+        </isNotEmpty>
+        <isNotEmpty prepend="," property="tb_i259b_qaczrgh">
+          tb_i259b_qaczrgh = #tb_i259b_qaczrgh#,
+        </isNotEmpty>
+        <isNotEmpty prepend="," property="tb_i259b_gg">
+          tb_i259b_gg = #tb_i259b_gg#,
+        </isNotEmpty>
+        <isNotEmpty prepend="," property="tb_i259b_num2">
+          tb_i259b_num2 = #tb_i259b_num2#,
+        </isNotEmpty>
+        <isNotEmpty prepend="," property="tb_i259b_kczl">
+          tb_i259b_kczl = #tb_i259b_kczl#,
+        </isNotEmpty>
+        <isNotEmpty prepend="," property="tb_i259b_bf">
+          tb_i259b_bf = #tb_i259b_bf#,
+        </isNotEmpty>
+        <isNotEmpty prepend="," property="tb_i259b_bfmx">
+          tb_i259b_bfmx = #tb_i259b_bfmx#,
+        </isNotEmpty>
+        <isNotEmpty prepend="," property="tb_i259b_cpbzrq">
+          tb_i259b_cpbzrq = #tb_i259b_cpbzrq#,
+        </isNotEmpty>
+        <isNotEmpty prepend="," property="tb_i259b_ckcl">
+          tb_i259b_ckcl = #tb_i259b_ckcl#,
+        </isNotEmpty>
+        <isNotEmpty prepend="," property="tb_i259b_jhdh">
+          tb_i259b_jhdh = #tb_i259b_jhdh#,
+        </isNotEmpty>
+        <isNotEmpty prepend="," property="tb_i259b_cgdh">
+          tb_i259b_cgdh = #tb_i259b_cgdh#,
+        </isNotEmpty>
+        <isNotEmpty prepend="," property="tb_i259b_sbid">
+          tb_i259b_sbid = #tb_i259b_sbid#,
+        </isNotEmpty>
+        <isNotEmpty prepend="," property="tb_i259b_sfqj">
+          tb_i259b_sfqj = #tb_i259b_sfqj#,
+        </isNotEmpty>
+        <isNotEmpty prepend="," property="tb_i259b_zhbzq">
+          tb_i259b_zhbzq = #tb_i259b_zhbzq#,
+        </isNotEmpty>
+        <isNotEmpty prepend="," property="tb_i259b_qjrq">
+          tb_i259b_qjrq = #tb_i259b_qjrq#,
+        </isNotEmpty>
+        <isNotEmpty prepend="," property="tb_i259b_rkrq">
+          tb_i259b_rkrq = #tb_i259b_rkrq#,
+        </isNotEmpty>
+        <isNotEmpty prepend="," property="tb_i259b_rkl">
+          tb_i259b_rkl = #tb_i259b_rkl#,
+        </isNotEmpty>
+        <isNotEmpty prepend="," property="tb_i259b_num22">
+          tb_i259b_num22 = #tb_i259b_num22#,
+        </isNotEmpty>
+        <isNotEmpty prepend="," property="tb_i259b_cw">
+          tb_i259b_cw = #tb_i259b_cw#,
+        </isNotEmpty>
+        <isNotEmpty prepend="," property="tb_i259b_scs">
+          tb_i259b_scs = #tb_i259b_scs#,
+        </isNotEmpty>
+        <isNotEmpty prepend="," property="tb_i259b_qcsh">
+          tb_i259b_qcsh = #tb_i259b_qcsh#,
+        </isNotEmpty>
+        <isNotEmpty prepend="," property="tb_i259b_endrq">
+          tb_i259b_endrq = #tb_i259b_endrq#,
+        </isNotEmpty>
+        <isNotEmpty prepend="," property="tb_i259b_scrq">
+          tb_i259b_scrq = #tb_i259b_scrq#,
+        </isNotEmpty>
+        <isNotEmpty prepend="," property="tb_i259b_remind">
+          tb_i259b_remind = #tb_i259b_remind#,
+        </isNotEmpty>
+        <isNotEmpty prepend="," property="tb_i259b_fhxz">
+          tb_i259b_fhxz = #tb_i259b_fhxz#,
+        </isNotEmpty>
+        <isNotEmpty prepend="," property="tb_i259b_zlhsxs">
+          tb_i259b_zlhsxs = #tb_i259b_zlhsxs#,
+        </isNotEmpty>
+        <isNotEmpty prepend="," property="tb_i259b_gysbs">
+          tb_i259b_gysbs = #tb_i259b_gysbs#,
+        </isNotEmpty>
+      </dynamic>
+      where   tb_i259b_ID = $tb_i259b_ID$
+    </update>
+
+    <delete id="deletetb_i259b" parameterClass="string">
+      delete from tb_i259b  where   tb_i259b_ID = #value#
+    </delete>
+
+  </statements>
+
+</sqlMap>

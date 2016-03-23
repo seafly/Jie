@@ -43,7 +43,11 @@
       tb_scxq_xxbs
       from tb_scxq
       <dynamic prepend="where">
-        <isNotEmpty prepend="" property="">
+        <isNotEmpty prepend="and" property="tb_scxq_lx">
+          tb_scxq_lx = #tb_scxq_lx#
+        </isNotEmpty>
+        <isNotEmpty prepend="and" property="tb_scxq_scbs">
+          tb_scxq_scbs = #tb_scxq_scbs#
         </isNotEmpty>
       </dynamic>
     </select>

@@ -63,6 +63,7 @@
     <Compile Include="Material\MaterialDao.cs" />
     <Compile Include="Material\MaterialStockDao.cs" />
     <Compile Include="Material\UseRecordDao.cs" />
+    <Compile Include="Material\WlDao.cs" />
     <Compile Include="Produce\ProduceDao.cs" />
     <Compile Include="Produce\ProduceDetailDao.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

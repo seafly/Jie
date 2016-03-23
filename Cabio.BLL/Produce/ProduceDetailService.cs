@@ -46,5 +46,20 @@ namespace Cabio.BLL.Produce
             }
             return result;
         }
+
+        /// <summary>
+        /// 根据类型和生产标识查询生产详情
+        /// </summary>
+        /// <param name="type">类型</param>
+        /// <param name="scbs">生产标识</param>
+        /// <returns></returns>
+        public IList<tb_scxq> GetInfoList(string type, string scbs)
+        {
+            Hashtable map = new Hashtable();
+            map.Add("tb_scxq_lx", type);
+            map.Add("tb_scxq_scbs", scbs);
+
+            return base.GetListByQuery<tb_scxq>(map);
+        }
     }
 }
