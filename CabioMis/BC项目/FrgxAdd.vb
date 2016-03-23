@@ -1,4 +1,9 @@
-﻿Public Class FrgxAdd
+﻿Imports com.uceip.Common
+Imports Cabio.Model.Crafts
+Imports Cabio.BLL.Crafts
+
+
+Public Class FrgxAdd
     '基本信息数据
     Dim m_gxszDt As DataTable
     '产出产品信息
@@ -23,12 +28,16 @@
     End Sub
     Private Sub FrgxAdd_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Me.Icon = G_icon : Me.BackgroundImage = G_backimg
-        ''1123
+
         Dim sql As String = "select * from tb_gxsz where tb_gxsz_ID=" & IIf(m_gxid > 0, m_gxid, 0)
         m_gxszDt = sql.YanGetDb
+
+        Dim list As IList(Of tb_gxsz) = New CraftsSettingService().GetListByQuery(Of tb_gxsz)()
+        Dim dt As DataTable = DataTableExtensions.ToDataTable(list)
+        dt.TableName = "tb_gxsz"
         m_gxszDt.TableName = "tb_gxsz"
         If m_gxid > 0 Then
-            _D.YanDtSetFrCon(Me, m_gxszDt)
+            _D.YanDtSetFrCon(Me, dt)
         End If
         setCccp()
         setFjxx()

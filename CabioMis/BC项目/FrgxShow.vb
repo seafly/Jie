@@ -1,4 +1,10 @@
-﻿Public Class FrgxShow
+﻿Imports com.uceip.Common
+Imports Cabio.Model.Crafts
+Imports Cabio.BLL.Crafts
+
+Public Class FrgxShow
+
+    Dim craftsBll As CraftsSettingService = New CraftsSettingService()
 
     Private Sub FrgxShow_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Me.Icon = G_icon : Me.BackgroundImage = G_backimg
@@ -14,13 +20,17 @@
         f.m_gxid = pBs
         If f.ShowDialog = DialogResult.OK Then
             showList()
-            CType(Application.OpenForms.Item("FrbcList"), FrbcList).setMenu
+            CType(Application.OpenForms.Item("FrbcList"), FrbcList).setMenu()
         End If
     End Sub
 
-    Private Sub showList(Optional pSql As String="")
-        Dim sql As String = "select * from tb_gxsz where 1=1 " & pSql & " order by tb_gxsz_px"
-        Dim dt As DataTable = sql.YanGetDb
+    Private Sub showList(Optional pSql As String = "")
+        'Dim sql As String = "select * from tb_gxsz where 1=1 " & pSql & " order by tb_gxsz_px"
+        'Dim dt As DataTable = sql.YanGetDb
+
+        Dim list As IList(Of tb_gxsz) = craftsBll.GetListByQuery(Of tb_gxsz)()
+        Dim dt As DataTable = DataTableExtensions.ToDataTable(list)
+
         Dim menu1 As ContextMenuStrip = Nothing
         menu1 = New ContextMenuStrip
         menu1.Items.Add("查看明细")
@@ -40,10 +50,11 @@
         menu1.Items.Add("删除")
         AddHandler menu1.Items(3).Click, Sub()
                                              If MsgBox("确定要删除吗？", MsgBoxStyle.YesNo) = vbYes Then
-                                                 sql = "delete from tb_gxsz where tb_gxsz_ID=" & YanDaTaGridView1.SelectedRows(0).Cells("tb_gxsz_ID").Value
-                                                 sql &= vbCrLf & "delete from tb_gxfjxx where tb_gxfjxx_gxbs=" & YanDaTaGridView1.SelectedRows(0).Cells("tb_gxsz_ID").Value
-                                                 sql &= vbCrLf & "delete from tb_gxcccp where tb_gxcccp_gxbs=" & YanDaTaGridView1.SelectedRows(0).Cells("tb_gxsz_ID").Value
-                                                 sql.YanDbExe()
+                                                 'sql = "delete from tb_gxsz where tb_gxsz_ID=" & YanDaTaGridView1.SelectedRows(0).Cells("tb_gxsz_ID").Value
+                                                 'sql &= vbCrLf & "delete from tb_gxfjxx where tb_gxfjxx_gxbs=" & YanDaTaGridView1.SelectedRows(0).Cells("tb_gxsz_ID").Value
+                                                 'sql &= vbCrLf & "delete from tb_gxcccp where tb_gxcccp_gxbs=" & YanDaTaGridView1.SelectedRows(0).Cells("tb_gxsz_ID").Value
+                                                 'sql.YanDbExe()
+                                                 craftsBll.Delete(YanDaTaGridView1.SelectedRows(0).Cells("tb_gxsz_ID").Value)
                                                  showList()
                                                  CType(Application.OpenForms.Item("FrbcList"), FrbcList).setMenu()
                                              End If
