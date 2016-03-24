@@ -24,7 +24,7 @@ namespace Cabio.DLL.Crafts
         /// <returns></returns>
         public int RemoveByCraftsSetting(string key)
         {
-            return base.Remove("deletetb_gxfjxxByGxsz", key);
+            return Remove("deletetb_gxfjxxByGxsz", key);
         }
     }
 }

@@ -1,4 +1,11 @@
-﻿Public Class FrbcList
+﻿Imports Cabio.BLL.Crafts
+Imports Cabio.BLL.Material
+Imports Cabio.BLL.Produce
+Imports Cabio.Model.Crafts
+Imports Cabio.Model.Material
+Imports Cabio.Model.Produce
+
+Public Class FrbcList
     ''' <summary>
     ''' 工艺信息
     ''' </summary>
@@ -27,6 +34,10 @@
     Public Sub setMenu()
         tsMenu.Items.Clear()
         '添加BC工艺菜单
+
+        'Dim gxszService As New CraftsSettingService()
+        'gxszService.GetListByQuery()
+
         Dim sql As String = "select * from tb_gxsz order by tb_gxsz_px"
         Dim dt As DataTable = sql.YanGetDb
         Dim m As ToolStripButton
@@ -81,7 +92,7 @@
         AddHandler q.Click, AddressOf (New FrgxShow).ShowDialog
         tsMenu.Items.Add(m2)
         q = m2.DropDownItems.Add("自定义批号")
-        AddHandler q.Click,AddressOf (New Frph_List).ShowDialog
+        AddHandler q.Click, AddressOf (New Frph_List).ShowDialog
         tsMenu.Items.Add(m2)
         '切换菜单与关闭菜单的加载
         GF_OpenFaceList2(tsMenu)
@@ -93,12 +104,15 @@
         Me.Text = "BC-" & m_gxszDt.YanDtValue2("tb_gxsz_mc")
         GroupBox3.Text = m_gxszDt.YanDtValue2("tb_gxsz_mc")
         '列出该工艺产出的批号
-        'Dim Sql As String = "select * from tb_sc where tb_sc_isEnd<>'是' and tb_sc_gxbs='" & m_gxszDt.YanDtValue2("tb_gxsz_ID") & "'"
+
+        'Dim produceService As New ProduceService()
+        'produceService.GetScInfo()
+
         Dim Sql As String = "select b.tb_gxsz_mc,a.*,case when tb_gxsz_isqc='是' then" & vbCrLf & _
         "case when exists(select * from tb_QcJc where tb_QcJc_wlbs=a.tb_sc_ID and tb_QcJc_jcb='tb_sc' and tb_QcJc_sfsh='是') then" & vbCrLf & _
         "'是' else '否' end else '--' end as QC审核" & vbCrLf & _
         "from tb_sc as a left join tb_gxsz as b" & vbCrLf & _
-        "on a.tb_sc_gxbs=b.tb_gxsz_ID where tb_sc_isEnd='"& en_sczt.待定.ToString &"' and tb_sc_gxbs='" & m_gxszDt.YanDtValue2("tb_gxsz_ID") & "'"
+        "on a.tb_sc_gxbs=b.tb_gxsz_ID where tb_sc_isEnd='" & en_sczt.待定.ToString & "' and tb_sc_gxbs='" & m_gxszDt.YanDtValue2("tb_gxsz_ID") & "'"
         Dim dt As DataTable = Sql.YanGetDb
         '添加右键餐单
         Dim menu1 As New ContextMenuStrip
@@ -143,12 +157,19 @@
             Return
         End If
         '附加信息
+
+        'Dim producedetailService As New ProduceDetailService()
+        'producedetailService.GetInfoList("附加信息", "")
+
         Dim sql As String = "select tb_scxq_text as 项目,tb_scxq_value from tb_scxq where tb_scxq_lx='附加信息' and " &
             " tb_scxq_scbs=" & tShow.SelectedRows(0).Cells("tb_sc_ID").Value
         Dim dt As DataTable = sql.YanGetDb
         dt.YanDataBind(showFjxx)
 
         '投料信息
+
+        'producedetailService.GetInfoList("投料", "")
+
         sql = "select tb_scxq_text as 物品名称,tb_scxq_value from tb_scxq where tb_scxq_lx='投料' and " &
         " tb_scxq_scbs=" & tShow.SelectedRows(0).Cells("tb_sc_ID").Value
         dt = sql.YanGetDb
@@ -168,6 +189,9 @@
         Next
         dt.YanDataBind(showTlxx, "tb_scxq_value")
         '产出信息
+
+        'producedetailService.GetInfoList("产出", "")
+
         sql = "select tb_scxq_text as 物品名称,tb_scxq_value from tb_scxq where tb_scxq_lx='产出' and " &
         " tb_scxq_scbs=" & tShow.SelectedRows(0).Cells("tb_sc_ID").Value
         dt = sql.YanGetDb
@@ -293,7 +317,7 @@
          "case when exists(select * from tb_QcJc where tb_QcJc_wlbs=a.tb_sc_ID and tb_QcJc_jcb='tb_sc' and tb_QcJc_sfsh='是') then" & vbCrLf & _
          "'是' else '否' end else '--' end as QC审核" & vbCrLf & _
          "from tb_sc as a left join tb_gxsz as b" & vbCrLf & _
-         "on a.tb_sc_gxbs=b.tb_gxsz_ID where tb_sc_isEnd<>'"& en_sczt.待定.ToString &"' and tb_sc_gxbs='" & m_gxszDt.YanDtValue2("tb_gxsz_ID") & "' " & strWhere
+         "on a.tb_sc_gxbs=b.tb_gxsz_ID where tb_sc_isEnd<>'" & en_sczt.待定.ToString & "' and tb_sc_gxbs='" & m_gxszDt.YanDtValue2("tb_gxsz_ID") & "' " & strWhere
         Dim dt As DataTable = sql.YanGetDb
         AddHandler show2.CellClick, AddressOf showScxq
         dt.YanDataBind(show2, "tb_sc_ID,tb_sc_gxbs")

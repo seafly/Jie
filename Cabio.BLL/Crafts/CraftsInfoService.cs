@@ -97,7 +97,7 @@ namespace Cabio.BLL.Crafts
 
             new CraftsInfoService().GetListByQuery<tb_gxcccp>(null);
 
-            return base.GetListByQuery<tb_gxfjxx>(new Hashtable { { "tb_gxfjxx_gxbs", key } });
+            return GetListByQuery<tb_gxfjxx>(new Hashtable { { "tb_gxfjxx_gxbs", key } });
         }
 
         /// <summary>

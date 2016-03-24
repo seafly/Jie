@@ -92,7 +92,7 @@ namespace Cabio.BLL.Crafts
         /// <returns></returns>
         public IList<tb_gxcccp> GetCraftsProductList(string key)
         {
-            return base.GetListByQuery<tb_gxcccp>(new Hashtable { { "tb_gxcccp_gxbs", key } });
+            return GetListByQuery<tb_gxcccp>(new Hashtable { { "tb_gxcccp_gxbs", key } });
         }
 
         /// <summary>

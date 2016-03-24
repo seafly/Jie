@@ -1,4 +1,9 @@
 ﻿Imports System.Linq
+Imports Cabio.BLL.Crafts
+Imports Cabio.Model.Crafts
+Imports Cabio.BLL.Produce
+Imports Cabio.Model.Produce
+
 Public Class FrWpAdd
     ''' <summary>
     ''' 修改标识
@@ -34,6 +39,10 @@ Public Class FrWpAdd
 
         m_hzDm = G_SYCPDMB.Select("tb_cpdmhz_cpxz='" & m_strCplb & "'").YanArrDrToDb()
         '先检查该工序是否有附加信息
+
+        'Dim Service As New CraftsInfoService()
+        'Service.getCraftsInfoList(工艺设置ID)
+
         Dim sql As String = "select * from tb_gxfjxx where tb_gxfjxx_gxbs=" & m_frOpen.m_gxszDt.YanDtValue2("tb_gxsz_ID") & " order by tb_gxfjxx_ID"
         m_fjxxDt = sql.YanGetDb
         If m_fjxxDt.Rows.Count = 0 Then
@@ -203,6 +212,10 @@ Public Class FrWpAdd
             Return
         End If
         '先检查产出产品的数目
+
+        'Dim Service As New CraftsProductService()
+        'Service.GetCraftsProductList(工艺设置ID)
+
         Dim sql As String = "select b.tb_wp_pm,b.tb_wp_dm,b.tb_wp_wpfl,b.tb_wp_ID,a.* from tb_gxcccp as a left join tb_wp as b on a.tb_gxcccp_wpbs=b.tb_wp_ID " &
             " where tb_gxcccp_gxbs=" & m_frOpen.m_gxszDt.YanDtValue2("tb_gxsz_ID")
         m_cccpDt = sql.YanGetDb
@@ -538,10 +551,19 @@ Public Class FrWpAdd
     ''' </summary>
     Private Sub setKjVa()
         '主窗体
+
+        'Dim produceService As New ProduceService()
+        'produceService.GetObject()
+
         Dim sql As String = "select * from tb_sc where tb_sc_ID=" & m_xgid
         Dim dt As DataTable = _D.GF_CreateDataSource(sql)
         _D.YanDtSetFrCon(Me, dt)
         '附加信息
+
+        Dim producedetailService As New ProduceDetailService()
+        producedetailService.GetInfoList("附加信息", "")
+
+
         sql = "select * from tb_scxq as a left join tb_gxfjxx as b on a.tb_scxq_xxbs=b.tb_gxfjxx_ID where tb_scxq_lx='附加信息' and tb_scxq_scbs=" & m_xgid
         dt = sql.YanGetDb
         For i As Integer = 0 To dt.Rows.Count - 1
@@ -555,6 +577,9 @@ Public Class FrWpAdd
             tContr.Text = dt.YanDtValue3("tb_scxq_value", i)
         Next
         '投料信息
+
+        producedetailService.GetInfoList("投料", "")
+
         sql = "select * from tb_scxq where tb_scxq_lx='投料' and tb_scxq_scbs=" & m_xgid
         dt = sql.YanGetDb
         For i As Integer = 0 To dt.Rows.Count - 1
@@ -570,6 +595,9 @@ Public Class FrWpAdd
             GroupBox1.YanFindControl("wp" & dt.YanDtValue2("tb_scxq_xxbs", i) & "bs").Text = arrStr(2)
         Next
         '产出信息
+
+        producedetailService.GetInfoList("产出", "")
+
         sql = "select * from tb_scxq where tb_scxq_lx='产出' and tb_scxq_scbs=" & m_xgid
         dt = sql.YanGetDb
         For i As Integer = 0 To dt.Rows.Count - 1
@@ -602,7 +630,11 @@ Public Class FrWpAdd
     ''' <summary>
     ''' 提交的过程
     ''' </summary>
-    Private Function  saveFrom() As Boolean
+    Private Function saveFrom() As Boolean
+
+        'Dim Service As New ProduceService()
+        'Service.Save()
+
         '检查表单必填项
         If CheckControlNull(Me) = False Then
             Return False

@@ -1,4 +1,7 @@
-﻿Public Class FrgxAdd
+﻿Imports Cabio.BLL.Crafts
+Imports Cabio.Model.Crafts
+
+Public Class FrgxAdd
     '基本信息数据
     Dim m_gxszDt As DataTable
     '产出产品信息
@@ -23,7 +26,11 @@
     End Sub
     Private Sub FrgxAdd_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Me.Icon = G_icon : Me.BackgroundImage = G_backimg
-        ''1123
+
+        'Dim Service As New CraftsSettingService()
+        'Dim gysz As tb_gxsz
+        'gysz = Service.GetObject(工艺设置ID)
+
         Dim sql As String = "select * from tb_gxsz where tb_gxsz_ID=" & IIf(m_gxid > 0, m_gxid, 0)
         m_gxszDt = sql.YanGetDb
         m_gxszDt.TableName = "tb_gxsz"
@@ -43,6 +50,10 @@
     ''' 产出产品 的过程
     ''' </summary>
     Private Sub setCccp()
+
+        'Dim Service As New CraftsProductService()
+        'Service.GetCraftsProductList(工艺设置ID)
+
         Dim Sql As String = "select b.tb_wp_pm,b.tb_wp_dm,tb_wp_ID,a.*,cast(newid() as varchar(50)) as rowBs " &
             " from tb_gxcccp as a left join tb_wp as b on a.tb_gxcccp_wpbs=b.tb_wp_ID  where tb_gxcccp_gxbs=" & IIf(m_gxid > 0, m_gxid, 0)
         m_cccpDt = Sql.YanGetDb
@@ -71,6 +82,7 @@
                                          End Sub
         menu1.Items.Add("删除")
         AddHandler menu1.Items(4).Click, Sub()
+                                             'Service.Remove(附件信息ID)
                                              m_cccpDt.Rows.Remove(m_cccpDt.Select("rowBs='" & showWpxx.SelectedRows(0).Cells("rowBs").Value & "'")(0))
                                          End Sub
         AddHandler showWpxx.CellDoubleClick, Sub()
@@ -90,6 +102,12 @@
             f.rowBs.Text = showWpxx.SelectedRows(0).Cells("rowBs").Value
         End If
         If f.ShowDialog() = DialogResult.OK Then
+            'Dim Service As New CraftsProductService()
+            'If (添加) Then
+            '    Service.Insert(工艺产出产品实体);
+            'else
+            '    Service.Update(工艺产出产品实体)
+
             If m_cccpDt.Select("tb_gxcccp_ID<>" & f.tb_gxcccp_ID.Text & " and tb_gxcccp_wpbs=" & f.tb_wp_ID.Text).Length > 0 Then
                 MsgBox("已有相同的物品！", MsgBoxStyle.Exclamation)
                 Return
@@ -112,6 +130,10 @@
     ''' 设置附加信息的过程
     ''' </summary>
     Private Sub setFjxx()
+
+        'Dim Service As New CraftsInfoService()
+        'Service.getCraftsInfoList(工艺设置ID)
+
         Dim Sql As String = "select *,cast(newid() as varchar(50)) as rowBs  from tb_gxfjxx where tb_gxfjxx_gxbs=" & IIf(m_gxid > 0, m_gxid, 0)
         m_fjxxDt = Sql.YanGetDb
         m_fjxxDt.TableName = "tb_gxfjxx"
@@ -125,6 +147,7 @@
         AddHandler menu1.Items(1).Click, Sub()
                                              Dim f As New FrEdit_gxfjxx
                                              If f.ShowDialog() = DialogResult.OK Then
+                                                 'Service.Insert()
                                                  If m_fjxxDt.Select("tb_gxfjxx_mc='" & f.tb_gxfjxx_mc.Text & "'").Length > 0 Then
                                                      MsgBox("已有相同名称的项目！", MsgBoxStyle.Exclamation)
                                                      Return
@@ -136,6 +159,7 @@
         AddHandler menu1.Items(2).Click, AddressOf modFjxx
         menu1.Items.Add("删除")
         AddHandler menu1.Items(3).Click, Sub()
+                                             'Service.Remove()
                                              m_fjxxDt.Rows.Remove(m_fjxxDt.Select("rowBs='" & showFjxx.SelectedRows(0).Cells("rowBs").Value & "'")(0))
                                          End Sub
         AddHandler showFjxx.CellDoubleClick, AddressOf modFjxx
@@ -145,6 +169,8 @@
         Dim f As New FrEdit_gxfjxx
         f.rowBs.Text = showFjxx.SelectedRows(0).Cells("rowBs").Value
         If f.ShowDialog() = DialogResult.OK Then
+            'Dim Service As New CraftsInfoService()
+            'Service.Update()
             If m_fjxxDt.Select("tb_gxfjxx_mc='" & f.tb_gxfjxx_mc.Text & "' and rowBs<>'" & f.rowBs.Text & "'").Length > 0 Then
                 MsgBox("已有相同名称的项目！", MsgBoxStyle.Exclamation)
                 Return
@@ -154,6 +180,10 @@
     End Sub
     '确定
     Private Sub button1_Click(sender As Object, e As EventArgs) Handles button1.Click
+        'Dim Service As New CraftsSettingService()
+        'Service.Insert()添加
+        'Service.Update()修改
+
         If CheckControlNull(GroupBox1) = False Then
             Return
         End If

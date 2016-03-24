@@ -47,7 +47,20 @@
       tb_gxsz_isBf
       from tb_gxsz
       <dynamic prepend="where">
-        <isNotEmpty prepend="" property="">
+        <isNotEmpty prepend="and" property="tb_gxsz_mc">
+          tb_gxsz_mc = #tb_gxsz_mc#
+        </isNotEmpty>
+        <isNotEmpty prepend="and" property="tb_gxsz_dm">
+          tb_gxsz_dm = #tb_gxsz_dm#
+        </isNotEmpty>
+        <isNotEmpty prepend="and" property="tb_gxsz_isMod">
+          tb_gxsz_isMod = #tb_gxsz_isMod#
+        </isNotEmpty>
+        <isNotEmpty prepend="and" property="tb_gxsz_isqc">
+          tb_gxsz_isqc = #tb_gxsz_isqc#
+        </isNotEmpty>
+        <isNotEmpty prepend="and" property="tb_gxsz_isBf">
+          tb_gxsz_isBf = #tb_gxsz_isBf#
         </isNotEmpty>
       </dynamic>
       order by tb_gxsz_px

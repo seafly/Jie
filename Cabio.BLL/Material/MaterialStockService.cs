@@ -26,7 +26,7 @@ namespace Cabio.BLL.Material
         /// <returns></returns>
         public bool IsLack(int key, decimal amount)
         {
-            tb_wlphck Model = base.GetObject(key);
+            tb_wlphck Model = GetObject(key);
             if (Model != null)
             {
                 if (Model.tb_wlphck_cjcl >= amount)

@@ -29,7 +29,7 @@ namespace Cabio.DLL.Produce
             Hashtable map = new Hashtable();
             map.Add("tb_scxq_lx", tb_scxq_lx);
             map.Add("tb_scxq_scbs", tb_scxq_scbs);
-            return base.Remove("deletetb_scxqByMap", map);
+            return Remove("deletetb_scxqByMap", map);
         }
     }
 }

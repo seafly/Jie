@@ -26,7 +26,7 @@ namespace Cabio.DLL.Produce
         /// <returns></returns>
         public IList<tb_sc> GetScInfo(Hashtable map)
         {
-            return base.GetListByQuery<tb_sc>("tb_scinfolist", map);
+            return GetListByQuery<tb_sc>("tb_scinfolist", map);
         }
     }
 }

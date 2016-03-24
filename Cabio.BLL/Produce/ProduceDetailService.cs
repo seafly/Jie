@@ -59,7 +59,7 @@ namespace Cabio.BLL.Produce
             map.Add("tb_scxq_lx", type);
             map.Add("tb_scxq_scbs", scbs);
 
-            return base.GetListByQuery<tb_scxq>(map);
+            return GetListByQuery<tb_scxq>(map);
         }
     }
 }
