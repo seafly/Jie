@@ -53,6 +53,7 @@
     <Compile Include="BindDataControl.cs" />
     <Compile Include="Commons.cs" />
     <Compile Include="DataCache.cs" />
+    <Compile Include="DataTableExtensions.cs" />
     <Compile Include="DEncrypt\DEncrypt.cs" />
     <Compile Include="DEncrypt\DESEncrypt.cs" />
     <Compile Include="DEncrypt\HashEncode.cs" />

@@ -1,5 +1,7 @@
-﻿Imports Cabio.BLL.Crafts
+﻿Imports com.uceip.Common
 Imports Cabio.Model.Crafts
+Imports Cabio.BLL.Crafts
+
 
 Public Class FrgxAdd
     '基本信息数据
@@ -10,6 +12,9 @@ Public Class FrgxAdd
     Dim m_fjxxDt As DataTable
     '修改ID
     Public m_gxid As Integer = 0
+
+    Dim craftsSettingBll As CraftsProductService = New CraftsProductService()
+
     Public Sub New()
         ' 此调用是设计器所必需的。
         InitializeComponent()
@@ -31,11 +36,15 @@ Public Class FrgxAdd
         'Dim gysz As tb_gxsz
         'gysz = Service.GetObject(工艺设置ID)
 
-        Dim sql As String = "select * from tb_gxsz where tb_gxsz_ID=" & IIf(m_gxid > 0, m_gxid, 0)
-        m_gxszDt = sql.YanGetDb
-        m_gxszDt.TableName = "tb_gxsz"
+
+        'Dim sql As String = "select * from tb_gxsz where tb_gxsz_ID=" & IIf(m_gxid > 0, m_gxid, 0)
+        'm_gxszDt = sql.YanGetDb
+
+        Dim list As IList(Of tb_gxsz) = New CraftsSettingService().GetListByQuery(Of tb_gxsz)()
+        Dim dt As DataTable = DataTableExtensions.ToDataTable(list)
+        dt.TableName = "tb_gxsz"
         If m_gxid > 0 Then
-            _D.YanDtSetFrCon(Me, m_gxszDt)
+            _D.YanDtSetFrCon(Me, dt)
         End If
         setCccp()
         setFjxx()
@@ -54,9 +63,12 @@ Public Class FrgxAdd
         'Dim Service As New CraftsProductService()
         'Service.GetCraftsProductList(工艺设置ID)
 
-        Dim Sql As String = "select b.tb_wp_pm,b.tb_wp_dm,tb_wp_ID,a.*,cast(newid() as varchar(50)) as rowBs " &
-            " from tb_gxcccp as a left join tb_wp as b on a.tb_gxcccp_wpbs=b.tb_wp_ID  where tb_gxcccp_gxbs=" & IIf(m_gxid > 0, m_gxid, 0)
-        m_cccpDt = Sql.YanGetDb
+        'Dim Sql As String = "select b.tb_wp_pm,b.tb_wp_dm,tb_wp_ID,a.*,cast(newid() as varchar(50)) as rowBs " &
+        '    " from tb_gxcccp as a left join tb_wp as b on a.tb_gxcccp_wpbs=b.tb_wp_ID  where tb_gxcccp_gxbs=" & IIf(m_gxid > 0, m_gxid, 0)
+        'm_cccpDt = Sql.YanGetDb
+
+        Dim list As IList(Of tb_gxcccp) = craftsSettingBll.GetCraftsProductList(IIf(m_gxid > 0, m_gxid, Nothing))
+        m_cccpDt = DataTableExtensions.ToDataTable(list)
         m_cccpDt.TableName = "tb_gxcccp"
         '添加右键餐单
         Dim menu1 As New ContextMenuStrip
