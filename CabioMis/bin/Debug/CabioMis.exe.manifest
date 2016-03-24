@@ -42,14 +42,18 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Cabio.BLL.dll" size="11264">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Cabio.BLL.dll" size="12800">
       <assemblyIdentity name="Cabio.BLL" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+<<<<<<< HEAD
         <dsig:DigestValue>eI7s4+KrQ/HolQ0M0DtE4o2vrOY=</dsig:DigestValue>
+=======
+        <dsig:DigestValue>iVXxcFyHZOMry5H87UZivep5Mfo=</dsig:DigestValue>
+>>>>>>> 52e9cae36bc2c10738ab0e4e369e905fd9533bb3
       </hash>
     </dependentAssembly>
   </dependency>
@@ -61,19 +65,27 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+<<<<<<< HEAD
         <dsig:DigestValue>oKXhDUITmBVPqv+wVRbG2lXhNuU=</dsig:DigestValue>
+=======
+        <dsig:DigestValue>xniOYZLWQhSgHGKTT7cqq9kxqp0=</dsig:DigestValue>
+>>>>>>> 52e9cae36bc2c10738ab0e4e369e905fd9533bb3
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Cabio.Model.dll" size="26624">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Cabio.Model.dll" size="35840">
       <assemblyIdentity name="Cabio.Model" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+<<<<<<< HEAD
         <dsig:DigestValue>l5RwAwut/FtErK4V9r4oFcBHOko=</dsig:DigestValue>
+=======
+        <dsig:DigestValue>wweuNHFKzs0L5Rc5SIs+XcV2Qyw=</dsig:DigestValue>
+>>>>>>> 52e9cae36bc2c10738ab0e4e369e905fd9533bb3
       </hash>
     </dependentAssembly>
   </dependency>
@@ -85,7 +97,11 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+<<<<<<< HEAD
         <dsig:DigestValue>DzwJHRiCjhZfH0cC+peE9PLIC44=</dsig:DigestValue>
+=======
+        <dsig:DigestValue>Gant9bjHYfa+AyIqv9pXhu64egE=</dsig:DigestValue>
+>>>>>>> 52e9cae36bc2c10738ab0e4e369e905fd9533bb3
       </hash>
     </dependentAssembly>
   </dependency>
@@ -133,7 +149,11 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+<<<<<<< HEAD
         <dsig:DigestValue>64lon0BD+35VAPEwecYfV4vpamQ=</dsig:DigestValue>
+=======
+        <dsig:DigestValue>Jw+JqU5xK3Ya3e7lZHIIgwxvvDY=</dsig:DigestValue>
+>>>>>>> 52e9cae36bc2c10738ab0e4e369e905fd9533bb3
       </hash>
     </dependentAssembly>
   </dependency>
@@ -257,6 +277,15 @@
       <dsig:DigestValue>byoc+XeGyWV1snvWoCQSMdE+GeM=</dsig:DigestValue>
     </hash>
   </file>
+  <file name="bin\Debug\Config\Maps\Material\tb_i259b.xml" size="11355" writeableType="applicationData">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>iqPY57Ny83peNqf+okE31c7MLbw=</dsig:DigestValue>
+    </hash>
+  </file>
   <file name="bin\Debug\Config\Maps\Material\tb_syjl.xml" size="5623" writeableType="applicationData">
     <hash>
       <dsig:Transforms>
@@ -329,13 +358,13 @@
       <dsig:DigestValue>D2nUEEbixazp00U9mw8OUDI8lac=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="CabioMis.exe.config" size="2189">
+  <file name="CabioMis.exe.config" size="2231">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>ZJfJPwJR41diVqYIDfA7XpBFtFk=</dsig:DigestValue>
+      <dsig:DigestValue>WFHziohtKTjLDlrYsqDFveap180=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Chemistry.ico" size="766">

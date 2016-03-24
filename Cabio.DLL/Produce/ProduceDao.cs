@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -18,11 +19,14 @@ namespace Cabio.DLL.Produce
             domainEntity = "tb_sc";
         }
 
-        public bool IsLack(int key, decimal amount)
+        /// <summary>
+        /// 获取生产信息
+        /// </summary>
+        /// <param name="map"></param>
+        /// <returns></returns>
+        public IList<tb_sc> GetScInfo(Hashtable map)
         {
-
-
-            return false;
+            return base.GetListByQuery<tb_sc>("tb_scinfolist", map);
         }
     }
 }

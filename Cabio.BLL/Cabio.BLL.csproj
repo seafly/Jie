@@ -63,6 +63,7 @@
     <Compile Include="Material\MaterialService.cs" />
     <Compile Include="Material\MaterialStockService.cs" />
     <Compile Include="Material\UseRecordService.cs" />
+    <Compile Include="Material\WlService.cs" />
     <Compile Include="Produce\ProduceDetailService.cs" />
     <Compile Include="Produce\ProduceService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

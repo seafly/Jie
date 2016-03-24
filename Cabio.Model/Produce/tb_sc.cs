@@ -41,5 +41,17 @@ namespace Cabio.Model.Produce
         /// </summary>		
         public string tb_sc_bz { get; set; }
 
+        #region 辅助属性
+        /// <summary>
+        /// 工艺名称
+        /// </summary>
+        public string tb_gxsz_mc { get; set; }
+
+        /// <summary>
+        /// 是否审核
+        /// </summary>
+        public string sfsh { get; set; }
+        #endregion
+
     }
 }

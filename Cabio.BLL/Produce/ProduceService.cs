@@ -24,19 +24,37 @@ namespace Cabio.BLL.Produce
         }
 
         /// <summary>
+        /// 获取生产信息
+        /// </summary>
+        /// <param name="gxbs">工艺标识</param>
+        /// <returns></returns>
+        public IList<tb_sc> GetScInfo(string gxbs)
+        {
+            Hashtable map = new Hashtable();
+            map.Add("tb_sc_isEnd", "待定");
+            map.Add("tb_sc_gxbs", gxbs);
+            return new ProduceDao(_daoManager).GetScInfo(map);
+        }
+
+        /// <summary>
         /// 保存生产信息
         /// </summary>
         /// <param name="produce"></param>
         /// <param name="scxq_list"></param>
         /// <param name="wlphl_ist"></param>
         /// <returns></returns>
-        public int Save(tb_sc produce, List<tb_scxq> fjxx_list, List<tb_scxq> tlxx_list, List<tb_scxq> ccxx_list, List<tb_wlph> wlphl_ist)
+        public int Save(tb_sc produce, List<tb_scxq> fjxx_list, List<tlModel> tlxx_list, List<tb_scxq> ccxx_list, List<tb_wlph> wlphl_ist)
         {
             int result = 0;
             try
             {
 
                 ProduceDetailDao detailDao = new ProduceDetailDao(_daoManager);
+                MaterialStockDao materialStockDao = new MaterialStockDao(_daoManager);
+                MaterialDao material_Dao = new MaterialDao(_daoManager);
+                WlDao wl_Dao = new WlDao(_daoManager);
+                UseRecordDao user_record_Dao = new UseRecordDao(_daoManager);
+
 
                 _daoManager.BeginTransaction();
 
@@ -81,12 +99,78 @@ namespace Cabio.BLL.Produce
 
                 #region 保存投料信息
                 detailDao.RemoveByMap("投料", produce.tb_sc_ID.ToString());
-                foreach (tb_scxq scxq in tlxx_list)
+                foreach (tlModel tl in tlxx_list)
                 {
+                    tb_scxq scxq = new tb_scxq();
+                    scxq.tb_scxq_xxbs = tl.xxbs;
+                    scxq.tb_scxq_text = tl.tb_scxq_text;
+                    scxq.tb_scxq_value = tl.tb_scxq_value;
                     scxq.tb_scxq_scbs = produceKey;
                     if (detailDao.Insert(scxq) < 1)
                     {
                         throw new Exception("保存投料信息出错");
+                    }
+                    string strYb = "";
+                    string strCjcl = "";
+                    if (scxq.lb == 1)
+                    {
+                        strYb = "tb_wlphck";
+                        strCjcl = "tb_wlphck_cjcl";
+
+                        tb_wlphck ck = materialStockDao.GetObject(1);
+                        if (ck != null && ck.tb_wlphck_cjcl >= 1)
+                        {
+                            ck.tb_wlphck_cjcl = ck.tb_wlphck_cjcl - 1;
+                            if (materialStockDao.Update(ck) < 1)
+                            {
+                                throw new Exception("保存投料信息出错");
+                            }
+                        }
+                        else
+                        {
+                            //库存不足
+                            _daoManager.RollBackTransaction();
+                            return -5;
+                        }
+
+                    }
+                    else
+                    {
+                        strYb = "tb_i259b";
+                        strCjcl = "tb_i259b_p518h";
+
+                        tb_i259b wl = wl_Dao.GetObject(1);
+                        if (wl != null && wl.tb_i259b_p518h >= 1)
+                        {
+                            wl.tb_i259b_p518h = wl.tb_i259b_p518h - 1;
+                            if (wl_Dao.Update(wl) < 1)
+                            {
+                                throw new Exception("保存投料信息出错");
+                            }
+                        }
+                        else
+                        {
+                            //库存不足
+                            _daoManager.RollBackTransaction();
+                            return -5;
+                        }
+                    }
+                    tb_syjl syjl = new tb_syjl();
+                    syjl.tb_syjl_wpbs = tl.tb_wp_ID;
+                    syjl.tb_syjl_wpdm = tl.tb_wp_dm;
+                    syjl.tb_syjl_xz = 0;
+                    syjl.tb_syjl_yb = strYb;
+                    syjl.tb_syjl_wlph = tl.tb_syjl_wlph;
+                    syjl.tb_syjl_zl = tl.tb_syjl_zl;
+                    syjl.tb_syjl_cjcl = tl.tb_syjl_cjcl;
+                    syjl.tb_syjl_ybs = tl.tb_syjl_ybs;
+                    syjl.tb_syjl_czlx = "生产";
+                    syjl.tb_syjl_mbb = "tb_wlph";
+                    syjl.tb_syjl_czbs = "";
+
+                    if (user_record_Dao.Insert(syjl) < 1)
+                    {
+                        throw new Exception("保存原料使用记录报错");
                     }
                 }
                 #endregion
@@ -104,10 +188,6 @@ namespace Cabio.BLL.Produce
                 #endregion
 
                 #region 保存物料批号
-
-                MaterialDao material_Dao = new MaterialDao(_daoManager);
-                MaterialStockDao material_stock_Dao = new MaterialStockDao(_daoManager);
-                UseRecordDao user_record_Dao = new UseRecordDao(_daoManager);
                 foreach (tb_wlph wlph in wlphl_ist)
                 {
                     int wlphKey = material_Dao.Insert(wlph);
@@ -117,7 +197,7 @@ namespace Cabio.BLL.Produce
                     }
 
                     wlph.wlphck.tb_wlphck_wlbs = wlphKey;
-                    int wlphckKey = material_stock_Dao.Insert(wlph.wlphck);
+                    int wlphckKey = materialStockDao.Insert(wlph.wlphck);
                     if (wlphckKey < 1)
                     {
                         throw new Exception("保存物料批号库存报错");
@@ -169,5 +249,6 @@ namespace Cabio.BLL.Produce
 
             return dao.GetObject(map) == null ? false : true;
         }
+
     }
 }
