@@ -39,7 +39,10 @@
       tb_gxcccp_gxbs,
       tb_gxcccp_wpbs,
       tb_gxcccp_isdp,
-      tb_gxcccp_ccps
+      tb_gxcccp_ccps,
+      b.tb_wp_pm,
+      b.tb_wp_dm,
+      b.tb_wp_ID
       from tb_gxcccp a
       left join tb_wp b on a.tb_gxcccp_wpbs=b.tb_wp_ID
       <dynamic prepend="where">
