@@ -35,7 +35,8 @@
     <SignAssembly>false</SignAssembly>
   </PropertyGroup>
   <PropertyGroup>
-    <AssemblyOriginatorKeyFile>mykey.snk</AssemblyOriginatorKeyFile>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="IBatisNet.Common">
@@ -44,19 +45,19 @@
     <Reference Include="IBatisNet.DataAccess">
       <HintPath>..\Packages\IBatisNet.DataAccess.dll</HintPath>
     </Reference>
-    <Reference Include="IBatisNet.DataMapper">
+    <Reference Include="IBatisNet.DataMapper, Version=1.6.2.0, Culture=neutral, PublicKeyToken=ed781d9fc396c6ca, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Packages\IBatisNet.DataMapper.dll</HintPath>
     </Reference>
     <Reference Include="System" />
-    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
-    <Reference Include="System.Xml" />
+    <Reference Include="System.XML" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BaseService.cs" />
+    <Compile Include="Class1.cs" />
     <Compile Include="Crafts\CraftsInfoService.cs" />
     <Compile Include="Crafts\CraftsProductService.cs" />
     <Compile Include="Crafts\CraftsSettingService.cs" />
@@ -67,6 +68,7 @@
     <Compile Include="Produce\ProduceDetailService.cs" />
     <Compile Include="Produce\ProduceService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ServiceInterface.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Cabio.DLL\Cabio.DLL.csproj">
@@ -77,16 +79,14 @@
       <Project>{69fb3577-5ded-4585-b957-ddd0a5bd78c8}</Project>
       <Name>Cabio.Model</Name>
     </ProjectReference>
+    <ProjectReference Include="..\com.uceip.Common\com.uceip.Common.csproj">
+      <Project>{0b1b56c9-54e1-4351-b1b1-1f2096bea808}</Project>
+      <Name>com.uceip.Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\com.uceip.DBUtility\com.uceip.DBUtility.csproj">
       <Project>{952d90e0-f1ad-426a-a5fc-73585d29d375}</Project>
       <Name>com.uceip.DBUtility</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="App.config">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="mykey.snk" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Code\" />

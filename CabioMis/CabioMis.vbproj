@@ -3430,10 +3430,6 @@
       <Project>{0b1b56c9-54e1-4351-b1b1-1f2096bea808}</Project>
       <Name>com.uceip.Common</Name>
     </ProjectReference>
-    <ProjectReference Include="..\com.uceip.DBUtility\com.uceip.DBUtility.csproj">
-      <Project>{952d90e0-f1ad-426a-a5fc-73585d29d375}</Project>
-      <Name>com.uceip.DBUtility</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="bin\Debug\Config\Maps\QA\" />

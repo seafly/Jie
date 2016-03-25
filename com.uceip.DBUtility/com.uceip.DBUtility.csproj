@@ -59,13 +59,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DbHelperSQL.cs" />
-    <Compile Include="iBatis\BaseImpl\BaseDao.cs" />
-    <Compile Include="iBatis\BaseImpl\BaseService.cs" />
     <Compile Include="iBatis\BaseImpl\ServiceConfig.cs" />
     <Compile Include="iBatis\BaseImpl\SysTableId.cs" />
     <Compile Include="iBatis\BaseImpl\SysTableIdDao.cs" />
-    <Compile Include="iBatis\Interfaces\DaoInterface.cs" />
-    <Compile Include="iBatis\Interfaces\ServiceInterface.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
