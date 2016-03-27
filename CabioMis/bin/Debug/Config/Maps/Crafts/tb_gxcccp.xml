@@ -74,19 +74,19 @@
     </insert>
 
     <update id="updatetb_gxcccp" parameterClass="tb_gxcccp">
-      update tb_gxcccp set
-      <dynamic>
+      update tb_gxcccp 
+      <dynamic prepend="set">
         <isNotEmpty prepend="," property="tb_gxcccp_gxbs">
-          tb_gxcccp_gxbs = #tb_gxcccp_gxbs#,
+          tb_gxcccp_gxbs = #tb_gxcccp_gxbs#
         </isNotEmpty>
         <isNotEmpty prepend="," property="tb_gxcccp_wpbs">
-          tb_gxcccp_wpbs = #tb_gxcccp_wpbs#,
+          tb_gxcccp_wpbs = #tb_gxcccp_wpbs#
         </isNotEmpty>
         <isNotEmpty prepend="," property="tb_gxcccp_isdp">
-          tb_gxcccp_isdp = #tb_gxcccp_isdp#,
+          tb_gxcccp_isdp = #tb_gxcccp_isdp#
         </isNotEmpty>
         <isNotEmpty prepend="," property="tb_gxcccp_ccps">
-          tb_gxcccp_ccps = #tb_gxcccp_ccps#,
+          tb_gxcccp_ccps = #tb_gxcccp_ccps#
         </isNotEmpty>
       </dynamic>
       where   tb_gxcccp_ID = $tb_gxcccp_ID$

@@ -87,31 +87,31 @@
     </insert>
 
     <update id="updatetb_wlph" parameterClass="tb_wlph">
-      update tb_wlph set
-      <dynamic>
+      update tb_wlph 
+      <dynamic prepend="set">
         <isNotEmpty prepend="," property="tb_wlph_wpbs">
-          tb_wlph_wpbs = #tb_wlph_wpbs#,
+          tb_wlph_wpbs = #tb_wlph_wpbs#
         </isNotEmpty>
         <isNotEmpty prepend="," property="tb_wlph_wpdm">
-          tb_wlph_wpdm = #tb_wlph_wpdm#,
+          tb_wlph_wpdm = #tb_wlph_wpdm#
         </isNotEmpty>
         <isNotEmpty prepend="," property="tb_wlph_wlph">
-          tb_wlph_wlph = #tb_wlph_wlph#,
+          tb_wlph_wlph = #tb_wlph_wlph#
         </isNotEmpty>
         <isNotEmpty prepend="," property="tb_wlph_cjfs">
-          tb_wlph_cjfs = #tb_wlph_cjfs#,
+          tb_wlph_cjfs = #tb_wlph_cjfs#
         </isNotEmpty>
         <isNotEmpty prepend="," property="tb_wlph_sl">
-          tb_wlph_sl = #tb_wlph_sl#,
+          tb_wlph_sl = #tb_wlph_sl#
         </isNotEmpty>
         <isNotEmpty prepend="," property="tb_wlph_ftime">
-          tb_wlph_ftime = #tb_wlph_ftime#,
+          tb_wlph_ftime = #tb_wlph_ftime#
         </isNotEmpty>
         <isNotEmpty prepend="," property="tb_wlph_cjtb">
-          tb_wlph_cjtb = #tb_wlph_cjtb#,
+          tb_wlph_cjtb = #tb_wlph_cjtb#
         </isNotEmpty>
         <isNotEmpty prepend="," property="tb_wlph_cjbs">
-          tb_wlph_cjbs = #tb_wlph_cjbs#,
+          tb_wlph_cjbs = #tb_wlph_cjbs#
         </isNotEmpty>
       </dynamic>
       where   tb_wlph_ID = $tb_wlph_ID$

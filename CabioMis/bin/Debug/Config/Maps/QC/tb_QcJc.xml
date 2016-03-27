@@ -92,34 +92,34 @@
     </insert>
 
     <update id="updatetb_QcJc" parameterClass="tb_QcJc">
-      update tb_QcJc set
-      <dynamic>
+      update tb_QcJc 
+      <dynamic prepend="set">
         <isNotEmpty prepend="," property="tb_QcJc_ftime">
-          tb_QcJc_ftime = #tb_QcJc_ftime#,
+          tb_QcJc_ftime = #tb_QcJc_ftime#
         </isNotEmpty>
         <isNotEmpty prepend="," property="tb_QcJc_sfsh">
-          tb_QcJc_sfsh = #tb_QcJc_sfsh#,
+          tb_QcJc_sfsh = #tb_QcJc_sfsh#
         </isNotEmpty>
         <isNotEmpty prepend="," property="tb_QcJc_wlbs">
-          tb_QcJc_wlbs = #tb_QcJc_wlbs#,
+          tb_QcJc_wlbs = #tb_QcJc_wlbs#
         </isNotEmpty>
         <isNotEmpty prepend="," property="tb_QcJc_czr">
-          tb_QcJc_czr = #tb_QcJc_czr#,
+          tb_QcJc_czr = #tb_QcJc_czr#
         </isNotEmpty>
         <isNotEmpty prepend="," property="tb_QcJc_stime">
-          tb_QcJc_stime = #tb_QcJc_stime#,
+          tb_QcJc_stime = #tb_QcJc_stime#
         </isNotEmpty>
         <isNotEmpty prepend="," property="tb_QcJc_qjbh">
-          tb_QcJc_qjbh = #tb_QcJc_qjbh#,
+          tb_QcJc_qjbh = #tb_QcJc_qjbh#
         </isNotEmpty>
         <isNotEmpty prepend="," property="tb_QcJc_qjtime">
-          tb_QcJc_qjtime = #tb_QcJc_qjtime#,
+          tb_QcJc_qjtime = #tb_QcJc_qjtime#
         </isNotEmpty>
         <isNotEmpty prepend="," property="tb_QcJc_jcb">
-          tb_QcJc_jcb = #tb_QcJc_jcb#,
+          tb_QcJc_jcb = #tb_QcJc_jcb#
         </isNotEmpty>
         <isNotEmpty prepend="," property="tb_QCJc_sfwc">
-          tb_QCJc_sfwc = #tb_QCJc_sfwc#,
+          tb_QCJc_sfwc = #tb_QCJc_sfwc#
         </isNotEmpty>
       </dynamic>
       where   tb_QcJc_ID = $tb_QcJc_ID$

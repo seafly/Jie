@@ -92,34 +92,34 @@
     </insert>
 
     <update id="updatetb_QcXm" parameterClass="tb_QcXm">
-      update tb_QcXm set
-      <dynamic>
+      update tb_QcXm
+      <dynamic prepend="set">
         <isNotEmpty prepend="," property="tb_QcXm_xmmc">
-          tb_QcXm_xmmc = #tb_QcXm_xmmc#,
+          tb_QcXm_xmmc = #tb_QcXm_xmmc#
         </isNotEmpty>
         <isNotEmpty prepend="," property="tb_QcXm_wldm">
-          tb_QcXm_wldm = #tb_QcXm_wldm#,
+          tb_QcXm_wldm = #tb_QcXm_wldm#
         </isNotEmpty>
         <isNotEmpty prepend="," property="tb_QcXm_lx">
-          tb_QcXm_lx = #tb_QcXm_lx#,
+          tb_QcXm_lx = #tb_QcXm_lx#
         </isNotEmpty>
         <isNotEmpty prepend="," property="tb_QcXm_vamin">
-          tb_QcXm_vamin = #tb_QcXm_vamin#,
+          tb_QcXm_vamin = #tb_QcXm_vamin#
         </isNotEmpty>
         <isNotEmpty prepend="," property="tb_QcXm_vamax">
-          tb_QcXm_vamax = #tb_QcXm_vamax#,
+          tb_QcXm_vamax = #tb_QcXm_vamax#
         </isNotEmpty>
         <isNotEmpty prepend="," property="tb_QcXm_vadef">
-          tb_QcXm_vadef = #tb_QcXm_vadef#,
+          tb_QcXm_vadef = #tb_QcXm_vadef#
         </isNotEmpty>
         <isNotEmpty prepend="," property="tb_QcXm_dxz">
-          tb_QcXm_dxz = #tb_QcXm_dxz#,
+          tb_QcXm_dxz = #tb_QcXm_dxz#
         </isNotEmpty>
         <isNotEmpty prepend="," property="tb_QcXm_qclx">
-          tb_QcXm_qclx = #tb_QcXm_qclx#,
+          tb_QcXm_qclx = #tb_QcXm_qclx#
         </isNotEmpty>
         <isNotEmpty prepend="," property="tb_QcXm_wpbs">
-          tb_QcXm_wpbs = #tb_QcXm_wpbs#,
+          tb_QcXm_wpbs = #tb_QcXm_wpbs#
         </isNotEmpty>
       </dynamic>
       where   tb_QcXm_ID = $tb_QcXm_ID$

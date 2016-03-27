@@ -137,61 +137,61 @@
     </insert>
 
     <update id="updatetb_syjl" parameterClass="tb_syjl">
-      update tb_syjl set
-      <dynamic>
+      update tb_syjl 
+      <dynamic prepend="set">
         <isNotEmpty prepend="," property="tb_syjl_wpdm">
-          tb_syjl_wpdm = #tb_syjl_wpdm#,
+          tb_syjl_wpdm = #tb_syjl_wpdm#
         </isNotEmpty>
         <isNotEmpty prepend="," property="tb_syjl_xz">
-          tb_syjl_xz = #tb_syjl_xz#,
+          tb_syjl_xz = #tb_syjl_xz#
         </isNotEmpty>
         <isNotEmpty prepend="," property="tb_syjl_czbs">
-          tb_syjl_czbs = #tb_syjl_czbs#,
+          tb_syjl_czbs = #tb_syjl_czbs#
         </isNotEmpty>
         <isNotEmpty prepend="," property="tb_syjl_ftime">
-          tb_syjl_ftime = #tb_syjl_ftime#,
+          tb_syjl_ftime = #tb_syjl_ftime#
         </isNotEmpty>
         <isNotEmpty prepend="," property="tb_syjl_czlx">
-          tb_syjl_czlx = #tb_syjl_czlx#,
+          tb_syjl_czlx = #tb_syjl_czlx#
         </isNotEmpty>
         <isNotEmpty prepend="," property="tb_syjl_wlph">
-          tb_syjl_wlph = #tb_syjl_wlph#,
+          tb_syjl_wlph = #tb_syjl_wlph#
         </isNotEmpty>
         <isNotEmpty prepend="," property="tb_syjl_zl">
-          tb_syjl_zl = #tb_syjl_zl#,
+          tb_syjl_zl = #tb_syjl_zl#
         </isNotEmpty>
         <isNotEmpty prepend="," property="tb_syjl_yb">
-          tb_syjl_yb = #tb_syjl_yb#,
+          tb_syjl_yb = #tb_syjl_yb#
         </isNotEmpty>
         <isNotEmpty prepend="," property="tb_syjl_mbb">
-          tb_syjl_mbb = #tb_syjl_mbb#,
+          tb_syjl_mbb = #tb_syjl_mbb#
         </isNotEmpty>
         <isNotEmpty prepend="," property="tb_syjl_ybs">
-          tb_syjl_ybs = #tb_syjl_ybs#,
+          tb_syjl_ybs = #tb_syjl_ybs#
         </isNotEmpty>
         <isNotEmpty prepend="," property="tb_syjl_cjcl">
-          tb_syjl_cjcl = #tb_syjl_cjcl#,
+          tb_syjl_cjcl = #tb_syjl_cjcl#
         </isNotEmpty>
         <isNotEmpty prepend="," property="tb_syjl_bfb">
-          tb_syjl_bfb = #tb_syjl_bfb#,
+          tb_syjl_bfb = #tb_syjl_bfb#
         </isNotEmpty>
         <isNotEmpty prepend="," property="tb_syjl_kdlk">
-          tb_syjl_kdlk = #tb_syjl_kdlk#,
+          tb_syjl_kdlk = #tb_syjl_kdlk#
         </isNotEmpty>
         <isNotEmpty prepend="," property="tb_syjl_storagemslk">
-          tb_syjl_storagemslk = #tb_syjl_storagemslk#,
+          tb_syjl_storagemslk = #tb_syjl_storagemslk#
         </isNotEmpty>
         <isNotEmpty prepend="," property="tb_syjl_storagewzlk">
-          tb_syjl_storagewzlk = #tb_syjl_storagewzlk#,
+          tb_syjl_storagewzlk = #tb_syjl_storagewzlk#
         </isNotEmpty>
         <isNotEmpty prepend="," property="tb_syjl_wpbs">
-          tb_syjl_wpbs = #tb_syjl_wpbs#,
+          tb_syjl_wpbs = #tb_syjl_wpbs#
         </isNotEmpty>
         <isNotEmpty prepend="," property="tb_syjl_czrgh">
-          tb_syjl_czrgh = #tb_syjl_czrgh#,
+          tb_syjl_czrgh = #tb_syjl_czrgh#
         </isNotEmpty>
         <isNotEmpty prepend="," property="tb_syjl_ctime">
-          tb_syjl_ctime = #tb_syjl_ctime#,
+          tb_syjl_ctime = #tb_syjl_ctime#
         </isNotEmpty>
       </dynamic>
       where   tb_syjl_ID = $tb_syjl_ID$

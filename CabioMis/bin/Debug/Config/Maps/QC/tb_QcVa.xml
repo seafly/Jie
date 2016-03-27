@@ -62,16 +62,16 @@
     </insert>
 
     <update id="updatetb_QcVa" parameterClass="tb_QcVa">
-      update tb_QcVa set
-      <dynamic>
+      update tb_QcVa
+      <dynamic prepend="set">
         <isNotEmpty prepend="," property="tb_QcVa_xmmc">
-          tb_QcVa_xmmc = #tb_QcVa_xmmc#,
+          tb_QcVa_xmmc = #tb_QcVa_xmmc#
         </isNotEmpty>
         <isNotEmpty prepend="," property="tb_QcVa_xmva">
-          tb_QcVa_xmva = #tb_QcVa_xmva#,
+          tb_QcVa_xmva = #tb_QcVa_xmva#
         </isNotEmpty>
         <isNotEmpty prepend="," property="tb_QcVa_Qcbs">
-          tb_QcVa_Qcbs = #tb_QcVa_Qcbs#,
+          tb_QcVa_Qcbs = #tb_QcVa_Qcbs#
         </isNotEmpty>
       </dynamic>
       where   tb_QcVa_ID = $tb_QcVa_ID$

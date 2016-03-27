@@ -111,28 +111,28 @@
     </insert>
 
     <update id="updatetb_sc" parameterClass="tb_sc">
-      update tb_sc set
-      <dynamic>
+      update tb_sc 
+      <dynamic prepend="set">
         <isNotEmpty prepend="," property="tb_sc_ftime">
-          tb_sc_ftime = #tb_sc_ftime#,
+          tb_sc_ftime = #tb_sc_ftime#
         </isNotEmpty>
         <isNotEmpty prepend="," property="tb_sc_etime">
-          tb_sc_etime = #tb_sc_etime#,
+          tb_sc_etime = #tb_sc_etime#
         </isNotEmpty>
         <isNotEmpty prepend="," property="tb_sc_czrgh">
-          tb_sc_czrgh = #tb_sc_czrgh#,
+          tb_sc_czrgh = #tb_sc_czrgh#
         </isNotEmpty>
         <isNotEmpty prepend="," property="tb_sc_gxbs">
-          tb_sc_gxbs = #tb_sc_gxbs#,
+          tb_sc_gxbs = #tb_sc_gxbs#
         </isNotEmpty>
         <isNotEmpty prepend="," property="tb_sc_dh">
-          tb_sc_dh = #tb_sc_dh#,
+          tb_sc_dh = #tb_sc_dh#
         </isNotEmpty>
         <isNotEmpty prepend="," property="tb_sc_isEnd">
-          tb_sc_isEnd = #tb_sc_isEnd#,
+          tb_sc_isEnd = #tb_sc_isEnd#
         </isNotEmpty>
         <isNotEmpty prepend="," property="tb_sc_bz">
-          tb_sc_bz = #tb_sc_bz#,
+          tb_sc_bz = #tb_sc_bz#
         </isNotEmpty>
       </dynamic>
       where   tb_sc_ID = $tb_sc_ID$
