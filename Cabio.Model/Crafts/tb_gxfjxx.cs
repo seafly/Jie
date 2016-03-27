@@ -8,7 +8,9 @@ namespace Cabio.Model.Crafts
 {
     //tb_gxfjxx
     public class tb_gxfjxx
-    {        
+    {
+        public string rowBs { get; set; }
+
         /// <summary>
         /// tb_gxfjxx_ID
         /// </summary>		
