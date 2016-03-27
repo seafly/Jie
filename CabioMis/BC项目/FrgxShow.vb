@@ -24,7 +24,7 @@ Public Class FrgxShow
             CType(Application.OpenForms.Item("FrbcList"), FrbcList).setMenu()
         End If
     End Sub
-    Private Sub showList(Optional pSql As String = "")
+    Private Sub showList(Optional pKey As String = "", Optional pValue As String = "")
 
         Dim Service As New CraftsSettingService()
         'Service.GetListByQuery()根据查询条件出入不同的HashMap
@@ -32,7 +32,15 @@ Public Class FrgxShow
         'Dim sql As String = "select * from tb_gxsz where 1=1 " & pSql & " order by tb_gxsz_px"
         'Dim dt As DataTable = sql.YanGetDb
 
-        Dim list As IList(Of tb_gxsz) = craftsBll.GetListByQuery(Of tb_gxsz)()
+        Dim list As IList(Of tb_gxsz)
+        If pKey = "" And pValue = "" Then
+            list = craftsBll.GetListByQuery(Of tb_gxsz)()
+        Else
+            Dim ht As New Hashtable()
+            ht.Add(pKey, pValue)
+            list = craftsBll.GetListByQuery(Of tb_gxsz)(ht)
+        End If
+
         Dim dt As DataTable = DataTableExtensions.ToDataTable(list)
 
         Dim menu1 As ContextMenuStrip = Nothing
@@ -54,7 +62,7 @@ Public Class FrgxShow
         menu1.Items.Add("删除")
         AddHandler menu1.Items(3).Click, Sub()
                                              If MsgBox("确定要删除吗？", MsgBoxStyle.YesNo) = vbYes Then
-'Service.Delete(工艺设置ID)
+                                                 'Service.Delete(工艺设置ID)
 
                                                  'sql = "delete from tb_gxsz where tb_gxsz_ID=" & YanDaTaGridView1.SelectedRows(0).Cells("tb_gxsz_ID").Value
                                                  'sql &= vbCrLf & "delete from tb_gxfjxx where tb_gxfjxx_gxbs=" & YanDaTaGridView1.SelectedRows(0).Cells("tb_gxsz_ID").Value
@@ -74,7 +82,7 @@ Public Class FrgxShow
         '得到英文字段名
         Dim jgzd As String = _D.GF_cnwithen(db, "tb_biaozdinf_mx='" & zdzw & "'", 1)
         Dim sql As String = IIf(jgzd = "", "", " and [" & jgzd & "] like '%" & TextBox1.Text.Trim & "%'")
-        showList(sql)
+        showList(jgzd, TextBox1.Text.Trim)
     End Sub
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
