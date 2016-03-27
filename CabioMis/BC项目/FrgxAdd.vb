@@ -1,6 +1,7 @@
 ﻿Imports com.uceip.Common
 Imports Cabio.Model.Crafts
 Imports Cabio.BLL.Crafts
+Imports System.Reflection
 
 
 Public Class FrgxAdd
@@ -47,7 +48,7 @@ Public Class FrgxAdd
         If m_gxid > 0 Then
             Dim ht As New Hashtable
             ht.Add("tb_gxsz_ID", m_gxid)
-            list = New CraftsSettingService().GetListByQuery(Of tb_gxsz)(ht)
+            list = craftsSettingBll.GetListByQuery(Of tb_gxsz)(ht)
         Else
             Dim model As New tb_gxsz
             model.tb_gxsz_dm = "1"
@@ -59,7 +60,7 @@ Public Class FrgxAdd
             If m_gxid > 0 Then
                 Dim ht As New Hashtable
                 ht.Add("tb_gxsz_ID", m_gxid)
-                list = New CraftsSettingService().GetListByQuery(Of tb_gxsz)(ht)
+                list = craftsSettingBll.GetListByQuery(Of tb_gxsz)(ht)
             Else
                 MsgBox("新增工艺出错！", MsgBoxStyle.Exclamation)
                 Return
@@ -107,6 +108,10 @@ Public Class FrgxAdd
         menu1.Items.Add("修改")
         AddHandler menu1.Items(2).Click, Sub()
                                              showSetCccp("修改", Nothing)
+                                             list = craftsProductBll.GetCraftsProductList(IIf(m_gxid > 0, m_gxid, 0))
+                                             m_cccpDt = DataTableExtensions.ToDataTable(list)
+                                             m_cccpDt.TableName = "tb_gxcccp"
+                                             m_cccpDt.YanDataBind(showWpxx, "tb_wp_ID,rowBs,tb_gxcccp_ID,tb_gxcccp_gxbs,tb_gxcccp_wpbs")
                                          End Sub
         menu1.Items.Add("批号设置")
         AddHandler menu1.Items(3).Click, Sub()
@@ -121,18 +126,22 @@ Public Class FrgxAdd
         menu1.Items.Add("删除")
         AddHandler menu1.Items(4).Click, Sub()
                                              'Service.Remove(附件信息ID)
-                                             craftsProductBll.Remove(showWpxx.SelectedRows(0).Cells("tb_gxcccp_ID").Value.ToString)
+                                             Dim resutlt As Int16 = craftsProductBll.Remove(showWpxx.SelectedRows(0).Cells("tb_gxcccp_ID").Value.ToString)
                                              'm_cccpDt.Rows.Remove(m_cccpDt.Select("rowBs='" & showWpxx.SelectedRows(0).Cells("rowBs").Value & "'")(0))
                                              'm_cccpDt.Rows.Remove(m_cccpDt.Select("tb_gxcccp_ID='" & showWpxx.SelectedRows(0).Cells("tb_gxcccp_ID").Value & "'")(0))
+                                             list = craftsProductBll.GetCraftsProductList(IIf(m_gxid > 0, m_gxid, 0))
+                                             m_cccpDt = DataTableExtensions.ToDataTable(list)
+                                             m_cccpDt.TableName = "tb_gxcccp"
+                                             m_cccpDt.YanDataBind(showWpxx, "tb_wp_ID,rowBs,tb_gxcccp_ID,tb_gxcccp_gxbs,tb_gxcccp_wpbs")
                                          End Sub
         AddHandler showWpxx.CellDoubleClick, Sub()
                                                  showSetCccp("修改", Nothing)
+                                                 list = craftsProductBll.GetCraftsProductList(IIf(m_gxid > 0, m_gxid, 0))
+                                                 m_cccpDt = DataTableExtensions.ToDataTable(list)
+                                                 m_cccpDt.TableName = "tb_gxcccp"
+                                                 m_cccpDt.YanDataBind(showWpxx, "tb_wp_ID,rowBs,tb_gxcccp_ID,tb_gxcccp_gxbs,tb_gxcccp_wpbs")
                                              End Sub
 
-
-        'list = craftsProductBll.GetCraftsProductList(IIf(m_gxid > 0, m_gxid, 0))
-        'm_cccpDt = DataTableExtensions.ToDataTable(list)
-        'm_cccpDt.TableName = "tb_gxcccp"
         m_cccpDt.YanDataBind(showWpxx, "tb_wp_ID,rowBs,tb_gxcccp_ID,tb_gxcccp_gxbs,tb_gxcccp_wpbs", menu1)
     End Sub
     Private Sub showSetCccp(sender As Object, e As EventArgs)
@@ -144,7 +153,7 @@ Public Class FrgxAdd
         End If
         Dim f As New FrEdit_gxcp
         If sender.ToString() = "修改" Then
-            f.rowBs.Text = showWpxx.SelectedRows(0).Cells("tb_gxcccp_ID").Value
+            f.rowBs.Text = showWpxx.SelectedRows(0).Cells("rowBs").Value
         End If
         If f.ShowDialog() = DialogResult.OK Then
             'Dim Service As New CraftsProductService()
@@ -168,15 +177,25 @@ Public Class FrgxAdd
             '    End If
             'End If
 
+            Dim rowBs As String = _D.YanFrVaAddDt(f, m_cccpDt)
+
+            Dim model As New tb_gxcccp
+            model.tb_gxcccp_ccps = f.tb_gxcccp_ccps.Text
+            model.tb_gxcccp_gxbs = m_gxid
+            model.tb_gxcccp_isdp = f.tb_gxcccp_isdp.Text
+            model.tb_gxcccp_wpbs = f.tb_wp_ID.Text
+
             If sender.ToString() = "修改" Then
-                'craftsSettingBll.Update(New Cabio.Model.Crafts.tb_gxcccp)
+                model.tb_gxcccp_ID = showWpxx.SelectedRows(0).Cells("tb_gxcccp_ID").Value
+                craftsProductBll.Update(model)
             Else
-                'craftsSettingBll.Insert(New Cabio.Model.Crafts.tb_gxcccp)
+                craftsProductBll.Insert(model)
             End If
 
-            Dim rowBs As String = _D.YanFrVaAddDt(f, m_cccpDt)
-            m_cccpDt.Select("rowBs='" & rowBs & "'")(0)("tb_gxcccp_wpbs") =
-                m_cccpDt.Select("rowBs='" & rowBs & "'")(0)("tb_wp_ID")
+            Dim list As IList(Of tb_gxcccp) = craftsProductBll.GetCraftsProductList(IIf(m_gxid > 0, m_gxid, 0))
+            m_cccpDt = DataTableExtensions.ToDataTable(list)
+            m_cccpDt.TableName = "tb_gxcccp"
+            m_cccpDt.YanDataBind(showWpxx, "tb_wp_ID,rowBs,tb_gxcccp_ID,tb_gxcccp_gxbs,tb_gxcccp_wpbs")
         End If
     End Sub
     ''' <summary>

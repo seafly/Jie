@@ -49,7 +49,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>P7GLGMzxOb3ymdm9uhlay+TBvBM=</dsig:DigestValue>
+        <dsig:DigestValue>hO/94vUzKX1HTdbflwmgL831e3M=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -61,7 +61,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>IpElu14hFMixOjo5idHA8WVWEcg=</dsig:DigestValue>
+        <dsig:DigestValue>VV/fdlxqJGvaczW8g6IaczVInIQ=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -73,19 +73,19 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>z6BG2sMshKbz5w2VfNVwL4nknOo=</dsig:DigestValue>
+        <dsig:DigestValue>7zAKHPKh4M+tjnUeNGLRcQJ/8Es=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="CabioMis.exe" size="6690304">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="CabioMis.exe" size="6691840">
       <assemblyIdentity name="CabioMis" version="2.1.0.0" language="neutral" processorArchitecture="x86" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>38LlvmuWN539YfrOExCBVZE8XSc=</dsig:DigestValue>
+        <dsig:DigestValue>yFXEMgOq1ESnnVMnvYAc7IU85bQ=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -121,7 +121,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>7Tikaj0ZQAtSlO4COE604S18Wik=</dsig:DigestValue>
+        <dsig:DigestValue>SmbC9nc2ri8rQzMM06+wD8ZBm1g=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -133,7 +133,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>MgyehUYCz7dKkjQRpTRp2R97PWo=</dsig:DigestValue>
+        <dsig:DigestValue>J+aEjO9cDaqZARBkQn+IDWQkQeA=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
