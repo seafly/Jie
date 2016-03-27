@@ -9,6 +9,7 @@ namespace Cabio.Model.Crafts
     //tb_gxcccp
     public class tb_gxcccp
     {
+        public string rowBs { get; set; }
 
         /// <summary>
         /// tb_gxcccp_ID

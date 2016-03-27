@@ -35,6 +35,7 @@
 
     <select id="querytb_gxcccpList" resultClass="tb_gxcccp" parameterClass="map">
       select
+      cast(newid() as varchar(50)) as rowBs,
       tb_gxcccp_ID,
       tb_gxcccp_gxbs,
       tb_gxcccp_wpbs,

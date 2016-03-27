@@ -38,6 +38,7 @@
 
     <select id="querytb_gxszList" resultClass="tb_gxsz" parameterClass="map">
       select
+      cast(newid() as varchar(50)) as rowBs,
       tb_gxsz_ID,
       tb_gxsz_mc,
       tb_gxsz_px,
@@ -48,19 +49,19 @@
       from tb_gxsz
       <dynamic prepend="where">
         <isNotEmpty prepend="and" property="tb_gxsz_mc">
-          tb_gxsz_mc = #tb_gxsz_mc#
+          tb_gxsz_mc like '%'+#tb_gxsz_mc# +'%'
         </isNotEmpty>
         <isNotEmpty prepend="and" property="tb_gxsz_dm">
-          tb_gxsz_dm = #tb_gxsz_dm#
+          tb_gxsz_dm like '%'+ #tb_gxsz_dm#+'%'
         </isNotEmpty>
         <isNotEmpty prepend="and" property="tb_gxsz_isMod">
-          tb_gxsz_isMod = #tb_gxsz_isMod#
+          tb_gxsz_isMod like '%'+ #tb_gxsz_isMod#+'%'
         </isNotEmpty>
         <isNotEmpty prepend="and" property="tb_gxsz_isqc">
-          tb_gxsz_isqc = #tb_gxsz_isqc#
+          tb_gxsz_isqc like '%'+ #tb_gxsz_isqc#+'%'
         </isNotEmpty>
         <isNotEmpty prepend="and" property="tb_gxsz_isBf">
-          tb_gxsz_isBf = #tb_gxsz_isBf#
+          tb_gxsz_isBf like '%'+ #tb_gxsz_isBf#+'%'
         </isNotEmpty>
       </dynamic>
       order by tb_gxsz_px

@@ -43,6 +43,7 @@
 
     <select id="querytb_gxfjxxList" resultClass="tb_gxfjxx" parameterClass="map">
       select
+      cast(newid() as varchar(50)) as rowBs,
       tb_gxfjxx_ID,
       tb_gxfjxx_mc,
       tb_gxfjxx_gxbs,
