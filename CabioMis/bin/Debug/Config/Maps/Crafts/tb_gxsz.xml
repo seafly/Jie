@@ -38,7 +38,6 @@
 
     <select id="querytb_gxszList" resultClass="tb_gxsz" parameterClass="map">
       select
-      cast(newid() as varchar(50)) as rowBs,
       tb_gxsz_ID,
       tb_gxsz_mc,
       tb_gxsz_px,

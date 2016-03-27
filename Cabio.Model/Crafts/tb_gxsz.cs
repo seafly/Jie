@@ -9,8 +9,6 @@ namespace Cabio.Model.Crafts
     [ComVisible(true)]
     public class tb_gxsz
     {
-        public string rowBs { get; set; }
-
         public int ID { get; set; }
 
         /// <summary>
