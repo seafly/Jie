@@ -127,8 +127,6 @@ Public Class FrgxAdd
         AddHandler menu1.Items(4).Click, Sub()
                                              'Service.Remove(附件信息ID)
                                              Dim resutlt As Int16 = craftsProductBll.Remove(showWpxx.SelectedRows(0).Cells("tb_gxcccp_ID").Value.ToString)
-                                             'm_cccpDt.Rows.Remove(m_cccpDt.Select("rowBs='" & showWpxx.SelectedRows(0).Cells("rowBs").Value & "'")(0))
-                                             'm_cccpDt.Rows.Remove(m_cccpDt.Select("tb_gxcccp_ID='" & showWpxx.SelectedRows(0).Cells("tb_gxcccp_ID").Value & "'")(0))
                                              list = craftsProductBll.GetCraftsProductList(IIf(m_gxid > 0, m_gxid, 0))
                                              m_cccpDt = DataTableExtensions.ToDataTable(list)
                                              m_cccpDt.TableName = "tb_gxcccp"
@@ -161,21 +159,6 @@ Public Class FrgxAdd
             '    Service.Insert(工艺产出产品实体);
             'else
             '    Service.Update(工艺产出产品实体)
-
-            'If m_cccpDt.Select("tb_gxcccp_ID<>" & f.tb_gxcccp_ID.Text & " and tb_gxcccp_wpbs=" & f.tb_wp_ID.Text).Length > 0 Then
-            '    MsgBox("已有相同的物品！", MsgBoxStyle.Exclamation)
-            '    Return
-            'End If
-
-            'If m_cccpDt.Rows.Count > 0 Then
-            '    Dim Sql As String = "select * from tb_mrp where tb_mrp_cpbs=" & m_cccpDt.YanDtValue2("tb_gxcccp_wpbs") & " order by tb_mrp_wpdm"
-            '    Dim strWpdm As String = Sql.YanGetDb.YanDtToStr("tb_mrp_wpdm")
-            '    Sql = "select * from tb_mrp where tb_mrp_cpbs=" & f.tb_wp_ID.Text & " order by tb_mrp_wpdm"
-            '    If strWpdm <> Sql.YanGetDb.YanDtToStr("tb_mrp_wpdm") Then
-            '        MsgBox("产出物品的原料必须完全一致！", MsgBoxStyle.Exclamation)
-            '        Return
-            '    End If
-            'End If
 
             Dim rowBs As String = _D.YanFrVaAddDt(f, m_cccpDt)
 
@@ -223,12 +206,30 @@ Public Class FrgxAdd
                                              Dim f As New FrEdit_gxfjxx
                                              If f.ShowDialog() = DialogResult.OK Then
                                                  'Service.Insert()
-                                                 'craftsInfoBll.Insert()
-                                                 'If m_fjxxDt.Select("tb_gxfjxx_mc='" & f.tb_gxfjxx_mc.Text & "'").Length > 0 Then
-                                                 '    MsgBox("已有相同名称的项目！", MsgBoxStyle.Exclamation)
-                                                 '    Return
-                                                 'End If
-                                                 _D.YanFrVaAddDt(f, m_fjxxDt)
+                                                 Dim rowBs As String = _D.YanFrVaAddDt(f, m_fjxxDt)
+
+                                                 Dim model As New tb_gxfjxx
+                                                 model.tb_gxfjxx_isbx = m_fjxxDt.Select("rowBs='" & rowBs & "'")(0)("tb_gxfjxx_isbx")
+                                                 model.tb_gxfjxx_lx = m_fjxxDt.Select("rowBs='" & rowBs & "'")(0)("tb_gxfjxx_lx")
+                                                 model.tb_gxfjxx_mc = m_fjxxDt.Select("rowBs='" & rowBs & "'")(0)("tb_gxfjxx_mc")
+                                                 model.tb_gxfjxx_gxbs = m_gxid
+                                                 Select Case model.tb_gxfjxx_lx
+                                                     Case en_fjxxLx.数字.ToString
+                                                         model.tb_gxfjxx_vamax = m_fjxxDt.Select("rowBs='" & rowBs & "'")(0)("tb_gxfjxx_vamax")
+                                                         model.tb_gxfjxx_vamin = m_fjxxDt.Select("rowBs='" & rowBs & "'")(0)("tb_gxfjxx_vamin")
+                                                     Case en_fjxxLx.文本.ToString
+                                                     Case en_fjxxLx.时间.ToString
+                                                         model.tb_gxfjxx_vadef = m_fjxxDt.Select("rowBs='" & rowBs & "'")(0)("tb_gxfjxx_vadef")
+                                                     Case en_fjxxLx.选择.ToString
+                                                     Case en_fjxxLx.批号.ToString
+                                                         model.tb_gxfjxx_dxz = m_fjxxDt.Select("rowBs='" & rowBs & "'")(0)("tb_gxfjxx_dxz")
+                                                 End Select
+
+                                                 Dim result As Int16 = craftsInfoBll.Insert(model)
+                                                 If result = -2 Then
+                                                     MsgBox("已存在此产出产品！", MsgBoxStyle.Exclamation)
+                                                     Return
+                                                 End If
                                              End If
                                          End Sub
         menu1.Items.Add("修改")
@@ -243,15 +244,37 @@ Public Class FrgxAdd
     End Sub
     Private Sub modFjxx()
         Dim f As New FrEdit_gxfjxx
-        'f.rowBs.Text = showFjxx.SelectedRows(0).Cells("tb_gxcccp_ID").Value
+        f.rowBs.Text = showFjxx.SelectedRows(0).Cells("rowBs").Value
         If f.ShowDialog() = DialogResult.OK Then
             'Dim Service As New CraftsInfoService()
             'Service.Update()
-            If m_fjxxDt.Select("tb_gxfjxx_mc='" & f.tb_gxfjxx_mc.Text & "' and tb_gxcccp_ID<>'" & f.rowBs.Text & "'").Length > 0 Then
-                MsgBox("已有相同名称的项目！", MsgBoxStyle.Exclamation)
+            _D.YanFrVaAddDt(f, m_fjxxDt)
+
+            Dim rowBs As String = _D.YanFrVaAddDt(f, m_fjxxDt)
+
+            Dim model As New tb_gxfjxx
+            model.tb_gxfjxx_isbx = m_fjxxDt.Select("rowBs='" & rowBs & "'")(0)("tb_gxfjxx_isbx")
+            model.tb_gxfjxx_lx = m_fjxxDt.Select("rowBs='" & rowBs & "'")(0)("tb_gxfjxx_lx")
+            model.tb_gxfjxx_mc = m_fjxxDt.Select("rowBs='" & rowBs & "'")(0)("tb_gxfjxx_mc")
+            model.tb_gxfjxx_gxbs = m_gxid
+            Select Case model.tb_gxfjxx_lx
+                Case en_fjxxLx.数字.ToString
+                    model.tb_gxfjxx_vamax = m_fjxxDt.Select("rowBs='" & rowBs & "'")(0)("tb_gxfjxx_vamax")
+                    model.tb_gxfjxx_vamin = m_fjxxDt.Select("rowBs='" & rowBs & "'")(0)("tb_gxfjxx_vamin")
+                Case en_fjxxLx.文本.ToString
+                Case en_fjxxLx.时间.ToString
+                    model.tb_gxfjxx_vadef = m_fjxxDt.Select("rowBs='" & rowBs & "'")(0)("tb_gxfjxx_vadef")
+                Case en_fjxxLx.选择.ToString
+                Case en_fjxxLx.批号.ToString
+                    model.tb_gxfjxx_dxz = m_fjxxDt.Select("rowBs='" & rowBs & "'")(0)("tb_gxfjxx_dxz")
+            End Select
+            model.tb_gxfjxx_ID = m_fjxxDt.Select("rowBs='" & rowBs & "'")(0)("tb_gxfjxx_ID")
+
+            Dim result As Int16 = craftsInfoBll.Update(model)
+            If result = -2 Then
+                MsgBox("已存在此产出产品！", MsgBoxStyle.Exclamation)
                 Return
             End If
-            _D.YanFrVaAddDt(f, m_fjxxDt)
         End If
     End Sub
     '确定
