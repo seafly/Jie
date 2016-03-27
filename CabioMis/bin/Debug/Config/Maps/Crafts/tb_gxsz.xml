@@ -92,25 +92,25 @@
     </insert>
 
     <update id="updatetb_gxsz" parameterClass="tb_gxsz">
-      update tb_gxsz set
-      <dynamic>
+      update tb_gxsz
+      <dynamic prepend="set">
         <isNotEmpty prepend="," property="tb_gxsz_mc">
-          tb_gxsz_mc = #tb_gxsz_mc#,
+          tb_gxsz_mc = #tb_gxsz_mc#
         </isNotEmpty>
         <isNotEmpty prepend="," property="tb_gxsz_px">
-          tb_gxsz_px = #tb_gxsz_px#,
+          tb_gxsz_px = #tb_gxsz_px#
         </isNotEmpty>
         <isNotEmpty prepend="," property="tb_gxsz_isMod">
-          tb_gxsz_isMod = #tb_gxsz_isMod#,
+          tb_gxsz_isMod = #tb_gxsz_isMod#
         </isNotEmpty>
         <isNotEmpty prepend="," property="tb_gxsz_dm">
-          tb_gxsz_dm = #tb_gxsz_dm#,
+          tb_gxsz_dm = #tb_gxsz_dm#
         </isNotEmpty>
         <isNotEmpty prepend="," property="tb_gxsz_isqc">
-          tb_gxsz_isqc = #tb_gxsz_isqc#,
+          tb_gxsz_isqc = #tb_gxsz_isqc#
         </isNotEmpty>
         <isNotEmpty prepend="," property="tb_gxsz_isBf">
-          tb_gxsz_isBf = #tb_gxsz_isBf#,
+          tb_gxsz_isBf = #tb_gxsz_isBf#
         </isNotEmpty>
       </dynamic>
       where   tb_gxsz_ID = $tb_gxsz_ID$

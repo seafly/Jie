@@ -49,7 +49,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>hO/94vUzKX1HTdbflwmgL831e3M=</dsig:DigestValue>
+        <dsig:DigestValue>dtQCmGpkNhqD3UZl1m9IBA7ARFo=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -61,7 +61,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>VV/fdlxqJGvaczW8g6IaczVInIQ=</dsig:DigestValue>
+        <dsig:DigestValue>xOqHGTBs51btYZDa0KWoSgdRnFU=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -73,19 +73,19 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>7zAKHPKh4M+tjnUeNGLRcQJ/8Es=</dsig:DigestValue>
+        <dsig:DigestValue>3oOqOvZzgNwRysshw7Js71LqoAs=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="CabioMis.exe" size="6691840">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="CabioMis.exe" size="6694912">
       <assemblyIdentity name="CabioMis" version="2.1.0.0" language="neutral" processorArchitecture="x86" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>yFXEMgOq1ESnnVMnvYAc7IU85bQ=</dsig:DigestValue>
+        <dsig:DigestValue>4V35TOkIHR8SovDk0jq7geO5TGg=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -121,7 +121,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>SmbC9nc2ri8rQzMM06+wD8ZBm1g=</dsig:DigestValue>
+        <dsig:DigestValue>cAj7H0aSt5yRecOuOkuhANj8v30=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -133,7 +133,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>J+aEjO9cDaqZARBkQn+IDWQkQeA=</dsig:DigestValue>
+        <dsig:DigestValue>3phfH2/cEDHBIyHUvTeZv7xMjmA=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -230,121 +230,121 @@
       <dsig:DigestValue>f2HETDvpJzrkIdTx4Nyq2I/X5X4=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\Config\Maps\Crafts\tb_gxcccp.xml" size="3156" writeableType="applicationData">
+  <file name="bin\Debug\Config\Maps\Crafts\tb_gxcccp.xml" size="3060" writeableType="applicationData">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>A2BhgvsulCZnvvP7VDQqEvMoHA0=</dsig:DigestValue>
+      <dsig:DigestValue>Gzp64uo1Gq7mHC80DjkXjrdIa/I=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\Config\Maps\Crafts\tb_gxfjxx.xml" size="4032" writeableType="applicationData">
+  <file name="bin\Debug\Config\Maps\Crafts\tb_gxfjxx.xml" size="3892" writeableType="applicationData">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>OHdFg70RFFGS1wDrZesSiuQXYKk=</dsig:DigestValue>
+      <dsig:DigestValue>fz8SxcLsPQHY4xZ37ov/Y+5F2JY=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\Config\Maps\Crafts\tb_gxsz.xml" size="3701" writeableType="applicationData">
+  <file name="bin\Debug\Config\Maps\Crafts\tb_gxsz.xml" size="3571" writeableType="applicationData">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>zyyAs8ORrUSrzgwhKuy+h6U79Is=</dsig:DigestValue>
+      <dsig:DigestValue>b/3/jN5zMEx4PwDpcKXG503qiIo=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\Config\Maps\Material\tb_i259b.xml" size="11752" writeableType="applicationData">
+  <file name="bin\Debug\Config\Maps\Material\tb_i259b.xml" size="11313" writeableType="applicationData">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>eIOb4x79bWkehX9F5CUDPntW4gQ=</dsig:DigestValue>
+      <dsig:DigestValue>xSt3zqMUxfPleOnv7qsvYINgGGM=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\Config\Maps\Material\tb_syjl.xml" size="5623" writeableType="applicationData">
+  <file name="bin\Debug\Config\Maps\Material\tb_syjl.xml" size="5605" writeableType="applicationData">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>hkbQiapPeUrV4e6cV72iCbuL8f8=</dsig:DigestValue>
+      <dsig:DigestValue>eLmERAXlrL7KpqnsKOTHVqH8SFY=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\Config\Maps\Material\tb_wlph.xml" size="3331" writeableType="applicationData">
+  <file name="bin\Debug\Config\Maps\Material\tb_wlph.xml" size="3323" writeableType="applicationData">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>gjGwDZK5ywy72bO3Ai/949/tTIk=</dsig:DigestValue>
+      <dsig:DigestValue>ePEUyglZOQsDkFuTlXnlD20hB2c=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\Config\Maps\Material\tb_wlphck.xml" size="5301" writeableType="applicationData">
+  <file name="bin\Debug\Config\Maps\Material\tb_wlphck.xml" size="5286" writeableType="applicationData">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>1XGaec4XNUJeQcD9tnWkzH8EP8A=</dsig:DigestValue>
+      <dsig:DigestValue>RJUIqD1CCyzLgTchFm2gL9fRvDI=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\Config\Maps\Produce\tb_sc.xml" size="3978" writeableType="applicationData">
+  <file name="bin\Debug\Config\Maps\Produce\tb_sc.xml" size="3825" writeableType="applicationData">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>CUopjfL2oAIlgxqXkMC0vZlCK9g=</dsig:DigestValue>
+      <dsig:DigestValue>WPyn8ydu7i8WwibhpQUTuBoKREs=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\Config\Maps\Produce\tb_scxq.xml" size="3331" writeableType="applicationData">
+  <file name="bin\Debug\Config\Maps\Produce\tb_scxq.xml" size="3211" writeableType="applicationData">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>jQXacn0ELZaFeASjVJRubg16r9w=</dsig:DigestValue>
+      <dsig:DigestValue>/f7ABGZG5exLr5U1KyxScPygFpk=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\Config\Maps\QC\tb_QcJc.xml" size="3571" writeableType="applicationData">
+  <file name="bin\Debug\Config\Maps\QC\tb_QcJc.xml" size="3562" writeableType="applicationData">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>lr1isp5US3V568DtXMM3I0+5PPY=</dsig:DigestValue>
+      <dsig:DigestValue>BniTbDWNqR9iqzgnj1Deif0gQeU=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\Config\Maps\QC\tb_QcVa.xml" size="2223" writeableType="applicationData">
+  <file name="bin\Debug\Config\Maps\QC\tb_QcVa.xml" size="2220" writeableType="applicationData">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>HX5oRgdfCxFv0f3amNjoIShzQG4=</dsig:DigestValue>
+      <dsig:DigestValue>zeeYCti4UnrxpGHDEvvMUOSsK0E=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\Config\Maps\QC\tb_QcXm.xml" size="3555" writeableType="applicationData">
+  <file name="bin\Debug\Config\Maps\QC\tb_QcXm.xml" size="3546" writeableType="applicationData">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>D2nUEEbixazp00U9mw8OUDI8lac=</dsig:DigestValue>
+      <dsig:DigestValue>/jrnSTSPJDWttJDNSQ7yZU7CveA=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="CabioMis.exe.config" size="2189">
+  <file name="CabioMis.exe.config" size="2231">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>ZJfJPwJR41diVqYIDfA7XpBFtFk=</dsig:DigestValue>
+      <dsig:DigestValue>WFHziohtKTjLDlrYsqDFveap180=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Chemistry.ico" size="766">

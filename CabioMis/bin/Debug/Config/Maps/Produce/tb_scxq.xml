@@ -75,22 +75,22 @@
     </insert>
 
     <update id="updatetb_scxq" parameterClass="tb_scxq">
-      update tb_scxq set
-      <dynamic>
+      update tb_scxq
+      <dynamic prepend="set">
         <isNotEmpty prepend="," property="tb_scxq_text">
-          tb_scxq_text = #tb_scxq_text#,
+          tb_scxq_text = #tb_scxq_text#
         </isNotEmpty>
         <isNotEmpty prepend="," property="tb_scxq_value">
-          tb_scxq_value = #tb_scxq_value#,
+          tb_scxq_value = #tb_scxq_value#
         </isNotEmpty>
         <isNotEmpty prepend="," property="tb_scxq_lx">
-          tb_scxq_lx = #tb_scxq_lx#,
+          tb_scxq_lx = #tb_scxq_lx#
         </isNotEmpty>
         <isNotEmpty prepend="," property="tb_scxq_scbs">
-          tb_scxq_scbs = #tb_scxq_scbs#,
+          tb_scxq_scbs = #tb_scxq_scbs#
         </isNotEmpty>
         <isNotEmpty prepend="," property="tb_scxq_xxbs">
-          tb_scxq_xxbs = #tb_scxq_xxbs#,
+          tb_scxq_xxbs = #tb_scxq_xxbs#
         </isNotEmpty>
       </dynamic>
       where   tb_scxq_ID = $tb_scxq_ID$
