@@ -51,10 +51,10 @@ Public Class FrgxAdd
             list = craftsSettingBll.GetListByQuery(Of tb_gxsz)(ht)
         Else
             Dim model As New tb_gxsz
-            model.tb_gxsz_dm = "1"
-            model.tb_gxsz_isMod = "否"
-            model.tb_gxsz_isqc = "是"
-            model.tb_gxsz_isBf = "是"
+            model.tb_gxsz_dm = tb_gxsz_dm.Text
+            model.tb_gxsz_isMod = tb_gxsz_isMod.Text
+            model.tb_gxsz_isqc = tb_gxsz_isqc.Text
+            model.tb_gxsz_isBf = tb_gxsz_isBf.Text
 
             m_gxid = craftsSettingBll.Insert(model)
             If m_gxid > 0 Then
@@ -185,7 +185,6 @@ Public Class FrgxAdd
     ''' 设置附加信息的过程
     ''' </summary>
     Private Sub setFjxx()
-
         'Dim Service As New CraftsInfoService()
         'Service.getCraftsInfoList(工艺设置ID)
 
@@ -230,6 +229,11 @@ Public Class FrgxAdd
                                                      MsgBox("已存在此产出产品！", MsgBoxStyle.Exclamation)
                                                      Return
                                                  End If
+
+                                                 list = craftsInfoBll.getCraftsInfoList(IIf(m_gxid > 0, m_gxid, 0))
+                                                 m_fjxxDt = DataTableExtensions.ToDataTable(list)
+                                                 m_fjxxDt.TableName = "tb_gxfjxx"
+                                                 m_fjxxDt.YanDataBind(showFjxx, "tb_gxfjxx_ID,rowBs,tb_gxfjxx_gxbs")
                                              End If
                                          End Sub
         menu1.Items.Add("修改")
@@ -237,7 +241,12 @@ Public Class FrgxAdd
         menu1.Items.Add("删除")
         AddHandler menu1.Items(3).Click, Sub()
                                              'Service.Remove()
-                                             m_fjxxDt.Rows.Remove(m_fjxxDt.Select("tb_gxcccp_ID='" & showFjxx.SelectedRows(0).Cells("tb_gxcccp_ID").Value & "'")(0))
+                                             m_fjxxDt.Rows.Remove(m_fjxxDt.Select("tb_gxfjxx_Id='" & showFjxx.SelectedRows(0).Cells("tb_gxfjxx_Id").Value & "'")(0))
+
+                                             list = craftsInfoBll.getCraftsInfoList(IIf(m_gxid > 0, m_gxid, 0))
+                                             m_fjxxDt = DataTableExtensions.ToDataTable(list)
+                                             m_fjxxDt.TableName = "tb_gxfjxx"
+                                             m_fjxxDt.YanDataBind(showFjxx, "tb_gxfjxx_ID,rowBs,tb_gxfjxx_gxbs")
                                          End Sub
         AddHandler showFjxx.CellDoubleClick, AddressOf modFjxx
         m_fjxxDt.YanDataBind(showFjxx, "tb_gxfjxx_ID,rowBs,tb_gxfjxx_gxbs", menu1)
@@ -275,6 +284,11 @@ Public Class FrgxAdd
                 MsgBox("已存在此产出产品！", MsgBoxStyle.Exclamation)
                 Return
             End If
+
+            Dim list As IList(Of tb_gxfjxx) = craftsInfoBll.getCraftsInfoList(IIf(m_gxid > 0, m_gxid, 0))
+            m_fjxxDt = DataTableExtensions.ToDataTable(list)
+            m_fjxxDt.TableName = "tb_gxfjxx"
+            m_fjxxDt.YanDataBind(showFjxx, "tb_gxfjxx_ID,rowBs,tb_gxfjxx_gxbs")
         End If
     End Sub
     '确定
@@ -286,6 +300,7 @@ Public Class FrgxAdd
         If CheckControlNull(GroupBox1) = False Then
             Return
         End If
+
         If m_gxid = 0 Then
             If _D.isRowNull("tb_gxsz", "tb_gxsz_mc='" & tb_gxsz_mc.Text.Trim & "'") Then
                 MsgBox("已有相同的工艺！", MsgBoxStyle.Exclamation)
@@ -311,28 +326,24 @@ Public Class FrgxAdd
         End If
 
         '更新主表
-        _D.YanFrVaAddDt(GroupBox1, m_gxszDt, True)
-        m_gxid = m_gxszDt.YanDtValue2("tb_gxsz_ID")
-        '更新工序标识
-        For Each dr As DataRow In m_cccpDt.Rows
-            dr("tb_gxcccp_gxbs") = m_gxid
-        Next
-        '更新产出产品
-        _D.YanDtUpdateSv(m_cccpDt)
-        '删除刚才剔除的产出产品
-        Dim sql As String = "delete from tb_gxcccp where tb_gxcccp_gxbs=" & m_gxid & " and tb_gxcccp_ID not in (" & m_cccpDt.YanDtToStr("tb_gxcccp_ID") & ")"
-        sql.YanDbExe()
+        Dim model As New tb_gxsz
+        model.tb_gxsz_ID = m_gxid
+        model.tb_gxsz_mc = tb_gxsz_mc.Text
+        model.tb_gxsz_dm = tb_gxsz_dm.Text
+        model.tb_gxsz_px = tb_gxsz_px.Text
+        model.tb_gxsz_isMod = tb_gxsz_isMod.Text
+        model.tb_gxsz_isqc = tb_gxsz_isqc.Text
+        model.tb_gxsz_isBf = tb_gxsz_isBf.Text
 
-        '更新工序标识
-        For Each dr As DataRow In m_fjxxDt.Rows
-            dr("tb_gxfjxx_gxbs") = m_gxid
-        Next
-        '更新附加信息
-        _D.YanDtUpdateSv(m_fjxxDt)
-        '删除刚才剔除的附加信息
-        sql = "delete from tb_gxfjxx where tb_gxfjxx_gxbs=" & m_gxid &
-            IIf(m_fjxxDt.Rows.Count = 0, "", " and tb_gxfjxx_ID not in (" & m_fjxxDt.YanDtToStr("tb_gxfjxx_ID") & ")")
-        sql.YanDbExe()
+        Dim result As Int16 = craftsSettingBll.Update(model)
+
+        ''更新主表
+        '_D.YanFrVaAddDt(GroupBox1, m_gxszDt, True)
+        'm_gxid = m_gxszDt.YanDtValue2("tb_gxsz_ID")
+        ''更新工序标识
+        'For Each dr As DataRow In m_cccpDt.Rows
+        '    dr("tb_gxcccp_gxbs") = m_gxid
+        'Next
 
         Me.DialogResult = DialogResult.OK
     End Sub
