@@ -13,7 +13,9 @@ Public Class FrgxAdd
     '修改ID
     Public m_gxid As Integer = 0
 
-    Dim craftsSettingBll As CraftsProductService = New CraftsProductService()
+    Dim craftsSettingBll As CraftsSettingService = New CraftsSettingService()
+    Dim craftsProductBll As CraftsProductService = New CraftsProductService()
+    Dim craftsInfoBll As CraftsInfoService = New CraftsInfoService()
 
     Public Sub New()
         ' 此调用是设计器所必需的。
@@ -36,13 +38,37 @@ Public Class FrgxAdd
         'Dim gysz As tb_gxsz
         'gysz = Service.GetObject(工艺设置ID)
 
-
         'Dim sql As String = "select * from tb_gxsz where tb_gxsz_ID=" & IIf(m_gxid > 0, m_gxid, 0)
         'm_gxszDt = sql.YanGetDb
 
-        Dim list As IList(Of tb_gxsz) = New CraftsSettingService().GetListByQuery(Of tb_gxsz)()
+
+
+        Dim list As IList(Of tb_gxsz)
+        If m_gxid > 0 Then
+            Dim ht As New Hashtable
+            ht.Add("tb_gxsz_ID", m_gxid)
+            list = New CraftsSettingService().GetListByQuery(Of tb_gxsz)(ht)
+        Else
+            Dim model As New tb_gxsz
+            model.tb_gxsz_dm = "1"
+            model.tb_gxsz_isMod = "否"
+            model.tb_gxsz_isqc = "是"
+            model.tb_gxsz_isBf = "是"
+
+            m_gxid = craftsSettingBll.Insert(model)
+            If m_gxid > 0 Then
+                Dim ht As New Hashtable
+                ht.Add("tb_gxsz_ID", m_gxid)
+                list = New CraftsSettingService().GetListByQuery(Of tb_gxsz)(ht)
+            Else
+                MsgBox("新增工艺出错！", MsgBoxStyle.Exclamation)
+                Return
+            End If
+        End If
+
         Dim dt As DataTable = DataTableExtensions.ToDataTable(list)
         dt.TableName = "tb_gxsz"
+
         If m_gxid > 0 Then
             _D.YanDtSetFrCon(Me, dt)
         End If
@@ -67,7 +93,7 @@ Public Class FrgxAdd
         '    " from tb_gxcccp as a left join tb_wp as b on a.tb_gxcccp_wpbs=b.tb_wp_ID  where tb_gxcccp_gxbs=" & IIf(m_gxid > 0, m_gxid, 0)
         'm_cccpDt = Sql.YanGetDb
 
-        Dim list As IList(Of tb_gxcccp) = craftsSettingBll.GetCraftsProductList(IIf(m_gxid > 0, m_gxid, Nothing))
+        Dim list As IList(Of tb_gxcccp) = craftsProductBll.GetCraftsProductList(IIf(m_gxid > 0, m_gxid, 0))
         m_cccpDt = DataTableExtensions.ToDataTable(list)
         m_cccpDt.TableName = "tb_gxcccp"
         '添加右键餐单
@@ -95,11 +121,18 @@ Public Class FrgxAdd
         menu1.Items.Add("删除")
         AddHandler menu1.Items(4).Click, Sub()
                                              'Service.Remove(附件信息ID)
-                                             m_cccpDt.Rows.Remove(m_cccpDt.Select("rowBs='" & showWpxx.SelectedRows(0).Cells("rowBs").Value & "'")(0))
+                                             craftsProductBll.Remove(showWpxx.SelectedRows(0).Cells("tb_gxcccp_ID").Value.ToString)
+                                             'm_cccpDt.Rows.Remove(m_cccpDt.Select("rowBs='" & showWpxx.SelectedRows(0).Cells("rowBs").Value & "'")(0))
+                                             'm_cccpDt.Rows.Remove(m_cccpDt.Select("tb_gxcccp_ID='" & showWpxx.SelectedRows(0).Cells("tb_gxcccp_ID").Value & "'")(0))
                                          End Sub
         AddHandler showWpxx.CellDoubleClick, Sub()
                                                  showSetCccp("修改", Nothing)
                                              End Sub
+
+
+        'list = craftsProductBll.GetCraftsProductList(IIf(m_gxid > 0, m_gxid, 0))
+        'm_cccpDt = DataTableExtensions.ToDataTable(list)
+        'm_cccpDt.TableName = "tb_gxcccp"
         m_cccpDt.YanDataBind(showWpxx, "tb_wp_ID,rowBs,tb_gxcccp_ID,tb_gxcccp_gxbs,tb_gxcccp_wpbs", menu1)
     End Sub
     Private Sub showSetCccp(sender As Object, e As EventArgs)
@@ -111,7 +144,7 @@ Public Class FrgxAdd
         End If
         Dim f As New FrEdit_gxcp
         If sender.ToString() = "修改" Then
-            f.rowBs.Text = showWpxx.SelectedRows(0).Cells("rowBs").Value
+            f.rowBs.Text = showWpxx.SelectedRows(0).Cells("tb_gxcccp_ID").Value
         End If
         If f.ShowDialog() = DialogResult.OK Then
             'Dim Service As New CraftsProductService()
@@ -120,19 +153,27 @@ Public Class FrgxAdd
             'else
             '    Service.Update(工艺产出产品实体)
 
-            If m_cccpDt.Select("tb_gxcccp_ID<>" & f.tb_gxcccp_ID.Text & " and tb_gxcccp_wpbs=" & f.tb_wp_ID.Text).Length > 0 Then
-                MsgBox("已有相同的物品！", MsgBoxStyle.Exclamation)
-                Return
+            'If m_cccpDt.Select("tb_gxcccp_ID<>" & f.tb_gxcccp_ID.Text & " and tb_gxcccp_wpbs=" & f.tb_wp_ID.Text).Length > 0 Then
+            '    MsgBox("已有相同的物品！", MsgBoxStyle.Exclamation)
+            '    Return
+            'End If
+
+            'If m_cccpDt.Rows.Count > 0 Then
+            '    Dim Sql As String = "select * from tb_mrp where tb_mrp_cpbs=" & m_cccpDt.YanDtValue2("tb_gxcccp_wpbs") & " order by tb_mrp_wpdm"
+            '    Dim strWpdm As String = Sql.YanGetDb.YanDtToStr("tb_mrp_wpdm")
+            '    Sql = "select * from tb_mrp where tb_mrp_cpbs=" & f.tb_wp_ID.Text & " order by tb_mrp_wpdm"
+            '    If strWpdm <> Sql.YanGetDb.YanDtToStr("tb_mrp_wpdm") Then
+            '        MsgBox("产出物品的原料必须完全一致！", MsgBoxStyle.Exclamation)
+            '        Return
+            '    End If
+            'End If
+
+            If sender.ToString() = "修改" Then
+                'craftsSettingBll.Update(New Cabio.Model.Crafts.tb_gxcccp)
+            Else
+                'craftsSettingBll.Insert(New Cabio.Model.Crafts.tb_gxcccp)
             End If
-            If m_cccpDt.Rows.Count > 0 Then
-                Dim Sql As String = "select * from tb_mrp where tb_mrp_cpbs=" & m_cccpDt.YanDtValue2("tb_gxcccp_wpbs") & " order by tb_mrp_wpdm"
-                Dim strWpdm As String = Sql.YanGetDb.YanDtToStr("tb_mrp_wpdm")
-                Sql = "select * from tb_mrp where tb_mrp_cpbs=" & f.tb_wp_ID.Text & " order by tb_mrp_wpdm"
-                If strWpdm <> Sql.YanGetDb.YanDtToStr("tb_mrp_wpdm") Then
-                    MsgBox("产出物品的原料必须完全一致！", MsgBoxStyle.Exclamation)
-                    Return
-                End If
-            End If
+
             Dim rowBs As String = _D.YanFrVaAddDt(f, m_cccpDt)
             m_cccpDt.Select("rowBs='" & rowBs & "'")(0)("tb_gxcccp_wpbs") =
                 m_cccpDt.Select("rowBs='" & rowBs & "'")(0)("tb_wp_ID")
@@ -146,8 +187,11 @@ Public Class FrgxAdd
         'Dim Service As New CraftsInfoService()
         'Service.getCraftsInfoList(工艺设置ID)
 
-        Dim Sql As String = "select *,cast(newid() as varchar(50)) as rowBs  from tb_gxfjxx where tb_gxfjxx_gxbs=" & IIf(m_gxid > 0, m_gxid, 0)
-        m_fjxxDt = Sql.YanGetDb
+        'Dim Sql As String = "select *,cast(newid() as varchar(50)) as rowBs  from tb_gxfjxx where tb_gxfjxx_gxbs=" & IIf(m_gxid > 0, m_gxid, 0)
+        'm_fjxxDt = Sql.YanGetDb
+
+        Dim list As IList(Of tb_gxfjxx) = craftsInfoBll.getCraftsInfoList(IIf(m_gxid > 0, m_gxid, 0))
+        m_fjxxDt = DataTableExtensions.ToDataTable(list)
         m_fjxxDt.TableName = "tb_gxfjxx"
         '添加右键餐单
         Dim menu1 As New ContextMenuStrip
@@ -160,10 +204,11 @@ Public Class FrgxAdd
                                              Dim f As New FrEdit_gxfjxx
                                              If f.ShowDialog() = DialogResult.OK Then
                                                  'Service.Insert()
-                                                 If m_fjxxDt.Select("tb_gxfjxx_mc='" & f.tb_gxfjxx_mc.Text & "'").Length > 0 Then
-                                                     MsgBox("已有相同名称的项目！", MsgBoxStyle.Exclamation)
-                                                     Return
-                                                 End If
+                                                 'craftsInfoBll.Insert()
+                                                 'If m_fjxxDt.Select("tb_gxfjxx_mc='" & f.tb_gxfjxx_mc.Text & "'").Length > 0 Then
+                                                 '    MsgBox("已有相同名称的项目！", MsgBoxStyle.Exclamation)
+                                                 '    Return
+                                                 'End If
                                                  _D.YanFrVaAddDt(f, m_fjxxDt)
                                              End If
                                          End Sub
@@ -172,18 +217,18 @@ Public Class FrgxAdd
         menu1.Items.Add("删除")
         AddHandler menu1.Items(3).Click, Sub()
                                              'Service.Remove()
-                                             m_fjxxDt.Rows.Remove(m_fjxxDt.Select("rowBs='" & showFjxx.SelectedRows(0).Cells("rowBs").Value & "'")(0))
+                                             m_fjxxDt.Rows.Remove(m_fjxxDt.Select("tb_gxcccp_ID='" & showFjxx.SelectedRows(0).Cells("tb_gxcccp_ID").Value & "'")(0))
                                          End Sub
         AddHandler showFjxx.CellDoubleClick, AddressOf modFjxx
         m_fjxxDt.YanDataBind(showFjxx, "tb_gxfjxx_ID,rowBs,tb_gxfjxx_gxbs", menu1)
     End Sub
     Private Sub modFjxx()
         Dim f As New FrEdit_gxfjxx
-        f.rowBs.Text = showFjxx.SelectedRows(0).Cells("rowBs").Value
+        'f.rowBs.Text = showFjxx.SelectedRows(0).Cells("tb_gxcccp_ID").Value
         If f.ShowDialog() = DialogResult.OK Then
             'Dim Service As New CraftsInfoService()
             'Service.Update()
-            If m_fjxxDt.Select("tb_gxfjxx_mc='" & f.tb_gxfjxx_mc.Text & "' and rowBs<>'" & f.rowBs.Text & "'").Length > 0 Then
+            If m_fjxxDt.Select("tb_gxfjxx_mc='" & f.tb_gxfjxx_mc.Text & "' and tb_gxcccp_ID<>'" & f.rowBs.Text & "'").Length > 0 Then
                 MsgBox("已有相同名称的项目！", MsgBoxStyle.Exclamation)
                 Return
             End If
